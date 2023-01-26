@@ -1,0 +1,6 @@
+body {
+    background-image: url('../images/home/home_background_img_small.jpg'); /** alexander-ramsey-dBtWLliLt5k-unsplash **/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
