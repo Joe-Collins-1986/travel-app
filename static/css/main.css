@@ -1,6 +1,11 @@
-body {
-    background-image: url('../images/home/home_background_img_small.jpg'); /** alexander-ramsey-dBtWLliLt5k-unsplash **/
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+/* SET ALL FONTS */
+
+#footer {
+    position: fixed;
+    height: 50px;
+    background-color: rgb(72, 72, 72);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}

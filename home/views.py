@@ -13,6 +13,7 @@ class TravelHome(View):
             request,
             "home/travel-home.html",
             {
+                "tab_title": "Home"
 
             },
         )

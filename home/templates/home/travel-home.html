@@ -1,10 +1,17 @@
 {% extends "home/base.html" %}
 
+<!-- style home background for this template -->
+{% block additional_styles %}
+    {% include 'home/snippets/home-bg.html' %}
+{% endblock additional_styles %}
+
+
+<!-- main block code -->
 {% block content %}
 
+<div class="home-background">
     TEST HOME CONTENT
 
-    {% include 'home/snippets/home-info.html' %}
-    
+</div>
 {% endblock content %}
 
