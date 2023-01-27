@@ -1,4 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* NAV-BAR */
+/* .offcanvas {
+    background: rgb(6, 68, 103);
+}
+
+.navbar-toggler-icon {
+    font-size: 20px;
+    color: rgb(6, 68, 103);
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+} */
+
+
+
 /* SET ALL FONTS */
+
+
+/* ALL PAGES */
+.social-icons {
+    font-size: xx-large;
+}
 
 #footer {
     position: fixed;
@@ -8,4 +38,18 @@
     left: 0px;
     right: 0px;
     margin-bottom: 0px;
+}
+
+.footer-icons {
+    height: 100%;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* HOME PAGES ONLY */
+.social-icons {
+    color: white;
 }
