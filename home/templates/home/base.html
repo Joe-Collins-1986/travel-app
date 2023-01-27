@@ -24,7 +24,6 @@
     .offcanvas {
         background-color: rgb(6, 68, 103);
         color: rgb(255, 255, 255);
-        /* filter: saturate(4); */
         z-index: 1500;
     }
 
@@ -56,11 +55,50 @@
         text-decoration: underline;
     }
 
-    @media (max-width: 992px) {
+    .fa-bars {
+        color: rgb(6, 68, 103);
+        font-size: 2rem;
+    }
+
+    .fa-circle-xmark {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+    .box {
+        display: none;
+    }
+    .social-box {
+        display: none;
+    }
+
+
+
+    @media (max-width: 991px) {
         .nav-item {
-            color: rgb(255, 255, 255);
+            color: white;
         }
-    
+        .nav-item:hover {
+            color: white;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            margin-top: 3px;
+        }
+        .top-box {
+            height: calc(100vh - 81px);
+        }
+        .social-box {
+            display: inline;
+            height: 30px;
+            width: 92%;
+            margin-left: 4%;
+        }
     }
 
 
@@ -74,33 +112,51 @@
 
 
                     <button class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas">
-                        <span class="navbar-toggler-icon"></span>
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <i class="fa-solid fa-bars"></i>
                     </button>
 
+
                     <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvas">Offcanvas</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div class="top-box">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvas">Menu</h5>
+                                <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
+                            </div>
+    
+                            <div class="offcanvas-body">
+                                <div class="navbar-nav mr-auto">
+                                    <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}">Home</a>
+                                    <a class="nav-item nav-link px-lg-4" href="#">Planner</a>
+                                    <a class="nav-item nav-link px-lg-4" href="#">Community</a>
+                                    <hr>
+                                </div>
+                            <!-- Navbar Right Side -->
+                                <div class="navbar-nav ms-auto">
+                                    {% if user.is_authenticated %}
+                                    <a class="nav-item nav-link px-lg-4" href="#">Profile</a>
+                                    <a class="nav-item nav-link px-lg-4" href="#">Logout</a>
+                                    {% else %}
+                                    <a class="nav-item nav-link px-lg-4" href="#">Login</a>
+                                    <a class="nav-item nav-link px-lg-4" href="#">Register</a>
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="offcanvas-body">
-                            <div class="navbar-nav mr-auto">
-                                <a class="nav-item nav-link px-lg-4" href="#">Home</a>
-                                <a class="nav-item nav-link px-lg-4" href="#">Planner</a>
-                                <a class="nav-item nav-link px-lg-4" href="#">Community</a>
-                            </div>
-                        <!-- Navbar Right Side -->
-                            <div class="navbar-nav ms-auto">
-                                {% if user.is_authenticated %}
-                                <a class="nav-item nav-link px-lg-4" href="#">Profile</a>
-                                <a class="nav-item nav-link px-lg-4" href="#">Logout</a>
-                                {% else %}
-                                <a class="nav-item nav-link px-lg-4" href="#">Login</a>
-                                <a class="nav-item nav-link px-lg-4" href="#">Register</a>
-                                {% endif %}
-                            </div>
-                            
+                        <div class="social-box">
+                            <p class="m-1 text-center">Social</p>
+                            <hr class="justify-content-evenly m-0 text-center">
                         </div>
+
+
+                        <div class="box">
+                            <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-facebook"></i></a></div>
+                            <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-instagram"></i></a></div>
+                            <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-twitter"></i></a></div>
+                            <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
+                        </div>
+
                     </div>
                 </div>
             </nav>
