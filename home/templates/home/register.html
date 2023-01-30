@@ -40,29 +40,33 @@
     
         <div class="col">
             <div class="row home-top-row">
-                <div>
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }} mt-5">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
             </div>
+
             <div class="row home-mid-row">
                 <div class="col-4">
-    
                 </div>
                 <div class="col home-welcome-container">
                     <h1> Welcome</h1>
-                    <h3>Log in to start your journey.</h3>
+                    <h3>Sign Up to start your journey.</h3>
                     <div class="home-form-container">
-                        <p>Add Login post</p>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Join Today</legend>
+                                {{ form }}
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                        <div class="border-top pt-3">
+                            <small class="text-muted">
+                                Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-1">
-    
                 </div>
             </div>
             <div class="row home-bottom-row">
@@ -73,4 +77,3 @@
 
 
 {% endblock content %}
-
