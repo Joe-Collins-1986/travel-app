@@ -4,9 +4,112 @@
     box-sizing: border-box;
 }
 
-/* NAV-BAR */
-/* .offcanvas {
-    background: rgb(6, 68, 103);
+/***** SET ALL FONTS *****/
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Merriweather&display=swap');
+/* font-family: 'Lora', serif;
+font-family: 'Merriweather', serif; */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+}
+
+a {
+    font-family: 'Lora', serif;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+}
+
+#social-menu-header {
+    font-size: 140%;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 300%;
+    }
+    h2 {
+        font-size: 250%;
+    }
+    h3 {
+        font-size: 200%;
+    }
+    h4 {
+        font-size: 150%;
+    }
+    h5 {
+        font-size: 140%;
+    }
+    h6 {
+        font-size: 120%;
+    }
+    p {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 350%;
+    }
+    h2 {
+        font-size: 300%;
+    }
+    h3 {
+        font-size: 250%;
+    }
+    h4 {
+        font-size: 200%;
+    }
+    h5 {
+        font-size: 160%;
+    }
+    h6 {
+        font-size: 140%;
+    }
+    p {
+        font-size: 140%;
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 400%;
+    }
+    h2 {
+        font-size: 350%;
+    }
+    h3 {
+        font-size: 300%;
+    }
+    h4 {
+        font-size: 250%;
+    }
+    h5 {
+        font-size: 200%;
+    }
+    h6 {
+        font-size: 150%;
+    }
+    p {
+        font-size: 150%;
+    }
+}
+
+
+
+/***** ALL PAGES *****/
+
+/* NAV BAR */
+.offcanvas {
+    background-color: rgb(6, 68, 103);
+    color: rgb(255, 255, 255);
+    z-index: 1500;
+}
+
+.offcanvas-backdrop {
+    z-index: 100;
 }
 
 .navbar-toggler-icon {
@@ -18,14 +121,78 @@
 .navbar-toggler:focus {
     outline: none;
     box-shadow: none;
-} */
+}
+
+.container-fluid {
+    background-color: rgb(202, 202, 202);
+    height: 50px;
+}
+
+.nav-item {
+    color: rgb(6, 68, 103);
+    font-weight: bold;
+    font-size: 140%;
+}
+.nav-item:hover {
+    color: rgb(6, 2, 254);
+    text-decoration: underline;
+}
+
+.fa-bars {
+    color: rgb(6, 68, 103);
+    font-size: 2rem;
+}
+
+.fa-circle-xmark {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.navbar-toggler {
+    border: none;
+}
+.social-title-container {
+    display: none;
+}
+.social-icon-container {
+    display: none;
+}
+
+/* NAV BAR SMALLER SCREEN */
+@media (max-width: 990px) {
+    .nav-item {
+        color: white;
+    }
+    .nav-item:hover {
+        color: white;
+    }
+    .top-box {
+        height: calc(100vh - 81px);
+    }
+    .social-title-container {
+        display: inline;
+        height: 40px;
+        width: 92%;
+        margin-left: 4%;
+    }
+    .social-icon-container {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        margin-top: 3px;
+    }
+}
+
+/* MAIN INSERT SECTION */
+    /* .main-section {
+        margin-top: 35px;
+        height: calc(100vh - 100px);
+        width: 100%;
+        border: solid 5px red;
+    } */
 
 
-
-/* SET ALL FONTS */
-
-
-/* ALL PAGES */
+/* FOOTER SECTION */
 .social-icons {
     font-size: xx-large;
 }

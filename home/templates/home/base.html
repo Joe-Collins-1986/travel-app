@@ -20,91 +20,7 @@
     {% endblock additional_styles %}
 </head>
 
-<style>
-    .offcanvas {
-        background-color: rgb(6, 68, 103);
-        color: rgb(255, 255, 255);
-        z-index: 1500;
-    }
-
-    .offcanvas-backdrop {
-        z-index: 100;
-    }
-
-    .navbar-toggler-icon {
-        font-size: 20px;
-        color: rgb(6, 68, 103);
-        outline: none;
-    }
-
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: none;
-    }
-
-    .container-fluid {
-        background-color: rgb(202, 202, 202);
-        height: 50px;
-    }
-
-    .nav-item {
-        color: rgb(6, 68, 103);
-    }
-    .nav-item:hover {
-        color: rgb(6, 2, 254);
-        text-decoration: underline;
-    }
-
-    .fa-bars {
-        color: rgb(6, 68, 103);
-        font-size: 2rem;
-    }
-
-    .fa-circle-xmark {
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-    .box {
-        display: none;
-    }
-    .social-box {
-        display: none;
-    }
-
-
-
-    @media (max-width: 991px) {
-        .nav-item {
-            color: white;
-        }
-        .nav-item:hover {
-            color: white;
-        }
-        .box {
-            display: flex;
-            justify-content: center;
-            height: 50px;
-            margin-top: 3px;
-        }
-        .top-box {
-            height: calc(100vh - 81px);
-        }
-        .social-box {
-            display: inline;
-            height: 30px;
-            width: 92%;
-            margin-left: 4%;
-        }
-    }
-
-
-</style>
 <body>
-    <main>
         <section class="navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid fixed-top">
@@ -120,7 +36,7 @@
                     <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
                         <div class="top-box">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvas">Menu</h5>
+                                <h3 class="offcanvas-title" id="offcanvas">Menu</h3>
                                 <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
                             </div>
     
@@ -144,45 +60,35 @@
                             </div>
                         </div>
 
-                        <div class="social-box">
-                            <p class="m-1 text-center">Social</p>
+                        <div class="social-title-container">
+                            <p id="social-menu-header" class="m-1 text-center">Social</p>
                             <hr class="justify-content-evenly m-0 text-center">
                         </div>
 
-
-                        <div class="box">
+                        <div class="social-icon-container">
                             <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-facebook"></i></a></div>
                             <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-instagram"></i></a></div>
                             <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-twitter"></i></a></div>
                             <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
                         </div>
-
                     </div>
                 </div>
             </nav>
         </section>
 
-        <style>
-            .main-section {
-                margin-top: 50px;
-            }
-        </style>
-
-        <div class="main-section">
+        <main class="main-section">
             {% block content %}
             {% endblock %}
-        </div>
+        </main>
 
-
-        <div id="footer">
+        <section id="footer">
             <div class="h-100 d-flex justify-content-end">
                 <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-facebook"></i></a></div>
                 <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-instagram"></i></a></div>
                 <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-twitter"></i></a></div>
                 <div class="footer-icons"><a href="#"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
             </div>
-        </div>
-    </main>
+        </section>
 
 
     <script src="https://kit.fontawesome.com/5c52ef23bc.js" crossorigin="anonymous"></script>

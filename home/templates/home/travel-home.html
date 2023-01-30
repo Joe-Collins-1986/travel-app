@@ -9,8 +9,84 @@
 <!-- main block code -->
 {% block content %}
 
-<div>
-    TEST HOME CONTENT
+<style>
+
+    .admin-updates-col-main {
+        background-color: rgba(255, 255, 255, 0.5);
+        height: calc(100vh - 80px);
+    }
+
+    .home-top-row {
+        height: 50vh;
+    }
+    .home-mid-row {
+        background-color: white;
+    }
+    .home-form-container {
+        background-color: grey;
+    }
+    .home-bottom-row {
+        height: 60px;
+    }
+</style>
+
+<div class="row">
+    <div class="d-none d-lg-block col-3 admin-updates-col-main">
+        <h3>Add admin list view</h3>
+    </div>
+
+    <div class="col">
+        <div class="row home-top-row">
+        </div>
+        <div class="row home-mid-row">
+            <div class="col-4">
+
+            </div>
+            <div class="col">
+                <h1> Welcome</h1>
+                <h3>Log in to start your journey.</h3>
+                <div class="home-form-container">
+                    <p>Add Login post</p>
+                </div>
+            </div>
+            <div class="col-1">
+
+            </div>
+        </div>
+        <div class="row home-bottom-row">
+        </div>
+    </div>
 </div>
+
+<!-- <div class="col">
+    <div class="row">
+        testing
+    </div>
+    <div class="row">
+        <div class="col home-top-col">
+            some content
+        </div>
+        <div class="col home-mid-col">
+            <h1> Welcome</h1>
+            <h3>Log in to start your journey.</h3>
+            <div class="home-form-container">
+                <p>Add Login post</p>
+            </div>
+        </div>
+        <div class="col home-bottom-col">
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="test-block">
+    <h1> Welcome</h1>
+    <h3>Log in to start your journey.</h3>
+    <div class="home-form-container">
+        <p>Add Login post</p>
+    </div>
+</div> -->
+
+
 {% endblock content %}
 
