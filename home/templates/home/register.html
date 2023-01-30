@@ -1,37 +1,10 @@
-{% extends "home/base.html" %}
+{% extends "home/home-base.html" %}
 {% load crispy_forms_tags %}
 
-<!-- style home background for this template -->
-{% block additional_styles %}
-    {% include 'home/snippets/home-styles.html' %}
-{% endblock additional_styles %}
-
-
 <!-- main block code -->
-{% block content %}
+{% block form-content %}
 
 <style>
-
-    .admin-updates-col-main {
-        background-color: rgba(255, 255, 255, 0.5);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 25vw;
-        margin-top: 50px;
-    }
-
-    .home-welcome-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 0px 25px 0px 25px;
-        color: rgb(6, 68, 103);
-    }
-
-    .home-mid-row {
-        margin: 15vh 0 80px 0;
-    }
-
     /* UPDATE CRISPY FORM STYLING */
     #div_id_username, #div_id_email, #div_id_password1, #div_id_password2 {
         font-family: 'Merriweather', serif !important;
@@ -44,44 +17,21 @@
         color: rgb(6, 68, 103) !important;
         font-weight: 500;
     }
-
 </style>
 
-    <div class="row m-0">
-        <div class="d-none d-lg-block col-3 admin-updates-col-main">
-            <h3>Add admin list view</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-2">Register</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
         </div>
-    
-        <div class="col">
-            <div class="row home-mid-row">
-                <div class="col-1 col-sm-3 col-lg-6">
-                </div>
-                <div class="col home-welcome-container">
-                    <div class="home-form-container">
-                        <form method="POST">
-                            {% csrf_token %}
-                            <fieldset class="form-group">
-                                <legend class="border-bottom mb-2">Register</legend>
-                                {{ form|crispy }}
-                            </fieldset>
-                            <div class="form-group">
-                                <button class="btn btn-outline-info" type="submit">Sign Up</button>
-                            </div>
-                        </form>
-                        <div class="border-top pt-3">
-                            <small class="text-muted">
-                                Already Have An Account? <a class="ml-2" href="#">Sign In</a>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1">
-                </div>
-            </div>
-
-        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+        </small>
     </div>
-
-
-
-{% endblock content %}
+{% endblock form-content%}
