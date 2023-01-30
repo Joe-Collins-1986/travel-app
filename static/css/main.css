@@ -184,12 +184,7 @@ p {
 }
 
 /* MAIN INSERT SECTION */
-    /* .main-section {
-        margin-top: 35px;
-        height: calc(100vh - 100px);
-        width: 100%;
-        border: solid 5px red;
-    } */
+
 
 
 /* FOOTER SECTION */
@@ -220,3 +215,4 @@ p {
 .social-icons {
     color: white;
 }
+
