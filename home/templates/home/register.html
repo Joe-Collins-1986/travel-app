@@ -3,35 +3,19 @@
 
 <!-- main block code -->
 {% block form-content %}
-
-<style>
-    /* UPDATE CRISPY FORM STYLING */
-    #div_id_username, #div_id_email, #div_id_password1, #div_id_password2 {
-        font-family: 'Merriweather', serif !important;
-        color: rgb(6, 68, 103) !important;
-        font-weight: 700;
-    }
-
-    #hint_id_username, #hint_id_password1, #hint_id_password2 {
-        font-family: 'Merriweather', serif !important;
-        color: rgb(6, 68, 103) !important;
-        font-weight: 500;
-    }
-</style>
-
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-2">Register</legend>
+            <legend class="border-bottom mb-2 p-2 text-center">Register</legend>
             {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            <button class="btn btn-travel mb-2" type="submit">Sign Up</button>
         </div>
     </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
+    <div class="border-top pt-3 mb-3 text-center">
+        <small class="p-font">
             Already Have An Account? <a class="ml-2" href="#">Sign In</a>
         </small>
     </div>
-{% endblock form-content%}
+{% endblock form-content %}

@@ -5,34 +5,8 @@
     {% include 'home/snippets/home-styles.html' %}
 {% endblock additional_styles %}
 
-
 <!-- main block code -->
 {% block content %}
-
-<style>
-
-    .admin-updates-col-main {
-        background-color: rgba(255, 255, 255, 0.5);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 25vw;
-        margin-top: 50px;
-    }
-
-    .home-welcome-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 0px 25px 0px 25px;
-        color: rgb(6, 68, 103);
-    }
-
-    .home-mid-row {
-        margin: 15vh 0 80px 0;
-    }
-
-</style>
-
     <div class="row m-0">
         <div class="d-none d-lg-block col-3 admin-updates-col-main">
             <h3>Add admin list view</h3>
@@ -53,5 +27,4 @@
             </div>
         </div>
     </div>
-
 {% endblock content %}
