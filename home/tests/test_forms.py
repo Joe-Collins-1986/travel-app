@@ -16,7 +16,7 @@ class TestUserRegisterForm(TestCase):
         })
         self.assertTrue(form.is_valid())
 
-    def test_registration_form_valid(self):
+    def test_registration_invalid_passwords_dont_match(self):
         """ Registration form when passwords do not match """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
@@ -26,7 +26,7 @@ class TestUserRegisterForm(TestCase):
         })
         self.assertFalse(form.is_valid())
 
-    def test_registration_form_valid(self):
+    def test_registration_invalid_passwords_no_special_characters(self):
         """ Registration form when passwords match but are not valid (e.g. no special characters) """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
@@ -36,7 +36,7 @@ class TestUserRegisterForm(TestCase):
         })
         self.assertFalse(form.is_valid())
     
-    def test_registration_form_valid(self):
+    def test_registration_form_email_not_valid(self):
         """ Registration form when email not valid """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
