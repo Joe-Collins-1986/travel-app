@@ -1,76 +1,21 @@
-{% extends "home/base.html" %}
-
-<!-- style home background for this template -->
-{% block additional_styles %}
-    {% include 'home/snippets/home-styles.html' %}
-{% endblock additional_styles %}
-
+{% extends "home/home-base.html" %}
+{% load crispy_forms_tags %}
 
 <!-- main block code -->
-{% block content %}
-
-<style>
-
-    .admin-updates-col-main {
-        background-color: rgba(255, 255, 255, 0.5);
-        height: calc(100vh - 80px);
-        margin-top: 30px;
-    }
-
-    .home-top-row {
-        height: 50vh;
-    }
-    .home-welcome-container {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 0px 25px 0px 25px;
-        color: rgb(6, 68, 103);
-    }
-    .home-form-container {
-        background-color: grey;
-    }
-    .home-bottom-row {
-        height: 60px;
-    }
-</style>
-
-    <div class="row m-0">
-        <div class="d-none d-lg-block col-3 admin-updates-col-main">
-            <h3>Add admin list view</h3>
+{% block form-content %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-2 p-2 text-center">Login</legend>
+            <div>INPUT FORM</div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-travel mb-2" type="submit">Login</button>
         </div>
-    
-        <div class="col">
-            <div class="row home-top-row">
-                <div>
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }} mt-5">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-            <div class="row home-mid-row">
-                <div class="col-4">
-    
-                </div>
-                <div class="col home-welcome-container">
-                    <h1> Welcome</h1>
-                    <h3>Log in to start your journey.</h3>
-                    <div class="home-form-container">
-                        <p>Add Login post</p>
-                    </div>
-                </div>
-                <div class="col-1">
-    
-                </div>
-            </div>
-            <div class="row home-bottom-row">
-            </div>
-        </div>
+    </form>
+    <div class="border-top pt-3 mb-3 text-center">
+        <small class="p-font">
+            Need An Account? <a class="ml-2" href="#">Register</a>
+        </small>
     </div>
-
-
-
-{% endblock content %}
-
+{% endblock form-content %}
