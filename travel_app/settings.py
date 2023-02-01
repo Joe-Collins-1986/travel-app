@@ -154,6 +154,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 #Default redirect auth_views
 LOGIN_REDIRECT_URL = 'travel-home'
+LOGOUT_REDIRECT_URL = 'home-login'
 
 
 # AWS access keys and settings
