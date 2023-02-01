@@ -3,23 +3,30 @@
 
 <!-- main block code -->
 {% block form-content %}
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-2 p-2 text-center">
+    <fieldset class="form-group welcome">
+        <legend class="border-bottom mb-2 p-2 text-center">
+            <h4>
                 Welcome {{ user.username }}
                 <br>
                 {% for message in messages %}
                     {{ message }}
                 {% endfor %}
-            </legend>
-            <div>Welcome Message</div>
-            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus sequi error eius dolor eaque! Est, architecto sunt! Cumque autem aliquid illo fugit, error nihil optio similique dicta voluptatum quae dignissimos?</div>
-        </fieldset>
-    </form>
+            </h4>
+        </legend>
+        <p class="text-center">Plan your travel and document your adventures with our travel planner.<br><br>
+            Or link in with like-minded  travellers to share your experiences, travel tips and get advice.</p>
+        <div class="row">
+            <div class="col">
+                <a href="#"><h5 class="text-center">Planner</h5></a>
+            </div>
+            <div class="col">
+                <a href="#"><h5 class="text-center">Community</h5></a>
+            </div>
+        </div>
+    </fieldset>
     <div class="border-top pt-3 mb-3 text-center">
         <small class="p-font">
-            Need An Account? <a class="ml-2" href="#">Register</a>
+            Want to update your profile? <a class="ml-2" href="#">Profile</a>
         </small>
     </div>
 {% endblock form-content %}
