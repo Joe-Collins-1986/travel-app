@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from .views import (
     TravelHome,
     register,
@@ -6,6 +7,7 @@ from .views import (
 
 urlpatterns = [
     path('', TravelHome.as_view(), name="travel-home"),
-    path('register/', register, name='travel-register'),
-
+    path('register/', register, name='home-register'),
+    path('login/', auth_views.LoginView.as_view(template_name='home/login.html'), name='home-login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='home/logout.html'), name='home-logout'),
 ]

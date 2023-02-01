@@ -6,6 +6,6 @@ from home.views import register
 class TestUrls(SimpleTestCase):
 
     def test_register_url_resolves(self):
-        url = reverse('travel-register')
+        url = reverse('home-register')
         self.assertEquals(resolve(url).func, register)
 

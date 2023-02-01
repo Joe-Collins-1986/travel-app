@@ -152,6 +152,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+#Default redirect auth_views
+LOGIN_REDIRECT_URL = 'travel-home'
+
 
 # AWS access keys and settings
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
