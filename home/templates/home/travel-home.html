@@ -6,12 +6,16 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-2 p-2 text-center">Welcome</legend>
-            <div>Welcome message</div>
+            <legend class="border-bottom mb-2 p-2 text-center">
+                Welcome {{ user.username }}
+                <br>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </legend>
+            <div>Welcome Message</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus sequi error eius dolor eaque! Est, architecto sunt! Cumque autem aliquid illo fugit, error nihil optio similique dicta voluptatum quae dignissimos?</div>
         </fieldset>
-        <div class="form-group">
-            <button class="btn btn-travel mb-2" type="submit">Login</button>
-        </div>
     </form>
     <div class="border-top pt-3 mb-3 text-center">
         <small class="p-font">
