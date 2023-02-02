@@ -14,7 +14,10 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-travel mb-2" type="submit">Sign In</button>
+                <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
+                <small class="p-font">
+                    Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
+                </small><br><br>
             </div>
         </form>
         <div class="border-top pt-3 mb-3 text-center">
