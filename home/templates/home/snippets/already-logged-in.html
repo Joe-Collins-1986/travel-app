@@ -1,0 +1,16 @@
+{% block already_logged_in %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-2 p-2 text-center">You Are Logged In</legend>
+        You are already logged on as {{ user.username }}.<br><br>
+        If you wish to access another account please logout first.
+    </fieldset>
+    <div class="form-group">
+        <br>
+        <a href="{% url 'home-logout' %}" class="btn btn-travel mb-2">Logout</a>
+    </div>
+    <div class="border-top pt-3 mb-3 text-center">
+        <small class="p-font">
+            Want to update your profile? <a class="ml-2" href="#">Profile</a>
+        </small>
+    </div>
+{% endblock already_logged_in %}
