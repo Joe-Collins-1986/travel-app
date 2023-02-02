@@ -25,4 +25,22 @@ class TestUrls(SimpleTestCase):
         url = reverse('home-logout')
         self.assertEquals(resolve(url).func.view_class, auth_views.LogoutView)
 
+    def test_password_reset_url_resolves(self):
+        url = reverse('password_reset')
+        self.assertEquals(resolve(url).func.view_class,
+                          auth_views.PasswordResetView)
+    
+    def test_password_reset_confirm_url_resolves(self):
+        url = reverse('password_reset_confirm', args=['arg1', 'arg2'])
+        self.assertEquals(resolve(url).func.view_class,
+                          auth_views.PasswordResetConfirmView)
 
+    def test_password_reset_done_url_resolves(self):
+        url = reverse('password_reset_done')
+        self.assertEquals(resolve(url).func.view_class,
+                          auth_views.PasswordResetDoneView)
+
+    def test_password_reset_complete_url_resolves(self):
+        url = reverse('password_reset_complete')
+        self.assertEquals(resolve(url).func.view_class,
+                          auth_views.PasswordResetCompleteView)
