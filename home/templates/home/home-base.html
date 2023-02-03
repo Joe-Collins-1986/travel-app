@@ -7,14 +7,60 @@
 
 <!-- main block code -->
 {% block content %}
+
+<style>
+    .updates-intro {
+        background-color: rgba(255, 255, 255, .9);
+        margin-top: 10px;
+    }
+
+    .update-container {
+        background-color: rgba(255, 255, 255, .9);
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 70%;
+        overflow-x: none;
+        overflow-y: scroll;
+        max-height: 200px;
+        margin-top: 10px;
+    }
+
+    .update-container p, .update-container h4, .updates-intro h4 {
+        color: rgb(6, 68, 103);
+    }
+
+    .btn-all-topics {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        margin-top: 10px;
+    }
+
+    .btn-all-topics:hover {
+        background-color: rgb(10, 104, 158);
+        color: white;
+        margin-top: 10px;
+    }
+
+</style>
+
     <div class="row m-0">
         <div class="d-none d-lg-block col-3 admin-updates-col-main">
 
-            <h3>ADMIN UPDATES</h3>
+            <div class="updates-intro">
+                <h4 class="text-center">Latest Site Updates</h4>                
+            </div>
+            
             {% for update in updates %}
-                <h2>{{ update.title }}</h2>
-                <P>{{ update.content }}</P>
+                <div class="update-container">
+                    <h4 class="text-center">{{ update.title }}</h4>
+                    <hr>
+                    <P>{{ update.content }}</P>
+                </div>
             {% endfor %}
+
+            <a class="btn btn-all-topics" href="#">See all updates</a>
 
         </div>
         <div class="col">
