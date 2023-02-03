@@ -204,6 +204,41 @@ p {
 
 
 /***** HOME / REGISTER FORM SECTION *****/
+
+/* ADMIN UPDATES ON HOME SECTION */
+    .updates-intro {
+        background-color: rgba(255, 255, 255, .9);
+        margin-top: 10px;
+    }
+
+    .update-container {
+        background-color: rgba(255, 255, 255, .9);
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 70%;
+        overflow-x: none;
+        overflow-y: scroll;
+        max-height: 200px;
+        margin-top: 10px;
+    }
+
+    .update-container p, .update-container h4, .updates-intro h4 {
+        color: rgb(6, 68, 103);
+    }
+
+    .btn-all-topics {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        margin-top: 10px;
+    }
+
+    .btn-all-topics:hover {
+        background-color: rgb(10, 104, 158);
+        color: white;
+        margin-top: 10px;
+    }
     /* HOME-BASE SECTION */
     .social-icons {
         color: white;
