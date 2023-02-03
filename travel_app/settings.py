@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'storages',
     'diary',
     'home',
+    'site_updates',
 
 ]
 

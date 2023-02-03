@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+
+from site_updates.models import Update
+
 from .forms import UserRegisterForm
 from django.views.generic import (
     View,
@@ -9,14 +12,18 @@ from django.views.generic import (
 
 # Create your views here.
 class TravelHome(View):
+    
 
     def get(self, request):
+        updates = Update.objects.all()
+
         if request.user.is_authenticated:
             return render(
                 request,
                 "home/travel-home.html",
                 {
-                    "tab_title": "Home"
+                    "tab_title": "Home",
+                    "updates": updates,
                 },
             )
         else:  
