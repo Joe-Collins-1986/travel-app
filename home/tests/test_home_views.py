@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
-class TestRegister(TestCase):
+class TestRegisterView(TestCase):
     """ Test Register Function """
 
     def test_register_user_get(self):
@@ -39,7 +39,7 @@ class TestRegister(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
-class TestLogin(TestCase):
+class TestLoginView(TestCase):
     """ Test Login Function """
 
     def setUp(self):
@@ -86,7 +86,7 @@ class TestLogin(TestCase):
     
 
 
-class TestHome(TestCase):
+class TestHomeView(TestCase):
 
     def setUp(self):
         User.objects.create_user('JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')

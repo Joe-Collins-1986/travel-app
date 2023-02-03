@@ -31,6 +31,8 @@ class TravelHome(View):
 
 
 def register(request):
+    updates = Update.objects.filter(status=1).order_by('-published_on')[0:3]
+
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -49,6 +51,7 @@ def register(request):
                 'home/register.html',
                 {
                     "tab_title": "Register",
-                    "form": form
+                    "form": form,
+                    "updates": updates,
                 }
             )
