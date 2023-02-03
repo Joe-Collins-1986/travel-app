@@ -1,0 +1,66 @@
+{% extends "home/base.html" %}
+
+<!-- main block code -->
+{% block content %}
+
+<style>
+
+    .updates-main-section {
+        margin-top: 60px;
+        margin-left: 10vw;
+        margin-right: 30vw;
+        margin-bottom: 100px;
+    }
+
+    .update-containter-list-view {
+        background-color: #C3C3C3;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .update-containter-list-view {
+        color: rgb(6, 68, 103);
+    }
+
+    .test {
+        display: flex;
+        justify-content: center;
+    }
+
+    .update-picture {
+        max-width: 30vw;
+        border: 5px white solid;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+
+    .update-picture img {
+        max-width: 100%;
+    }
+
+
+</style>
+
+    <div class="updates-main-section">
+    {% for update in updates %}
+
+        <div class="update-containter-list-view">
+            <h3>{{ update.title }}</h3>
+            <hr>
+            <p>{{ update.content }}</p>
+            {% if update.update_image %}
+                <div class="test">
+                    <div class="update-picture-container">
+                        <div class="update-picture">
+                            <img src="{{ update.update_image.url }}">
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -19,6 +19,7 @@
             {% for update in updates %}
                 <div class="update-container">
                     <h4 class="text-center">{{ update.title }}</h4>
+                    <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
                     <hr>
                     <P>{{ update.content }}</P>
                 </div>

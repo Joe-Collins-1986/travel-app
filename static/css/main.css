@@ -222,7 +222,7 @@ p {
         margin-top: 10px;
     }
 
-    .update-container p, .update-container h4, .updates-intro h4 {
+    .update-container p, .update-container h4, .update-container h6, .updates-intro h4 {
         color: rgb(6, 68, 103);
     }
 
