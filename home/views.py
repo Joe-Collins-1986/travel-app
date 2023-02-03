@@ -15,7 +15,7 @@ class TravelHome(View):
     
 
     def get(self, request):
-        updates = Update.objects.all()
+        updates = Update.objects.filter(status=1).order_by('published_on')[0:5]
 
         if request.user.is_authenticated:
             return render(

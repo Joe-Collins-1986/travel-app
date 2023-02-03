@@ -15,7 +15,7 @@ class Update(models.Model):
     topic = models.ForeignKey(UpdateCatagory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
-    update_image = models.ImageField(default=None, upload_to='media/update_pics/')
+    update_image = models.ImageField(default=None, upload_to='media/update_pics/', blank=True)
     published_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)

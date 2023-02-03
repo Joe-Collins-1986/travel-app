@@ -9,11 +9,13 @@
 {% block content %}
     <div class="row m-0">
         <div class="d-none d-lg-block col-3 admin-updates-col-main">
+
+            <h3>ADMIN UPDATES</h3>
             {% for update in updates %}
-                <h3>{{ update.title }}</h3>
+                <h2>{{ update.title }}</h2>
+                <P>{{ update.content }}</P>
             {% endfor %}
 
-            <h3>Add admin list view</h3>
         </div>
         <div class="col">
             <div class="row home-mid-row">
