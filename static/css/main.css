@@ -179,6 +179,13 @@ p {
     }
 }
 
+@media screen and ( max-height: 500px ) {
+    .hide-social-icons {
+        display: none;
+    }
+
+}
+
 /* FOOTER SECTION */
 .social-icons {
     font-size: xx-large;
