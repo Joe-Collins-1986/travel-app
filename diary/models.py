@@ -1,11 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 from PIL import Image
 
 
 class Country(models.Model):
     name = models.CharField(max_length=100, unique=True, default=None)
     country_image = models.ImageField(default=None, upload_to='media/country_pics/', blank=True)
-    country_map = models.ImageField(default=None, upload_to='media/country_maps/', blank=True)
+    country_flag = models.ImageField(default=None, upload_to='media/country_maps/', blank=True)
     code = models.CharField(max_length=5, unique=True, default=None)
     capital = models.CharField(max_length=100, unique=True, default=None)
     region = models.CharField(max_length=100, default=None)

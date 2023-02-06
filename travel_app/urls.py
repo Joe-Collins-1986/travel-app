@@ -21,5 +21,5 @@ urlpatterns = [
     
     path('', include("home.urls")),
     path('updates', include("site_updates.urls")),
-    path('diary', include("site_updates.urls")),
+    path('diary', include("diary.urls")),
 ]
