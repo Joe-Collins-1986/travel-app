@@ -1,0 +1,363 @@
+[
+    {
+        "name": "Albania",
+        "code": "AL",
+        "capital": "Tirana",
+        "region": "EU",
+        "currency": "Albanian lek",
+        "language": "Albanian",
+        "about": "Albania, on Southeastern Europe's Balkan Peninsula, is a small country with Adriatic and Ionian coastlines and an interior crossed by the Albanian Alps. The country has many castles and archaeological sites. Capital Tirana centers on sprawling Skanderbeg Square, site of the National History Museum, with exhibits spanning antiquity to post-communism, and frescoed Et'hem Bey Mosque.",
+        "population": "2.812 million (2021)"
+    },
+    {
+        "name": "Belarus",
+        "code": "BY",
+        "capital": "Minsk",
+        "region": "EU",
+        "currency": "New Belarusian ruble",
+        "language": "Belarusian",
+        "about": "Belarus, officially the Republic of Belarus, is a landlocked country in Eastern Europe. It is bordered by Russia to the east and northeast, Ukraine to the south, Poland to the west, and Lithuania and Latvia to the northwest.",
+        "population": "9.34 million (2021)"
+    },
+    {
+        "name": "Belgium",
+        "code": "BE",
+        "capital": "Brussels",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Dutch",
+        "about": "Belgium, a country in Western Europe, is known for medieval towns, Renaissance architecture and as headquarters of the European Union and NATO. The country has distinctive regions including Dutch-speaking Flanders to the north, French-speaking Wallonia to the south and a German-speaking community to the east. The bilingual capital, Brussels, has ornate guildhalls at Grand-Place and elegant art-nouveau buildings.",
+        "population": "11.59 million (2021)"
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "code": "BA",
+        "capital": "Sarajevo",
+        "region": "EU",
+        "currency": "Bosnia and Herzegovina convertible mark",
+        "language": "Bosnian",
+        "about": "Bosnia and Herzegovina is a country on the Balkan Peninsula in southeastern Europe. Its countryside is home to medieval villages, rivers and lakes, plus the craggy Dinaric Alps. National capital Sarajevo has a well preserved old quarter, Baščaršija, with landmarks like 16th-century Gazi Husrev-bey Mosque. Ottoman-era Latin Bridge is the site of the assassination of Archduke Franz Ferdinand, which ignited World War I.",
+        "population": "3.271 million (2021)"
+    },
+    {
+        "name": "Bulgaria",
+        "code": "BG",
+        "capital": "Sofia",
+        "region": "EU",
+        "currency": "Bulgarian lev",
+        "language": "Bulgarian",
+        "about": "Bulgaria is a Balkan nation with diverse terrain encompassing Black Sea coastline, a mountainous interior and rivers, including the Danube. A cultural melting pot with Greek, Slavic, Ottoman, and Persian influences, it has a rich heritage of traditional dance, music, costumes, and crafts. At the foot of domed Vitosha mountain is its capital city, Sofia, dating to the 5th century B.C.",
+        "population": "6.878 million (2021)"
+    },
+    {
+        "name": "Croatia",
+        "code": "HR",
+        "capital": "Zagreb",
+        "region": "EU",
+        "currency": "Croatian kuna",
+        "language": "Croatian",
+        "about": "Croatia, officially the Republic of Croatia, is a country at the crossroads of Central and Southeast Europe. Its coast lies entirely on the Adriatic Sea.",
+        "population": "3.899 million (2021)"
+    },
+    {
+        "name": "Czech Republic",
+        "code": "CZ",
+        "capital": "Prague",
+        "region": "EU",
+        "currency": "Czech koruna",
+        "language": "Czech",
+        "about": "The Czech Republic, also known as Czechia, is a landlocked country in Central Europe. Historically known as Bohemia, it is bordered by Austria to the south, Germany to the west, Poland to the northeast, and Slovakia to the southeast.",
+        "population": "10.51 million (2021)"
+    },
+    {
+        "name": "Denmark",
+        "code": "DK",
+        "capital": "Copenhagen",
+        "region": "EU",
+        "currency": "Danish krone",
+        "language": "Danish",
+        "about": "Denmark is a Scandinavian country comprising the Jutland Peninsula and numerous islands. It's linked to nearby Sweden via the Öresund bridge. Copenhagen, its capital, is home to royal palaces and colorful Nyhavn harbor, plus the Tivoli amusement park and the iconic “Little Mermaid” statue. Odense is writer Hans Christian Andersen’s hometown, with a medieval core of cobbled streets and half-timbered houses.",
+        "population": "5.857 million (2021)"
+    }, 
+    {
+        "name": "Estonia",
+        "code": "EE",
+        "capital": "Tallinn",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Estonian",
+        "about": "Estonia, a country in Northern Europe, borders the Baltic Sea and Gulf of Finland. Including more than 1,500 islands, its diverse terrain spans rocky beaches, old-growth forest and many lakes. Formerly part of the Soviet Union, it's dotted with castles, churches and hilltop fortresses. The capital, Tallinn, is known for its preserved Old Town, museums and the 314m-high Tallinn TV Tower, which has an observation deck.",
+        "population": "1.331 million (2021) "
+    },
+    {
+        "name": "Finland",
+        "code": "FI",
+        "capital": "Helsinki",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Finnish",
+        "about": "Finland is a Northern European nation bordering Sweden, Norway and Russia. Its capital, Helsinki, occupies a peninsula and surrounding islands in the Baltic Sea. Helsinki is home to the 18th-century sea fortress Suomenlinna, the fashionable Design District and diverse museums. The Northern Lights can be seen from the country's Arctic Lapland province, a vast wilderness with national parks and ski resorts.",
+        "population": "5.541 million (2021)"
+    },
+    {
+        "name": "France",
+        "code": "FR",
+        "capital": "Paris",
+        "region": "EU",
+        "demonym": "French",
+        "currency": "Euro",
+        "language": "French",
+        "about": "France, in Western Europe, encompasses medieval cities, alpine villages and Mediterranean beaches. Paris, its capital, is famed for its fashion houses, classical art museums including the Louvre and monuments like the Eiffel Tower. The country is also renowned for its wines and sophisticated cuisine. Lascaux’s ancient cave drawings, Lyon’s Roman theater and the vast Palace of Versailles attest to its rich history.",
+        "population": "67.75 million (2021)"
+    },
+    {
+        "name": "Germany",
+        "code": "DE",
+        "capital": "Berlin",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "German",
+        "about": "Germany is a Western European country with a landscape of forests, rivers, mountain ranges and North Sea beaches. It has over 2 millennia of history. Berlin, its capital, is home to art and nightlife scenes, the Brandenburg Gate and many sites relating to WWII. Munich is known for its Oktoberfest and beer halls, including the 16th-century Hofbräuhaus. Frankfurt, with its skyscrapers, houses the European Central Bank.",
+        "population": "83.2 million (2021)"
+    },
+    {
+        "name": "Greece",
+        "code": "GR",
+        "capital": "Athens",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Greek (modern)",
+        "about": "Greece is a country in southeastern Europe with thousands of islands throughout the Aegean and Ionian seas. Influential in ancient times, it's often called the cradle of Western civilization. Athens, its capital, retains landmarks including the 5th-century B.C. Acropolis citadel with the Parthenon temple. Greece is also known for its beaches, from the black sands of Santorini to the party resorts of Mykonos.",
+        "population": "10.64 million (2021)"
+    },
+    {
+        "name": "Hungary",
+        "code": "HU",
+        "capital": "Budapest",
+        "region": "EU",
+        "currency": "Hungarian forint",
+        "language": "Hungarian",
+        "about": "Hungary is a landlocked country in Central Europe. Its capital, Budapest, is bisected by the Danube River. Its cityscape is studded with architectural landmarks from Buda’s medieval Castle Hill and grand neoclassical buildings along Pest’s Andrássy Avenue to the 19th-century Chain Bridge. Turkish and Roman influence on Hungarian culture includes the popularity of mineral spas, including at thermal Lake Hévíz.",
+        "population": "9.71 million (2021)"
+    },
+    {
+        "name": "Iceland",
+        "code": "IS",
+        "capital": "Reykjavík",
+        "region": "EU",
+        "currency": "Icelandic króna",
+        "language": "Icelandic",
+        "about": "Iceland, a Nordic island nation, is defined by its dramatic landscape with volcanoes, geysers, hot springs and lava fields. Massive glaciers are protected in Vatnajökull and Snæfellsjökull national parks. Most of the population lives in the capital, Reykjavik, which runs on geothermal power and is home to the National and Saga museums, tracing Iceland’s Viking history.",
+        "population": "372,520 (2021)"
+    },
+    {
+        "name": "Ireland",
+        "code": "IE",
+        "capital": "Dublin",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Irish",
+        "about": "The Republic of Ireland occupies most of the island of Ireland, off the coast of England and Wales. Its capital, Dublin, is the birthplace of writers like Oscar Wilde, and home of Guinness beer. The 9th-century Book of Kells and other illustrated manuscripts are on show in Dublin's Trinity College Library. Dubbed the 'Emerald Isle' for its lush landscape, the country is dotted with castles like medieval Cahir Castle.",
+        "population": "5,203,000 (2023)"
+    },
+    {
+        "name": "Italy",
+        "code": "IT",
+        "capital": "Rome",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Italian",
+        "about": "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. Its capital, Rome, is home to the Vatican as well as landmark art and ancient ruins. Other major cities include Florence, with Renaissance masterpieces such as Michelangelo's 'David' and Brunelleschi's Duomo; Venice, the city of canals; and Milan, Italy's fashion capital.",
+        "population": "59.11 million (2021)"
+    },
+    {
+        "name": "Latvia",
+        "code": "LV",
+        "capital": "Riga",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Latvian",
+        "about": "Latvia is a country on the Baltic Sea between Lithuania and Estonia. Its landscape is marked by wide beaches as well as dense, sprawling forests. Latvia's capital is Riga, home to notable wooden and art nouveau architecture, a vast Central Market and a medieval Old Town with St. Peter's Church. Riga's museums include the Latvian Ethnographic Open-Air Museum, showcasing local crafts, food and music.",
+        "population": "1.884 million (2021)"
+    },
+    {
+        "name": "Lithuania",
+        "code": "LT",
+        "capital": "Vilnius",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Lithuanian",
+        "about": "Lithuania, officially the Republic of Lithuania, is a country in the Baltic region of Europe. It is one of three Baltic states and lies on the eastern shore of the Baltic Sea. Lithuania shares land borders with Latvia to the north, Belarus to the east and south, Poland to the south, and Russia to the southwest.",
+        "population": "2.801 million (2021)"
+    },
+    {
+        "name": "Luxembourg",
+        "code": "LU",
+        "capital": "Luxembourg",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "French",
+        "about": "Luxembourg is a small European country, surrounded by Belgium, France and Germany. It’s mostly rural, with dense Ardennes forest and nature parks in the north, rocky gorges of the Mullerthal region in the east and the Moselle river valley in the southeast. Its capital, Luxembourg City, is famed for its fortified medieval old town perched on sheer cliffs.",
+        "population": "640,064 (2021)"
+    },
+    {
+        "name": "Malta",
+        "code": "MT",
+        "capital": "Valletta",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Maltese",
+        "about": "Malta is an archipelago in the central Mediterranean between Sicily and the North African coast. It's a nation known for historic sites related to a succession of rulers including the Romans, Moors, Knights of Saint John, French and British. It has numerous fortresses, megalithic temples and the Ħal Saflieni Hypogeum, a subterranean complex of halls and burial chambers dating to circa 4000 B.C.",
+        "population": "518,536 (2021)"
+    },
+    {
+        "name": "Moldova (Republic of)",
+        "code": "MD",
+        "capital": "Chișinău",
+        "region": "EU",
+        "currency": "Moldovan leu",
+        "language": "Romanian",
+        "about": "Moldova, an Eastern European country and former Soviet republic, has varied terrain including forests, rocky hills and vineyards. Its wine regions include Nistreana, known for reds, and Codru, home to some of the world’s largest cellars. Capital Chișinău has Soviet-style architecture and the National Museum of History, exhibiting art and ethnographic collections that reflect cultural links with neighboring Romania.",
+        "population": "2.615 million (2021)"
+    },
+    {
+        "name": "Montenegro",
+        "code": "ME",
+        "capital": "Podgorica",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Serbian",
+        "about": "Montenegro is a Balkan country with rugged mountains, medieval villages and a narrow strip of beaches along its Adriatic coastline. The Bay of Kotor, resembling a fjord, is dotted with coastal churches and fortified towns such as Kotor and Herceg Novi. Durmitor National Park, home to bears and wolves, encompasses limestone peaks, glacial lakes and 1,300m-deep Tara River Canyon.",
+        "population": "619,211 (2021)"
+    },
+    {
+        "name": "Netherlands",
+        "code": "NL",
+        "capital": "Amsterdam",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Dutch",
+        "about": "The Netherlands, a country in northwestern Europe, is known for a flat landscape of canals, tulip fields, windmills and cycling routes. Amsterdam, the capital, is home to the Rijksmuseum, Van Gogh Museum and the house where Jewish diarist Anne Frank hid during WWII. Canalside mansions and a trove of works from artists including Rembrandt and Vermeer remain from the city's 17th-century 'Golden Age.'",
+        "population": "17.53 million (2021)"
+    },
+    {
+        "name": "Norway",
+        "code": "NO",
+        "capital": "Oslo",
+        "region": "EU",
+        "currency": "Norwegian krone",
+        "language": "Norwegian",
+        "about": "Norway is a Scandinavian country encompassing mountains, glaciers and deep coastal fjords. Oslo, the capital, is a city of green spaces and museums. Preserved 9th-century Viking ships are displayed at Oslo's Viking Ship Museum. Bergen, with colorful wooden houses, is the starting point for cruises to the dramatic Sognefjord. Norway is also known for fishing, hiking and skiing, notably at Lillehammer's Olympic resort.",
+        "population": "5.408 million (2021)"
+    },
+    {
+        "name": "Poland",
+        "code": "PL",
+        "capital": "Warsaw",
+        "region": "EU",
+        "currency": "Polish złoty",
+        "language": "Polish",
+        "about": "Poland, officially the Republic of Poland, is a country in Central Europe. It is divided into 16 administrative provinces called voivodeships, covering an area of 312,696 km². Poland has a population of 37.7 million and is the fifth-most populous member state of the European Union.",
+        "population": "37.75 million (2021)"
+    },
+    {
+        "name": "Portugal",
+        "code": "PT",
+        "capital": "Lisbon",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Portuguese",
+        "about": "Portugal is a southern European country on the Iberian Peninsula, bordering Spain. Its location on the Atlantic Ocean has influenced many aspects of its culture: salt cod and grilled sardines are national dishes, the Algarve's beaches are a major destination and much of the nation's architecture dates to the 1500s-1800s, when Portugal had a powerful maritime empire.",
+        "population": "10.33 million (2021)"
+    },
+    {
+        "name": "Romania",
+        "code": "RO",
+        "capital": "Bucharest",
+        "region": "EU",
+        "currency": "Romanian leu",
+        "language": "Romanian",
+        "about": "Romania is a southeastern European country known for the forested region of Transylvania, ringed by the Carpathian Mountains. Its preserved medieval towns include Sighişoara, and there are many fortified churches and castles, notably clifftop Bran Castle, long associated with the Dracula legend. Bucharest, the country's capital, is the site of the gigantic, Communist-era Palatul Parlamentului government building.",
+        "population": "19.12 million (2021)"
+    },
+    {
+        "name": "Serbia",
+        "code": "RS",
+        "capital": "Belgrade",
+        "region": "EU",
+        "currency": "Serbian dinar",
+        "language": "Serbian",
+        "about": "Serbia, officially the Republic of Serbia, is a landlocked country in Southeastern and Central Europe, situated at the crossroads of the Pannonian Basin and the Balkans.",
+        "population": "6.834 million (2021)"
+    },   
+    {
+        "name": "Slovakia",
+        "code": "SK",
+        "capital": "Bratislava",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Slovak",
+        "about": "Slovakia, officially the Slovak Republic, is a landlocked country in Central Europe. It is bordered by Poland to the north, Ukraine to the east, Hungary to the south, Austria to the southwest, and the Czech Republic to the northwest.",
+        "population": "5.447 million (2021)"
+    },
+    {
+        "name": "Slovenia",
+        "code": "SI",
+        "capital": "Ljubljana",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Slovene",
+        "about": "Slovenia, a country in Central Europe, is known for its mountains, ski resorts and lakes. On Lake Bled, a glacial lake fed by hot springs, the town of Bled contains a church-topped islet and a cliffside medieval castle. In Ljubljana, Slovenia's capital, baroque facades mix with the 20th-century architecture of native Jože Plečnik, whose iconic Tromostovje (Triple Bridge) spans the tightly curving Ljubljanica River.",
+        "population": "2.108 million (2021)"
+    },
+    {
+        "name": "Spain",
+        "code": "ES",
+        "capital": "Madrid",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "Spanish",
+        "about": "Spain, a country on Europe's Iberian Peninsula, includes 17 autonomous regions with diverse geography and cultures. Capital city Madrid is home to the Royal Palace and Prado museum, housing works by European masters. Segovia has a medieval castle (the Alcázar) and an intact Roman aqueduct. Catalonia's capital, Barcelona, is defined by Antoni Gaudí's whimsical modernist landmarks like the Sagrada Família church.",
+        "population": "47.42 million (2021)"
+    },
+    {
+        "name": "Sweden",
+        "code": "SE",
+        "capital": "Stockholm",
+        "region": "EU",
+        "currency": "Swedish krona",
+        "language": "Swedish",
+        "about": "Sweden is a Scandinavian nation with thousands of coastal islands and inland lakes, along with vast boreal forests and glaciated mountains. Its principal cities, eastern capital Stockholm and southwestern Gothenburg and Malmö, are all coastal. Stockholm is built on 14 islands. It has more than 50 bridges, as well as the medieval old town, Gamla Stan, royal palaces and museums such as open-air Skansen.",
+        "population": "10.42 million (2021)"
+    },
+    {
+        "name": "Switzerland",
+        "code": "CH",
+        "capital": "Bern",
+        "region": "EU",
+        "currency": "Swiss franc",
+        "language": "German",
+        "about": "Switzerland is a mountainous Central European country, home to numerous lakes, villages and the high peaks of the Alps. Its cities contain medieval quarters, with landmarks like capital Bern's Zytglogge clock tower and Lucerne's wooden chapel bridge. The country is also known for its ski resorts and hiking trails. Banking and finance are key industries, and Swiss watches and chocolate are world renowned.",
+        "population": "8.703 million (2021)"
+    },
+    {
+        "name": "Ukraine",
+        "code": "UA",
+        "capital": "Kiev",
+        "region": "EU",
+        "currency": "Ukrainian hryvnia",
+        "language": "Ukrainian",
+        "about": "Ukraine is a country in Eastern Europe. It is the second-largest European country after Russia, which it borders to the east and northeast. Ukraine covers approximately 600,000 square kilometres.",
+        "population": "43.79 million (2021)"
+    },
+    {
+        "name": "United Kingdom of Great Britain and Northern Ireland",
+        "code": "GB",
+        "capital": "London",
+        "region": "EU",
+        "currency": "British pound",
+        "language": "English",
+        "about": "The United Kingdom, made up of England, Scotland, Wales and Northern Ireland, is an island nation in northwestern Europe. England - birthplace of Shakespeare and The Beatles - is home to the capital, London, a globally influential centre of finance and culture. England is also site of Neolithic Stonehenge, Bath's Roman spa and centuries-old universities at Oxford and Cambridge.",
+        "population": "67.33 million (2021)"
+    }
+]
