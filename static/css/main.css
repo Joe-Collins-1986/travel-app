@@ -119,7 +119,7 @@ p {
     box-shadow: none;
 }
 
-.container-fluid {
+.header-grey {
     background-color: rgb(202, 202, 202);
     height: 50px;
 }
