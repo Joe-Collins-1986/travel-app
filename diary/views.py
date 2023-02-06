@@ -1,14 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import (
-    LoginRequiredMixin,
-    UserPassesTestMixin
-)
 from django.contrib.auth.models import User
 from django.views.generic import (
     View,
-    ListView,
-    DetailView,
 )
 from .models import Country, Visit
 from .forms import VisitForm
@@ -35,17 +29,15 @@ class MapView(View):
                 key = f"{country_code}_status"
                 status_dict[key] = "not_visited"
 
-            # globals().update(status_dict) # https://stackoverflow.com/questions/18090672/convert-dictionary-entries-into-variables
             dict.update(status_dict) # MERGE DICTIONARIES - https://favtutor.com/blogs/merge-dictionaries-python#:~:text=You%20can%20merge%20two%20dictionaries,other%20one%20by%20overwriting%20it.
 
-        # globals().update(dict)
         countries = Country.objects.all()
         visited_countries = Visit.objects.filter(user=request.user.id)
 
         dict['countries'] = countries
         dict['visited_countries'] = visited_countries
             
-        return render(request, "map/home.html", dict)
+        return render(request, "diary/map.html", dict)
     
 
 class CountryView(View):
@@ -61,7 +53,7 @@ class CountryView(View):
 
             return render(
                     request,
-                    "map/country.html",
+                    "diary/country.html",
                     {
                         "country": country,
                         "visit_form": VisitForm(instance=country_visited)
@@ -70,7 +62,7 @@ class CountryView(View):
         else:
             return render(
                     request,
-                    "map/country.html",
+                    "diary/country.html",
                     {
                         "country": country,
                         "visit_form": VisitForm()
