@@ -74,8 +74,6 @@ class CountryView(View):
         country = get_object_or_404(countries, pk=pk)
         visited = Visit.objects.filter(user_id=request.user.id)
 
-        print(visited)
-
         if visited.filter(country=country).exists():
             country_visited = visited.get(country=country)
 
@@ -86,7 +84,6 @@ class CountryView(View):
                 visit_form.instance.id = country_visited.id
                 country_visited = visit_form.save(commit=False)
                 country_visited.save()
-                print(country_visited.id)
             else:
                 visit_form = VisitForm()
 
