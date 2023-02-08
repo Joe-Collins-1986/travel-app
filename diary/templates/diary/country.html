@@ -2,12 +2,64 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<h1>Country {{ country.name }}</h1>
-<p>Country {{ country.about }}</p>
-<p>Capital: {{ country.capital }}</p>
-<p>Currency: {{ country.currency }}</p>
-<p>Language: {{ country.language }}</p>
-<p>Population: {{ country.population }}</p>
+<style>
+    .country-header-img-container {
+        width: 100%;
+    }
+
+    .header-img-background {
+        margin-top: 30px;
+        background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: end;
+    }
+
+    .header-content-container {
+        padding: 30px;
+        background-color: rgba(72, 72, 72, 0.7);
+    }
+
+    .header-flag-container img {
+        margin-top: 10px;
+        height: 150px;
+    }
+</style>
+
+<div class="header-img-background">
+
+    <div class="header-content-container">
+        <div class="header-flag-container">
+            <img src="{{ country.country_flag.url }}" alt="">
+        </div>
+        <div>
+            <h1>{{ country.name }}</h1>
+        </div>       
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9">
+            <p>{{ country.about }}</p>
+        </div>
+        <div class="col-3">
+            <p>Capital: {{ country.capital }}</p>
+            <p>Currency: {{ country.currency }}</p>
+            <p>Language: {{ country.language }}</p>
+            <p>Population: {{ country.population }}</p>
+        </div>
+
+    </div>
+
+
+</div>
+
 
 <form method="POST">
     {% csrf_token %}

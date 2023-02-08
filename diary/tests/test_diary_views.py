@@ -74,8 +74,8 @@ class TestCountryView(TestCase):
             country_code_list.append(country['code'])
 
         self.visited_model = Visit.objects.create(user=user1,
-                                             country=Country.objects.get(code='AL'),
-                                             status='visited')
+                                                  country=Country.objects.get(code='AL'),
+                                                  status='visited')
 
     def test_get_country_info_not_visited_found(self):
         response = self.client.get(reverse('country', args=[1]))

@@ -12,8 +12,10 @@ class MapView(View):
 
     def get(self, request):
 
-        country_code_list = ['AL', 'BY', 'BE', 'BA', 'BG', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS',
-                             'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'MD', 'ME', 'NL', 'NO', 'PL', 'PT', 'RO', 'RS', 'SK',
+        country_code_list = ['AL', 'BY', 'BE', 'BA', 'BG', 'HR', 'CZ', 'DK',
+                             'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE',
+                             'IT', 'LV', 'LT', 'LU', 'MT', 'MD', 'ME', 'NL',
+                             'NO', 'PL', 'PT', 'RO', 'RS', 'SK',
                              'SI', 'ES', 'SE', 'CH', 'UA', 'GB']
 
         dict = {}
