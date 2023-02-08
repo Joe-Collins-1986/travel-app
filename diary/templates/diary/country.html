@@ -4,11 +4,13 @@
 
 <style>
 
-    /* body {
-        background-color: rgb(204, 229, 245);
-    } */
+    /* COUNTRY SPECIFIC PAGE */
     .country-header-img-container {
         width: 100%;
+    }
+
+    .color-contry-page-font {
+        color: rgb(6, 68, 103);
     }
 
     .header-img-background {
@@ -43,6 +45,10 @@
         border: 2px solid black;
     }
 
+    .center-container {
+        justify-content: center;
+    }
+
     .visit-form-container {
         display: flex;
         justify-content: center;
@@ -57,19 +63,18 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
-    .btn-visit-submit {
+    .btn-travel {
         background-color: rgb(6, 68, 103);
         color: white;
     }
 
-    .btn-visit-submit:hover {
+    .btn-travel:hover {
         background-color: rgb(4, 39, 59);
         color: white;
     }
 
     .bottom-row {
         margin-bottom: 80px;
-
     }
 
     .diary-section {
@@ -77,14 +82,20 @@
         margin-bottom: 70px;
     }
 
-    .a {
+    .btn-action {
+        background-color: rgb(6, 68, 103);
+        width: 150px;
+        height: 35px;
+        margin: 10px;
+
+        display: flex;
         justify-content: center;
+        align-items: center;
     }
 
 </style>
 
 <div class="header-img-background">
-
     <div class="header-content-container">
         <div class="header-flag-container">
             <img src="{{ country.country_flag.url }}" alt="">
@@ -95,8 +106,8 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row bg-white a">
+<div class="container-fluid color-contry-page-font">
+    <div class="row bg-white center-container">
         <div class="col-11 col-lg-7 m-2 border-info-full">
             <div class="row country-about-title-row">
                 <h4>About:</h4>
@@ -110,10 +121,10 @@
                 <h4>Info:</h4>
             </div>
             <div class="row">
-                <p>Capital: {{ country.capital }}</p>
-                <p>Currency: {{ country.currency }}</p>
-                <p>Language: {{ country.language }}</p>
-                <p>Population: {{ country.population }}</p>
+                <p><strong>Capital:</strong> {{ country.capital }}</p>
+                <p><strong>Currency:</strong> {{ country.currency }}</p>
+                <p><strong>Language:</strong> {{ country.language }}</p>
+                <p><strong>Population:</strong> {{ country.population }}</p>
                 <div class="visit-form-container">
                     <form class="visit-form" method="POST">
                         {% csrf_token %}
@@ -121,20 +132,30 @@
                             <legend class="border-bottom mb-4">Visited Status:</legend>
                             {{ visit_form | crispy }}
                         </fieldset>
-                        <button type="submit" class="btn btn-visit-submit">Submit</button>
+                        <button type="submit" class="btn btn-travel">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row bottom-row a">
-        <div class="col-11 col-lg m-2 border-info-full">
+    <div class="row bg-white center-container bottom-row">
+        <div class="col-11 col-lg-3 m-2 border-info-full">
             <div class="row country-about-title-row">
-                <h4>Diary:</h4>
+                <h4>To Do List:</h4>
             </div>
             <div class="row">
-                <p>Add Diary</p>
+                <a class="btn btn-travel btn-action" href="#">Add To Do List</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
+            </div>
+        </div>
+        <div class="col-11 col-lg m-2 border-info-full">
+            <div class="row country-about-title-row">
+                <h4>Diary Entries:</h4>
+            </div>
+            <div class="row">
+                <a class="btn btn-travel btn-action" href="#">Add Diary Entry</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
             </div>
         </div>
     </div>
