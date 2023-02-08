@@ -3,6 +3,10 @@
 {% load crispy_forms_tags %}
 
 <style>
+
+    /* body {
+        background-color: rgb(204, 229, 245);
+    } */
     .country-header-img-container {
         width: 100%;
     }
@@ -29,6 +33,54 @@
         margin-top: 10px;
         height: 150px;
     }
+
+    .country-about-title-row {
+        background-color: #C3C3C3;
+        border-bottom: 2px solid black;
+    }
+
+    .border-info-full {
+        border: 2px solid black;
+    }
+
+    .visit-form-container {
+        display: flex;
+        justify-content: center;
+    }
+    .visit-form {
+        justify-content: center;
+        padding: 20px;
+        background-color: #C3C3C3;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .btn-visit-submit {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .btn-visit-submit:hover {
+        background-color: rgb(4, 39, 59);
+        color: white;
+    }
+
+    .bottom-row {
+        margin-bottom: 80px;
+
+    }
+
+    .diary-section {
+        margin-top: 0.5rem;
+        margin-bottom: 70px;
+    }
+
+    .a {
+        justify-content: center;
+    }
+
 </style>
 
 <div class="header-img-background">
@@ -44,33 +96,51 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-9">
-            <p>{{ country.about }}</p>
+    <div class="row bg-white a">
+        <div class="col-11 col-lg-7 m-2 border-info-full">
+            <div class="row country-about-title-row">
+                <h4>About:</h4>
+            </div>
+            <div class="row">
+                <p>{{ country.about }}</p>
+            </div>
         </div>
-        <div class="col-3">
-            <p>Capital: {{ country.capital }}</p>
-            <p>Currency: {{ country.currency }}</p>
-            <p>Language: {{ country.language }}</p>
-            <p>Population: {{ country.population }}</p>
+        <div class="col-11 col-lg m-2 border-info-full">
+            <div class="row country-about-title-row">
+                <h4>Info:</h4>
+            </div>
+            <div class="row">
+                <p>Capital: {{ country.capital }}</p>
+                <p>Currency: {{ country.currency }}</p>
+                <p>Language: {{ country.language }}</p>
+                <p>Population: {{ country.population }}</p>
+                <div class="visit-form-container">
+                    <form class="visit-form" method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Visited Status:</legend>
+                            {{ visit_form | crispy }}
+                        </fieldset>
+                        <button type="submit" class="btn btn-visit-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
     </div>
 
-
+    <div class="row bottom-row a">
+        <div class="col-11 col-lg m-2 border-info-full">
+            <div class="row country-about-title-row">
+                <h4>Diary:</h4>
+            </div>
+            <div class="row">
+                <p>Add Diary</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<form method="POST">
-    {% csrf_token %}
-
-
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Status</legend>
-        {{ visit_form | crispy }}
-    </fieldset>
-    <button type="submit" class="btn btn-outline-secondary">Submit</button>
-</form>
 
 
 {% endblock content %}
