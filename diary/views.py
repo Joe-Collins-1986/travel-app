@@ -6,9 +6,12 @@ from django.views.generic import (
 )
 from .models import Country, Visit
 from .forms import VisitForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class MapView(View):
+class MapView(LoginRequiredMixin, View):
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
 
     def get(self, request):
 
@@ -42,7 +45,9 @@ class MapView(View):
         return render(request, "diary/map.html", dict)
     
 
-class CountryView(View):
+class CountryView(LoginRequiredMixin, View):
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
 
     def get(self, request, pk):
         countries = Country.objects.all()

@@ -22,8 +22,18 @@ urlpatterns = [
                            }
          ),
          name='home-login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='home-logout'),
 
+    path('login/required/',
+         auth_views.LoginView.as_view(
+            template_name='home/login-required.html',
+            extra_context={
+                              "tab_title": "Login-required",
+                              "updates": updates,
+                           }
+         ),
+         name='home-login-required'),
+         
+    path('logout/', auth_views.LogoutView.as_view(), name='home-logout'),
 
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
