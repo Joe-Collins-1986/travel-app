@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from .models import Update
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (
     ListView,
 )
 
 
-class AdminUpdatesListView(LoginRequiredMixin, ListView):
-    login_url = '/login/required'
-    redirect_field_name = 'redirect_to'
+class AdminUpdatesListView(ListView):
 
     model = Update
     template_name = 'site_updates/admin-updates.html'

@@ -48,6 +48,10 @@
         .glass {
             display: none;
         }
+
+        #graph-container {
+        display: none;
+        }
     }
 
     .stats {
@@ -59,8 +63,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid red;
     }
+
+
 
     svg {
         stroke: white;
@@ -68,7 +73,6 @@
     }
 
 </style>
-
 
 <div class="container-fluid  mt-5 buffer">
     <div class="glass">
@@ -82,7 +86,7 @@
         </div>
          <!-- PROMPT SECTION -->
         <div class="col-4 prompt-section">
-            <h4 class="text-center" id="prompt">TESTING</h4>
+            <h4 class="text-center" id="prompt">PROMPT</h4>
         </div>
         <hr>
     </div>
@@ -416,8 +420,8 @@
         <!-- DROPDOWN SECTION -->
         <div class="col-12 col-lg-4">
             <div class="dropdown-container">
-                <h5>Don't want to user the map selection?</h5>
-                <h6>Select from one of the below dropdowns insead</h6>
+                <h5>Don't want to use the map selection?</h5>
+                <h6>Select from one of the below dropdowns instead:</h6>
                 <form>
                     <select onchange="location = this.value;">
                         <option value="">Visited</option>
@@ -447,11 +451,9 @@
                     </select>
                 </form>
             </div>
-            <div>
-                <div id="graph-container" class="stats" style="width: 80% !important; width: 100%;">
-                    <h6>Percent Visited: {{ percentage_visited }}% </h6>
-                    <canvas width="600" id="pie-chart" style="border: 3px solid green;"></canvas>
-                </div>
+            <div id="graph-container" class="stats">
+                <h6>Percent Visited: {{ percentage_visited }}% </h6>
+                <canvas width="600" id="pie-chart"></canvas>
             </div>
         </div>
     </div>
@@ -479,10 +481,6 @@
         },
     });
 </script>
-
-
-
-
 
 <script>
     window.onload=function(){
