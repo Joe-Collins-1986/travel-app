@@ -50,7 +50,22 @@
         }
 
         #graph-container {
-        display: none;
+            display: none;
+        }
+
+        #map-legend {
+            display: none;
+        }
+
+        .modal-content {
+            color: rgb(6, 68, 103);
+        }
+
+        .legend-color-box {
+            height: 30px;
+            width: 30px;
+            align-content: center;
+            margin-top: 5px;
         }
     }
 
@@ -65,7 +80,51 @@
         align-items: center;
     }
 
+    .map {
+        position: relative;
+    }
 
+    #map-legend {
+        position: absolute;
+        top: 0;
+        right: 3vw;
+        background-color: white;
+        width: 120px;
+        color: rgb(6, 68, 103);
+        border: 2px solid black;
+        font-size: 60%;
+    }
+
+    .legend-color-box {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        align-content: center;
+        border: 2px solid black;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+    .color-box-visited {
+        background-color: rgb(212, 255, 0)
+    }
+
+    .color-box-wish {
+        background-color: rgb(43, 255, 0)
+    }
+
+    .color-box-not-visited {
+        background-color: rgb(192, 11, 11)
+    }
+
+    .legend-row p {
+        margin: 0;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
 
     svg {
         stroke: white;
@@ -74,7 +133,7 @@
 
 </style>
 
-<div class="container-fluid  mt-5 buffer">
+<div class="container-fluid mt-5 buffer">
     <div class="glass">
     
     </div>
@@ -93,7 +152,51 @@
     
     <div class="row">
         <!-- MAP SECTION -->
-        <div class="col-12 col-lg-8">
+
+        <div class="col-12 col-lg-8 map">
+            <!-- Modal -->
+            <h6 class="small-legend d-lg-none">Legend: <span><i class="fa-solid fa-location-dot pointer" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i></span></h6>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Legend</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="legend-row d-flex">
+                            <div class="legend-color-box color-box-visited"></div>
+                            <p>Visited</p>
+                        </div>
+                        <div class="legend-row d-flex">
+                            <div class="legend-color-box color-box-wish"></div>
+                            <p>Wish List</p>
+                        </div>
+                        <div class="legend-row d-flex">
+                            <div class="legend-color-box color-box-not-visited"></div>
+                            <p>Not Visited</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div id="map-legend">
+                <h5 class="text-center">Legend</h5>
+                <div class="legend-row d-flex">
+                    <div class="legend-color-box color-box-visited"></div>
+                    <p>Visited</p>
+                </div>
+                <div class="legend-row d-flex">
+                    <div class="legend-color-box color-box-wish"></div>
+                    <p>Wish List</p>
+                </div>
+                <div class="legend-row d-flex">
+                    <div class="legend-color-box color-box-not-visited"></div>
+                    <p>Not Visited</p>
+                </div>
+            </div>
             <svg
             xmlns="http://www.w3.org/2000/svg"
             baseprofile="tiny"
