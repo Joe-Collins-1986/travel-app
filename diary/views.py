@@ -41,7 +41,17 @@ class MapView(LoginRequiredMixin, View):
 
         dict['countries'] = countries
         dict['visited_countries'] = visited_countries
-            
+
+        traveled_to_countries = visited_countries.filter(status="visited")
+        remaining_countries = countries.count()-traveled_to_countries.count()
+
+        labels = ["Visited", "Not Visited"]
+        data = [traveled_to_countries.count(), remaining_countries]
+
+        percentage_visited = round((traveled_to_countries.count()/countries.count())*100, 2)
+
+        dict.update({"labels": labels, "data": data, "percentage_visited": percentage_visited})
+
         return render(request, "diary/map.html", dict)
     
 
