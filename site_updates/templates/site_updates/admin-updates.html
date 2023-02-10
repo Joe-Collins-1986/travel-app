@@ -43,7 +43,6 @@
 
     <div class="updates-main-section">
     {% for update in updates %}
-
         <div class="update-containter-list-view">
             <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
             <hr>
@@ -58,8 +57,6 @@
                 </div>
             {% endif %}
         </div>
-
-
     {% endfor %}
     </div>
 

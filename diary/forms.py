@@ -8,6 +8,7 @@ VISITED = [
     ('wish_list', 'Wish List'),
     ]
 
+
 class VisitForm(forms.ModelForm):
     class Meta:
         model = Visit

@@ -1,4 +1,5 @@
 {% extends "home/base.html" %}
+{% load crispy_forms_tags %}
 
 <!-- main block code -->
 {% block content %}
@@ -10,6 +11,11 @@
 
     img {
         width: 20vw
+    }
+    .content-section {
+        width: 30%;
+        margin-bottom: 100px;
+        margin-left: 20px;
     }
 
 </style>
@@ -63,9 +69,23 @@
     <br>
     {% if user == comment.author %}
         <button class="btn btn-success">Update</button>
+        <button class="btn btn-danger">Delete</button>
     {% endif %}
     <hr>
 
 {% endfor %}
+
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            {{ comment_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
