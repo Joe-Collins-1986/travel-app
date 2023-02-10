@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Update
+from .models import Update, UpdateComment
 from django.views.generic import (
     ListView,
     View,
@@ -20,11 +20,18 @@ class AdminDetailUpdateView(View):
     def get(self, request, pk):
         update_objects = Update.objects.filter(status=1)
         update = get_object_or_404(update_objects, pk=pk)
+        comments = UpdateComment.objects.filter(site_update=update)
+
+        for comment in comments:
+            a = str(comment.updated_on - comment.created_on)
+            if '0:00:00' in a:
+                comment.updated_on = None
 
         return render(
             request,
             "site_updates/admin-update-detail.html",
             {
                 "update": update,
+                "comments": comments
             }
         )

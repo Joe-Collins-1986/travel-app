@@ -14,15 +14,53 @@
 
 </style>
 
-<div class="top-div">TEST</div>
-<div>TOPIC: {{ update.topic }}</div>
-<div>TITLE: {{ update.tile }}</div>
-<div>CONTENT: {{ update.content }}</div>
-{% if update.update_image %}
-    <div>IMAGE: <img src="{{ update.update_image.url }}" alt=""></div>
-{% endif %}
-<div>PUBISHED ON: {{ update.published_on }}</div>
-<div>UPDATED ON: {{ update.update_on }}</div>
+<strong>TOPIC: </strong>
 
+<h3 class="top-div">UPDATE DETAIL</h3></div>
+<div><strong>TOPIC: </strong>{{ update.topic }}</div>
+<div><strong>TITLE: </strong>{{ update.tile }}</div>
+<div><strong>CONTENT: </strong>{{ update.content }}</div>
+{% if update.update_image %}
+    <div><strong>COMMENT IMAGE: </strong><img src="{{ update.update_image.url }}" alt=""></div>
+{% endif %}
+<div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
+{% if update.updated_on %}
+    <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
+{% endif %}
+
+
+<hr>
+<h3>COMMENTS</h3>
+{% for comment in comments %}
+    <div><strong>TITLE: </strong>{{ comment.title }}</div>
+    <div><strong>COMMENT: </strong>{{ comment.comment }}</div>
+    {% if comment.update_on %}
+        <div><strong>COMMENT IMAGE: </strong>{{ comment.comment_image }}</div>
+    {% endif %}
+
+    {% if comment.action_taken %}
+        <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
+    {% endif %}
+
+    {% if comment.action_image %}
+        <div><strong>ACTION IMAGE: </strong>{{ comment.action_image }}</div>
+    {% endif %}
+
+    {% if comment.created_on %}
+        <div><strong>CREATED ON: </strong>{{ comment.created_on|date:"dS F Y (P)" }}</div>
+    {% endif %}
+
+    {% if comment.updated_on %}
+        <div><strong>UPDATED: </strong>{{ comment.updated_on|timesince }} ago</div>
+    {% endif %}
+
+    {% if comment.comment_status == 1 %}
+        <div><strong>COMMENT STATUS: </strong>closed</div>
+    {% else %}
+        <div><strong>COMMENT STATUS: </strong>open</div>
+    {% endif %}
+    <hr>
+
+{% endfor %}
 
 {% endblock %}
