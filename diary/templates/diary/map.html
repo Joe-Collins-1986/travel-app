@@ -38,7 +38,7 @@
         top: 0;
         right: 0;
         height: 100%;
-        width: 35vw;
+        width: 33vw;
         box-shadow: inset 0 0 1000px rgba(255, 255, 255, .5);
         backdrop-filter: blur(10px);
         z-index: -1;
@@ -66,6 +66,9 @@
             width: 30px;
             align-content: center;
             margin-top: 5px;
+        }
+        select {
+            width: 50%;
         }
     }
 
@@ -140,11 +143,11 @@
 
     <div class="row text-center">
         <!-- TITLE SECTION -->
-        <div class="col-8">
-            <h1>European Map</h1>
+        <div class="col-12 col-lg-8">
+            <h1>Europe</h1>
         </div>
          <!-- PROMPT SECTION -->
-        <div class="col-4 prompt-section">
+        <div class="d-none col-0 d-lg-inline col-md-4">
             <h4 class="text-center" id="prompt">PROMPT</h4>
         </div>
         <hr>
@@ -521,7 +524,7 @@
         </div>
     
         <!-- DROPDOWN SECTION -->
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-lg-4 text-center d-flex-column justify-content-center">
             <div class="dropdown-container">
                 <h5>Don't want to use the map selection?</h5>
                 <h6>Select from one of the below dropdowns instead:</h6>
@@ -554,7 +557,7 @@
                     </select>
                 </form>
             </div>
-            <div id="graph-container" class="stats">
+            <div id="graph-container" class="stats" style="margin-left: 10%;">
                 <h6>Percent Visited: {{ percentage_visited }}% </h6>
                 <canvas width="600" id="pie-chart"></canvas>
             </div>
