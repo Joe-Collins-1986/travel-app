@@ -9,31 +9,67 @@
         margin-top: 50px;
     }
 
+    .test-border {
+        border: 2px solid rgb(255, 0, 0);
+    }
+
+    .update-card {
+        margin: 20px;
+        border: 2px solid black;
+    }
+
+    .update-card-title {
+        background-color: blue;
+        text-align: center;
+    }
+
+    .info-colour {
+        background-color: aqua;
+    }
+
     img {
         width: 20vw
-    }
-    .content-section {
-        width: 30%;
-        margin-bottom: 100px;
-        margin-left: 20px;
     }
 
 </style>
 
-<strong>TOPIC: </strong>
+<div class="container-fluid top-div">
+    <div class="row">
+        <div class="col-12 col-lg-8 test-border info-colour">
+            <div class="update-card">
+                <div class="update-card-title">
+                    <h1 class="m-0 p-1">{{ update.title }}</h1>
+                </div>
+                <div><strong>TOPIC: </strong>{{ update.topic }}</div>
+                <div><strong>TITLE: </strong>{{ update.title }}</div>
+                <div><strong>CONTENT: </strong>{{ update.content }}</div>
+                {% if update.update_image %}
+                    <div><strong>COMMENT IMAGE: </strong><img src="{{ update.update_image.url }}" alt=""></div>
+                {% endif %}
+                <div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
+                {% if update.updated_on %}
+                    <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
+                {% endif %}
+            </div>
+        </div>
+    
+        <div class="col test-border">
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Add Comment</legend>
+                        {{ comment_form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Submit Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<h3 class="top-div">UPDATE DETAIL</h3></div>
-<div><strong>TOPIC: </strong>{{ update.topic }}</div>
-<div><strong>TITLE: </strong>{{ update.tile }}</div>
-<div><strong>CONTENT: </strong>{{ update.content }}</div>
-{% if update.update_image %}
-    <div><strong>COMMENT IMAGE: </strong><img src="{{ update.update_image.url }}" alt=""></div>
-{% endif %}
-<div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
-{% if update.updated_on %}
-    <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
-{% endif %}
-
+</div>
 
 <hr>
 <h3>COMMENTS</h3>
@@ -75,17 +111,5 @@
 
 {% endfor %}
 
-<div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Blog Post</legend>
-            {{ comment_form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Post</button>
-        </div>
-    </form>
-</div>
 
 {% endblock %}
