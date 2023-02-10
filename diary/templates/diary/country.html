@@ -98,7 +98,11 @@
 <div class="header-img-background">
     <div class="header-content-container">
         <div class="header-flag-container">
-            <img src="{{ country.country_flag.url }}" alt="">
+            {% if country.country_flag %}
+                <img src="{{ country.country_flag.url }}" alt="">
+            {% else %}
+                <img src="../../../static/images/home/home_background_img_small.jpg" alt="">
+            {% endif %}
         </div>
         <div>
             <h1>{{ country.name }}</h1>

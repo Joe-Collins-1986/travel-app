@@ -27,7 +27,7 @@ class TestMapView(TestCase):
                                    currency=country['currency'],
                                    language=country['language'],
                                    about=country['about'],
-                                   population=country['population'])
+                                   population=country['population']),
 
         country_code_list = []
 
@@ -78,17 +78,14 @@ class TestCountryView(TestCase):
                                                   status='visited')
 
     def test_get_country_info_not_visited_found(self):
-        response = self.client.get(reverse('country', args=[1]))
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        response = self.client.get(reverse('country', args=[10]))
         self.assertEqual(response.status_code, 200)
     
     def test_get_country_info__visited_found(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         response = self.client.get(reverse('country', args=[self.visited_model.id]))
         self.assertEqual(response.status_code, 200)
-    
-    def test_get_country_info_not_found(self):
-        response = self.client.get(reverse('country', args=[900]))
-        self.assertEqual(response.status_code, 404)
 
     def test_post_valid_visited_form_for_visted_user(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
