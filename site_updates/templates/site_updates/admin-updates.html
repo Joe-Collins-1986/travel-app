@@ -45,7 +45,7 @@
     {% for update in updates %}
 
         <div class="update-containter-list-view">
-            <h3>{{ update.title }}</h3>
+            <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
             <hr>
             <p>{{ update.content }}</p>
             {% if update.update_image %}

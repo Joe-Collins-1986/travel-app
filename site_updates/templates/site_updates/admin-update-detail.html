@@ -1,0 +1,28 @@
+{% extends "home/base.html" %}
+
+<!-- main block code -->
+{% block content %}
+
+<style>
+    .top-div {
+        margin-top: 50px;
+    }
+
+    img {
+        width: 20vw
+    }
+
+</style>
+
+<div class="top-div">TEST</div>
+<div>TOPIC: {{ update.topic }}</div>
+<div>TITLE: {{ update.tile }}</div>
+<div>CONTENT: {{ update.content }}</div>
+{% if update.update_image %}
+    <div>IMAGE: <img src="{{ update.update_image.url }}" alt=""></div>
+{% endif %}
+<div>PUBISHED ON: {{ update.published_on }}</div>
+<div>UPDATED ON: {{ update.update_on }}</div>
+
+
+{% endblock %}
