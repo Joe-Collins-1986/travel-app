@@ -31,6 +31,7 @@ class Update(models.Model):
 
 class UpdateComment(models.Model):
     site_update = models.ForeignKey(Update, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     comment = models.TextField()
     comment_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)

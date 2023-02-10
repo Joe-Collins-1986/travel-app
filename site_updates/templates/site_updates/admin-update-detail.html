@@ -59,6 +59,11 @@
     {% else %}
         <div><strong>COMMENT STATUS: </strong>open</div>
     {% endif %}
+
+    <br>
+    {% if user == comment.author %}
+        <button class="btn btn-success">Update</button>
+    {% endif %}
     <hr>
 
 {% endfor %}
