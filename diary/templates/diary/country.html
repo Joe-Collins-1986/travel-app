@@ -102,7 +102,9 @@
 
     .grey-background {
         background-color: #C3C3C3;
-        color: rgb(6, 68, 103);    
+        color: rgb(6, 68, 103);
+        height: 100%;
+        width: 100%;    
     }
 
     .off-white-background {
@@ -125,6 +127,10 @@
         color: rgb(6, 68, 103);  
     }
 
+    .blue-border {
+        border: 2px solid rgb(6, 68, 103);
+    }
+
 </style>
 
 <div class="header-img-background">
@@ -145,7 +151,7 @@
 <div class="row m-0 grey-background">
     <div class="col-12 d-flex justify-content-center align-self-center p-5">
         <div class="w-75">
-            <h4 class="text-center">About {{ country.name }}:</h4>
+            <h4 class="text-center">About {{ country.name }}</h4>
             <p class="text-center">{{ country.about }}</p>
         </div>
     </div>
@@ -159,7 +165,7 @@
     </div>
     <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center p-5">
         <div>
-            <h4>Info:</h4>
+            <h4>Info</h4>
             <p><strong>Capital:</strong> {{ country.capital }}</p>
             <p><strong>Currency:</strong> {{ country.currency }}</p>
             <p><strong>Language:</strong> {{ country.language }}</p>
@@ -182,28 +188,22 @@
 </div>
 
 <div class="row m-0 off-white-background">
-    <div class="col-6 d-flex justify-content-center align-self-center p-5">
-        <div class="w-75">
-            <h4>To Do List:</h4>
+    <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center text-center px-5 pt-5 p-lg-5">
+        <div>
+            <h4>To Do List</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
+            <a class="btn btn-travel m-2" href="#">Add Diary Entry</a>
         </div>
     </div>
-    <div class="col m-5">
-        <div class="border-info-full">
-            <div class="p-2">
-                <h4>Lists:</h4>
-                <ul>
-                    <li><p>No To-Do Lists!</p></li>
-                </ul>
-            </div>
-        </div>
+    <div class="col m-5 d-flex justify-content-center align-self-center text-center">
+        <h3>Currently you have no To-Do lists!</h3>
     </div>
 </div>
 
 <div class="row m-0 text-center blue-background">
     <div class="col-12 d-flex justify-content-center align-self-center p-5">
         <div class="w-75 mb-5">
-            <h4>Diary Entries:</h4>
+            <h4>Diary Entries</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
             <a class="btn btn-off-white-background" href="#">Add Diary Entry</a>
         </div>
