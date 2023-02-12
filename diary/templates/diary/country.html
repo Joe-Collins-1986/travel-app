@@ -93,6 +93,38 @@
         align-items: center;
     }
 
+/* ... */
+
+    .blue-background {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .grey-background {
+        background-color: #C3C3C3;
+        color: rgb(6, 68, 103);    
+    }
+
+    .off-white-background {
+        background-color: #f8f9fa;
+        color: rgb(6, 68, 103);  
+    }
+
+    .blue-font {
+        color: rgb(6, 68, 103);
+    }
+
+    .btn-off-white-background {
+        font-weight: bold;
+        background-color: #C3C3C3;
+        color: rgb(6, 68, 103);  
+    }
+
+    .btn-off-white-background:hover {
+        background-color: #f8f9fa;
+        color: rgb(6, 68, 103);  
+    }
+
 </style>
 
 <div class="header-img-background">
@@ -110,6 +142,81 @@
     </div>
 </div>
 
+<div class="row m-0 grey-background">
+    <div class="col-12 d-flex justify-content-center align-self-center p-5">
+        <div class="w-75">
+            <h4 class="text-center">About {{ country.name }}:</h4>
+            <p class="text-center">{{ country.about }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center m-0 blue-background">
+    <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
+        <div>
+            <i class="fa-solid fa-circle-info fa-10x"></i>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center p-5">
+        <div>
+            <h4>Info:</h4>
+            <p><strong>Capital:</strong> {{ country.capital }}</p>
+            <p><strong>Currency:</strong> {{ country.currency }}</p>
+            <p><strong>Language:</strong> {{ country.language }}</p>
+            <p><strong>Population:</strong> {{ country.population }}</p>
+            <form class="visit-form m-2 w-auto blue-font" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group text-center">
+                    <legend class="border-bottom mb-4">Visited Status:</legend>
+                    {{ visit_form | crispy }}
+                </fieldset>
+                <button type="submit" class="btn btn-travel">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
+        <div>
+            <i class="fa-solid fa-circle-info fa-10x"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row m-0 off-white-background">
+    <div class="col-6 d-flex justify-content-center align-self-center p-5">
+        <div class="w-75">
+            <h4>To Do List:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
+        </div>
+    </div>
+    <div class="col m-5">
+        <div class="border-info-full">
+            <div class="p-2">
+                <h4>Lists:</h4>
+                <ul>
+                    <li><p>No To-Do Lists!</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row m-0 text-center blue-background">
+    <div class="col-12 d-flex justify-content-center align-self-center p-5">
+        <div class="w-75 mb-5">
+            <h4>Diary Entries:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
+            <a class="btn btn-off-white-background" href="#">Add Diary Entry</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- .... -->
+
+<!-- 
 <div class="container-fluid color-contry-page-font">
     <div class="row bg-white center-container">
         <div class="col-11 col-lg-7 m-2 border-info-full">
@@ -163,7 +270,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
