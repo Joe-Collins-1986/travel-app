@@ -5,9 +5,9 @@
     {% include 'home/snippets/home-styles.html' %}
 {% endblock additional_styles %}
 
+
 <!-- main block code -->
 {% block content %}
-
 
     <div class="row m-0">
         <div class="d-none d-lg-block col-3 admin-updates-col-main">
@@ -20,12 +20,10 @@
                 <div class="update-container">
                     <h4 class="text-center">{{ update.title }}</h4>
                     <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
-                    <hr>
-                    <P>{{ update.content }}</P>
                 </div>
             {% endfor %}
 
-            <a class="btn btn-all-topics" href="{% url 'all-admin-updates' %}">See all updates</a>
+            <a class="btn btn-all-topics mb-5" href="{% url 'all-admin-updates' %}">See all updates</a>
 
         </div>
         <div class="col">

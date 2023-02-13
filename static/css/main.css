@@ -220,12 +220,8 @@ p {
 
     .update-container {
         background-color: rgba(255, 255, 255, .9);
-        padding-left: 10px;
-        padding-top: 10px;
+        padding: 10px;
         font-size: 70%;
-        overflow-x: none;
-        overflow-y: scroll;
-        max-height: 200px;
         margin-top: 10px;
     }
 
@@ -253,12 +249,14 @@ p {
 
     .admin-updates-col-main {
         background-color: rgba(255, 255, 255, 0.5);
-        position: absolute;
+        position: fixed;
         top: 0;
         bottom: 0;
         left: 0;
         width: 25vw;
         margin-top: 50px;
+        margin-bottom: 10px;
+        overflow-y: auto;
     }
 
     .home-welcome-container {
