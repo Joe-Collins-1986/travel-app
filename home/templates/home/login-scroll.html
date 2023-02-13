@@ -1,0 +1,149 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<style>
+    .admin-updates-col-main {
+        background-color: rgba(250, 2, 2, 0.5);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 25vw;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+    }
+
+    body {
+        background-color: rgb(6, 68, 103);
+    }
+
+    .wrapper {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        perspective: 10px;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .wrapper {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -1;
+    }
+
+    .background {
+        transform: translateZ(-10px) scale(2);
+    }
+
+    .foreground {
+        transform: translateZ(-5px) scale(1.5);
+    }
+
+    .background, .foreground {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .home-title {
+        color: white;
+        text-shadow: 0 0 5px rgb(6, 68, 103);
+    }
+
+    .content-under-home-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: rgb(6, 68, 103);
+        box-shadow: 0 0 50px 50px rgb(6, 68, 103);
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .form-layout {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0px 25px 0px 25px;
+        padding: 1rem;
+        width: 50%;
+        color: rgb(6, 68, 103);
+    }
+
+    @media (max-width: 990px) {
+        .form-layout {
+            width: 80%;
+        }
+
+    }
+
+</style>
+
+    <div class="wrapper">
+        <header>
+            <img src="/static/images/parallax_hom_bg_cropped.png" class="background" alt="">
+            <img src="/static/images/trees-cropped.png" class="foreground" alt="">
+            <h1 class="home-title text-center">Welcome<br>Login Below</h1>
+        </header>
+        <section class="content-under-home-header">
+            <div class="form-layout">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-2 p-2 text-center">Login</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
+                        <small class="p-font">
+                            Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
+                        </small><br><br>
+                    </div>
+                </form>
+                <div class="border-top pt-3 mb-3 text-center">
+                    <small class="p-font">
+                        Need An Account? <a class="ml-2" href="{% url 'home-register' %}">Sign Up</a>
+                    </small>
+                </div>
+            </div>
+        </section>
+
+
+<!-- 
+    <div class="d-none d-lg-block admin-updates-col-main">
+
+        <div class="updates-intro">
+            <h4 class="text-center">Latest Site Updates</h4>                
+        </div>
+        
+        {% for update in updates %}
+            <div class="update-container">
+                <h4 class="text-center">{{ update.title }}</h4>
+                <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
+            </div>
+        {% endfor %}
+
+        <a class="btn btn-all-topics mb-5" href="{% url 'all-admin-updates' %}">See all updates</a>
+
+    </div> -->
+{% endblock content %}

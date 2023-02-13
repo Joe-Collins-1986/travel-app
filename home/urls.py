@@ -15,7 +15,7 @@ urlpatterns = [
     path('register/', register, name='home-register'),
     path('login/',
          auth_views.LoginView.as_view(
-            template_name='home/login.html',
+            template_name='home/login-scroll.html',
             extra_context={
                               "tab_title": "Login",
                               "updates": updates,
