@@ -70,7 +70,7 @@
         text-shadow: 0 0 5px rgb(6, 68, 103);
     }
 
-    .content-under-home-header {
+    .content-under-login-header {
         position: relative;
         display: flex;
         justify-content: center;
@@ -98,14 +98,13 @@
     }
 
 </style>
-
     <div class="wrapper">
         <header>
             <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/parallax_hom_bg_cropped.png" class="background" alt="">
             <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/trees-cropped.png" class="foreground" alt="">
             <h1 class="home-title text-center">Welcome<br>Login Below</h1>
         </header>
-        <section class="content-under-home-header">
+        <section class="content-under-login-header">
             <div class="form-layout">
                 <form method="POST">
                     {% csrf_token %}

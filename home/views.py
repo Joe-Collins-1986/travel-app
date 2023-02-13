@@ -20,7 +20,7 @@ class TravelHome(View):
         if request.user.is_authenticated:
             return render(
                 request,
-                "home/travel-home.html",
+                "home/travel-home-scroll.html",
                 {
                     "tab_title": "Home",
                     "updates": updates,
