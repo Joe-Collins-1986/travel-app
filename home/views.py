@@ -48,7 +48,7 @@ def register(request):
 
     return render(
                 request,
-                'home/register.html',
+                'home/register-scroll.html',
                 {
                     "tab_title": "Register",
                     "form": form,

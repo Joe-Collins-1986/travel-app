@@ -1,0 +1,17 @@
+{% block site_updates_snippet %}
+    <div class="row site-updates-section">
+        <h3 class="mt-5">What have we been up to recently?</h3>
+        <h5 class="mb-5">Check out our latest 3 updates</h5>
+        {% for update in updates %}
+            <div class="bg-light update-card">
+                <h4 class="text-center">{{ update.title }}</h4>
+                <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
+                <hr>
+                <p class="text-center">{{ update.content }}</p>
+            </div>
+        {% endfor %}
+        <div>
+            <a class="btn btn-site-updates-all" href="{% url 'all-admin-updates' %}">See all updates</a>
+        </div>
+    </div>
+{% endblock site_updates_snippet %}

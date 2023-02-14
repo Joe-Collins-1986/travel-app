@@ -209,65 +209,9 @@ p {
     align-items: center;
 }
 
-
-/***** HOME / REGISTER FORM SECTION *****/
-
-/* ADMIN UPDATES ON HOME SECTION */
-    .updates-intro {
-        background-color: rgba(255, 255, 255, .9);
-        margin-top: 10px;
-    }
-
-    .update-container {
-        background-color: rgba(255, 255, 255, .9);
-        padding: 10px;
-        font-size: 70%;
-        margin-top: 10px;
-    }
-
-    .update-container p, .update-container h4, .update-container h6, .updates-intro h4 {
-        color: rgb(6, 68, 103);
-    }
-
-    .btn-all-topics {
-        display: flex;
-        justify-content: center;
-        background-color: rgb(6, 68, 103);
-        color: white;
-        margin-top: 10px;
-    }
-
-    .btn-all-topics:hover {
-        background-color: rgb(10, 104, 158);
-        color: white;
-        margin-top: 10px;
-    }
-    /* HOME-BASE SECTION */
-    .social-icons {
-        color: white;
-    }
-
-    .admin-updates-col-main {
-        background-color: rgba(255, 255, 255, 0.5);
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 25vw;
-        margin-top: 50px;
-        margin-bottom: 10px;
-        overflow-y: auto;
-    }
-
-    .home-welcome-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 0px 25px 0px 25px;
-        color: rgb(6, 68, 103);
-    }
-
-    .home-mid-row {
-        margin: 15vh 0 80px 0;
-    }
+.social-icons {
+    color: white;
+}
 
     /* FORM STYLING */
     .p-font {
@@ -301,4 +245,177 @@ p {
     }
 
 
+
+    /* HOME SECTIONS - HOME/LOGIN/REGISTER/PASSWORD-RESET */
+    .wrapper {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        perspective: 10px;
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .wrapper {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -1;
+    }
+    
+    .background {
+        transform: translateZ(-10px) scale(2);
+    }
+    
+    .foreground {
+        transform: translateZ(-5px) scale(1.5);
+    }
+    
+    .background, .foreground {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .home-title {
+        color: white;
+        text-shadow: 0 0 5px rgb(6, 68, 103);
+    }
+    
+    .content-under-home-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        box-shadow: 0 0 40px 40px rgb(6, 68, 103);
+    }
+    
+    
+    /**** HOME PAGE SPECIFIC ****/
+    .home-topic {
+        padding: 5rem;
+    }
+    
+    .planner-info {
+        background-color: rgb(6, 68, 103);
+        color: white;
+        padding: 3rem;
+    }
+    
+    .home-img {
+        width: 25vw;
+        margin-bottom: 5px;
+    }
+    
+    .planner-info h4 {
+        height: 80px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .btn-site-planner {
+        width: 150px;
+        background-color: white;
+        color: rgb(6, 68, 103);
+        margin-top: 10px;
+        font-weight: 700;
+    }
+
+    .btn-site-planner:hover {
+        background-color: rgb(202, 202, 202);
+        color: rgb(6, 68, 103);
+        margin-top: 10px;
+    }
+    
+    @media (max-width: 990px) {
+        .planner-info {
+            padding: 2rem;
+        }
+        .planner-info h4 {
+            height: 40px;
+        }
+        .home-img {
+            width: 40vw;
+        }
+    
+    }
+    
+    @media (max-width: 767px) {
+        .home-img {
+            width: 60vw;
+        }
+    }
+    
+    
+    /**** SPECIFIC TO SITE UPDATE INSERT ****/
+    .site-updates-section {
+        background-color: #f8f9fa;
+        color: rgb(6, 68, 103); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .update-card {
+        width: 400px;
+        border: 1px solid rgb(6, 68, 103);
+        box-shadow: 20px 20px 10px grey;
+        margin: 5px;
+        height: 350px;
+        overflow-y: auto;
+    }
+    
+    .btn-site-updates-all {
+        width: 150px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
+    
+    .btn-site-updates-all:hover {
+        background-color: rgb(10, 104, 158);
+        color: white;
+        margin-top: 10px;
+    }
+    
+    @media (max-width: 450px) {
+        .update-card {
+            width: 300px;
+            margin: 5px;
+            box-shadow: 10px 10px 10px grey;
+        }
+    }
+    
+    /**** LOGIN & REGISTER PAGES ****/
+    
+    .form-layout {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0px 25px 0px 25px;
+        padding: 1rem;
+        width: 50%;
+        color: rgb(6, 68, 103);
+    }
+    
+    @media (max-width: 990px) {
+        .form-layout {
+            width: 90%;
+        }
+    }
 

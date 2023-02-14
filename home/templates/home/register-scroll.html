@@ -15,19 +15,16 @@
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
-                            <legend class="border-bottom mb-2 p-2 text-center">Login</legend>
+                            <legend class="border-bottom mb-2 p-2 text-center">Register</legend>
                             {{ form|crispy }}
                         </fieldset>
                         <div class="form-group">
-                            <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
-                            <small class="p-font">
-                                Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
-                            </small><br><br>
+                            <button class="btn btn-travel mb-2" type="submit">Sign Up</button>
                         </div>
                     </form>
                     <div class="border-top pt-3 mb-3 text-center">
                         <small class="p-font">
-                            Need An Account? <a class="ml-2" href="{% url 'home-register' %}">Sign Up</a>
+                            Already Have An Account? <a class="ml-2" href="{% url 'home-login' %}">Sign In</a>
                         </small>
                     </div>
                 {% endif %}
