@@ -384,6 +384,10 @@ p {
         height: 350px;
         overflow-y: auto;
     }
+
+    .update-card a {
+        color: rgb(6, 68, 103);
+    }
     
     .btn-site-updates-all {
         width: 150px;

@@ -8,8 +8,8 @@
         {% include 'home/snippets/home-backgound-styles.html' %}
     {% endblock additional_styles %}
 
-    <div class="center-form register-form-margin">
-        <div class="form-layout register-form-width">
+    <div class="bg-img center-form">
+        <div class="form-layout register-form-width register-form-margin">
             {% if user.is_authenticated %}
                 {% include 'home/snippets/already-logged-in.html' %}
             {% else %}

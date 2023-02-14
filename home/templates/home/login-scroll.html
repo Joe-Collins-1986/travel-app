@@ -4,38 +4,39 @@
 
 {% block content %}
 
-    <div class="wrapper">
-        <header>
-            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/parallax_hom_bg_cropped.png" class="background" alt="">
-            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/trees-cropped.png" class="foreground" alt="">
-            <div class="form-layout">
-                {% if user.is_authenticated %}
-                    {% include 'home/snippets/already-logged-in.html' %}
-                {% else %}
-                    <form method="POST">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
-                            <legend class="border-bottom mb-2 p-2 text-center">Login</legend>
-                            {{ form|crispy }}
-                        </fieldset>
-                        <div class="form-group">
-                            <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
-                            <small class="p-font">
-                                Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
-                            </small><br><br>
-                        </div>
-                    </form>
-                    <div class="border-top pt-3 mb-3 text-center">
-                        <small class="p-font">
-                            Need An Account? <a class="ml-2" href="{% url 'home-register' %}">Sign Up</a>
-                        </small>
-                    </div>
-                {% endif %}
-            </div>
-        </header>
+{% block additional_styles %}
+    {% include 'home/snippets/home-backgound-styles.html' %}
+{% endblock additional_styles %}
 
+    <div class="bg-img center-form">
+        <div class="form-layout register-form-width register-form-margin">
+            {% if user.is_authenticated %}
+                {% include 'home/snippets/already-logged-in.html' %}
+            {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-2 p-2 text-center">Login</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
+                        <small class="p-font">
+                            Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
+                        </small><br><br>
+                    </div>
+                </form>
+                <div class="border-top pt-3 mb-3 text-center">
+                    <small class="p-font">
+                        Need An Account? <a class="ml-2" href="{% url 'home-register' %}">Sign Up</a>
+                    </small>
+                </div>
+            {% endif %}
+        </div>
+        </div>
         <section class="content-under-home-header">
-            {% include 'home/snippets/site-updates-insert.html' %}
+        {% include 'home/snippets/site-updates-insert.html' %}
         </section>
+    </div>
 
 {% endblock content %}
