@@ -20,7 +20,7 @@ class TravelHome(View):
         if request.user.is_authenticated:
             return render(
                 request,
-                "home/travel-home-scroll.html",
+                "home/travel-home.html",
                 {
                     "tab_title": "Home",
                     "updates": updates,
@@ -48,7 +48,7 @@ def register(request):
 
     return render(
                 request,
-                'home/register-scroll.html',
+                'home/register.html',
                 {
                     "tab_title": "Register",
                     "form": form,
