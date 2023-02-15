@@ -16,6 +16,7 @@
 
     .update-container {
         border: 1px solid rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
         color: rgb(6, 68, 103);
         background-color: white;
         margin: 5px;
@@ -98,7 +99,12 @@
 
                     {% endif %}
                     <div class="m-3">
-                        <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                        {% if update.updatecomment_set.all.count == 0 %}
+                            <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                        {% else %}
+                            <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                        {% endif %}
+
                     </div>
                 </div>
 
