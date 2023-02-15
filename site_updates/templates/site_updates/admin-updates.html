@@ -1,8 +1,156 @@
 {% extends "home/base.html" %}
-
-<!-- main block code -->
 {% block content %}
 
+<style>
+    body {
+        background-color: #e9e4e4;
+    }
+
+    .updates-page {
+        margin: 40px 10px 20px 10px;
+    }
+
+    .updates-title-section {
+        color: rgb(6, 68, 103);
+    }
+
+    .update-container {
+        border: 1px solid rgb(6, 68, 103);
+        color: rgb(6, 68, 103);
+        background-color: white;
+        margin: 5px;
+    }
+
+    .update-container a {
+        text-decoration: none;
+        color: rgb(6, 68, 103);
+    }
+
+    .update-container-title {
+        display: flex;
+    }
+
+    .profile-img-update {
+        height: 65px;
+        width: 65px;
+        margin-right: 16px;
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+    .update-picture-container{
+        margin: 0 20px 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-picture-container img{
+        width: 200px;
+    }
+
+    .update-picture-container p{
+        text-align: justify;
+    }
+
+    .pagination-section {
+        margin: 0 0 100px 30px;
+    }
+
+
+
+
+</style>
+
+
+<div class="row updates-page">
+    <div class="text-center updates-title-section">
+        <h1>Site Updates</h1>
+        <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
+        <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+    </div>
+
+    <div class="col-8">
+        {% for update in updates %}
+            {% if update.status == 1 %}
+            <div class="update-container">
+                <div class="update-container-title">
+
+                    <img class="profile-img-update" src="/static/images/default_flag.png" alt="">
+
+                    <div class="ms-3">
+                        <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
+                        <div>
+                            <h5>{{ update.topic}}</h5>
+                            <small><strong>Date Posted:</strong> {{ update.published_on|date:"dS F Y (P)" }}</small>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="update-body">
+                    <p class="p-3">{{ update.content }}</p>
+                    {% if update.update_image %}
+                        <div class="update-picture-container">
+                            <div class="update-picture">
+                                <img src="{{ update.update_image.url }}">
+                            </div>
+                        </div>
+
+                    {% endif %}
+                    <div class="m-3">
+                        <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+        
+
+        {% endfor %}
+
+    </div>
+    <div class="col-4 bg-success">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit mollitia voluptatem, dolores repellendus expedita a quia provident optio necessitatibus ullam autem adipisci maiores impedit debitis doloribus repudiandae dolor incidunt voluptatibus delectus non numquam culpa, commodi sapiente? Minima, blanditiis quibusdam laboriosam repudiandae delectus autem porro pariatur necessitatibus tempore consectetur reiciendis laudantium?
+
+    </div>
+</div>
+
+{% for update in updates %}
+
+{% endfor %}
+<div class="pagination-section">
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }} ">Previous</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }} ">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ num }} ">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }} ">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }} ">Last</a>
+    {% endif %}
+    {% endif %}
+
+</div>
+
+
+
+
+{% endblock content %}
+
+        
+
+
+
+<!-- 
 <style>
 
     .updates-main-section {
@@ -58,6 +206,4 @@
             {% endif %}
         </div>
     {% endfor %}
-    </div>
-
-{% endblock %}
+    </div> -->

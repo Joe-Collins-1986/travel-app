@@ -9,23 +9,31 @@ from django.contrib.auth.mixins import (
 )
 from django.views.generic import (
     View,
+    ListView,
     UpdateView,
     DeleteView
 )
 from .forms import CommentForm
 
-class AdminUpdatesListView(View):
+class AdminUpdatesListView(ListView):
+    model = Update
+    template_name = 'site_updates/admin-updates.html'  # This takes the place of the defaul which would be: <app>/<model>_<viewtype>.html - therefore(blog/post_list.html)
+    context_object_name = 'updates' # would pass object if not changed to post. Then would need to reference object not post in the template (see PostDetailView class for example)
+    paginate_by = 2
 
-    def get(self, request):
-        update_objects = Update.objects.filter(status=1)
+    # paginate_by = 2
+    
 
-        return render(
-            request,
-            "site_updates/admin-updates.html",
-            {
-                "updates": update_objects,
-            }
-        )
+    # def get(self, request):
+    #     update_objects = Update.objects.filter(status=1)
+
+    #     return render(
+    #         request,
+    #         "site_updates/admin-updates.html",
+    #         {
+    #             "updates": update_objects,
+    #         }
+    #     )
 
 
 class AdminDetailUpdateView(View):
@@ -54,6 +62,7 @@ class AdminDetailUpdateView(View):
         update_objects = Update.objects.filter(status=1)
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
+
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
