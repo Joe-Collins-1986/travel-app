@@ -68,8 +68,8 @@ class AdminDetailUpdateView(View):
 
 class CommentUpdateView(UpdateView): # create and update will default to <app>/<model>_<form>.html - same template as create
     model = UpdateComment
+    context_object_name = 'comment'
     fields = ['title', 'comment', 'comment_image']
-
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -77,6 +77,6 @@ class CommentUpdateView(UpdateView): # create and update will default to <app>/<
     
     def test_func(self):
         comment = self.get_object()
-        if self.request.user.username == comment.name:
+        if self.request.user.username == comment.author:
             return True
         return False
