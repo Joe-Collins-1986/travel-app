@@ -1,18 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Update, UpdateComment
 from django.views.generic import (
-    ListView,
     View,
+    UpdateView
 )
 from .forms import CommentForm
 
-class AdminUpdatesListView(ListView):
+class AdminUpdatesListView(View):
 
-    model = Update
-    template_name = 'site_updates/admin-updates.html'
-    context_object_name = 'updates' # would pass object if not changed to post. Then would need to reference object not post in the template (see PostDetailView class for example)
-    ordering = ["-published_on"]
-    paginate_by = 5
+    def get(self, request):
+        update_objects = Update.objects.filter(status=1)
+
+        return render(
+            request,
+            "site_updates/admin-updates.html",
+            {
+                "updates": update_objects,
+            }
+        )
 
 
 class AdminDetailUpdateView(View):
@@ -60,3 +65,18 @@ class AdminDetailUpdateView(View):
                 "comment_form": CommentForm()
             }
         )
+
+class CommentUpdateView(UpdateView): # create and update will default to <app>/<model>_<form>.html - same template as create
+    model = UpdateComment
+    fields = ['title', 'comment', 'comment_image']
+
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user.username == comment.name:
+            return True
+        return False

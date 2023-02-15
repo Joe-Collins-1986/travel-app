@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from PIL import Image
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -46,3 +47,6 @@ class UpdateComment(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('admin-update-detail', args=[str(self.site_update.id)])
