@@ -1,8 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Update, UpdateComment
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin
+)
 from django.views.generic import (
     View,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 from .forms import CommentForm
 
@@ -66,7 +74,7 @@ class AdminDetailUpdateView(View):
             }
         )
 
-class CommentUpdateView(UpdateView): # create and update will default to <app>/<model>_<form>.html - same template as create
+class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # default to <app>/<model>_<form>.html
     model = UpdateComment
     context_object_name = 'comment'
     fields = ['title', 'comment', 'comment_image']
@@ -74,9 +82,26 @@ class CommentUpdateView(UpdateView): # create and update will default to <app>/<
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-    
+
     def test_func(self):
         comment = self.get_object()
-        if self.request.user.username == comment.author:
+
+        if self.request.user == comment.author:
+            return True
+        return False
+
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # default to a form for: <app>/<model>_<confirm_delete>.html
+    model = UpdateComment
+    context_object_name = 'comment'
+    
+    
+    def get_success_url(self):
+        comment = self.get_object()
+        return reverse('admin-update-detail', args=[str(comment.site_update.id)])
+
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author:
             return True
         return False

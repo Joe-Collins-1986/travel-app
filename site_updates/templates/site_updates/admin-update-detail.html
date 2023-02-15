@@ -105,7 +105,7 @@
     <br>
     {% if user == comment.author %}
         <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update Comment</a>
-        <button class="btn btn-danger">Delete</button>
+        <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Delete</a>
     {% endif %}
     <hr>
 
