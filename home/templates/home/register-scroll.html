@@ -15,7 +15,7 @@
             {% else %}
                 <form method="POST">
                     {% csrf_token %}
-                    <fieldset class="form-group m-5">
+                    <fieldset class="form-group">
                         <legend class="border-bottom mb-2 p-2 text-center">Register</legend>
                         {{ form|crispy }}
                     </fieldset>
