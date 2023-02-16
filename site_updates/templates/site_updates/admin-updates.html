@@ -165,7 +165,7 @@
             <input type="text" name="q" placeholder="Search Updates" />
         </form>
         <div>
-            <a href="{% url 'all-admin-updates' %}">All Topics</a>
+            <a href="{% url 'all-admin-updates' %}">All Topics </a>
         </div>
         {% for topic in topics %}
         <div>
@@ -176,10 +176,7 @@
     </div>
 </div>
 
-{% for update in updates %}
 
-
-{% endfor %}
 
 
 {% if updates.has_other_pages %}

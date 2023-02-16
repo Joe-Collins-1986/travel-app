@@ -21,7 +21,6 @@ class AdminUpdatesListView(View):
 
     def get(self, request):
         topics = UpdateCatagory.objects.all()
-        empty = False
 
         if request.GET.get('q') is not None:
             q = request.GET.get('q')
@@ -29,25 +28,26 @@ class AdminUpdatesListView(View):
             q = ""
 
         update_list_published = Update.objects.filter(status=1)
+
         update_list = update_list_published.filter(
             Q(topic__topic_catagory__icontains=q) |
             Q(title__icontains=q)
             )
 
         topic_items = update_list.count()
-        
-        if not update_list:
-            empty = True
 
-        page = request.GET.get('page', 1)
-        paginator = Paginator(update_list, 2)
+        updates = update_list
 
-        try:
-            updates = paginator.page(page)
-        except PageNotAnInteger:
-            updates = paginator.page(1)
-        except EmptyPage:
-            updates = paginator.page(paginator.num_pages)
+        if q == "":
+            page = request.GET.get('page', 1)
+            paginator = Paginator(update_list, 2)
+
+            try:
+                updates = paginator.page(page)
+            except PageNotAnInteger:
+                updates = paginator.page(1)
+            except EmptyPage:
+                updates = paginator.page(paginator.num_pages)
         
 
         return render(
@@ -56,8 +56,8 @@ class AdminUpdatesListView(View):
             {
                 "updates": updates,
                 "topics": topics,
-                "empty": empty,
                 "topic_items": topic_items,
+                "all_published_updates": update_list_published,
             }
         )
 
