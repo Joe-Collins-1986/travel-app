@@ -58,6 +58,10 @@
         margin: 0 0 100px 30px;
     }
 
+    nav {
+        margin-bottom: 100px;
+    }
+
 
 
 
@@ -123,93 +127,70 @@
 
 {% for update in updates %}
 
+
 {% endfor %}
-<div class="pagination-section">
-    {% if is_paginated %}
-    {% if page_obj.has_previous %}
-        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }} ">Previous</a>
-    {% endif %}
 
-    {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-            <a class="btn btn-info mb-4" href="?page={{ num }} ">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-            <a class="btn btn-outline-info mb-4" href="?page={{ num }} ">{{ num }}</a>
+<style>
+
+/* PAGINATION */
+    .page-item {
+        z-index: 0;
+    }
+
+    .page-link {
+        z-index: 0;
+    }
+
+    .active-page-link {
+        color: rgb(6, 68, 103);
+        text-decoration: underline;
+    }
+
+    .page-link:focus {
+        box-shadow: None;
+    }
+
+</style>
+
+
+{% if updates.has_other_pages %}
+    <nav>
+      <ul class="pagination justify-content-center">
+        {% if updates.has_previous %}
+          <li>
+            <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+              <span class="page-link" aria-hidden="true">&laquo;</span>
+          </li>
         {% endif %}
-    {% endfor %}
 
-    {% if page_obj.has_next %}
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }} ">Next</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }} ">Last</a>
-    {% endif %}
-    {% endif %}
+        {% for update in updates.paginator.page_range %}
+          {% if updates.number == update %}
+            <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
+          {% endif %}
+        {% endfor %}
 
-</div>
-
-
-
+        {% if updates.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <span class="page-link" aria-hidden="true">&raquo;</span>
+          </li>
+        {% endif %}
+    </ul>
+    </nav>
+  {% endif %}
 
 {% endblock content %}
 
         
-
-
-
-<!-- 
-<style>
-
-    .updates-main-section {
-        margin-top: 60px;
-        margin-left: 10vw;
-        margin-right: 30vw;
-        margin-bottom: 100px;
-    }
-
-    .update-containter-list-view {
-        background-color: #C3C3C3;
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-    .update-containter-list-view {
-        color: rgb(6, 68, 103);
-    }
-
-    .test {
-        display: flex;
-        justify-content: center;
-    }
-
-    .update-picture {
-        max-width: 30vw;
-        border: 5px white solid;
-        background-color: white;
-        margin-bottom: 10px;
-    }
-
-    .update-picture img {
-        max-width: 100%;
-    }
-
-
-</style>
-
-    <div class="updates-main-section">
-    {% for update in updates %}
-        <div class="update-containter-list-view">
-            <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
-            <hr>
-            <p>{{ update.content }}</p>
-            {% if update.update_image %}
-                <div class="test">
-                    <div class="update-picture-container">
-                        <div class="update-picture">
-                            <img src="{{ update.update_image.url }}">
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-        </div>
-    {% endfor %}
-    </div> -->

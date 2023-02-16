@@ -23,8 +23,8 @@ class Update(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    class Meta:
-        ordering = ('-published_on',)
+    # class Meta:
+    #     ordering = ('-published_on',)
 
     def __str__(self):
         return self.title

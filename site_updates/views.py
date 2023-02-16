@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Update, UpdateComment
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -16,24 +17,34 @@ from django.views.generic import (
 from .forms import CommentForm
 
 class AdminUpdatesListView(ListView):
-    model = Update
-    template_name = 'site_updates/admin-updates.html'  # This takes the place of the defaul which would be: <app>/<model>_<viewtype>.html - therefore(blog/post_list.html)
-    context_object_name = 'updates' # would pass object if not changed to post. Then would need to reference object not post in the template (see PostDetailView class for example)
-    paginate_by = 2
+    # model = Update
+    # template_name = 'site_updates/admin-updates.html'  # This takes the place of the defaul which would be: <app>/<model>_<viewtype>.html - therefore(blog/post_list.html)
+    # context_object_name = 'updates' # would pass object if not changed to post. Then would need to reference object not post in the template (see PostDetailView class for example)
+    # ordering = ["-published_on"]
+    # paginate_by = 3
 
-    # paginate_by = 2
+
     
 
-    # def get(self, request):
-    #     update_objects = Update.objects.filter(status=1)
+    def get(self, request):
+        update_list = Update.objects.filter(status=1)
+        page = request.GET.get('page', 1)
+        paginator = Paginator(update_list, 2)
 
-    #     return render(
-    #         request,
-    #         "site_updates/admin-updates.html",
-    #         {
-    #             "updates": update_objects,
-    #         }
-    #     )
+        try:
+            updates = paginator.page(page)
+        except PageNotAnInteger:
+            updates = paginator.page(1)
+        except EmptyPage:
+            updates = paginator.page(paginator.num_pages)
+
+        return render(
+            request,
+            "site_updates/admin-updates.html",
+            {
+                "updates": updates,
+            }
+        )
 
 
 class AdminDetailUpdateView(View):
