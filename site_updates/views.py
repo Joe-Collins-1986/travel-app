@@ -33,6 +33,8 @@ class AdminUpdatesListView(View):
             Q(topic__topic_catagory__icontains=q) |
             Q(title__icontains=q)
             )
+
+        topic_items = update_list.count()
         
         if not update_list:
             empty = True
@@ -54,7 +56,8 @@ class AdminUpdatesListView(View):
             {
                 "updates": updates,
                 "topics": topics,
-                "empty": empty
+                "empty": empty,
+                "topic_items": topic_items,
             }
         )
 

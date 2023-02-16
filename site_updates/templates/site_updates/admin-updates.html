@@ -54,6 +54,15 @@
         text-align: justify;
     }
 
+    .not-found-img {
+        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/home_background_img_small.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50vh;
+    }
+
+
+    /* PAGINATION */
     .pagination-section {
         margin: 0 0 100px 30px;
     }
@@ -62,7 +71,6 @@
         margin-bottom: 100px;
     }
 
-    /* PAGINATION */
     .page-item {
         z-index: 0;
     }
@@ -89,18 +97,28 @@
 
 <div class="row updates-page">
     <div class="text-center updates-title-section">
-        <h1>Site Updates</h1>
-        <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
-        <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+        {% if topic_items != 0 %}
+            {% if topic_items == 1 %}
+                <h1>Site Updates ( {{topic_items}} Update Located)</h1>
+                <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
+                <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+            {% else %}
+                <h1>Site Updates ( {{topic_items}} Updates Located)</h1>
+                <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
+                <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+            {% endif %}
+        {% else %}
+            <h1>Site Updates ( None Found)</h1>
+            <p>Unfortunatly we do not have any updates matching your search parameters.</p>
+            <p>Please try again or simply select the topic you wish to search from the available options.</p>
+        {% endif %}
+
     </div>
 
     <div class="col-8">
-        {% if empty %}
-        <h1>No Updates Matching search</h1>
-        {% endif %}
 
+    {% if topic_items != 0 %}
         {% for update in updates %}
-            {% if update.status == 1 %}
             <div class="update-container">
                 <div class="update-container-title">
                     <div class="ms-3">
@@ -131,12 +149,14 @@
 
                     </div>
                 </div>
-
             </div>
-            {% endif %}
-        
-
         {% endfor %}
+    {% else %}
+        <div class="update-container not-found-img">
+
+        </div>
+
+    {% endif %}
 
     </div>
     <div class="col-3 update-container">
