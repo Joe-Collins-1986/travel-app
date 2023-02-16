@@ -80,8 +80,9 @@
         box-shadow: None;
     }
 
-
-
+    .buffer {
+        margin-bottom: 100px;
+    }
 
 </style>
 
@@ -94,6 +95,10 @@
     </div>
 
     <div class="col-8">
+        {% if empty %}
+        <h1>No Updates Matching search</h1>
+        {% endif %}
+
         {% for update in updates %}
             {% if update.status == 1 %}
             <div class="update-container">
@@ -136,6 +141,9 @@
     </div>
     <div class="col-3 update-container">
         <h3>Topics</h3>
+        <form method="GET" action="{% url 'all-admin-updates' %}">
+            <input type="text" name="q" placeholder="Search Updates" />
+        </form>
         <div>
             <a href="{% url 'all-admin-updates' %}">All Topics</a>
         </div>
@@ -145,7 +153,6 @@
         </div>
         {% endfor %}
         
-
     </div>
 </div>
 
@@ -191,7 +198,13 @@
         {% endif %}
     </ul>
     </nav>
-  {% endif %}
+
+{% else %}
+    <div class="buffer">
+
+    </div>
+
+{% endif %}
 
 {% endblock content %}
 

@@ -3,6 +3,7 @@ from .models import Update, UpdateComment, UpdateCatagory
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -20,6 +21,7 @@ class AdminUpdatesListView(View):
 
     def get(self, request):
         topics = UpdateCatagory.objects.all()
+        empty = False
 
         if request.GET.get('q') is not None:
             q = request.GET.get('q')
@@ -27,7 +29,13 @@ class AdminUpdatesListView(View):
             q = ""
 
         update_list_published = Update.objects.filter(status=1)
-        update_list = update_list_published.filter(topic__topic_catagory__icontains=q)
+        update_list = update_list_published.filter(
+            Q(topic__topic_catagory__icontains=q) |
+            Q(title__icontains=q)
+            )
+        
+        if not update_list:
+            empty = True
 
         page = request.GET.get('page', 1)
         paginator = Paginator(update_list, 2)
@@ -38,6 +46,7 @@ class AdminUpdatesListView(View):
             updates = paginator.page(1)
         except EmptyPage:
             updates = paginator.page(paginator.num_pages)
+        
 
         return render(
             request,
@@ -45,6 +54,7 @@ class AdminUpdatesListView(View):
             {
                 "updates": updates,
                 "topics": topics,
+                "empty": empty
             }
         )
 
