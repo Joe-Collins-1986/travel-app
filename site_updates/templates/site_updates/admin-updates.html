@@ -134,7 +134,16 @@
         {% endfor %}
 
     </div>
-    <div class="col-4 bg-success">
+    <div class="col-3 update-container">
+        <h3>Topics</h3>
+        <div>
+            <a href="{% url 'all-admin-updates' %}">All Topics</a>
+        </div>
+        {% for topic in topics %}
+        <div>
+            <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
+        </div>
+        {% endfor %}
         
 
     </div>

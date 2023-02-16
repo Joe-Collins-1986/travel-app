@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Update, UpdateComment
+from .models import Update, UpdateComment, UpdateCatagory
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
@@ -19,7 +19,16 @@ from .forms import CommentForm
 class AdminUpdatesListView(View):  
 
     def get(self, request):
-        update_list = Update.objects.filter(status=1)
+        topics = UpdateCatagory.objects.all()
+
+        if request.GET.get('q') is not None:
+            q = request.GET.get('q')
+        else:
+            q = ""
+
+        update_list_published = Update.objects.filter(status=1)
+        update_list = update_list_published.filter(topic__topic_catagory__icontains=q)
+
         page = request.GET.get('page', 1)
         paginator = Paginator(update_list, 2)
 
@@ -35,6 +44,7 @@ class AdminUpdatesListView(View):
             "site_updates/admin-updates.html",
             {
                 "updates": updates,
+                "topics": topics,
             }
         )
 
