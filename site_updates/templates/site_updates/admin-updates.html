@@ -62,6 +62,24 @@
         margin-bottom: 100px;
     }
 
+    /* PAGINATION */
+    .page-item {
+        z-index: 0;
+    }
+
+    .page-link {
+        z-index: 0;
+    }
+
+    .active-page-link {
+        color: rgb(6, 68, 103);
+        text-decoration: underline;
+    }
+
+    .page-link:focus {
+        box-shadow: None;
+    }
+
 
 
 
@@ -80,9 +98,6 @@
             {% if update.status == 1 %}
             <div class="update-container">
                 <div class="update-container-title">
-
-                    <img class="profile-img-update" src="/static/images/default_flag.png" alt="">
-
                     <div class="ms-3">
                         <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
                         <div>
@@ -120,7 +135,7 @@
 
     </div>
     <div class="col-4 bg-success">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit mollitia voluptatem, dolores repellendus expedita a quia provident optio necessitatibus ullam autem adipisci maiores impedit debitis doloribus repudiandae dolor incidunt voluptatibus delectus non numquam culpa, commodi sapiente? Minima, blanditiis quibusdam laboriosam repudiandae delectus autem porro pariatur necessitatibus tempore consectetur reiciendis laudantium?
+        
 
     </div>
 </div>
@@ -130,35 +145,13 @@
 
 {% endfor %}
 
-<style>
-
-/* PAGINATION */
-    .page-item {
-        z-index: 0;
-    }
-
-    .page-link {
-        z-index: 0;
-    }
-
-    .active-page-link {
-        color: rgb(6, 68, 103);
-        text-decoration: underline;
-    }
-
-    .page-link:focus {
-        box-shadow: None;
-    }
-
-</style>
-
 
 {% if updates.has_other_pages %}
     <nav>
       <ul class="pagination justify-content-center">
         {% if updates.has_previous %}
           <li>
-            <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+            <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
