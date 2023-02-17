@@ -101,7 +101,9 @@
     }
 
     .comments-section {
-        margin-bottom: 80px;
+        padding-bottom: 80px;
+        background-color: rgb(202, 202, 202);
+        color: rgb(6, 68, 103);;
     }
 
 </style>
@@ -159,8 +161,7 @@
 </div>
 
 <div class="comments-section">
-    <hr class="text-light">
-    <h3 class="text-center text-light">COMMENTS</h3>
+    <h3 class="text-center pt-3 mt-2">COMMENTS</h3>
     {% for comment in comments %}
         <div class="comment-card">
             <h5>{{ comment.title }}</h5>
