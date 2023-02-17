@@ -49,7 +49,6 @@ class AdminUpdatesListView(View):
             except EmptyPage:
                 updates = paginator.page(paginator.num_pages)
         
-
         return render(
             request,
             "site_updates/admin-updates.html",
@@ -88,7 +87,6 @@ class AdminDetailUpdateView(View):
         update_objects = Update.objects.filter(status=1)
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
-
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -129,7 +127,6 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # 
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # default to a form for: <app>/<model>_<confirm_delete>.html
     model = UpdateComment
     context_object_name = 'comment'
-    
     
     def get_success_url(self):
         comment = self.get_object()

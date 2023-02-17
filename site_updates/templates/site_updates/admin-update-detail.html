@@ -14,47 +14,93 @@
     }
 
     .update-card {
-        margin: 20px;
+        margin: 0 20px;
+        height: calc(100%);
+        width: calc(100% - 40px);
         border: 2px solid black;
+        border-radius: 5%;
+        color: rgb(6, 68, 103);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
     }
 
     .update-card-title {
-        background-color: blue;
+        background-color: rgb(202, 202, 202);
         text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .info-colour {
-        background-color: aqua;
+    .update-card-img-section {
+        max-height: 200px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    img {
-        width: 20vw
+    .update-detail-img {
+        height: 100%;
+    }
+
+    .update-card-comment-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-card-comment-btn .btn {
+        width: 150px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+        margin: 10px;
     }
 
 </style>
 
 <div class="container-fluid top-div">
     <div class="row">
-        <div class="col-12 col-lg-8 test-border info-colour">
+        <div class="col-12 col-lg-8 p-0">
             <div class="update-card">
                 <div class="update-card-title">
                     <h1 class="m-0 p-1">{{ update.title }}</h1>
+                    <hr>
                 </div>
-                <div><strong>TOPIC: </strong>{{ update.topic }}</div>
-                <div><strong>TITLE: </strong>{{ update.title }}</div>
-                <div><strong>CONTENT: </strong>{{ update.content }}</div>
+
+                <div class="update-card-content p-3 text-center">
+                    <div><h5>{{ update.topic }}</h5></div>
+                    <hr>
+                    <div>{{ update.content }}</div>
+                </div>
+
                 {% if update.update_image %}
-                    <div><strong>COMMENT IMAGE: </strong><img src="{{ update.update_image.url }}" alt=""></div>
+                    <div class="update-card-img-section">
+                        <img class="update-detail-img" src="{{ update.update_image.url }}" alt="">
+                    </div>
                 {% endif %}
-                <div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
-                {% if update.updated_on %}
-                    <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
-                {% endif %}
+
+                <div class="update-card-posted-date p-3 text-center">
+                    <hr>
+                    <div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
+                    {% if update.updated_on %}
+                        <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="update-card-comment-btn">
+                    <a class="btn" href="">Add Comment</a>
+                </div>
             </div>
         </div>
     
-        <div class="col test-border">
-            <div class="content-section">
+        <div class="d-none d-lg-inline col test-border">
+            <div class="comment-section">
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">

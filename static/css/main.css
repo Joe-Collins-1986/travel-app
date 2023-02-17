@@ -488,14 +488,6 @@ p {
         display: flex;
     }
 
-    .profile-img-update {
-        height: 65px;
-        width: 65px;
-        margin-right: 16px;
-        border-radius: 50%;
-        margin: 5px;
-    }
-
     .update-picture-container{
         margin: 0 20px 20px 20px;
         display: flex;
