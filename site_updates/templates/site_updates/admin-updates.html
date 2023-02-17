@@ -20,6 +20,14 @@
         color: rgb(6, 68, 103);
         background-color: white;
         margin: 5px;
+        width: 70vw;
+    }
+
+    @media (max-width: 992px) {
+        .update-container {
+            width: 90vw;
+            margin: 10px 5vw;
+        }
     }
 
     .update-container a {
@@ -61,6 +69,40 @@
         height: 50vh;
     }
 
+    .topic-filter-container {
+        border: 1px solid white;
+        background-color: rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
+        color: white;
+        border-radius: 5%;
+        margin: 5px 15px;
+        padding: 2%;
+        height: 100%;
+    }
+
+    @media (max-width: 992px) {
+        .topic-filter-container {
+            width: 90vw;
+            margin: 20px 5vw;
+        }
+    }
+
+    .topic-filter-container a h3 {
+        margin-left: 20px;
+    }
+
+    .topic-filter-container a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .topic-filter-container .btn {
+        width: 120px;
+        background-color: white;
+        color: rgb(6, 68, 103);
+        font-weight: 700;
+    }
+
 
     /* PAGINATION */
     .pagination-section {
@@ -95,134 +137,128 @@
 </style>
 
 
-<div class="row updates-page">
-    <div class="text-center updates-title-section">
-        {% if topic_items != 0 %}
-            {% if topic_items == 1 %}
-                <h1>Site Updates ( {{topic_items}} Update Located)</h1>
-                <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
-                <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+    <div class="updates-page">
+        <div class="text-center updates-title-section">
+            {% if topic_items != 0 %}
+                {% if topic_items == 1 %}
+                    <h1>Site Updates ({{topic_items}} Update Located)</h1>
+                    <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
+                    <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+                {% else %}
+                    <h1>Site Updates ({{topic_items}} Updates Located)</h1>
+                    <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
+                    <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+                {% endif %}
             {% else %}
-                <h1>Site Updates ( {{topic_items}} Updates Located)</h1>
-                <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
-                <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+                <h1>Site Updates (None Found)</h1>
+                <p>Unfortunatly we do not have any updates matching your search parameters.</p>
+                <p>Please try again or simply select the topic you wish to search from the available options.</p>
             {% endif %}
-        {% else %}
-            <h1>Site Updates ( None Found)</h1>
-            <p>Unfortunatly we do not have any updates matching your search parameters.</p>
-            <p>Please try again or simply select the topic you wish to search from the available options.</p>
-        {% endif %}
-
+        </div>
     </div>
 
-    <div class="col-8">
 
-    {% if topic_items != 0 %}
-        {% for update in updates %}
-            <div class="update-container">
-                <div class="update-container-title">
-                    <div class="ms-3">
-                        <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
-                        <div>
-                            <h5>{{ update.topic}}</h5>
-                            <small><strong>Date Posted:</strong> {{ update.published_on|date:"dS F Y (P)" }}</small>
-                        </div>
-                    </div>
+    <div class="d-lg-flex">
+        <div class="topic-filter-container">
+                <h3 class="m-2">Topics</h3>
+                <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
+                    <input type="text" name="q" placeholder="Search Updates" />
+                </form>
+            <div class="p-2 d-flex justify-content-evenly flex-wrap">
+                <div>
+                    <a class="btn btn-success m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
                 </div>
-                <hr>
-                <div class="update-body">
-                    <p class="p-3">{{ update.content }}</p>
-                    {% if update.update_image %}
-                        <div class="update-picture-container">
-                            <div class="update-picture">
-                                <img src="{{ update.update_image.url }}">
+
+                {% for topic in topics %}
+                <div>
+                    <a class="btn btn-success m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div>
+            {% if topic_items != 0 %}
+                {% for update in updates %}
+                    <div class="update-container">
+                        <div class="update-container-title">
+                            <div class="ms-3">
+                                <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
+                                <div>
+                                    <h5>{{ update.topic}}</h5>
+                                    <small><strong>Date Posted:</strong> {{ update.published_on|date:"dS F Y (P)" }}</small>
+                                </div>
                             </div>
                         </div>
-
-                    {% endif %}
-                    <div class="m-3">
-                        {% if update.updatecomment_set.all.count == 0 %}
-                            <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
-                        {% else %}
-                            <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
-                        {% endif %}
-
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    {% else %}
-        <div class="update-container not-found-img">
-
-        </div>
-
-    {% endif %}
-
-    </div>
-    <div class="col-3 update-container">
-        <h3>Topics</h3>
-        <form method="GET" action="{% url 'all-admin-updates' %}">
-            <input type="text" name="q" placeholder="Search Updates" />
-        </form>
-        <div>
-            <a href="{% url 'all-admin-updates' %}">All Topics </a>
-        </div>
-        {% for topic in topics %}
-        <div>
-            <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
-        </div>
-        {% endfor %}
+                        <hr>
+                        <div class="update-body">
+                            <p class="p-3">{{ update.content }}</p>
+                            {% if update.update_image %}
+                                <div class="update-picture-container">
+                                    <div class="update-picture">
+                                        <img src="{{ update.update_image.url }}">
+                                    </div>
+                                </div>
         
-    </div>
-</div>
-
-
-
-
-{% if updates.has_other_pages %}
-    <nav>
-      <ul class="pagination justify-content-center">
-        {% if updates.has_previous %}
-          <li>
-            <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-              <span class="page-link" aria-hidden="true">&laquo;</span>
-          </li>
-        {% endif %}
-
-        {% for update in updates.paginator.page_range %}
-          {% if updates.number == update %}
-            <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
-          {% else %}
-            <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
-          {% endif %}
-        {% endfor %}
-
-        {% if updates.has_next %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-            <span class="page-link" aria-hidden="true">&raquo;</span>
-          </li>
-        {% endif %}
-    </ul>
-    </nav>
-
-{% else %}
-    <div class="buffer">
-
+                            {% endif %}
+                            <div class="m-3">
+                                {% if update.updatecomment_set.all.count == 0 %}
+                                    <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                {% else %}
+                                    <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                {% endif %}
+        
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="update-container not-found-img"></div>
+            {% endif %}
+        </div>
     </div>
 
-{% endif %}
+        {% if updates.has_other_pages %}
+        <nav>
+            <ul class="pagination justify-content-center mt-3">
+                {% if updates.has_previous %}
+                    <li>
+                        <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&laquo;</span>
+                    </li>
+                {% endif %}
+
+                {% for update in updates.paginator.page_range %}
+                {% if updates.number == update %}
+                    <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                {% if updates.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&raquo;</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        {% else %}
+            <div class="buffer"></div>
+        {% endif %}
+
+    </div>
 
 {% endblock content %}
-
-        
