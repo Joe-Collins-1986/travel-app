@@ -5,6 +5,9 @@
 {% block content %}
 
 <style>
+    body {
+        background-color: rgb(6, 68, 103);
+    }
     .top-div {
         margin-top: 50px;
     }
@@ -17,10 +20,7 @@
         margin: 0 20px;
         height: calc(100%);
         width: calc(100% - 40px);
-        border: 1px solid rgb(6, 68, 103);
-        box-shadow: 20px 20px 10px grey;
-        border-radius: 5%;
-        color: rgb(6, 68, 103);
+        color: white;
         overflow-y: auto;
 
         display: flex;
@@ -30,7 +30,6 @@
     }
 
     .update-card-title {
-        background-color: rgb(202, 202, 202);
         text-align: center;
 
         display: flex;
@@ -58,21 +57,51 @@
 
     .update-card-comment-btn .btn {
         width: 150px;
-        background-color: rgb(6, 68, 103);
-        color: white;
+        background-color: white;
+        color: rgb(6, 68, 103);
         font-weight: 700;
         margin: 10px;
     }
 
 
-    .comment-section {
+    .comment-form-section, .comment-card {
         margin: 10px;
         padding: 15px;
         border: 1px solid rgb(6, 68, 103);
-        border-radius: 5% 0;
-        box-shadow: 20px 20px 10px grey;
+        box-shadow: 10px 10px 10px rgb(42, 41, 41);
         color: rgb(6, 68, 103);
+    }
 
+    .comment-form-section {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5% 0;
+    }
+
+    .comment-form-section .btn {
+        width: 180px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+    }
+
+    .comment-card {
+
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255);
+    }
+
+    .comment-card h5 {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .comment-card img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .comments-section {
+        margin-bottom: 80px;
     }
 
 </style>
@@ -113,7 +142,7 @@
         </div>
     
         <div class="d-none d-lg-inline col">
-            <div class="comment-section">
+            <div class="comment-form-section">
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
@@ -121,54 +150,66 @@
                         {{ comment_form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Submit Comment</button>
+                        <button class="btn btn-comment-submit" type="submit">Submit Comment</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
 </div>
 
-<hr>
-<h3>COMMENTS</h3>
-{% for comment in comments %}
-    <div><strong>TITLE: </strong>{{ comment.title }}</div>
-    <div><strong>COMMENT: </strong>{{ comment.comment }}</div>
-    {% if comment.update_on %}
-        <div><strong>COMMENT IMAGE: </strong>{{ comment.comment_image }}</div>
-    {% endif %}
+<div class="comments-section">
+    <hr class="text-light">
+    <h3 class="text-center text-light">COMMENTS</h3>
+    {% for comment in comments %}
+        <div class="comment-card">
+            <h5>{{ comment.title }}</h5>
+            {% if comment.created_on %}
+                <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
+            {% endif %}
+            {% if comment.updated_on %}
+                <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
+            {% endif %}
+            <hr>
 
-    {% if comment.action_taken %}
-        <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
-    {% endif %}
 
-    {% if comment.action_image %}
-        <div><strong>ACTION IMAGE: </strong>{{ comment.action_image }}</div>
-    {% endif %}
+            <p>{{ comment.comment }}</p>
 
-    {% if comment.created_on %}
-        <div><strong>CREATED ON: </strong>{{ comment.created_on|date:"dS F Y (P)" }}</div>
-    {% endif %}
 
-    {% if comment.updated_on %}
-        <div><strong>UPDATED: </strong>{{ comment.updated_on|timesince }} ago</div>
-    {% endif %}
+            {% if comment.update_on %}
+                <div class="update-card-img-section">
+                    <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
+                </div>
+                <img src="{{ comment.comment_image.url }}" alt="">
+                {{ comment.comment_image }}
+            {% endif %}
 
-    {% if comment.comment_status == 1 %}
-        <div><strong>COMMENT STATUS: </strong>closed</div>
-    {% else %}
-        <div><strong>COMMENT STATUS: </strong>open</div>
-    {% endif %}
 
-    <br>
-    {% if user == comment.author %}
-        <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update Comment</a>
-        <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Delete</a>
-    {% endif %}
-    <hr>
 
-{% endfor %}
+            {% if comment.action_taken %}
+                <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
+            {% endif %}
 
+            {% if comment.action_image %}
+                <div><strong>ACTION IMAGE: </strong>{{ comment.action_image }}</div>
+            {% endif %}
+            <hr>
+
+            {% if comment.comment_status == 1 %}
+                <div><strong>COMMENT STATUS: </strong>closed</div>
+            {% else %}
+                <div><strong>COMMENT STATUS: </strong>open</div>
+            {% endif %}
+
+            <hr>
+            {% if user == comment.author %}
+                <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update Comment</a>
+                <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Delete</a>
+            {% endif %}        
+        </div>
+
+    {% endfor %}
+
+</div>
 
 {% endblock %}
