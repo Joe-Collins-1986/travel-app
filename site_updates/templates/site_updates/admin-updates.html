@@ -5,137 +5,7 @@
     body {
         background-color: #e9e4e4;
     }
-
-    .updates-page {
-        margin: 40px 10px 20px 10px;
-    }
-
-    .updates-title-section {
-        color: rgb(6, 68, 103);
-    }
-
-    .update-container {
-        border: 1px solid rgb(6, 68, 103);
-        box-shadow: 10px 10px 5px grey;
-        color: rgb(6, 68, 103);
-        background-color: white;
-        margin: 5px;
-        width: 70vw;
-    }
-
-    @media (max-width: 992px) {
-        .update-container {
-            width: 90vw;
-            margin: 10px 5vw;
-        }
-    }
-
-    .update-container a {
-        text-decoration: none;
-        color: rgb(6, 68, 103);
-    }
-
-    .update-container-title {
-        display: flex;
-    }
-
-    .profile-img-update {
-        height: 65px;
-        width: 65px;
-        margin-right: 16px;
-        border-radius: 50%;
-        margin: 5px;
-    }
-
-    .update-picture-container{
-        margin: 0 20px 20px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .update-picture-container img{
-        width: 200px;
-    }
-
-    .update-picture-container p{
-        text-align: justify;
-    }
-
-    .not-found-img {
-        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/home_background_img_small.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 50vh;
-    }
-
-    .topic-filter-container {
-        border: 1px solid white;
-        background-color: rgb(6, 68, 103);
-        box-shadow: 10px 10px 5px grey;
-        color: white;
-        border-radius: 5%;
-        margin: 5px 15px;
-        padding: 2%;
-        height: 100%;
-    }
-
-    @media (max-width: 992px) {
-        .topic-filter-container {
-            width: 90vw;
-            margin: 20px 5vw;
-        }
-    }
-
-    .topic-filter-container a h3 {
-        margin-left: 20px;
-    }
-
-    .topic-filter-container a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .topic-filter-container .btn {
-        width: 120px;
-        background-color: white;
-        color: rgb(6, 68, 103);
-        font-weight: 700;
-    }
-
-
-    /* PAGINATION */
-    .pagination-section {
-        margin: 0 0 100px 30px;
-    }
-
-    nav {
-        margin-bottom: 100px;
-    }
-
-    .page-item {
-        z-index: 0;
-    }
-
-    .page-link {
-        z-index: 0;
-    }
-
-    .active-page-link {
-        color: rgb(6, 68, 103);
-        text-decoration: underline;
-    }
-
-    .page-link:focus {
-        box-shadow: None;
-    }
-
-    .buffer {
-        margin-bottom: 100px;
-    }
-
 </style>
-
 
     <div class="updates-page">
         <div class="text-center updates-title-section">
@@ -157,7 +27,6 @@
         </div>
     </div>
 
-
     <div class="d-lg-flex">
         <div class="topic-filter-container">
                 <h3 class="m-2">Topics</h3>
@@ -166,12 +35,12 @@
                 </form>
             <div class="p-2 d-flex justify-content-evenly flex-wrap">
                 <div>
-                    <a class="btn btn-success m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
+                    <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
                 </div>
 
                 {% for topic in topics %}
                 <div>
-                    <a class="btn btn-success m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
+                    <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
                 </div>
                 {% endfor %}
             </div>
@@ -203,9 +72,13 @@
                             {% endif %}
                             <div class="m-3">
                                 {% if update.updatecomment_set.all.count == 0 %}
-                                    <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                    <a href="{% url 'admin-update-detail' update.id %}">
+                                        <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                    </a>
                                 {% else %}
-                                    <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                    <a href="{% url 'admin-update-detail' update.id %}">
+                                        <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                    </a>
                                 {% endif %}
         
                             </div>
@@ -219,7 +92,7 @@
     </div>
 
         {% if updates.has_other_pages %}
-        <nav>
+        <nav class="buffer-site-updates">
             <ul class="pagination justify-content-center mt-3">
                 {% if updates.has_previous %}
                     <li>
@@ -256,7 +129,7 @@
         </nav>
 
         {% else %}
-            <div class="buffer"></div>
+            <div class="buffer-site-updates"></div>
         {% endif %}
 
     </div>

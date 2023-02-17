@@ -460,3 +460,127 @@ p {
         }
     }
 
+    /***** ADMIN UPDATES PAGE *****/
+
+    .updates-page {
+        margin: 40px 10px 20px 10px;
+    }
+
+    .updates-title-section {
+        color: rgb(6, 68, 103);
+    }
+
+    .update-container {
+        border: 1px solid rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
+        color: rgb(6, 68, 103);
+        background-color: white;
+        margin: 5px 20px 5px 5px;
+        width: 70vw;
+    }
+
+    .update-container a {
+        text-decoration: none;
+        color: rgb(6, 68, 103);
+    }
+
+    .update-container-title {
+        display: flex;
+    }
+
+    .profile-img-update {
+        height: 65px;
+        width: 65px;
+        margin-right: 16px;
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+    .update-picture-container{
+        margin: 0 20px 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-picture-container img{
+        width: 200px;
+    }
+
+    .update-picture-container p{
+        text-align: justify;
+    }
+
+    .not-found-img {
+        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/home_background_img_small.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50vh;
+    }
+
+    .topic-filter-container {
+        border: 1px solid white;
+        background-color: rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
+        color: white;
+        border-radius: 5%;
+        margin: 5px 15px;
+        padding: 2%;
+        height: 100%;
+    }
+
+    .topic-filter-container a h3 {
+        margin-left: 20px;
+    }
+
+    .topic-filter-container a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .topic-filter-container .btn {
+        width: 120px;
+        background-color: white;
+        color: rgb(6, 68, 103);
+        font-weight: 700;
+    }
+
+    @media (max-width: 992px) {
+        .topic-filter-container {
+            width: 90vw;
+            margin: 20px 5vw;
+        }
+        
+        .update-container {
+            width: 90vw;
+            margin: 10px 5vw;
+        }
+    }
+
+
+    /* PAGINATION */
+    .pagination-section {
+        margin: 0 0 100px 30px;
+    }
+
+    .page-item {
+        z-index: 0;
+    }
+
+    .page-link {
+        z-index: 0;
+    }
+
+    .active-page-link {
+        color: rgb(6, 68, 103);
+        text-decoration: underline;
+    }
+
+    .page-link:focus {
+        box-shadow: None;
+    }
+
+    .buffer-site-updates {
+        margin-bottom: 100px;
+    }
+
