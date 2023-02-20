@@ -27,7 +27,7 @@ class AdminUpdatesListView(View):
         else:
             q = ""
 
-        update_list_published = Update.objects.filter(status=1)
+        update_list_published = Update.objects.all()
 
         update_list = update_list_published.filter(
             Q(topic__topic_catagory__icontains=q) |
@@ -64,7 +64,7 @@ class AdminUpdatesListView(View):
 class AdminDetailUpdateView(View):
 
     def get(self, request, pk):
-        update_objects = Update.objects.filter(status=1)
+        update_objects = Update.objects.all()
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
 
@@ -84,13 +84,12 @@ class AdminDetailUpdateView(View):
         )
     
     def post(self, request, pk):
-        update_objects = Update.objects.filter(status=1)
+        update_objects = Update.objects.all()
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
 
         comment_form = CommentForm(request.POST, request.FILES or None)
         if comment_form.is_valid():
-            print(request.FILES)
             comment_form.instance.author = request.user
             comment = comment_form.save(commit=False)
             comment.site_update = update

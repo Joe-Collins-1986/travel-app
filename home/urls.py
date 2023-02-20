@@ -8,7 +8,7 @@ from .views import (
     register,
 )
 
-updates = Update.objects.filter(status=1).order_by('-published_on')[0:3]
+updates = Update.objects.all().order_by('-published_on')[0:3]
 
 urlpatterns = [
     path('', TravelHome.as_view(), name="travel-home"),

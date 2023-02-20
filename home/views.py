@@ -15,7 +15,7 @@ class TravelHome(View):
     
 
     def get(self, request):
-        updates = Update.objects.filter(status=1).order_by('-published_on')[0:3]
+        updates = Update.objects.all().order_by('-published_on')[0:3]
 
         if request.user.is_authenticated:
             return render(
@@ -31,7 +31,7 @@ class TravelHome(View):
 
 
 def register(request):
-    updates = Update.objects.filter(status=1).order_by('-published_on')[0:3]
+    updates = Update.objects.all().order_by('-published_on')[0:3]
 
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

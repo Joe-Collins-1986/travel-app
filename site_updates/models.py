@@ -2,9 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django_resized import ResizedImageField
-# from PIL import Image
 
-STATUS = ((0, "Draft"), (1, "Published"))
 COMMENT_STATUS = ((0, "No Action Required"), (1, "Action Required"))
 
 
@@ -19,9 +17,12 @@ class Update(models.Model):
     topic = models.ForeignKey(UpdateCatagory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
-    update_image = models.ImageField(default=None, upload_to='media/update_pics/', blank=True)
+    update_image = ResizedImageField(
+                                    upload_to='media/update_pics/',
+                                    blank=True,
+                                    size=[600, None],
+                                    force_format='JPEG')
     published_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ('-published_on',)
@@ -40,7 +41,6 @@ class UpdateComment(models.Model):
                                         blank=True,
                                         size=[600, None],
                                         force_format='JPEG')
-    # comment_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
     action_taken = models.TextField(blank=True)
     action_image = ResizedImageField(
                                         upload_to='media/comment_pics/',
