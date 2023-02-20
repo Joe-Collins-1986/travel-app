@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django_resized import ResizedImageField
 # from PIL import Image
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -34,7 +35,12 @@ class UpdateComment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     comment = models.TextField()
-    comment_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
+    comment_image = ResizedImageField(
+                                        upload_to='media/comment_pics/',
+                                        blank=True,
+                                        size=[600, None],
+                                        force_format='JPEG')
+    # comment_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
     action_taken = models.TextField(blank=True)
     action_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)

@@ -88,8 +88,9 @@ class AdminDetailUpdateView(View):
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
 
-        comment_form = CommentForm(data=request.POST)
+        comment_form = CommentForm(request.POST, request.FILES or None)
         if comment_form.is_valid():
+            print(request.FILES)
             comment_form.instance.author = request.user
             comment = comment_form.save(commit=False)
             comment.site_update = update

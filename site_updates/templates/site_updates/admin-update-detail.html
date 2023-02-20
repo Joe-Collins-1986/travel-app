@@ -142,7 +142,7 @@
     
         <div class="d-none d-lg-inline col">
             <div class="comment-form-section">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4">Add Comment</legend>
@@ -172,7 +172,7 @@
             <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>
 
 
-            {% if comment.update_on %}
+            {% if comment.comment_image %}
                 <div class="update-card-img-section">
                     <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
                 </div>
