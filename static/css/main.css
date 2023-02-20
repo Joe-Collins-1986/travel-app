@@ -15,7 +15,7 @@ a {
     font-family: 'Lora', serif;
 }
 
-p {
+p, .comments-txt {
     font-family: 'Merriweather', serif;
 }
 
@@ -42,7 +42,7 @@ p {
     h6 {
         font-size: 120%;
     }
-    p {
+    p, .comments-txt {
         font-size: 120%;
     }
 }
@@ -66,7 +66,7 @@ p {
     h6 {
         font-size: 140%;
     }
-    p {
+    p, .comments-txt {
         font-size: 140%;
     }
 }
@@ -90,7 +90,7 @@ p {
     h6 {
         font-size: 150%;
     }
-    p {
+    p, .comments-txt {
         font-size: 150%;
     }
 }

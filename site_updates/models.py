@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-from PIL import Image
+# from PIL import Image
 
 STATUS = ((0, "Draft"), (1, "Published"))
 COMMENT_STATUS = ((0, "No Action Required"), (1, "Action Required"))
@@ -20,7 +20,6 @@ class Update(models.Model):
     content = models.TextField()
     update_image = models.ImageField(default=None, upload_to='media/update_pics/', blank=True)
     published_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:

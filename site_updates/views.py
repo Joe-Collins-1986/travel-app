@@ -96,6 +96,11 @@ class AdminDetailUpdateView(View):
             comment.save()
         else:
             comment_form = CommentForm()
+
+        for comment in comments:
+            a = str(comment.updated_on - comment.created_on)
+            if '0:00:00' in a:
+                comment.updated_on = None
         
         return render(
             request,

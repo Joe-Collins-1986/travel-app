@@ -132,9 +132,6 @@
                 <div class="update-card-posted-date p-3 text-center">
                     <hr>
                     <div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
-                    {% if update.updated_on %}
-                        <div><strong>UPDATED ON: </strong>{{ update.updated_on|date:"dS F Y (P)" }}</div>
-                    {% endif %}
                 </div>
 
                 <div class="update-card-comment-btn">
@@ -165,16 +162,14 @@
     {% for comment in comments %}
         <div class="comment-card">
             <h5>{{ comment.title }}</h5>
-            {% if comment.created_on %}
-                <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
-            {% endif %}
+            <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
             {% if comment.updated_on %}
                 <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
             {% endif %}
             <hr>
 
 
-            <p>{{ comment.comment }}</p>
+            <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>
 
 
             {% if comment.update_on %}
@@ -182,9 +177,8 @@
                     <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
                 </div>
                 <img src="{{ comment.comment_image.url }}" alt="">
-                {{ comment.comment_image }}
+                {{ comment.comment_image.url }}
             {% endif %}
-
 
 
             {% if comment.action_taken %}
