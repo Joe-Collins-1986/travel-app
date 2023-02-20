@@ -29,18 +29,17 @@ class AdminUpdatesListView(View):
 
         update_list_published = Update.objects.all()
 
-        update_list = update_list_published.filter(
+        updates = update_list_published.filter(
             Q(topic__topic_catagory__icontains=q) |
             Q(title__icontains=q)
             )
 
-        topic_items = update_list.count()
+        topic_items = updates.count()
 
-        updates = update_list
 
         if q == "":
             page = request.GET.get('page', 1)
-            paginator = Paginator(update_list, 2)
+            paginator = Paginator(updates, 2)
 
             try:
                 updates = paginator.page(page)

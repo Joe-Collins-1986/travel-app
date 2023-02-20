@@ -40,7 +40,8 @@
 
                 {% for topic in topics %}
                 <div>
-                    <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
+                    <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
+
                 </div>
                 {% endfor %}
             </div>
