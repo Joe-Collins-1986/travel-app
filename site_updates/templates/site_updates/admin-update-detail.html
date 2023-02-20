@@ -45,9 +45,6 @@
         align-items: center;
     }
 
-    .update-detail-img {
-        height: 100%;
-    }
 
     .update-card-comment-btn {
         display: flex;
@@ -95,9 +92,10 @@
         text-decoration: underline;
     }
 
-    .comment-card img {
-        width: 200px;
+    .update-detail-img {
         height: 200px;
+        border: 1px solid black;
+        border-radius: 5px;
     }
 
     .comments-section {
@@ -176,8 +174,6 @@
                 <div class="update-card-img-section">
                     <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
                 </div>
-                <img src="{{ comment.comment_image.url }}" alt="">
-                {{ comment.comment_image.url }}
             {% endif %}
 
 

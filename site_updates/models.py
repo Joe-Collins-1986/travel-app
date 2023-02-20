@@ -42,7 +42,11 @@ class UpdateComment(models.Model):
                                         force_format='JPEG')
     # comment_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
     action_taken = models.TextField(blank=True)
-    action_image = models.ImageField(default=None, upload_to='media/comment_pics/', blank=True)
+    action_image = ResizedImageField(
+                                        upload_to='media/comment_pics/',
+                                        blank=True,
+                                        size=[600, None],
+                                        force_format='JPEG')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     comment_status = models.IntegerField(choices=COMMENT_STATUS, default=0)
