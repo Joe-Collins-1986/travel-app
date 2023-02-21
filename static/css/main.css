@@ -375,14 +375,27 @@ p, .comments-txt {
         align-items: center;
         margin: 0;
     }
-    
+
     .update-card {
         width: 400px;
+        padding: 0;
         border: 1px solid rgb(6, 68, 103);
         box-shadow: 20px 20px 10px grey;
         margin: 5px;
+    }
+
+    .update-card-body {
         height: 350px;
         overflow-y: auto;
+    }
+    .update-card-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-top: 1px solid rgb(6, 68, 103);
+        height: 40px;
+        background-color: rgb(202, 202, 202);
     }
 
     .update-card a {
@@ -402,14 +415,20 @@ p, .comments-txt {
         color: white;
         margin-top: 10px;
     }
-    
+
     @media (max-width: 450px) {
         .update-card {
             width: 300px;
-            margin: 5px;
             box-shadow: 10px 10px 10px grey;
         }
     }
+
+    @media (max-width: 820px) {
+        .update-card-body {
+            height: auto;
+        }
+    }
+
     
     /**** LOGIN & REGISTER PAGES ****/
     
