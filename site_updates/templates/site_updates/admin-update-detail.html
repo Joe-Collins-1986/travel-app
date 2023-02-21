@@ -133,12 +133,12 @@
                 </div>
 
                 <div class="update-card-comment-btn">
-                    <a class="btn" href="">Add Comment</a>
+                    <a class="btn" href="{% url 'comment-create' update.pk %}">Add Comment</a>
                 </div>
             </div>
         </div>
     
-        <div class="d-none d-lg-inline col">
+        <div class="d-lg-inline col">
             <div class="comment-form-section">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -181,7 +181,6 @@
             <hr>
             <div class="bg-warning p-4 mt-2">
                 <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
-                {% endif %}
     
                 {% if comment.action_image %}
                     <div class="update-card-img-section">
@@ -190,6 +189,7 @@
                 {% endif %}
 
             </div>
+            {% endif %}
 
             <hr>
             {% if user == comment.author %}

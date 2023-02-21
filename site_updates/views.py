@@ -12,7 +12,8 @@ from django.contrib.auth.mixins import (
 from django.views.generic import (
     View,
     UpdateView,
-    DeleteView
+    DeleteView,
+    CreateView,
 )
 from .forms import CommentForm
 
@@ -111,9 +112,20 @@ class AdminDetailUpdateView(View):
             }
         )
 
+
+class CommentCreateView(LoginRequiredMixin, CreateView): # create and update will default to <app>/<model>_<form>.html
+    model = UpdateComment
+    fields = ['title', 'comment', 'comment_image']
+
+    def form_valid(self, form):
+        update = get_object_or_404(Update, pk=self.kwargs['pk'])
+        form.instance.author = self.request.user
+        form.instance.site_update = update
+        return super().form_valid(form)
+
+
 class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # default to <app>/<model>_<form>.html
     model = UpdateComment
-    context_object_name = 'comment'
     fields = ['title', 'comment', 'comment_image']
 
     def form_valid(self, form):
@@ -122,7 +134,6 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # 
 
     def test_func(self):
         comment = self.get_object()
-
         if self.request.user == comment.author:
             return True
         return False
