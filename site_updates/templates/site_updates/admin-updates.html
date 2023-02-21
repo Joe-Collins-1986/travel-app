@@ -22,8 +22,11 @@
                 <p>Unfortunatly we do not have any updates matching your search parameters.</p>
                 <p>Please try again or simply select the topic you wish to search from the available options.</p>
             {% endif %}
+
+            <button onclick="filterToggle()">Click Me</button>
         </div>
     </div>
+
 
     <div class="d-lg-flex">
         <div class="topic-filter-container">
@@ -31,17 +34,19 @@
                 <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
                     <input type="text" name="q" placeholder="Search Updates" />
                 </form>
-                <div class="p-2 d-flex justify-content-evenly flex-wrap">
-                    <div>
-                        <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
+                <div id="filter-updates">
+                    <div class="p-2 d-flex justify-content-evenly flex-wrap">
+                        <div>
+                            <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
+                        </div>
+    
+                        {% for topic in topics %}
+                        <div>
+                            <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
+    
+                        </div>
+                        {% endfor %}
                     </div>
-
-                    {% for topic in topics %}
-                    <div>
-                        <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
-
-                    </div>
-                    {% endfor %}
                 </div>
         </div>
 
@@ -132,5 +137,21 @@
         {% endif %}
 
     </div>
+
+
+
+    <script>
+        const filterTopics = document.getElementById("filter-updates");
+
+        function filterToggle() {
+            const filterTopics = document.getElementById("filter-updates");
+            if (filterTopics.style.display === "none") {
+                    filterTopics.style.display = "block";
+                } else {
+                    filterTopics.style.display = "none";
+                }
+            }
+
+    </script>
 
 {% endblock content %}

@@ -132,13 +132,13 @@
                     <div><strong>PUBLISHED ON: </strong>{{ update.published_on|date:"dS F Y (P)" }}</div>
                 </div>
 
-                <div class="update-card-comment-btn">
+                <div class="update-card-comment-btn d-lg-none">
                     <a class="btn" href="{% url 'comment-create' update.pk %}">Add Comment</a>
                 </div>
             </div>
         </div>
     
-        <div class="d-lg-inline col">
+        <div class="d-none d-lg-inline col">
             <div class="comment-form-section">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
