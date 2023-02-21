@@ -379,7 +379,6 @@ p, .comments-txt {
     }
 
     .update-card {
-        width: 400px;
         padding: 0;
         border: 1px solid rgb(6, 68, 103);
         border-radius: 0 0 5% 5%;
@@ -388,8 +387,14 @@ p, .comments-txt {
         margin: 5px;
     }
 
+
+    .update-card-front-page {
+        width: 400px;
+    }
+
     .update-card-body {
         height: 350px;
+        padding: 20px;
         overflow-y: auto;
     }
 
@@ -539,7 +544,7 @@ p, .comments-txt {
         height: 50vh;
     }
 
-    .topic-filter-container {
+    /* .topic-filter-container {
         border: 1px solid white;
         background-color: rgb(6, 68, 103);
         box-shadow: 10px 10px 5px grey;
@@ -576,7 +581,7 @@ p, .comments-txt {
             width: 90vw;
             margin: 10px 5vw;
         }
-    }
+    } */
 
 
     /* PAGINATION */

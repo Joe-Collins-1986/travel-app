@@ -5,152 +5,213 @@
     body {
         background-color: #e9e4e4;
     }
+
+    .updates-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .updates-header-count {
+        background-color: white;
+        border: 1px solid rgb(6, 68, 103);
+        border-radius: 15%;
+        padding: .25rem .75rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+    }
+
+
+
+    
+
+    .topic-filter-container {
+        margin: 5px 15px;
+        border: 1px solid white;
+        background-color: rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
+        color: white;
+        border-radius: 10px;
+        min-width: 300px;
+        height: 100px;
+
+        display: flex;
+    }
+
+    .search-container {
+        border: 3px solid rgb(30, 255, 0);
+        margin: 0;
+
+    }
+
+    .topic-dropdown-icon-container {
+        border: 3px solid red;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topic-dropdown-icon-container {
+        font-size: 300%;
+    }
+
 </style>
 
     <div class="updates-page">
         <div class="text-center updates-title-section">
             {% if topic_items != 0 %}
-                {% if topic_items == 1 %}
-                    <h1>Site Updates ({{topic_items}})</h1>
+            <div class="updates-title">
+                <h1>Site Updates</h1>
+                <h3 class="updates-header-count">{{topic_items}}</h3>
+            </div>
 
-                {% else %}
-                    <h1>Site Updates ({{topic_items}})</h1>
-
-                {% endif %}
             {% else %}
-                <h1>Site Updates (None Found)</h1>
+                <div class="text-center updates-title">
+                    <h1>Site Updates</h1>
+                    <h3 class="updates-header-count">{{topic_items}}</h3>
+                </div>
                 <p>Unfortunatly we do not have any updates matching your search parameters.</p>
                 <p>Please try again or simply select the topic you wish to search from the available options.</p>
             {% endif %}
-
-            <button onclick="filterToggle()">Click Me</button>
         </div>
-    </div>
 
+        <div class="d-lg-flex">
+            <div class="topic-filter-container">
+                <div class="col-10 col-lg-8 search-container">
+                    Search
 
-    <div class="d-lg-flex">
-        <div class="topic-filter-container">
-                <h3 class="m-2">Topics</h3>
-                <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
-                    <input type="text" name="q" placeholder="Search Updates" />
-                </form>
-                <div id="filter-updates">
-                    <div class="p-2 d-flex justify-content-evenly flex-wrap">
-                        <div>
-                            <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
-                        </div>
-    
-                        {% for topic in topics %}
-                        <div>
-                            <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
-    
-                        </div>
-                        {% endfor %}
-                    </div>
                 </div>
-        </div>
 
-        <div>
-            {% if topic_items != 0 %}
-                {% for update in updates %}
-                    <div class="update-container">
-                        <div class="update-container-title">
-                            <div class="ms-3">
-                                <a href="{% url 'admin-update-detail' update.id %}"><h3>{{ update.title }}</h3></a>
-                                <div>
-                                    <h5>{{ update.topic}}</h5>
-                                    <small><strong>Date Posted:</strong> {{ update.published_on|date:"dS F Y (P)" }}</small>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="update-body">
-                            <p class="p-3">{{ update.content }}</p>
-                            {% if update.update_image %}
-                                <div class="update-picture-container">
-                                    <div class="update-picture">
-                                        <img src="{{ update.update_image.url }}">
+                <div class="col topic-dropdown-icon-container">
+                    <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+            
+            </div>
+
+            <div>
+                {% if topic_items != 0 %}
+                    {% for update in updates %}
+                    <div class="bg-light update-card mb-4 mx-3">
+                        <a href="{% url 'admin-update-detail' update.id %}">
+                            <div class="p-4">
+                                <h4 class="pt-3 text-center">{{ update.title }}</h4>
+                                <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
+                                <hr>
+                                <p class="text-center">{{ update.content }}</p>
+                                {% if update.update_image %}
+                                    <div class="update-picture-container">
+                                        <div class="update-picture">
+                                            <img src="{{ update.update_image.url }}">
+                                        </div>
                                     </div>
-                                </div>
-        
-                            {% endif %}
-                            <div class="m-3 align-self-end">
-                                {% if update.updatecomment_set.all.count == 0 %}
-                                    <a href="{% url 'admin-update-detail' update.id %}">
-                                        <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'admin-update-detail' update.id %}">
-                                        <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
-                                    </a>
+            
                                 {% endif %}
                             </div>
+                        </a>
+                        <div class="update-card-footer">
+                            {% if update.updatecomment_set.all.count == 0 %}
+                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                                    <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                </a>
+                            {% else %}
+                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                                    <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
-                {% endfor %}
-            {% else %}
-                <div class="update-container not-found-img"></div>
-            {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <div class="update-container not-found-img"></div>
+                {% endif %}
+            </div>
         </div>
-    </div>
 
         {% if updates.has_other_pages %}
-        <nav class="buffer-site-updates">
-            <ul class="pagination justify-content-center mt-3">
-                {% if updates.has_previous %}
-                    <li>
-                        <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link" aria-hidden="true">&laquo;</span>
-                    </li>
-                {% endif %}
+            <nav class="buffer-site-updates">
+                <ul class="pagination justify-content-center mt-3">
+                    {% if updates.has_previous %}
+                        <li>
+                            <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">&laquo;</span>
+                        </li>
+                    {% endif %}
 
-                {% for update in updates.paginator.page_range %}
-                {% if updates.number == update %}
-                    <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
-                {% else %}
-                    <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
-                {% endif %}
-                {% endfor %}
+                    {% for update in updates.paginator.page_range %}
+                    {% if updates.number == update %}
+                        <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
+                    {% endif %}
+                    {% endfor %}
 
-                {% if updates.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link" aria-hidden="true">&raquo;</span>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
-
+                    {% if updates.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">&raquo;</span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
         {% else %}
             <div class="buffer-site-updates"></div>
         {% endif %}
-
     </div>
+       
+       
+<script>
+    const filterTopics = document.getElementById("filter-updates");
 
-
-
-    <script>
+    function filterToggle() {
         const filterTopics = document.getElementById("filter-updates");
-
-        function filterToggle() {
-            const filterTopics = document.getElementById("filter-updates");
-            if (filterTopics.style.display === "none") {
-                    filterTopics.style.display = "block";
-                } else {
-                    filterTopics.style.display = "none";
-                }
+        if (filterTopics.style.display === "none") {
+                filterTopics.style.display = "block";
+            } else {
+                filterTopics.style.display = "none";
             }
+        }
 
-    </script>
+</script>
 
 {% endblock content %}
+
+
+<div class="d-lg-flex">
+    <div class="topic-filter-container">
+        <button onclick="filterToggle()">Click Me</button>
+        <h3 class="m-2">Topics</h3>
+        <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
+            <input type="text" name="q" placeholder="Search Updates" />
+        </form>
+        <div id="filter-updates">
+            <div class="p-2 d-flex justify-content-evenly flex-wrap">
+                <div>
+                    <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
+                </div>
+
+                {% for topic in topics %}
+                <div>
+                    <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
