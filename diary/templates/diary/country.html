@@ -131,7 +131,30 @@
         border: 2px solid rgb(6, 68, 103);
     }
 
+
+
+    
+    .back-to-map {
+        position: fixed;
+        top: 70px;
+        left: 2%;
+        z-index: 5;
+        color: rgb(6, 68, 103);
+        background-color: #C3C3C3;
+        border: 2px solid rgb(6, 68, 103);
+        border-radius: 15%;
+        font-size: 300%;
+    }
+
+    .back-to-map:hover {
+        color: #C3C3C3;
+        background-color: rgb(6, 68, 103);
+        border: 2px solid rgb(255, 255, 255);
+    }
+
 </style>
+<a href="{% url 'country-map' %}"><i class="fa-solid fa-globe back-to-map btn"></i></a>
+
 
 <div class="header-img-background">
     <div class="header-content-container">
