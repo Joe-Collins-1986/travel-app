@@ -392,6 +392,12 @@ p, .comments-txt {
         height: 350px;
         overflow-y: auto;
     }
+
+    .update-card-body:hover {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+    
     .update-card-footer {
         display: flex;
         justify-content: center;
@@ -404,6 +410,7 @@ p, .comments-txt {
 
     .update-card a {
         color: rgb(6, 68, 103);
+        text-decoration: none;
     }
     
     .btn-site-updates-all {
@@ -417,7 +424,6 @@ p, .comments-txt {
     .btn-site-updates-all:hover {
         background-color: rgb(10, 104, 158);
         color: white;
-        margin-top: 10px;
     }
 
     @media (max-width: 450px) {

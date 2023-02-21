@@ -5,12 +5,21 @@
         <h5 class="mb-5">Check out our latest 3 updates</h5>
         {% for update in updates %}
         <div class="bg-light update-card">
-            <div class="update-card-body">
+
+            <a href="{% url 'admin-update-detail' update.id %}">
+                <div class="update-card-body">
+                    <h4 class="pt-3 text-center">{{ update.title }}</h4>
+                    <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
+                    <hr>
+                    <p class="text-center">{{ update.content }}</p>
+                </div>
+            </a>
+            <!-- <div class="update-card-body">
                 <a href="{% url 'admin-update-detail' update.id %}"><h4 class="pt-3 text-center">{{ update.title }}</h4></a>
                 <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
                 <hr>
                 <p class="text-center">{{ update.content }}</p>
-            </div>
+            </div> -->
             <div class="update-card-footer">
                 {% if update.updatecomment_set.all.count == 0 %}
                     <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
