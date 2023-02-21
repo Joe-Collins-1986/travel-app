@@ -312,12 +312,14 @@ p, .comments-txt {
     /**** HOME PAGE SPECIFIC ****/
     .home-topic {
         padding: 5rem;
+        background-color: rgb(6, 68, 103);
+        color: white;
     }
     
     .planner-info {
         background-color: rgb(6, 68, 103);
         color: white;
-        padding: 3rem;
+        padding: 3rem 3rem 0 3rem;
     }
     
     .home-img {
@@ -348,7 +350,7 @@ p, .comments-txt {
     
     @media (max-width: 990px) {
         .planner-info {
-            padding: 2rem;
+            padding: 2rem 2rem 0 2rem;
         }
         .planner-info h4 {
             height: 40px;
@@ -380,6 +382,8 @@ p, .comments-txt {
         width: 400px;
         padding: 0;
         border: 1px solid rgb(6, 68, 103);
+        border-radius: 0 0 5% 5%;
+        overflow: hidden;
         box-shadow: 20px 20px 10px grey;
         margin: 5px;
     }
@@ -406,8 +410,8 @@ p, .comments-txt {
         width: 150px;
         background-color: rgb(6, 68, 103);
         color: white;
-        margin-top: 10px;
-        margin-bottom: 150px;
+        margin-top: 50px;
+        margin-bottom: 250px;
     }
     
     .btn-site-updates-all:hover {
