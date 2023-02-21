@@ -178,19 +178,18 @@
 
 
             {% if comment.action_taken %}
-                <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
-            {% endif %}
-
-            {% if comment.action_image %}
-                <div><strong>ACTION IMAGE: </strong>{{ comment.action_image }}</div>
-            {% endif %}
             <hr>
+            <div class="bg-warning p-4 mt-2">
+                <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
+                {% endif %}
+    
+                {% if comment.action_image %}
+                    <div class="update-card-img-section">
+                        <img class="update-detail-img" src="{{ comment.action_image.url }}" alt="">
+                    </div>
+                {% endif %}
 
-            <!-- {% if comment.comment_status == 1 %}
-                <div><strong>COMMENT STATUS: </strong>closed</div>
-            {% else %}
-                <div><strong>COMMENT STATUS: </strong>open</div>
-            {% endif %} -->
+            </div>
 
             <hr>
             {% if user == comment.author %}

@@ -10,6 +10,16 @@
         "population": "2.812 million (2021)"
     },
     {
+        "name": "Austria",
+        "code": "AT",
+        "capital": "Vienna",
+        "region": "EU",
+        "currency": "Euro",
+        "language": "German",
+        "about": "Austria, formally the Republic of Austria, is a landlocked country in the southern part of Central Europe, lying in the Eastern Alps. It is a federation of nine states, one of which is the capital, Vienna, the most populous city and state.",
+        "population": "8.956 million (2021)"
+    },
+    {
         "name": "Belarus",
         "code": "BY",
         "capital": "Minsk",

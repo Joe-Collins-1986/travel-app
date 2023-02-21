@@ -11,13 +11,11 @@
         <div class="text-center updates-title-section">
             {% if topic_items != 0 %}
                 {% if topic_items == 1 %}
-                    <h1>Site Updates ({{topic_items}} Update Located)</h1>
-                    <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
-                    <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+                    <h1>Site Updates ({{topic_items}})</h1>
+
                 {% else %}
-                    <h1>Site Updates ({{topic_items}} Updates Located)</h1>
-                    <p>The below posts detail the exciting updates out team are making to this ever evolving site.</p>
-                    <p>We strongly encourage you to feedback on these updates by selecting the update and leaving us a comment.</p>
+                    <h1>Site Updates ({{topic_items}})</h1>
+
                 {% endif %}
             {% else %}
                 <h1>Site Updates (None Found)</h1>
@@ -33,18 +31,18 @@
                 <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
                     <input type="text" name="q" placeholder="Search Updates" />
                 </form>
-            <div class="p-2 d-flex justify-content-evenly flex-wrap">
-                <div>
-                    <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
-                </div>
+                <div class="p-2 d-flex justify-content-evenly flex-wrap">
+                    <div>
+                        <a class="btn m-2 p-2 p-lg-0" href="{% url 'all-admin-updates' %}">All Topics </a>
+                    </div>
 
-                {% for topic in topics %}
-                <div>
-                    <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
+                    {% for topic in topics %}
+                    <div>
+                        <a class="btn m-2 p-2 p-lg-0"  href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }} - {{ topic.update_set.all.count }}</a>
 
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
         </div>
 
         <div>
