@@ -8,7 +8,7 @@
 
             <a href="{% url 'admin-update-detail' update.id %}">
                 <div class="update-card-body">
-                    <h4 class="pt-3 text-center">{{ update.title }}</h4>
+                    <h4 class="text-center">{{ update.title }}</h4>
                     <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
                     <hr>
                     <p class="text-center">{{ update.content }}</p>

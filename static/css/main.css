@@ -370,7 +370,7 @@ p, .comments-txt {
     
     /**** SPECIFIC TO SITE UPDATE INSERT ****/
     .site-updates-section {
-        background-color: #f8f9fa;
+        background-color: #e9e4e4;
         color: rgb(6, 68, 103); 
         display: flex;
         justify-content: center;
@@ -381,7 +381,7 @@ p, .comments-txt {
     .update-card {
         padding: 0;
         border: 1px solid rgb(6, 68, 103);
-        border-radius: 0 0 5% 5%;
+        border-radius: 0 0 10px 10px;
         overflow: hidden;
         box-shadow: 20px 20px 10px grey;
         margin: 5px;
