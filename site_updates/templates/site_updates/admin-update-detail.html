@@ -6,10 +6,13 @@
 
 <style>
     body {
-        background-color: rgb(6, 68, 103);
+        background-color: rgb(202, 202, 202);
     }
+
     .top-div {
-        margin-top: 50px;
+        margin-top: 35px;
+        padding-bottom: 20px;
+        background-color: rgb(6, 68, 103);
     }
 
     .test-border {
@@ -18,15 +21,13 @@
 
     .update-card-comment-page {
         margin: 0 20px;
-        height: calc(100%);
+        height: 100%;
         width: calc(100% - 40px);
         color: white;
         overflow-y: auto;
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-
     }
 
     .update-card-title {
@@ -45,6 +46,9 @@
         align-items: center;
     }
 
+    .update-card-posted-date {
+        margin-top: auto;
+    }
 
     .update-card-comment-btn {
         display: flex;
@@ -82,7 +86,6 @@
     }
 
     .comment-card {
-
         border-radius: 10px;
         background-color: rgba(255, 255, 255);
     }
@@ -93,7 +96,8 @@
     }
 
     .update-detail-img {
-        height: 200px;
+        max-height: 200px;
+        max-width: 90%;
         border: 1px solid black;
         border-radius: 5px;
     }
@@ -101,10 +105,38 @@
     .comments-section {
         padding-bottom: 80px;
         background-color: rgb(202, 202, 202);
-        color: rgb(6, 68, 103);;
+        color: rgb(6, 68, 103);
     }
 
+    .butons-container-back-add {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .admin-response {
+        background-color: rgb(240, 239, 186);
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .add-delete-btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .add-delete-btn-container .btn {
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
 </style>
+
 
 <div class="container-fluid top-div">
     <div class="row">
@@ -118,7 +150,7 @@
                 <div class="update-card-content p-3 text-center">
                     <div><h5>{{ update.topic }}</h5></div>
                     <hr>
-                    <div>{{ update.content }}</div>
+                    <div>{{ update.content|linebreaksbr }}</div>
                 </div>
 
                 {% if update.update_image %}
@@ -132,8 +164,15 @@
                     <div><strong>PUBLISHED: </strong>{{ update.published_on|date:"dS M Y" }}</div>
                 </div>
 
-                <div class="update-card-comment-btn d-lg-none">
-                    <a class="btn" href="{% url 'comment-create' update.pk %}">Add Comment</a>
+                <div class="butons-container-back-add">
+                    <div class="update-card-comment-btn">
+                        <a class="btn" href="{% url 'all-admin-updates' %}">Site Updates</a>
+
+                    </div>
+    
+                    <div class="update-card-comment-btn d-lg-none">
+                        <a class="btn" href="{% url 'comment-create' update.pk %}">Add Comment</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,32 +197,30 @@
 <div class="comments-section">
     <h3 class="text-center pt-3 mt-2">COMMENTS</h3>
     {% for comment in comments %}
-        <div class="comment-card">
+        <div class="comment-card text-center">
             <h5>{{ comment.title }}</h5>
             <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
             {% if comment.updated_on %}
                 <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
             {% endif %}
+
             <hr>
-
-
             <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>
 
-
             {% if comment.comment_image %}
-                <div class="update-card-img-section">
+                <div class="update-card-img-section mt-3">
                     <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
                 </div>
             {% endif %}
 
 
             {% if comment.action_taken %}
-            <hr>
-            <div class="bg-warning p-4 mt-2">
+            <div class="admin-response">
+                <h6><strong>ADMIN RESPONSE</strong></h6>
                 <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
     
                 {% if comment.action_image %}
-                    <div class="update-card-img-section">
+                    <div class="update-card-img-section mt-3">
                         <img class="update-detail-img" src="{{ comment.action_image.url }}" alt="">
                     </div>
                 {% endif %}
@@ -191,14 +228,23 @@
             </div>
             {% endif %}
 
-            <hr>
             {% if user == comment.author %}
-                <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update Comment</a>
+            <hr>
+            <div class="add-delete-btn-container">
+                <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update</a>
                 <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Delete</a>
+            </div>
             {% endif %}        
         </div>
-
     {% endfor %}
+
+
+    {% if comments.count == 0 %}
+        <div class="comment-card text-center">
+            <div class="comments-txt">No Comments</div>
+        </div>
+
+    {% endif %}
 
 </div>
 
