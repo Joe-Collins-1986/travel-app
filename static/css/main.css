@@ -411,6 +411,8 @@ p, .comments-txt {
         border-top: 1px solid rgb(6, 68, 103);
         height: 40px;
         background-color: rgb(202, 202, 202);
+
+        position: relative;
     }
 
     .update-card a {
@@ -432,7 +434,7 @@ p, .comments-txt {
     }
 
     @media (max-width: 450px) {
-        .update-card {
+        .update-card-front-page {
             width: 300px;
             box-shadow: 10px 10px 10px grey;
         }
@@ -500,10 +502,101 @@ p, .comments-txt {
         margin: 40px 10px 20px 10px;
     }
 
+    /* title */
     .updates-title-section {
         color: rgb(6, 68, 103);
     }
 
+    .updates-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .updates-header-count {
+        background-color: white;
+        border: 1px solid #064467;
+        border-radius: 15%;
+        padding: .25rem .75rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+    }
+
+
+    /* search bar */
+    .full-search-container {
+        margin: 5px 15px;
+    }
+   
+
+    .topic-filter-container {
+        background-color: rgb(6, 68, 103);
+        box-shadow: 10px 10px 5px grey;
+        color: white;
+        padding: 10px;
+
+        display: flex;
+    }
+
+    .search-container {
+        margin: 0;
+
+    }
+
+    .topic-dropdown-icon-container {
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 200%;
+        padding-right: 10px;
+    }
+
+    .topic-selections {
+        background-color: rgb(6, 68, 103);
+        padding-bottom: 10px;
+        box-shadow: 10px 10px 5px grey;
+        border-radius: 0 0 10px 10px;
+
+    }
+
+    .topic-titles {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .topic-titles a {
+        color: white;
+        font-weight: 700;
+    }
+
+    .topic-numbers {
+        color: rgb(6, 68, 103);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 10px;
+    }
+
+    .topic-number {
+        background-color: white;
+        width: 50px;
+        border-radius: 5px;
+        padding: .25rem .75rem;
+        text-align: center;
+    }
+
+    @media (min-width: 820px) {
+        .full-search-container {
+            min-width: 300px;
+        }
+    }
+
+
+    /* update-cards */
     .update-container {
         border: 1px solid rgb(6, 68, 103);
         box-shadow: 10px 10px 5px grey;
@@ -522,6 +615,11 @@ p, .comments-txt {
         display: flex;
     }
 
+    .all-updates-card-body:hover {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
     .update-picture-container{
         margin: 0 20px 20px 20px;
         display: flex;
@@ -537,51 +635,37 @@ p, .comments-txt {
         text-align: justify;
     }
 
-    .not-found-img {
-        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/home_background_img_small.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 50vh;
-    }
-
-    /* .topic-filter-container {
-        border: 1px solid white;
+    .topic-tag {
+        position: absolute;
+        right: 2px;
+        padding: 5px;
         background-color: rgb(6, 68, 103);
-        box-shadow: 10px 10px 5px grey;
+        border-radius: 5px;
         color: white;
-        border-radius: 5%;
+    }
+
+    .topic-not-found-img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #cacaca;
+        background: rgb(6,68,103);
+        background: linear-gradient(350deg, rgba(6,68,103,1) 24%, rgba(202,202,202,1) 63%, rgba(157,171,179,1) 90%, rgba(255,255,255,1) 100%);
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid #064467;
+        box-shadow: 20px 20px 10px grey;
         margin: 5px 15px;
-        padding: 2%;
-        height: 100%;
+
     }
 
-    .topic-filter-container a h3 {
-        margin-left: 20px;
-    }
-
-    .topic-filter-container a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .topic-filter-container .btn {
-        width: 120px;
-        background-color: white;
-        color: rgb(6, 68, 103);
-        font-weight: 700;
-    }
-
-    @media (max-width: 992px) {
-        .topic-filter-container {
-            width: 90vw;
-            margin: 20px 5vw;
-        }
+    .topic-not-found-img {
+        width: 50%;
+        border-radius: 50%;
+        border: 3px solid rgb(6, 68, 103);
         
-        .update-container {
-            width: 90vw;
-            margin: 10px 5vw;
-        }
-    } */
+    }
 
 
     /* PAGINATION */
