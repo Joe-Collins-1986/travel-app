@@ -1,19 +1,13 @@
-{% extends "home/base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
+<div class="error-page-container">
+    <div class="error-msg error-page-font-color">
+        <h1>Ohh no!</h1>
+        <h3>We seem to be experiencing server issues.</h3>
+        <h3 class="mb-3">Please, try again later.</h3>
 
-<style>
-
-    body {
-        background-color: white;
-    }
-</style>
-
-<div class="delete-form-container">
-    <div class="delete-form">
-        <h1>Sorry!</h1>
-        <h2>We seem to be having issues withour server right now. Please try again later.</h2>
-        <a class="btn btn-secondary" href="{% url 'admin-update-detail' comment.site_update.id %}">Go Back</a>
+        <a class="btn error-page-button" href="{% url 'travel-home' %}">Return Home</a>
     </div>
 </div>
 {% endblock content %}

@@ -827,8 +827,8 @@ p, .comments-txt {
 
 
 
-    /***** UPDATE COMMENTS FORM AND DELETE COMMENT CONFORMATION *****/
-    .comment-form-container, .delete-form-container {
+    /***** UPDATE COMMENTS FORM, DELETE COMMENT CONFORMATION & ERROR PAGES *****/
+    .comment-form-container, .delete-form-container, .error-page-container {
         margin: 50px 10px 120px 10px;
 
         display: flex;
@@ -837,7 +837,7 @@ p, .comments-txt {
 
     }
 
-    .comment-form, .delete-form {
+    .comment-form, .delete-form, .error-msg {
         width: 50%;
         border: 1px solid rgb(6, 68, 103);
         padding: 15px;
@@ -845,15 +845,25 @@ p, .comments-txt {
         background-color: #e9e4e4;
     }
 
-    .comment-form button {
+    .comment-form button, .error-page-button {
         width: 180px;
         background-color: rgb(6, 68, 103);
         color: white;
         font-weight: 700;
     }
 
+    .error-page-button:hover {
+        background-color: rgb(13, 92, 138);
+        color: white;
+        font-weight: 700;
+    }
+
+    .error-page-font-color {
+        color: rgb(11, 90, 136);
+    }
+
     @media (max-width: 767px) {
-        .comment-form, .delete-form {
+        .comment-form, .delete-form, .error-msg {
             width: 100%;
             }
     }

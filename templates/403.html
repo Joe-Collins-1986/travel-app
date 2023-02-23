@@ -1,7 +1,13 @@
-<h1>403</h1>
-<h1>403</h1>
-<h1>403</h1>
-<h1>403</h1>
-<h1>403</h1>
-<h1>403</h1>
-<h1>403</h1>
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="error-page-container">
+    <div class="error-msg error-page-font-color">
+        <h1>Ohh no!</h1>
+        <h3 class="mb-3">You do not have the appropriate permissions to access this page.</h3>
+
+        <a class="btn error-page-button" href="{% url 'travel-home' %}">Return Home</a>
+    </div>
+</div>
+{% endblock content %}

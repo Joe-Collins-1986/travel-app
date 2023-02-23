@@ -1,8 +1,13 @@
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
-<h1>400</h1>
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="error-page-container">
+    <div class="error-msg error-page-font-color">
+        <h1>Ohh no!</h1>
+        <h3 class="mb-3">We have experieced an error attempting to process your request.</h3>
+
+        <a class="btn error-page-button" href="{% url 'travel-home' %}">Return Home</a>
+    </div>
+</div>
+{% endblock content %}
