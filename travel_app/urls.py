@@ -23,3 +23,8 @@ urlpatterns = [
     path('updates/', include("site_updates.urls")),
     path('diary/', include("diary.urls")),
 ]
+
+handler404 = "travel_app.views.page_not_found_view"
+handler500 = "travel_app.views.my_custom_error_view"
+handler403 = 'travel_app.views.error_403'
+handler400 = "travel_app.views.my_custom_bad_request_view"
