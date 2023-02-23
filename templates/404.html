@@ -6,3 +6,24 @@
 <h1>404</h1>
 <h1>404</h1>
 <h1>404</h1>
+
+{% extends "home/base.html" %}
+{% block content %}
+
+
+<style>
+
+    body {
+        background-color: white;
+    }
+</style>
+
+<div class="delete-form-container">
+    <div class="delete-form">
+        <h1>Ohh Dear</h1>
+        <h2>Sorry we couldn't find your page!</h2>
+
+        <a class="btn btn-secondary" href="{% url 'admin-update-detail' comment.site_update.id %}">Go Back</a>
+    </div>
+</div>
+{% endblock content %}
