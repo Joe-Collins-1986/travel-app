@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -61,7 +62,9 @@ class AdminUpdatesListView(View):
         )
 
 
-class AdminDetailUpdateView(View):
+class AdminDetailUpdateView(LoginRequiredMixin, View):
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
 
     def get(self, request, pk):
         update_objects = Update.objects.all()

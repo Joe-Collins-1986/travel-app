@@ -8,133 +8,6 @@
     body {
         background-color: rgb(202, 202, 202);
     }
-
-    .top-div {
-        margin-top: 35px;
-        padding-bottom: 20px;
-        background-color: rgb(6, 68, 103);
-    }
-
-    .test-border {
-        border: 2px solid rgb(255, 0, 0);
-    }
-
-    .update-card-comment-page {
-        margin: 0 20px;
-        height: 100%;
-        width: calc(100% - 40px);
-        color: white;
-        overflow-y: auto;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .update-card-title {
-        text-align: center;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .update-card-img-section {
-        max-height: 200px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .update-card-posted-date {
-        margin-top: auto;
-    }
-
-    .update-card-comment-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .update-card-comment-btn .btn {
-        width: 150px;
-        background-color: white;
-        color: rgb(6, 68, 103);
-        font-weight: 700;
-        margin: 10px;
-    }
-
-
-    .comment-form-section, .comment-card {
-        margin: 10px;
-        padding: 15px;
-        border: 1px solid rgb(6, 68, 103);
-        box-shadow: 10px 10px 10px rgb(42, 41, 41);
-        color: rgb(6, 68, 103);
-    }
-
-    .comment-form-section {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 5% 0;
-    }
-
-    .comment-form-section .btn {
-        width: 180px;
-        background-color: rgb(6, 68, 103);
-        color: white;
-        font-weight: 700;
-    }
-
-    .comment-card {
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255);
-    }
-
-    .comment-card h5 {
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    .update-detail-img {
-        max-height: 200px;
-        max-width: 90%;
-        border: 1px solid black;
-        border-radius: 5px;
-    }
-
-    .comments-section {
-        padding-bottom: 80px;
-        background-color: rgb(202, 202, 202);
-        color: rgb(6, 68, 103);
-    }
-
-    .butons-container-back-add {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .admin-response {
-        background-color: rgb(240, 239, 186);
-        padding: 20px;
-        margin: 10px;
-        border: 1px solid black;
-        border-radius: 10px;
-    }
-
-    .add-delete-btn-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .add-delete-btn-container .btn {
-        width: 120px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-
 </style>
 
 
@@ -203,6 +76,7 @@
             {% if comment.updated_on %}
                 <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
             {% endif %}
+            <div><small><strong>Author:</strong> {{ comment.author }}</small></div>
 
             <hr>
             <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>

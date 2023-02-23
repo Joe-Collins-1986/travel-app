@@ -368,7 +368,7 @@ p, .comments-txt {
     }
     
     
-    /**** SPECIFIC TO SITE UPDATE INSERT ****/
+    /**** SITE UPDATE INSERT ****/
     .site-updates-section {
         background-color: #e9e4e4;
         color: rgb(6, 68, 103); 
@@ -649,7 +649,7 @@ p, .comments-txt {
         justify-content: center;
         align-items: center;
 
-        background-color: #cacaca;
+        background-color: rgb(202, 202, 202);
         background: rgb(6,68,103);
         background: linear-gradient(350deg, rgba(6,68,103,1) 24%, rgba(202,202,202,1) 63%, rgba(157,171,179,1) 90%, rgba(255,255,255,1) 100%);
         padding: 20px;
@@ -692,5 +692,178 @@ p, .comments-txt {
 
     .buffer-site-updates {
         margin-bottom: 100px;
+    }
+
+    /***** ADMIN SPECIFIC UPDATE & COMMENTS PAGE *****/
+
+    .top-div {
+        margin-top: 35px;
+        padding-bottom: 20px;
+        background-color: rgb(6, 68, 103);
+    }
+
+    .update-card-comment-page {
+        margin: 0 20px;
+        height: 100%;
+        width: calc(100% - 40px);
+        color: white;
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .update-card-title {
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-card-img-section {
+        max-height: 200px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-card-posted-date {
+        margin-top: auto;
+    }
+
+    .update-card-comment-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .update-card-comment-btn .btn {
+        width: 150px;
+        background-color: white;
+        color: rgb(6, 68, 103);
+        font-weight: 700;
+        margin: 10px;
+    }
+
+
+    .comment-form-section, .comment-card {
+        margin: 10px;
+        padding: 15px;
+        border: 1px solid rgb(6, 68, 103);
+        box-shadow: 10px 10px 10px rgb(42, 41, 41);
+        color: rgb(6, 68, 103);
+    }
+
+    .comment-form-section {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5% 0;
+    }
+
+    .comment-form-section .btn {
+        width: 180px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+    }
+
+    .comment-card {
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255);
+        width: 50%;
+    }
+
+    @media (max-width: 750px) {
+        .comment-card {
+            width: 85%;
+        }
+    }
+
+    .comment-card h5 {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .update-detail-img {
+        max-height: 200px;
+        max-width: 90%;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .comments-section {
+        padding-bottom: 80px;
+        background-color: rgb(202, 202, 202);
+        color: rgb(6, 68, 103);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .butons-container-back-add {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .admin-response {
+        background-color: rgb(240, 239, 186);
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .add-delete-btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .add-delete-btn-container .btn {
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 400px) {
+        .add-delete-btn-container .btn {
+            margin: 5px;
+        }
+    }
+
+
+
+    /***** UPDATE COMMENTS FORM AND DELETE COMMENT CONFORMATION *****/
+    .comment-form-container, .delete-form-container {
+        margin: 50px 10px 120px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .comment-form, .delete-form {
+        width: 50%;
+        border: 1px solid rgb(6, 68, 103);
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #e9e4e4;
+    }
+
+    @media (max-width: 767px) {
+        .comment-form, .delete-form {
+            width: 100%;
+            }
+    }
+
+    .comment-form .btn {
+        width: 180px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
     }
 

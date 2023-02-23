@@ -2,17 +2,30 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <div class="content-section">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Update Comment</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Submit Update</button>
-            </div>
-        </form>
+<style>
+
+    body {
+        background-color: white;
+    }
+</style>
+
+<div class="comment-form-container">
+    <div class="comment-form">
+        <h1>Comment</h1>
+    
+        <div class="content-section">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn" type="submit">Submit Comment</button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
 
 {% endblock content %}
