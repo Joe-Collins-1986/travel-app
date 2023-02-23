@@ -12,6 +12,8 @@
         <div class="form-layout register-form-width register-form-margin">
             <form method="POST">
                 {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.GET.redirect_to }}" />
+
                 <fieldset class="form-group">
                     <legend class="border-bottom mb-2 p-2 text-center">To access this site feature you must first Login</legend>
                     {{ form|crispy }}
