@@ -635,15 +635,6 @@ p, .comments-txt {
         text-align: justify;
     }
 
-    .topic-tag {
-        position: absolute;
-        right: 2px;
-        padding: 5px;
-        background-color: rgb(6, 68, 103);
-        border-radius: 5px;
-        color: white;
-    }
-
     .topic-not-found-img-container {
         display: flex;
         justify-content: center;
@@ -854,16 +845,16 @@ p, .comments-txt {
         background-color: #e9e4e4;
     }
 
-    @media (max-width: 767px) {
-        .comment-form, .delete-form {
-            width: 100%;
-            }
-    }
-
-    .comment-form .btn {
+    .comment-form button {
         width: 180px;
         background-color: rgb(6, 68, 103);
         color: white;
         font-weight: 700;
+    }
+
+    @media (max-width: 767px) {
+        .comment-form, .delete-form {
+            width: 100%;
+            }
     }
 

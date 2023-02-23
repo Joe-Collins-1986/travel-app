@@ -71,7 +71,7 @@
                     <div class="bg-light update-card mb-4 mx-3">
                         <a href="{% url 'admin-update-detail' update.id %}">
                             <div class="p-4 all-updates-card-body">
-                                <h4 class="text-center">{{ update.title }}</h4>
+                                <h4 class="text-center"><strong>{{ update.topic }}:</strong> {{ update.title }}</h4>
                                 <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
                                 <hr>
                                 <p class="text-center">{{ update.content }}</p>
@@ -95,10 +95,6 @@
                                     <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
                                 </a>
                             {% endif %}
-
-                            <div class="topic-tag">
-                                {{ update.topic }}
-                            </div>
                         </div>
                     </div>
                     {% endfor %}
