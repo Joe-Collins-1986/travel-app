@@ -72,4 +72,6 @@ class TestUpdateCommentModels(TestCase):
         response = self.client.post(reverse('admin-update-detail',
                                             args=[self.comment1.site_update.pk]))
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.comment1.get_absolute_url(),
+                         f'/updates/{self.comment1.site_update.pk}/')
 
