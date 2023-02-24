@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Update, UpdateComment, UpdateCatagory
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 
