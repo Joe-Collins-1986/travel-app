@@ -6,7 +6,7 @@ from django_resized import ResizedImageField
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_img = ResizedImageField(
-                                    default='media/profiles/default-profile-img.png',
+                                    default='media/profiles/default-profile-img.jpeg',
                                     upload_to='media/profiles/',
                                     size=[300, None],
                                     force_format='JPEG')
