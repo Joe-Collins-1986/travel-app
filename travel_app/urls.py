@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include("home.urls")),
     path('updates/', include("site_updates.urls")),
     path('diary/', include("diary.urls")),
+    path('profile/', include("user_profile.urls")),
 ]
 
 handler404 = "travel_app.views.page_not_found_view"

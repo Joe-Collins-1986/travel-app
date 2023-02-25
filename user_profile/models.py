@@ -11,7 +11,7 @@ class Profile(models.Model):
                                     size=[300, None],
                                     force_format='JPEG')
 
-    def __str__self(self):
+    def __str__(self):
         return f"{self.user.username} Profile"
 
 
