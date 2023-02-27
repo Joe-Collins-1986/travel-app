@@ -14,7 +14,7 @@ class Profile(models.Model):
     objectives = models.TextField(blank=True, null=True)
 
     background_img = ResizedImageField(
-                                default='media/images/profile-bg-default.jpg',
+                                default='media/profiles/background/profile-bg-default.jpg',
                                 upload_to='media/profiles/background/',
                                 size=[1920, None],
                                 force_format='JPEG')

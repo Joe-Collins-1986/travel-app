@@ -16,8 +16,8 @@
         border: 2px solid rgb(6, 68, 103);
         border-radius: 15px;
         color: rgb(6, 68, 103);
+        overflow: hidden;
         
-
         position: relative;
     }
 
@@ -35,7 +35,6 @@
         background-position: center;
         background-repeat: no-repeat; 
         background-size: cover;
-
 
         z-index: -1;
     }
@@ -98,6 +97,11 @@
         color: white;
     }
 
+    .profile-user-wish-container a {
+        color: rgb(6, 68, 103);
+        font-size: 120%;
+    }
+
     @media (max-width: 700px) {
         .profile-user-bio-container, .profile-user-wish-container {
             width: 100%;
@@ -140,14 +144,29 @@
         <div class="profile-section">
             <div class="profile-user-bio-container">
                 <h5>Travel Objectives</h5>
-                <p>Currently you have no travel objectives set.</p>
+                {% if profile.objectives %}
+                    <p>{{ profile.objectives|linebreaksbr }}</p>
+                {% else %}
+                    <p>Currently you have no travel objectives set.</p>
+                {% endif %}
             </div>
         </div>
 
         <div class="profile-section">
             <div class="profile-user-wish-container">
                 <h5>Wish List</h5>
-                <p>Currently you have no travel objectives set.</p>
+
+                {% if countries %}
+                    {% for visit in countries %}
+                        <ul>
+                        {% if visit.status == "wish_list" %}
+                            <li><a href="{% url 'country' visit.country.id %}">{{ visit.country.name }}</a></li>
+                        {% endif %}
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <p>Currently you have no travel objectives set.</p>
+                {% endif %}
             </div>
         </div>
 
