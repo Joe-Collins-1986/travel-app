@@ -13,7 +13,6 @@ from django.views.generic import (
 # Create your views here.
 class TravelHome(View):
     
-
     def get(self, request):
         updates = Update.objects.all().order_by('-published_on')[0:3]
 

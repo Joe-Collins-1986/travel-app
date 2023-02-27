@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+
+    body {
+        background-color: white;
+    }
+
+    .profile-form-container {
+        margin: 50px 10px 120px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-form {
+        width: 50%;
+        border: 1px solid rgb(6, 68, 103);
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #e9e4e4;
+        color: rgb(6, 68, 103);
+    }
+
+</style>
+
+<div class="profile-form-container">
+    <div class="profile-form">
+        <h1>Update Profile</h1>
+    
+        <div class="content-section">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn" type="submit">Submit Profile</button>
+                    <a class="btn btn-secondary" href="{% url 'profile-page' %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

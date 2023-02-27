@@ -834,7 +834,6 @@ p, .comments-txt {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     .comment-form, .delete-form, .error-msg {

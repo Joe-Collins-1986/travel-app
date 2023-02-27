@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -117,6 +116,9 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
 
 
 class CommentCreateView(LoginRequiredMixin, CreateView): # create and update will default to <app>/<model>_<form>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
@@ -128,6 +130,9 @@ class CommentCreateView(LoginRequiredMixin, CreateView): # create and update wil
 
 
 class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # default to <app>/<model>_<form>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
@@ -143,6 +148,9 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # 
 
 
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # default to a form for: <app>/<model>_<confirm_delete>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
     model = UpdateComment
     context_object_name = 'comment'
     
