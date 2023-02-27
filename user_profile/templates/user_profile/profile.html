@@ -15,14 +15,31 @@
         padding: 10px;
         border: 2px solid rgb(6, 68, 103);
         border-radius: 15px;
-        background-color: white;
         color: rgb(6, 68, 103);
+        
 
-        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/profile-bg-default.jpg');
+        position: relative;
+    }
+
+    .profile-outer-border:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: .6; 
+
+        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/{{profile.background_img}}');
         background-position: center;
         background-repeat: no-repeat; 
-        background-size: cover; 
+        background-size: cover;
+
+
+        z-index: -1;
     }
+
 
     .profile-section {
         display: flex;
