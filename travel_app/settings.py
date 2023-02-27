@@ -183,5 +183,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
-
+# Img oriantation
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = False
