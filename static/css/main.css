@@ -323,7 +323,7 @@ p, .comments-txt {
     }
     
     .home-img {
-        width: 25vw;
+        width: 100%;
         margin-bottom: 5px;
     }
     
@@ -356,14 +356,14 @@ p, .comments-txt {
             height: 40px;
         }
         .home-img {
-            width: 40vw;
+            width: 80%;
         }
     
     }
     
     @media (max-width: 767px) {
         .home-img {
-            width: 60vw;
+            width: 100%;
         }
     }
     
@@ -867,4 +867,10 @@ p, .comments-txt {
             width: 100%;
             }
     }
+
+
+    /***** USER PROFILE *****/
+    
+
+
 

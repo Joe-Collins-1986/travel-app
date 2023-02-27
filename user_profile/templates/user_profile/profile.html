@@ -2,6 +2,135 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1 class="m-5">{{ user.username }}</h1>
-    <img src="{{ profile.profile_img.url }}" alt="">
+
+<style>
+    body {
+        background-color: #e9e4e4;
+    }
+    .profile-outer-border {
+        margin-top: 60px;
+        margin-bottom: 100px;
+        margin-left: 5%;
+        width: 90%;
+        padding: 10px;
+        border: 2px solid rgb(6, 68, 103);
+        border-radius: 15px;
+        background-color: white;
+        color: rgb(6, 68, 103);
+
+        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/images/profile-bg-default.jpg');
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover; 
+    }
+
+    .profile-section {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .profile-user-info-container {
+        border-radius: 15px;
+        padding: 1rem 1rem 1rem 1rem;
+        max-width: max-content;
+        background-color: rgba(255, 255, 255, 0.9);
+
+        display: flex;
+    }
+
+    .profile-user-info-container img {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+    }
+
+    .profile-user-bio-container, .profile-user-wish-container {
+        border-radius: 15px;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 1rem 0 0 0;
+        width: 75%;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 500px) {
+
+        .profile-user-info {
+            font-size: smaller;
+        }
+
+        .profile-user-info-container {
+            min-width: 100%;
+        }
+
+        .profile-user-info-container img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .profile-user-bio-container, .profile-user-wish-container {
+            width: 100%;
+    }
+    
+    }
+
+    .profile-user-info {
+        margin-left: 10px;
+    }
+
+    .update-profile-button {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .update-profile-button a {
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .update-profile-button a:hover {
+        background-color: #e9e4e4;
+        color: rgb(6, 68, 103);
+    }
+
+    .update-profile-button a:focus {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+</style>
+
+
+    <div class="profile-outer-border">
+        <div class="profile-section">
+            <div class="profile-user-info-container">
+                <img src="{{ profile.profile_img.url }}" alt="">
+                <div class="profile-user-info">
+                    <h5>{{ user.username }}</h5>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="update-profile-button">
+                <a class="btn" href="">Update</a>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-user-bio-container">
+                <h5>Travel Objectives</h5>
+                <p>Currently you have no travel objectives set.</p>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-user-wish-container">
+                <h5>Wish List</h5>
+                <p>Currently you have no travel objectives set.</p>
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}
