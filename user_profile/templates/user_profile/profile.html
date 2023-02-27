@@ -43,6 +43,7 @@
         border-radius: 50%;
         height: 100px;
         width: 100px;
+        border: 0.5px solid rgb(6, 68, 103);
     }
 
     .profile-user-bio-container, .profile-user-wish-container {
@@ -51,27 +52,6 @@
         margin: 1rem 0 0 0;
         width: 75%;
         background-color: rgba(255, 255, 255, 0.9);
-    }
-
-    @media (max-width: 500px) {
-
-        .profile-user-info {
-            font-size: smaller;
-        }
-
-        .profile-user-info-container {
-            min-width: 100%;
-        }
-
-        .profile-user-info-container img {
-            height: 50px;
-            width: 50px;
-        }
-
-        .profile-user-bio-container, .profile-user-wish-container {
-            width: 100%;
-    }
-    
     }
 
     .profile-user-info {
@@ -85,6 +65,7 @@
 
     .update-profile-button a {
         background-color: rgb(6, 68, 103);
+        border: 1px solid white;
         color: white;
         font-weight: 700;
         margin-bottom: 1rem;
@@ -98,6 +79,28 @@
     .update-profile-button a:focus {
         background-color: rgb(6, 68, 103);
         color: white;
+    }
+
+    @media (max-width: 700px) {
+        .profile-user-bio-container, .profile-user-wish-container {
+            width: 100%;
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        .profile-user-info {
+            font-size: smaller;
+        }
+
+        .profile-user-info-container {
+            min-width: 100%;
+        }
+
+        .profile-user-info-container img {
+            height: 50px;
+            width: 50px;
+        }
     }
 
 </style>
