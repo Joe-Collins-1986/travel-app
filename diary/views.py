@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.views.generic import (
     View,
 )
-from .models import Country, Visit
+from .models import Country, Visit, Diary
 from .forms import VisitForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -115,3 +115,22 @@ class CountryView(LoginRequiredMixin, View):
                 visit_form = VisitForm()
 
         return HttpResponseRedirect(reverse('country', args=[pk]))
+
+
+class DiaryAllPostsView(LoginRequiredMixin, View):
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+
+    def get(self, request, pk):
+        country = get_object_or_404(Country, pk=pk)
+        diary_posts = Diary.objects.filter(country=country, author=request.user)
+
+        return render(
+            request,
+            "diary/diary-posts.html",
+            {
+                "diary_posts": diary_posts,
+            }
+        )
+
+
