@@ -15,9 +15,14 @@ a {
     font-family: 'Lora', serif;
 }
 
-p, .comments-txt {
+p, .comments-txt, .form-label {
     font-family: 'Merriweather', serif;
 }
+
+.form-label {
+    font-weight: 700;
+}
+
 
 #social-menu-header {
     font-size: 140%;
