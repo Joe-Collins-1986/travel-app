@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'home',
     'user_profile',
     'site_updates',
+    'taggit',
 
 ]
 
