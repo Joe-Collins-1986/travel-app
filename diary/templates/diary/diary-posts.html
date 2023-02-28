@@ -4,10 +4,16 @@
 <div class="mt-5">
     {% for post in diary_posts %}
         <h1>{{ post.content }}</h1>
-        <h1>{{ post.country.pk }}</h1>
-        <h1>{{ pk }}</h1>
 
-        <h1>{{ post.country.capital }}</h1>
+
+        <ul>
+            {% for tag in post.tags.all %}
+                <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+
+
+
 
     {% endfor %}
 

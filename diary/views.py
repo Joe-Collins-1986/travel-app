@@ -7,6 +7,7 @@ from django.views.generic import (
 from .models import Country, Visit, Diary
 from .forms import VisitForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from taggit.models import Tag
 
 
 class MapView(LoginRequiredMixin, View):
@@ -124,6 +125,7 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
     def get(self, request, pk):
         country = get_object_or_404(Country, pk=pk)
         diary_posts = Diary.objects.filter(country=country, author=request.user)
+
 
         return render(
             request,
