@@ -8,6 +8,8 @@ from .models import Country, Visit, Diary
 from .forms import VisitForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from taggit.models import Tag
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 
 
 class MapView(LoginRequiredMixin, View):
@@ -126,12 +128,37 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
         country = get_object_or_404(Country, pk=pk)
         diary_posts = Diary.objects.filter(country=country, author=request.user)
 
+        if request.GET.get('q') is not None:
+            q = request.GET.get('q')
+
+        else:
+            q = ""
+
+        diary_posts = diary_posts.filter(
+            Q(content__icontains=q)|
+            Q(tags__name__icontains=q)
+            )
+
+        diary_posts = diary_posts.distinct()
+
+        page = request.GET.get('page', 1)
+        paginator = Paginator(diary_posts, 2)
+
+        try:
+            diary_posts = paginator.page(page)
+        except PageNotAnInteger:
+            diary_posts = paginator.page(1)
+        except EmptyPage:
+            diary_posts = paginator.page(paginator.num_pages)
+
 
         return render(
             request,
             "diary/diary-posts.html",
             {
                 "diary_posts": diary_posts,
+                "country": country,
+                "search_query": q
             }
         )
 

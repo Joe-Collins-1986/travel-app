@@ -33,12 +33,12 @@ class Visit(models.Model):
 
 
 EXPERIENCE_CHOICES = (
-    ('not_rated','NOT RATED'),
-    ('amazing', 'AMAZING'),
-    ('good','GOOD'),
-    ('meh','MEH'),
-    ('bad','BAD'),
-    ('awful','AWFUL'),
+    ('Not Rated','Not Rated'),
+    ('Amazing', 'Amazing'),
+    ('Good','Good'),
+    ('Meh','Meh'),
+    ('Bad','Bad'),
+    ('Awful','Awful'),
 )
 
 
@@ -59,7 +59,7 @@ class Diary(models.Model):
     exp_rating = models.CharField(
                                     max_length=15,
                                     choices=EXPERIENCE_CHOICES,
-                                    default='not_rated')
+                                    default='Not Rated')
     tags = TaggableManager()
 
     def __str__(self):
