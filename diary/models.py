@@ -33,12 +33,12 @@ class Visit(models.Model):
 
 
 EXPERIENCE_CHOICES = (
-    ('Not Rated','Not Rated'),
-    ('Amazing', 'Amazing'),
-    ('Good','Good'),
-    ('Meh','Meh'),
-    ('Bad','Bad'),
-    ('Awful','Awful'),
+    ('Not Rated', 'Not Rated'),
+    ('fa-face-grin-hearts', 'Amazing'),
+    ('fa-face-smile', 'Good'),
+    ('fa-face-meh', 'Meh'),
+    ('fa-face-frown', 'Bad'),
+    ('fa-face-angry', 'Awful'),
 )
 
 
@@ -57,10 +57,13 @@ class Diary(models.Model):
                                         size=[600, None],
                                         force_format='JPEG')
     exp_rating = models.CharField(
-                                    max_length=15,
+                                    max_length=25,
                                     choices=EXPERIENCE_CHOICES,
                                     default='Not Rated')
     tags = TaggableManager(blank=True)
+
+    class Meta:
+        ordering = ('-created_on',)
 
     def __str__(self):
         return f'{self.created_on} diary post'
