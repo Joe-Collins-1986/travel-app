@@ -9,16 +9,16 @@
 
     .tag-outer-container {
         width: 90%;
-        margin-top: 80px;
+        margin-top: 25px;
         margin-left: calc(5% - 2px);
-        border: 2px solid rgb(21, 91, 132);
+        border: 2px solid rgb(6, 68, 103);
         overflow: hidden;
         border-radius: 10px;
         background-color: white;
     }
 
     .tag-header-section {
-        background-color: rgb(21, 91, 132);
+        background-color: rgb(6, 68, 103);
         display: flex;
         align-self: center;
         justify-content: center;
@@ -87,7 +87,51 @@
             margin-left: auto;
         }
     }
+
+
+
+
+    /* ..... */
+    .diary-header {
+        background-color: rgb(6, 68, 103);
+        padding: 1rem;
+        margin-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .search-links-container {
+        display: flex;
+    }
+
+    .tags-link {
+        margin-left: 5%; /* changed */
+        padding: 0.5rem;
+        background-color: rgb(202, 202, 202);
+        color: rgb(21, 91, 132);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .tags-link:hover {
+        background-color: rgb(21, 91, 132);
+        background-color: white;
+        text-decoration: none;
+    }
+
+    .tags-link:focus {
+        background-color: rgb(202, 202, 202);
+        color: rgb(21, 91, 132);
+        text-decoration: none;
+    }
+
 </style>
+
+<div class="diary-header">
+    <div class="search-links-container">
+        <a class="tags-link mt-2" href="{% url 'diary-all-posts' country.pk %}">Back To Diary</a>
+    </div>
+</div>
 
 <div class="tag-outer-container">
     <div class="tag-header-section">
