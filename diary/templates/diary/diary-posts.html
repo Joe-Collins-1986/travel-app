@@ -70,6 +70,8 @@
         </form>
     </div>
 
+    <a href="{% url 'diary-tags' country.pk %}">Search Tags</a>
+
     {% for post in diary_posts %}
         <div class="diary-summary-post">
             <div class="diary-summary-date-container">
