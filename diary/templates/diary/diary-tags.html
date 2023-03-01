@@ -3,6 +3,52 @@
 
 <div class="mt-5">
     TESTING TAGS PAGE
-</div>
+
+    {% if tags %}
+        {% for tag in tags %}
+                <div>{{tag.tags__name}} {{tag.count}}</div>
+        {% endfor %}
+    {% else %}
+        <h1>No tags</h1>
+    {% endif %}
+</div> 
+
+{% if tags.has_other_pages %}
+    <nav class="buffer-site-updates">
+        <ul class="pagination justify-content-center mt-3">
+            {% if tags.has_previous %}
+                <li>
+                    <a class="page-link" href="?page={{ tags.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">&laquo;</span>
+                </li>
+            {% endif %}
+
+            {% for tag in tags.paginator.page_range %}
+                {% if tags.number == tag %}
+                    <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ tag }}</strong></a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ tag }}">{{ tag }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if tags.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ tags.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">&raquo;</span>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
 
 {% endblock %}
