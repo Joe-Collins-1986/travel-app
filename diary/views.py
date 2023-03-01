@@ -145,7 +145,7 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
         # tags_all = diary_posts.values_list('tags__name', flat=True).distinct()
 
         page = request.GET.get('page', 1)
-        paginator = Paginator(diary_posts, 3)
+        paginator = Paginator(diary_posts, 2)
 
         try:
             diary_posts = paginator.page(page)
