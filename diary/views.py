@@ -141,6 +141,8 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
 
         diary_posts = diary_posts.distinct()
 
+        tags_all = diary_posts.values_list('tags__name', flat=True).distinct()
+
         page = request.GET.get('page', 1)
         paginator = Paginator(diary_posts, 2)
 
@@ -158,8 +160,41 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
             {
                 "diary_posts": diary_posts,
                 "country": country,
-                "search_query": q
+                "search_query": q,
+                "tags_all": tags_all,
             }
         )
+
+
+class DiaryTagsView(LoginRequiredMixin, View):
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+
+    def get(self, request, pk):
+        country = get_object_or_404(Country, pk=pk)
+        diary_posts = Diary.objects.filter(country=country, author=request.user)
+
+        tags_all = diary_posts.values_list('tags__name', flat=True).distinct()
+
+        page = request.GET.get('page', 1)
+        paginator = Paginator(diary_posts, 2)
+
+        try:
+            diary_posts = paginator.page(page)
+        except PageNotAnInteger:
+            diary_posts = paginator.page(1)
+        except EmptyPage:
+            diary_posts = paginator.page(paginator.num_pages)
+
+
+        return render(
+            request,
+            "diary/diary-tags.html",
+            {
+                "country": country,
+                "tags_all": tags_all,
+            }
+        )
+
 
 

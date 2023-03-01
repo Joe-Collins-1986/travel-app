@@ -43,14 +43,21 @@
     }
 
     .diary-summary-body-container li {
-        text-decoration: none;
         list-style: none;
         padding: 0.25rem 0.5rem;
         border-radius: 5px;
         background-color: rgb(6, 68, 103);
-        color: white;
         margin: 0.5rem 1rem 0.5rem;
+    }
 
+    .diary-summary-body-container a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .search-bar {
+        padding-left: 2rem;
+        margin-top: 1rem;
     }
 
 </style>
@@ -58,12 +65,10 @@
 <div class="diary-outer-border">
 
     <div class="col-9 search-container">
-        <form class="m-2" method="GET" action="{% url 'diary-all-posts' country.pk %}">
+        <form class="search-bar" method="GET" action="{% url 'diary-all-posts' country.pk %}">
             <input type="text" name="q" placeholder="Search Posts" />
         </form>
     </div>
-
-
 
     {% for post in diary_posts %}
         <div class="diary-summary-post">
@@ -83,7 +88,6 @@
                         <li><a href="?q={{tag}}">{{ tag }}</a></li>
                     {% endfor %}
                 </ul>
-
             </div>
         </div>
     {% endfor %}
@@ -93,7 +97,7 @@
                 <ul class="pagination justify-content-center mt-3">
                     {% if diary_posts.has_previous %}
                         <li>
-                            <a class="page-link" href="?page={{ updates.previous_page_number }}&q={{search_query}}" aria-label="Previous">
+                            <a class="page-link" href="?page={{ diary_posts.previous_page_number }}&q={{search_query}}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -113,7 +117,7 @@
 
                     {% if diary_posts.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}&q={{search_query}}" aria-label="Next">
+                            <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>

@@ -60,7 +60,7 @@ class Diary(models.Model):
                                     max_length=15,
                                     choices=EXPERIENCE_CHOICES,
                                     default='Not Rated')
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     def __str__(self):
         return f'{self.created_on} diary post'
