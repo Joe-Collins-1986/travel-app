@@ -137,12 +137,11 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
 
         diary_posts = diary_posts.filter(
             Q(content__icontains=q)|
-            Q(tags__name__icontains=q)
+            Q(tags__name__icontains=q)|
+            Q(exp_rating__icontains=q)
             )
 
         diary_posts = diary_posts.distinct()
-
-        # tags_all = diary_posts.values_list('tags__name', flat=True).distinct()
 
         page = request.GET.get('page', 1)
         paginator = Paginator(diary_posts, 2)
@@ -162,7 +161,6 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
                 "diary_posts": diary_posts,
                 "country": country,
                 "search_query": q,
-                # "tags_all": tags_all,
             }
         )
 

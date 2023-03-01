@@ -6,8 +6,18 @@
         background-color: #e9e4e4;
     }
 
-    .diary-outer-border {
+    .diary-header {
+        background-color: rgb(6, 68, 103);
+        padding: 1rem;
         margin-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .search-links-container {
+        display: flex;
+    }
+
+    .diary-outer-border {
         margin-bottom: 100px;
         width: 100%;
         padding: 1rem;
@@ -85,21 +95,22 @@
     .tags-link {
         margin-left: 2rem;
         padding: 0.5rem;
-        background-color: rgb(6, 68, 103);
-        color: white;
+        background-color: rgb(202, 202, 202);
+        color: rgb(21, 91, 132);
         border-radius: 5px;
         text-decoration: none;
+        font-weight: 700;
     }
 
     .tags-link:hover {
         background-color: rgb(21, 91, 132);
-        color: white;
+        background-color: white;
         text-decoration: none;
     }
 
     .tags-link:focus {
-        background-color: rgb(6, 68, 103);
-        color: white;
+        background-color: rgb(202, 202, 202);
+        color: rgb(21, 91, 132);
         text-decoration: none;
     }
 
@@ -123,28 +134,54 @@
     .diary-img {
         max-width: 100%;
         max-height: 400px;
-
-
     }
+
+    .align {
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .align i {
+        margin-left: 20px;
+        font-size: 150%;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 0.25rem;
+        color: white;
+    }
+
+    .align i:hover {
+        border: 2px solid rgb(6, 68, 103);
+        color: rgb(6, 68, 103);
+        background-color: white;
+    }
+
 
 </style>
 
-<div class="diary-outer-border">
-
-    <div class="col-9 search-container">
+<div class="diary-header">
+    <div class="search-container align">
         <form class="search-bar" method="GET" action="{% url 'diary-all-posts' country.pk %}">
             <input type="text" name="q" placeholder="Search Posts" />
         </form>
+        <a href="{% url 'diary-all-posts' country.pk %}"><i class="fa-solid fa-arrows-rotate"></i></a>
     </div>
+    <div class="search-links-container">
+        <a class="tags-link" href="{% url 'country' country.pk %}">Country Info</a>
+        <a class="tags-link" href="{% url 'diary-tags' country.pk %}">Search Tags</a>
+    </div>
+</div>
 
-    <a class="tags-link" href="{% url 'diary-tags' country.pk %}">Search Tags</a>
+<div class="diary-outer-border">
 
     <div class="diary-post-container">
         {% for post in diary_posts %}
             <div class="diary-summary-post">
                 <div class="diary-summary-date-container">
                     <h3>{{ post.created_on|date:"dS M Y" }}</h3>
-                    <i class="ms-auto rating-emoji fa-regular {{ post.exp_rating }}"></i>
+                    <a class="ms-auto" href="?q={{post.exp_rating}}"><i class="rating-emoji fa-regular {{ post.exp_rating }}"></i></a>
+                    <!-- <i class="ms-auto rating-emoji fa-regular {{ post.exp_rating }}"></i> -->
                 </div>
                 <div class="diary-summary-body-container">
                     {% if post.content_image %}
