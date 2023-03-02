@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from PIL import Image
 from taggit.managers import TaggableManager
 from django_resized import ResizedImageField
@@ -67,3 +68,6 @@ class Diary(models.Model):
 
     def __str__(self):
         return f'{self.created_on} diary post'
+
+    def get_absolute_url(self):
+        return reverse('diary-all-posts', args=[str(self.country.id)])

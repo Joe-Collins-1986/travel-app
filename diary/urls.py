@@ -4,6 +4,7 @@ from .views import (
     CountryView,
     DiaryAllPostsView,
     DiaryTagsView,
+    DiaryCreateView,
 )
 
 urlpatterns = [
@@ -12,4 +13,6 @@ urlpatterns = [
 
     path('diary_all_posts/<int:pk>', DiaryAllPostsView.as_view(), name="diary-all-posts"),
     path('diary_tags/<int:pk>', DiaryTagsView.as_view(), name="diary-tags"),
+
+    path('diary/<int:pk>/new/', DiaryCreateView.as_view(), name="diary-create"),
 ]

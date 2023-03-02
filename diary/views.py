@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+
 from django.views.generic import (
     View,
+    CreateView,
 )
+
 from .models import Country, Visit, Diary
 from .forms import VisitForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -198,4 +201,23 @@ class DiaryTagsView(LoginRequiredMixin, View):
         )
 
 
+class DiaryCreateView(LoginRequiredMixin, CreateView): # create and update will default to <app>/<model>_<form>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
+    model = Diary
+    fields = ['content', 'content_image', 'tags', 'exp_rating']
 
+    def form_valid(self, form):
+        country = get_object_or_404(Country, pk=self.kwargs['pk'])
+        form.instance.author = self.request.user
+        form.instance.country = country
+
+        response = super().form_valid(form)
+
+        tags = form.instance.tags.all()
+        if not tags.exists():
+            no_tags = Tag.objects.get_or_create(name='No Tags')[0]
+            form.instance.tags.add(no_tags)
+
+        return response
