@@ -181,6 +181,7 @@
             <div class="diary-summary-post">
                 <div class="diary-summary-date-container">
                     <h3>{{ post.created_on|date:"dS M Y" }}</h3>
+                    <h1>{{post.pk}}</h1>
                     <a class="ms-auto" href="?q={{post.exp_rating}}"><i class="rating-emoji fa-regular {{ post.exp_rating }}"></i></a>
                 </div>
                 <div class="diary-summary-body-container">

@@ -5,11 +5,15 @@ from django.contrib.auth.models import User
 from django.views.generic import (
     View,
     CreateView,
+    UpdateView,
 )
 
 from .models import Country, Visit, Diary
 from .forms import VisitForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    )
 from taggit.models import Tag
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -221,3 +225,21 @@ class DiaryCreateView(LoginRequiredMixin, CreateView): # create and update will 
             form.instance.tags.add(no_tags)
 
         return response
+
+
+class DiaryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # default to <app>/<model>_<form>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
+    model = Diary
+    fields = ['content', 'content_image', 'tags', 'exp_rating']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        diary_post = self.get_object()
+        if self.request.user == diary_post.author:
+            return True
+        return False
