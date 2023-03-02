@@ -6,6 +6,7 @@ from django.views.generic import (
     View,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 
 from .models import Country, Visit, Diary
@@ -241,5 +242,23 @@ class DiaryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # de
     def test_func(self):
         diary_post = self.get_object()
         if self.request.user == diary_post.author:
+            return True
+        return False
+
+
+class DiaryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # default to a form for: <app>/<model>_<confirm_delete>.html
+    login_url = '/login/required'
+    redirect_field_name = 'redirect_to'
+    
+    model = Diary
+    context_object_name = 'diary'
+    
+    def get_success_url(self):
+        diary = self.get_object()
+        return reverse('diary-all-posts', args=[str(diary.country.id)])
+
+    def test_func(self):
+        diary = self.get_object()
+        if self.request.user == diary.author:
             return True
         return False

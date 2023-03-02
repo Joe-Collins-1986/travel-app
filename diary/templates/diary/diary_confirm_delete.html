@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<style>
+
+    body {
+        background-color: white;
+    }
+</style>
+
+<div class="delete-form-container">
+    <div class="delete-form">
+        <h1>Delete Comment</h1>
+    
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <p>Are you sure you want to delete comment: <strong>"{{ diary }}"</strong></p>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-danger" type="submit">Yes, Delete</button>
+                    <a class="btn btn-secondary" href="{% url 'diary-all-posts' diary.country.id %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
