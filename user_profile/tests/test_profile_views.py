@@ -80,17 +80,17 @@ class TestUpdateProfilePageView(TestCase):
             username='newusername',
             email='newemail@example.com').exists())
 
-        def test_post_request_with_invalid_data(self):
-            self.client.login(username='testuser', password='testpassword')
-            data = {
-                'username': '',
-                'email': 'invalidemail',
-            }
-            response = self.client.post(self.url, data)
-            self.assertEqual(response.status_code, 200)
-            self.assertTemplateUsed(response, 'user_profile/update_profile.html')
-            self.assertFormError(response, 'u_form', 'username', 'This field is required.')
-            self.assertFormError(response, 'u_form', 'email', 'Enter a valid email address.')
+    def test_post_request_with_invalid_data(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        data = {
+            'username': '',
+            'email': 'invalidemail',
+        }
+        response = self.client.post(self.url, data)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'user_profile/update_profile.html')
+        self.assertFormError(response, 'u_form', 'username', 'This field is required.')
+        self.assertFormError(response, 'u_form', 'email', 'Enter a valid email address.')
 
 
     

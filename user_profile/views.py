@@ -58,3 +58,13 @@ class UpdateProfilePageView(LoginRequiredMixin, View):
             p_form.save()
             return redirect('profile-page')
 
+        else:
+            return render(
+                request,
+                "user_profile/update_profile.html",
+                {
+                    "u_form": u_form,
+                    "p_form": p_form,
+                }
+            )
+
