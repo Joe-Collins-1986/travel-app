@@ -248,8 +248,6 @@ class TestDiaryCreateView(TestCase):
         data = {
             'content': 'Test diary post content', 
             'exp_rating': 'Not Rated',
-            'author': self.user.pk,
-            'country': self.country1.pk
         }
         response = self.client.post(self.url, data)
         self.assertRedirects(
@@ -259,3 +257,126 @@ class TestDiaryCreateView(TestCase):
             target_status_code=200,
             fetch_redirect_response=True)
         self.assertTrue(Diary.objects.filter(content='Test diary post content').exists())
+
+
+
+class TestDiaryUpdateView(TestCase):
+    
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+                'JoeBloggs',
+                'JoeBloggs@test.com',
+                'Abc123456!')
+
+        self.user2 = User.objects.create_user(
+                'JaneBloggs',
+                'JaneBloggs@test.com',
+                'Xyz123456!')
+
+        self.country1 = Country.objects.create(
+            name='country-1',
+            code='AA',
+            capital='Capital',
+            region='Region',
+            currency='Pounds',
+            language='English',
+            about='Test content',
+            population='Sixy thousand',
+        )
+
+        self.diary = Diary.objects.create(
+            content='Test diary post content', 
+            exp_rating='Not Rated',
+            author=self.user,
+            country=self.country1
+        )
+
+        self.url = reverse('diary-update', kwargs={'pk': self.country1.pk})
+
+    def test_post_valid(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        self.url = reverse('diary-update', kwargs={'pk': self.diary.pk})
+        data = {
+            'content': 'Updated test content', 
+            'exp_rating': 'Not Rated',
+        }
+        response = self.client.post(self.url, data)
+        self.assertRedirects(
+            response,
+            reverse('diary-all-posts', args=[self.country1.pk]),
+            status_code=302,
+            target_status_code=200,
+            fetch_redirect_response=True)
+        self.assertTrue(Diary.objects.filter(
+            content='Updated test content').exists())
+
+    def test_post_not_author(self):
+        self.client.login(username='JaneBloggs', password='Xyz123456!')
+        self.url = reverse('diary-update', kwargs={'pk': self.diary.pk})
+        data = {
+            'content': 'Update test content from another login user.',
+            }
+        response = self.client.post(self.url, data)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(Diary.objects.filter(
+            content='Test diary post content').exists())
+        self.assertFalse(Diary.objects.filter(
+            content='Update test content from another login user.').exists())
+
+
+class TestDiaryDeleteView(TestCase):
+    
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+                'JoeBloggs',
+                'JoeBloggs@test.com',
+                'Abc123456!')
+
+        self.user2 = User.objects.create_user(
+                'JaneBloggs',
+                'JaneBloggs@test.com',
+                'Xyz123456!')
+
+        self.country1 = Country.objects.create(
+            name='country-1',
+            code='AA',
+            capital='Capital',
+            region='Region',
+            currency='Pounds',
+            language='English',
+            about='Test content',
+            population='Sixy thousand',
+        )
+
+        self.diary = Diary.objects.create(
+            content='Test diary post content', 
+            exp_rating='Not Rated',
+            author=self.user,
+            country=self.country1
+        )
+
+        self.url = reverse('diary-delete', kwargs={'pk': self.diary.pk})
+
+    def test_post_valid(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        self.url = reverse('diary-delete', kwargs={'pk': self.diary.pk})
+
+        response = self.client.post(self.url)
+        self.assertRedirects(
+            response,
+            reverse('diary-all-posts', args=[self.country1.pk]),
+            status_code=302,
+            target_status_code=200,
+            fetch_redirect_response=True)
+        self.assertFalse(Diary.objects.filter(
+            content='Updated test content').exists())
+
+    def test_post_not_author(self):
+        self.client.login(username='JaneBloggs', password='Xyz123456!')
+        self.url = reverse('diary-delete', kwargs={'pk': self.diary.pk})
+        response = self.client.post(self.url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(Diary.objects.filter(
+            content='Test diary post content').exists())
