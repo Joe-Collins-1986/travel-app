@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from diary.models import Country, Visit
+from diary.models import Country, Visit, Diary
 from django.contrib.auth.models import User
 import json
 
@@ -125,3 +125,137 @@ class TestCountryView(TestCase):
                                     args=[2]))
         self.assertEqual(response.status_code, 302)
 
+
+class TestDiaryAllPostsView(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            'JoeBloggs',
+            'JoeBloggs@test.com',
+            'Abc123456!')
+
+        self.country1 = Country.objects.create(
+            name='country-1',
+            code='AA',
+            capital='Capital',
+            region='Region',
+            currency='Pounds',
+            language='English',
+            about='Test content',
+            population='Sixy thousand',
+        )
+
+        self.diary = Diary.objects.create(
+            country=self.country1,
+            author=self.user,
+            content="test content"
+        )
+
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+
+        self.url = reverse('diary-all-posts', args=[self.country1.pk])
+        self.url_pagination_not_int = f'{self.url}?page=t'
+        self.url_pagination_empty_page = f'{self.url}?page=9999'
+
+    def test_diary_all_posts_list(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_with_search_query(self):
+        response = self.client.get(self.url, {"q": "test"})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "test content")
+
+    def test_get_not_int_pagination(self):
+        response = self.client.get(self.url_pagination_not_int)
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_empty_page_pagination(self):
+        response = self.client.get(self.url_pagination_empty_page)
+        self.assertEqual(response.status_code, 200)
+
+
+class DiaryTagsView(TestCase):
+
+    def setUp(self):
+
+        self.user = User.objects.create_user(
+            'JoeBloggs',
+            'JoeBloggs@test.com',
+            'Abc123456!')
+
+        self.country1 = Country.objects.create(
+            name='country-1',
+            code='AA',
+            capital='Capital',
+            region='Region',
+            currency='Pounds',
+            language='English',
+            about='Test content',
+            population='Sixy thousand',
+        )
+
+        self.diary = Diary.objects.create(
+            country=self.country1,
+            author=self.user,
+            content="test content"
+        )
+
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        self.url = reverse('diary-tags', args=[self.country1.pk])
+        self.url_pagination_not_int = f'{self.url}?page=t'
+        self.url_pagination_empty_page = f'{self.url}?page=9999'
+
+    def test_diary_tags_list(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_not_int_pagination(self):
+        response = self.client.get(self.url_pagination_not_int)
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_empty_page_pagination(self):
+        response = self.client.get(self.url_pagination_empty_page)
+        self.assertEqual(response.status_code, 200)
+
+
+class TestDiaryCreateView(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+                'JoeBloggs',
+                'JoeBloggs@test.com',
+                'Abc123456!')
+
+        self.country1 = Country.objects.create(
+            name='country-1',
+            code='AA',
+            capital='Capital',
+            region='Region',
+            currency='Pounds',
+            language='English',
+            about='Test content',
+            population='Sixy thousand',
+        )
+
+        self.url = reverse('diary-create', kwargs={'pk': self.country1.pk})
+
+    def test_post_valid(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        data = {
+            'content': 'Test diary post content', 
+            'exp_rating': 'Not Rated',
+            'author': self.user.pk,
+            'country': self.country1.pk
+        }
+        response = self.client.post(self.url, data)
+        self.assertRedirects(
+            response,
+            reverse('diary-all-posts', args=[self.country1.pk]),
+            status_code=302,
+            target_status_code=200,
+            fetch_redirect_response=True)
+        self.assertTrue(Diary.objects.filter(content='Test diary post content').exists())
