@@ -218,11 +218,18 @@ class DiaryCreateView(LoginRequiredMixin, CreateView): # create and update will 
         form.instance.author = self.request.user
         form.instance.country = country
 
+        # Convert tag names to uppercase
+        tag_names = form.cleaned_data.get('tags')
+        if tag_names:
+            for i, tag_name in enumerate(tag_names):
+                tag, created = Tag.objects.get_or_create(name=tag_name.upper())
+                tag_names[i] = tag.name
+
         response = super().form_valid(form)
 
         tags = form.instance.tags.all()
         if not tags.exists():
-            no_tags = Tag.objects.get_or_create(name='No Tags')[0]
+            no_tags = Tag.objects.get_or_create(name='NO TAGS')[0]
             form.instance.tags.add(no_tags)
 
         return response
