@@ -135,7 +135,7 @@ p, .comments-txt, .form-label {
     font-size: 140%;
 }
 .nav-item:hover {
-    color: rgb(6, 2, 254);
+    color: rgb(6, 68, 103);
     text-decoration: underline;
 }
 
@@ -350,7 +350,6 @@ p, .comments-txt, .form-label {
     .btn-site-planner:hover {
         background-color: rgb(202, 202, 202);
         color: rgb(6, 68, 103);
-        margin-top: 10px;
     }
     
     @media (max-width: 990px) {
@@ -369,6 +368,14 @@ p, .comments-txt, .form-label {
     @media (max-width: 767px) {
         .home-img {
             width: 100%;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .home-topic {
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
     }
     
@@ -421,7 +428,7 @@ p, .comments-txt, .form-label {
     }
 
     .update-card a {
-        color: rgb(6, 68, 103);
+        /* color: rgb(6, 68, 103); */
         text-decoration: none;
     }
     

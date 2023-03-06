@@ -8,9 +8,12 @@
         <header>
             <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/mountains-new.webp" class="background" alt="">
             <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/trees-cropped-mid.webp" class="foreground" alt="">
+
             <h1 class="home-title text-center">Welcome {{ user.username }}
                 <br>
                 Let your journey begin!
+                <br>
+                <i class="blink fa-solid fa-angle-down"></i>
         </header>
         <section class="content-under-home-header home-header-fade">
             <div class="row home-topic">
@@ -37,5 +40,17 @@
             {% include 'home/snippets/site-updates-insert.html' %}
         </section>
     </div>
+
+<script>
+    $('.blink').each(function() {
+    var elem = $(this);
+    elem.fadeOut(1000)
+        .fadeIn(1000)
+        .fadeOut(1000)
+        .fadeIn(1000)
+        .fadeOut(1000)
+        .fadeIn(1000)
+});
+</script>
 
 {% endblock content %}
