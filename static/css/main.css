@@ -846,6 +846,8 @@ p, .comments-txt, .form-label {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        color: rgb(6, 68, 103);
     }
 
     .comment-form, .delete-form, .error-msg {
@@ -863,7 +865,7 @@ p, .comments-txt, .form-label {
         font-weight: 700;
     }
 
-    .error-page-button:hover {
+    .comment-form button:hover, .error-page-button:hover {
         background-color: rgb(13, 92, 138);
         color: white;
         font-weight: 700;
@@ -881,6 +883,160 @@ p, .comments-txt, .form-label {
 
 
     /***** USER PROFILE *****/
+    .profile-outer-border {
+        margin-top: 60px;
+        margin-bottom: 100px;
+        margin-left: 5%;
+        width: 90%;
+        padding: 10px;
+        border: 2px solid rgb(6, 68, 103);
+        border-radius: 15px;
+        color: rgb(6, 68, 103);
+        overflow: hidden;
+        
+        position: relative;
+    }
+
+    .profile-outer-border:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: .6; 
+
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover;
+
+        z-index: -1;
+
+        /* background image is on template due to variable */
+    }
+
+
+    .profile-section {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .profile-user-info-container {
+        border-radius: 15px;
+        padding: 1rem 1rem 1rem 1rem;
+        max-width: max-content;
+        background-color: rgba(255, 255, 255, 0.9);
+
+        display: flex;
+    }
+
+    .profile-user-info-container img {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        border: 0.5px solid rgb(6, 68, 103);
+    }
+
+    .profile-user-bio-container, .profile-user-wish-container {
+        border-radius: 15px;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 1rem 0 0 0;
+        width: 75%;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .profile-user-info {
+        margin-left: 10px;
+    }
+
+    .update-profile-button {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .update-profile-button a {
+        background-color: rgb(6, 68, 103);
+        border: 1px solid white;
+        color: white;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .update-profile-button a:hover {
+        background-color: #e9e4e4;
+        color: rgb(6, 68, 103);
+        border: 1px solid rgb(6, 68, 103);
+    }
+
+    .update-profile-button a:focus {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .profile-user-wish-container a {
+        color: rgb(6, 68, 103);
+        font-size: 120%;
+    }
+
+    @media (max-width: 700px) {
+        .profile-user-bio-container, .profile-user-wish-container {
+            width: 100%;
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        .profile-user-info {
+            font-size: smaller;
+        }
+
+        .profile-user-info-container {
+            min-width: 100%;
+        }
+
+        .profile-user-info-container img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    /***** PROFILE FORM *****/
+    .profile-form-container {
+        margin: 50px 10px 120px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-form {
+        width: 50%;
+        border: 1px solid rgb(6, 68, 103);
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #e9e4e4;
+        color: rgb(6, 68, 103);
+    }
+
+    .profile-form button {
+        width: 180px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+    }
+
+    .profile-form button:hover {
+        background-color: rgb(10, 104, 158);
+        color: white;
+    }
+
+    @media (max-width: 767px) {
+        .profile-form {
+            width: 100%;
+            }
+    }
     
 
 
