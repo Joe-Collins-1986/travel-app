@@ -11,13 +11,13 @@
 
 <div class="delete-form-container">
     <div class="delete-form">
-        <h1>Delete Comment</h1>
+        <h1>Delete Post</h1>
     
         <div class="content-section">
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <p>Are you sure you want to delete comment: <strong>"{{ diary }}"</strong></p>
+                    <p>Are you sure you want to delete your diary post?</p>
                 </fieldset>
                 <div class="form-group">
                     <button class="btn btn-danger" type="submit">Yes, Delete</button>
