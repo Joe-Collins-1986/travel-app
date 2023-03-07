@@ -35,19 +35,19 @@ class AdminUpdatesListView(View):
             Q(title__icontains=q)
             )
 
+        updates = updates.distinct()
+
         topic_items = updates.count()
 
+        page = request.GET.get('page', 1)
+        paginator = Paginator(updates, 2)
 
-        if q == "":
-            page = request.GET.get('page', 1)
-            paginator = Paginator(updates, 5)
-
-            try:
-                updates = paginator.page(page)
-            except PageNotAnInteger:
-                updates = paginator.page(1)
-            except EmptyPage:
-                updates = paginator.page(paginator.num_pages)
+        try:
+            updates = paginator.page(page)
+        except PageNotAnInteger:
+            updates = paginator.page(1)
+        except EmptyPage:
+            updates = paginator.page(paginator.num_pages)
         
         return render(
             request,
@@ -57,6 +57,7 @@ class AdminUpdatesListView(View):
                 "topics": topics,
                 "topic_items": topic_items,
                 "all_published_updates": update_list_published,
+                "search_query": q,
             }
         )
 

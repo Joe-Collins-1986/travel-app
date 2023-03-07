@@ -111,7 +111,7 @@
                 <ul class="pagination justify-content-center mt-3">
                     {% if updates.has_previous %}
                         <li>
-                            <a class="page-link" href="?page={{ updates.previous_page_number }}" aria-label="Previous">
+                            <a class="page-link" href="?page={{ updates.previous_page_number }}&q={{search_query}}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -125,13 +125,13 @@
                     {% if updates.number == update %}
                         <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="?page={{ update }}">{{ update }}</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ update }}&q={{search_query}}">{{ update }}</a></li>
                     {% endif %}
                     {% endfor %}
 
                     {% if updates.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ updates.next_page_number }}" aria-label="Next">
+                            <a class="page-link" href="?page={{ updates.next_page_number }}&q={{search_query}}" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
