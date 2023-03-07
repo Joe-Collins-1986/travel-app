@@ -11,7 +11,7 @@
                     <h4 class="text-center">{{ update.title }}</h4>
                     <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
                     <hr>
-                    <p class="text-center">{{ update.content }}</p>
+                    <p class="text-center">{{ update.content|linebreaksbr }}</p>
                 </div>
             </a>
             <div class="update-card-footer">
