@@ -91,7 +91,7 @@
             {% if comment.action_taken %}
             <div class="admin-response">
                 <h6><strong>ADMIN RESPONSE</strong></h6>
-                <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken }}</div>
+                <div><strong>ACTION TAKEN: </strong>{{ comment.action_taken|linebreaksbr }}</div>
     
                 {% if comment.action_image %}
                     <div class="update-card-img-section mt-3">
