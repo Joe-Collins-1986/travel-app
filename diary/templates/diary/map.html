@@ -143,6 +143,10 @@
         stroke-width: 0.5px
     }
 
+    .stats {
+        color: rgb(6, 68, 103);
+    }
+
 </style>
 
 <div class="container-fluid mt-5 buffer">
@@ -559,8 +563,8 @@
                     </select>
                 </form>
             </div>
-            <div id="graph-container" class="stats" style="margin-left: 10%;">
-                <h6>Percent Visited: {{ percentage_visited }}% </h6>
+            <div id="graph-container" class="stats pb-2" style="margin-left: 10%;">
+                <h6 class="mt-3">Percent Visited: {{ percentage_visited }}% </h6>
                 <canvas width="600" id="pie-chart"></canvas>
             </div>
             <br class="d-none d-lg-block">
