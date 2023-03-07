@@ -5,13 +5,13 @@
 
 <style>
     .visited {
-      fill: rgb(217, 242, 53)
+      fill: rgb(217, 242, 53);
     }
     .not_visited {
-      fill: rgb(192, 11, 11)
+      fill: rgb(192, 11, 11);
     }
     .wish_list {
-      fill: rgb(34, 150, 11)
+      fill: rgb(34, 150, 11);
     }
     select {
         width: 80%;
@@ -21,6 +21,15 @@
     h4#prompt {
         display: none;
         width: 100%;
+
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .prompt-container {
+        display: flex;
+
     }
     .prompt-section {
         display: flex;
@@ -110,15 +119,15 @@
     }
 
     .color-box-visited {
-        background-color: rgb(212, 255, 0)
+        background-color: rgb(217, 242, 53);
     }
 
     .color-box-wish {
-        background-color: rgb(43, 255, 0)
+        background-color: rgb(34, 150, 11);
     }
 
     .color-box-not-visited {
-        background-color: rgb(192, 11, 11)
+        background-color: rgb(192, 11, 11);
     }
 
     .legend-row p {
@@ -147,7 +156,7 @@
             <h1>Europe</h1>
         </div>
          <!-- PROMPT SECTION -->
-        <div class="d-none col-0 d-lg-inline col-md-4">
+        <div class="prompt-container d-none col-0 d-lg-inline col-md-4">
             <h4 class="text-center" id="prompt">PROMPT</h4>
         </div>
         <hr>
@@ -179,6 +188,11 @@
                         <div class="legend-row d-flex">
                             <div class="legend-color-box color-box-not-visited"></div>
                             <p>Not Visited</p>
+                        </div>
+                        <hr>
+                        <div class="legend-row d-flex">
+                            <p class="text-center">Click the country on the map you want to navigate to.
+                                <br>Or select from the dropdown menu.</p>
                         </div>
                     </div>
                 </div>
@@ -612,7 +626,7 @@
 
         targets.forEach(element => element.addEventListener('mouseover', event => {
         countryHovered = (event.target.getAttribute("name"));
-        prompt.setAttribute('style', 'display: block;');
+        prompt.setAttribute('style', 'display: flex;');
         prompt.innerHTML = countryHovered;
         }));
 
