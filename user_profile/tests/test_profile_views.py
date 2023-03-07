@@ -68,6 +68,7 @@ class TestUpdateProfilePageView(TestCase):
             'username': 'newusername',
             'email': 'newemail@example.com',
             'objectives': 'new objectives',
+            'background_img': 'media/profiles/background/rome-profile-bg.jpg'
         }
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 302)

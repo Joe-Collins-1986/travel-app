@@ -9,6 +9,7 @@ PROFILE_BACKGROUNDS = (
     ('media/profiles/background/london-profile-bg.jpg', 'London'),
 )
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_img = ResizedImageField(
@@ -22,7 +23,7 @@ class Profile(models.Model):
     background_img = models.CharField(
                                 max_length=100,
                                 choices=PROFILE_BACKGROUNDS,
-                                default='Paris')
+                                default='media/profiles/background/profile-bg-default.jpg')
 
     def __str__(self):
         return f"{self.user.username} Profile"

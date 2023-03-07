@@ -243,11 +243,28 @@ class TestDiaryCreateView(TestCase):
 
         self.url = reverse('diary-create', kwargs={'pk': self.country1.pk})
 
-    def test_post_valid(self):
+    def test_post_valid_no_tags(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         data = {
             'content': 'Test diary post content', 
             'exp_rating': 'Not Rated',
+            'tags': [''],
+        }
+        response = self.client.post(self.url, data)
+        self.assertRedirects(
+            response,
+            reverse('diary-all-posts', args=[self.country1.pk]),
+            status_code=302,
+            target_status_code=200,
+            fetch_redirect_response=True)
+        self.assertTrue(Diary.objects.filter(content='Test diary post content').exists())
+
+    def test_post_valid_tags(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        data = {
+            'content': 'Test diary post content', 
+            'exp_rating': 'Not Rated',
+            'tags': ['Test_Tag_1', 'Test_Tag_2'],
         }
         response = self.client.post(self.url, data)
         self.assertRedirects(
