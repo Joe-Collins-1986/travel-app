@@ -40,7 +40,7 @@ class AdminUpdatesListView(View):
         topic_items = updates.count()
 
         page = request.GET.get('page', 1)
-        paginator = Paginator(updates, 2)
+        paginator = Paginator(updates, 5)
 
         try:
             updates = paginator.page(page)
