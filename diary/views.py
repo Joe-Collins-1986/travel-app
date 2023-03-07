@@ -50,17 +50,20 @@ class MapView(LoginRequiredMixin, View):
 
         countries = Country.objects.all()
         visited_countries = Visit.objects.filter(user=request.user.id)
+        visited_countries_wish_list = visited_countries.filter(status="wish_list")
+        visited_countries_travelled_to = visited_countries.filter(status="visited")
 
         dict['countries'] = countries
         dict['visited_countries'] = visited_countries
+        dict['visited_countries_wish_list'] = visited_countries_wish_list
+        dict['visited_countries_travelled_to'] = visited_countries_travelled_to
 
-        traveled_to_countries = visited_countries.filter(status="visited")
-        remaining_countries = countries.count()-traveled_to_countries.count()
+        remaining_countries = countries.count() - visited_countries_travelled_to.count() - visited_countries_wish_list.count()
 
-        labels = ["Visited", "Not Visited"]
-        data = [traveled_to_countries.count(), remaining_countries]
+        labels = ["wish List", "Visited", "Not Visited"]
+        data = [visited_countries_wish_list.count(), visited_countries_travelled_to.count(), remaining_countries]
 
-        percentage_visited = round((traveled_to_countries.count()/countries.count())*100, 2)
+        percentage_visited = round((visited_countries_travelled_to.count()/countries.count())*100, 2)
 
         dict.update({"labels": labels, "data": data, "percentage_visited": percentage_visited})
 
