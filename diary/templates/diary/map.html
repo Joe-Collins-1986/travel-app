@@ -554,7 +554,7 @@
                 <h5>Click the country on the map.</h5>
                 <h6>Or select from the below dropdown instead.</h6>
  
-                <form>
+                <form class="mb-1">
                     <select onchange="location = this.value;">
                         <option value="">All Countries</option>
                         {% for country in countries %}
@@ -570,7 +570,7 @@
             <br class="d-none d-lg-block">
 
             {% if visited_countries_travelled_to %}
-                <form>
+                <form class="mb-1">
                     <select onchange="location = this.value;">
                         <option value="">Visited</option>
                         {% for visit in visited_countries %}
@@ -583,7 +583,7 @@
             {% endif %}
 
             {% if visited_countries_wish_list %}
-                <form>
+                <form class="mb-1">
                     <select onchange="location = this.value;">
                         <option value="">Wish List</option>
                         {% for visit in visited_countries %}
