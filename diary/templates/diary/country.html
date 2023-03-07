@@ -2,6 +2,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<style>
+    .header-img-background {
+        background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
+    }
+</style>
+
 <a href="{% url 'country-map' %}"><i class="fa-solid fa-globe back-to-map btn"></i></a>
 
 
