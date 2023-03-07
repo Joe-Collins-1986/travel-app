@@ -2,154 +2,6 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<style>
-
-    /* COUNTRY SPECIFIC PAGE */
-    .country-header-img-container {
-        width: 100%;
-    }
-
-    .color-contry-page-font {
-        color: rgb(6, 68, 103);
-    }
-
-    .header-img-background {
-        margin-top: 30px;
-        background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: white;
-
-        display: flex;
-        align-items: center;
-        position: relative;
-        justify-content: end;
-    }
-
-    .header-content-container {
-        padding: 30px;
-        background-color: rgba(72, 72, 72, 0.7);
-    }
-
-    .header-flag-container img {
-        margin-top: 10px;
-        height: 150px;
-    }
-
-    .country-about-title-row {
-        background-color: #C3C3C3;
-        border-bottom: 2px solid black;
-    }
-
-    .border-info-full {
-        border: 2px solid black;
-    }
-
-    .center-container {
-        justify-content: center;
-    }
-
-    .visit-form-container {
-        display: flex;
-        justify-content: center;
-    }
-    .visit-form {
-        justify-content: center;
-        padding: 20px;
-        background-color: #C3C3C3;
-        border-radius: 25px;
-        margin-bottom: 10px;
-        width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-
-    .btn-travel {
-        background-color: rgb(6, 68, 103);
-        color: white;
-    }
-
-    .btn-travel:hover {
-        background-color: rgb(4, 39, 59);
-        color: white;
-    }
-
-    .bottom-row {
-        margin-bottom: 80px;
-    }
-
-    .diary-section {
-        margin-top: 0.5rem;
-        margin-bottom: 70px;
-    }
-
-    .btn-action {
-        background-color: rgb(6, 68, 103);
-        width: 150px;
-        height: 35px;
-        margin: 10px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-/* ... */
-
-    .blue-background {
-        background-color: rgb(6, 68, 103);
-        color: white;
-    }
-
-    .grey-background {
-        background-color: #C3C3C3;
-        color: rgb(6, 68, 103);
-        height: 100%;
-        width: 100%;    
-    }
-
-    .off-white-background {
-        background-color: #f8f9fa;
-        color: rgb(6, 68, 103);  
-    }
-
-    .blue-font {
-        color: rgb(6, 68, 103);
-    }
-
-    .btn-off-white-background {
-        font-weight: bold;
-        background-color: #C3C3C3;
-        color: rgb(6, 68, 103);  
-    }
-
-    .btn-off-white-background:hover {
-        background-color: #f8f9fa;
-        color: rgb(6, 68, 103);  
-    }
-
-    .blue-border {
-        border: 2px solid rgb(6, 68, 103);
-    }
-
-    .back-to-map {
-        position: fixed;
-        top: 70px;
-        left: 2%;
-        z-index: 5;
-        color: rgb(6, 68, 103);
-        background-color: #C3C3C3;
-        border: 2px solid rgb(6, 68, 103);
-        border-radius: 15%;
-        font-size: 300%;
-    }
-
-    .back-to-map:hover {
-        color: #C3C3C3;
-        background-color: rgb(6, 68, 103);
-        border: 2px solid rgb(255, 255, 255);
-    }
-
-</style>
 <a href="{% url 'country-map' %}"><i class="fa-solid fa-globe back-to-map btn"></i></a>
 
 
@@ -210,13 +62,13 @@
 <div class="row m-0 off-white-background">
     <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center text-center px-5 pt-5 p-lg-5">
         <div>
-            <h4>To Do List</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
-            <a class="btn btn-travel m-2" href="#">Add Diary Entry</a>
+            <h4>To-Do List</h4>
+            <p>Plan and track your travel activities with our easy to use 'To-Do List'.</p>
+            <a class="btn btn-travel m-2" href="#">To-Do List</a>
         </div>
     </div>
     <div class="col m-5 d-flex justify-content-center align-self-center text-center">
-        <h3>Currently you have no To-Do lists!</h3>
+        <h3>Currently you have no 'To-Do Lists'!</h3>
     </div>
 </div>
 
@@ -224,75 +76,11 @@
     <div class="col-12 d-flex justify-content-center align-self-center p-5">
         <div class="w-75 mb-5">
             <h4>Diary Entries</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
-            <a class="btn btn-off-white-background" href="{% url 'diary-all-posts' country.pk %}">Add Diary Entry</a>
+            <p>Record your memories for your {{ country.name }} trip.</p>
+            <a class="btn btn-off-white-background" href="{% url 'diary-all-posts' country.pk %}">View Diary</a>
         </div>
     </div>
 </div>
-
-
-
-
-
-<!-- .... -->
-
-<!-- 
-<div class="container-fluid color-contry-page-font">
-    <div class="row bg-white center-container">
-        <div class="col-11 col-lg-7 m-2 border-info-full">
-            <div class="row country-about-title-row">
-                <h4>About:</h4>
-            </div>
-            <div class="row">
-                <p>{{ country.about }}</p>
-            </div>
-        </div>
-        <div class="col-11 col-lg m-2 border-info-full">
-            <div class="row country-about-title-row">
-                <h4>Info:</h4>
-            </div>
-            <div class="row">
-                <p><strong>Capital:</strong> {{ country.capital }}</p>
-                <p><strong>Currency:</strong> {{ country.currency }}</p>
-                <p><strong>Language:</strong> {{ country.language }}</p>
-                <p><strong>Population:</strong> {{ country.population }}</p>
-                <div class="visit-form-container">
-                    <form class="visit-form" method="POST">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
-                            <legend class="border-bottom mb-4">Visited Status:</legend>
-                            {{ visit_form | crispy }}
-                        </fieldset>
-                        <button type="submit" class="btn btn-travel">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row bg-white center-container bottom-row">
-        <div class="col-11 col-lg-3 m-2 border-info-full">
-            <div class="row country-about-title-row">
-                <h4>To Do List:</h4>
-            </div>
-            <div class="row">
-                <a class="btn btn-travel btn-action" href="#">Add To Do List</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
-            </div>
-        </div>
-        <div class="col-11 col-lg m-2 border-info-full">
-            <div class="row country-about-title-row">
-                <h4>Diary Entries:</h4>
-            </div>
-            <div class="row">
-                <a class="btn btn-travel btn-action" href="#">Add Diary Entry</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia exercitationem odit, maiores nobis numquam excepturi, quisquam assumenda optio explicabo ab ad similique? Accusantium quas et quasi aliquam illo quod. Numquam!</p>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 
 
 {% endblock content %}

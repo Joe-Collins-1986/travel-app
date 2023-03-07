@@ -1359,3 +1359,147 @@ p, .comments-txt, .form-label {
     }
 
 
+    /**** COUNTRY SPECIFIC PAGE *****/
+    .country-header-img-container {
+        width: 100%;
+    }
+
+    .color-contry-page-font {
+        color: rgb(6, 68, 103);
+    }
+
+    .header-img-background {
+        margin-top: 30px;
+        background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: end;
+    }
+
+    .header-content-container {
+        padding: 30px;
+        background-color: rgba(72, 72, 72, 0.7);
+    }
+
+    .header-flag-container img {
+        margin-top: 10px;
+        height: 150px;
+    }
+
+    .country-about-title-row {
+        background-color: #C3C3C3;
+        border-bottom: 2px solid black;
+    }
+
+    .border-info-full {
+        border: 2px solid black;
+    }
+
+    .center-container {
+        justify-content: center;
+    }
+
+    .visit-form-container {
+        display: flex;
+        justify-content: center;
+    }
+    .visit-form {
+        justify-content: center;
+        padding: 20px;
+        background-color: #C3C3C3;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .btn-travel {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .btn-travel:hover {
+        background-color: rgb(4, 39, 59);
+        color: white;
+    }
+
+    .bottom-row {
+        margin-bottom: 80px;
+    }
+
+    .diary-section {
+        margin-top: 0.5rem;
+        margin-bottom: 70px;
+    }
+
+    .btn-action {
+        background-color: rgb(6, 68, 103);
+        width: 150px;
+        height: 35px;
+        margin: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* ... */
+
+    .blue-background {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .grey-background {
+        background-color: #C3C3C3;
+        color: rgb(6, 68, 103);
+        height: 100%;
+        width: 100%;    
+    }
+
+    .off-white-background {
+        background-color: #f8f9fa;
+        color: rgb(6, 68, 103);  
+    }
+
+    .blue-font {
+        color: rgb(6, 68, 103);
+    }
+
+    .btn-off-white-background {
+        font-weight: bold;
+        background-color: #C3C3C3;
+        color: rgb(6, 68, 103);  
+    }
+
+    .btn-off-white-background:hover {
+        background-color: #f8f9fa;
+        color: rgb(6, 68, 103);  
+    }
+
+    .blue-border {
+        border: 2px solid rgb(6, 68, 103);
+    }
+
+    .back-to-map {
+        position: fixed;
+        top: 70px;
+        left: 2%;
+        z-index: 5;
+        color: rgb(6, 68, 103);
+        background-color: #C3C3C3;
+        border: 2px solid rgb(6, 68, 103);
+        border-radius: 15%;
+        font-size: 300%;
+    }
+
+    .back-to-map:hover {
+        color: #C3C3C3;
+        background-color: rgb(6, 68, 103);
+        border: 2px solid rgb(255, 255, 255);
+    }
