@@ -1,21 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
     <div class="mt-5">
         <h1>To-Do Lists</h1>
 
+        <ul>
+        {% for list in lists %}
+            <a href="{% url 'to-do-items' list.pk %}"><li> {{ list.title }} </li></a>
+        {% endfor %}
+        </ul>
+
         <form method="post">
             {% csrf_token %}
-            <input type="text" name="name" placeholder="Enter task name">
-            <input type="text" name="description" placeholder="Enter task description">
+            {{ add_list_form|crispy }}
             <button type="submit">Add task</button>
         </form>
-
-
-
-
-
     </div>
 
 {% endblock content %}

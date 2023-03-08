@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from diary.models import Country
 
 # Create your models here.
+
+
 class ToDoList(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.CASCADE,

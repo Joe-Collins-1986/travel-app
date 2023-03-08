@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+    <div class="mt-5">
+        <h1>TITLE: {{ to_do_list.title }}</h1>
+        <h2>DESCRIPTION: {{ to_do_list.description }}</h2>
+    </div>
+    <div>
+        <ul>
+            {% for item in items %}
+                {% if item.complete %}
+                    <li><s>{{ item }}</s></li>
+                    <a href="{% url 'complete-item' item.pk %}">Open</a>
+                {% else %}
+                    <li>{{ item }}</li>
+                    <a href="{% url 'complete-item' item.pk %}">Close</a>
+                {% endif %}
+                <a href="{% url 'delete-item' item.pk %}">Delete</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ add_item_form|crispy }}
+            <button type="submit">Add task</button>
+        </form>
+    </div>
+
+
+
+{% endblock content %}
