@@ -14,10 +14,10 @@ class CompleteToDoListForm(forms.ModelForm):
         fields = ['complete']
 
 
-class FullToDoItemForm(forms.ModelForm):
+class ToDoItemForm(forms.ModelForm):
     class Meta:
         model = ToDoItem
-        fields = ['item', 'complete']
+        fields = ['item']
 
 
 class CompleteToDoItemForm(forms.ModelForm):
