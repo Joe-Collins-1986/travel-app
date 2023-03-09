@@ -2,7 +2,6 @@ from django.test import TestCase
 from diary.models import Country
 from to_do_list.models import ToDoList, ToDoItem
 from django.contrib.auth.models import User
-# from django.urls import reverse
 
 
 
