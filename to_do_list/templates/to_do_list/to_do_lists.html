@@ -9,6 +9,8 @@
         <ul>
         {% for list in lists %}
             <a href="{% url 'to-do-items' list.pk %}"><li> {{ list.title }} </li></a>
+            <a href="{% url 'delete-list' list.pk %}">Delete</a>
+            <a href="{% url 'edit-list' list.pk %}">Edit</a>
         {% endfor %}
         </ul>
 

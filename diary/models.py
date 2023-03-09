@@ -21,6 +21,9 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Visit(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
