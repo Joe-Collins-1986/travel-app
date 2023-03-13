@@ -12,7 +12,7 @@
     
     <div class="to-do-list-form-container"> <!-- change to diary and add to same css -->
         <div class="to-do-list-form"> <!-- change to diary and add to same css -->
-            <h1>Update To-Do List Details</h1>
+            <h1>Add To-Do List</h1>
         
             <div class="content-section"> <!-- change to diary and add to same css -->
                 <form method="POST">
@@ -21,8 +21,8 @@
                         {{ list_form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn" type="submit">Submit Update</button>
-                        <a class="btn btn-secondary" href="{% url 'country' list.country.pk %}#to_do_list_location">Cancel</a>
+                        <button class="btn" type="submit">Submit To-Do List</button>
+                        <a class="btn btn-secondary" href="{% url 'country' country.pk %}#to_do_list_location">Cancel</a>
                     </div>
                 </form>
             </div>

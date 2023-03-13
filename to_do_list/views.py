@@ -12,42 +12,29 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
-# PLACEHOLDER
-class ToDoListView(View):
-
-    def get(self, request):
-        return render(
-            request,
-            "to_do_list/placeholder.html",
-            {
-            }
-        )
-# PLACEHOLDER
-
 class AddListView(LoginRequiredMixin, View):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
 
-    template_name = 'to_do_list/add_to_do_list.html'
+    template_name = 'to_do_list/to_do_list_add.html'
 
     def get(self, request, pk):
         country = get_object_or_404(Country, pk=pk)
         lists = ToDoList.objects.filter(user=request.user, country=country)
 
-        add_list_form = FullToDoListForm()
+        list_form = FullToDoListForm()
         context = {
-            'add_list_form': add_list_form,
-            'lists': lists,
-            'country': country
+            'list_form': list_form,
+            'country': country,
             }
         return render(request, self.template_name, context)
 
     def post(self, request, pk, *args, **kwargs):
         country = get_object_or_404(Country, pk=pk)
-        add_list_form = FullToDoListForm(request.POST)
+        list_form = FullToDoListForm(request.POST)
 
-        if add_list_form.is_valid():
-            todo = add_list_form.save(commit=False)
+        if list_form.is_valid():
+            todo = list_form.save(commit=False)
             todo.user = request.user
             todo.country = country
             todo.save()
@@ -56,7 +43,7 @@ class AddListView(LoginRequiredMixin, View):
                 f'{url}#to_do_list_location'
                 )
 
-        context = {'add_list_form': add_list_form}
+        context = {'list_form': list_form}
         return render(request, self.template_name, context)
 
 
@@ -87,20 +74,21 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
     def get(self, request, pk):
         list = get_object_or_404(ToDoList, pk=pk)
 
-        edit_list_form = FullToDoListForm(instance=list)
+        list_form = FullToDoListForm(instance=list)
 
         context = {
-            'edit_list_form': edit_list_form,
+            'list_form': list_form,
+            'list': list,
             }
         return render(request, self.template_name, context)
 
     def post(self, request, pk, *args, **kwargs):
         list = get_object_or_404(ToDoList, pk=pk)
 
-        edit_list_form = FullToDoListForm(request.POST, instance=list)
+        list_form = FullToDoListForm(request.POST, instance=list)
 
-        if edit_list_form.is_valid():
-            edit = edit_list_form.save(commit=False)
+        if list_form.is_valid():
+            edit = list_form.save(commit=False)
             edit.save()
 
             url = reverse('country', args=[edit.country.pk])
@@ -109,7 +97,7 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
                 )
 
         context = {
-            'edit_list_form': edit_list_form,
+            'list_form': list_form,
             }
         return render(request, self.template_name, context)
 

@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import (
-    ToDoListView,
     AddListView,
     DeleteListView,
     EditListView,
@@ -11,7 +10,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', ToDoListView.as_view(), name="to-do-list"),
     path('to_do_list/<int:pk>/add', AddListView.as_view(), name="add-list"), #pass country pk
     path('to_do_lists/<int:pk>/delete', DeleteListView.as_view(), name="delete-list"), #pass ToDoList pk
     path('to_do_lists/<int:pk>/edit', EditListView.as_view(), name="edit-list"), #pass ToDoList pk

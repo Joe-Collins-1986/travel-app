@@ -100,7 +100,8 @@ class CountryView(LoginRequiredMixin, View):
                     "diary/country.html",
                     {
                         "country": country,
-                        "visit_form": VisitForm()
+                        "visit_form": VisitForm(),
+                        'lists': lists
                     },
             )
 
