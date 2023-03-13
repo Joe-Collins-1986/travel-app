@@ -24,11 +24,11 @@ class ToDoListView(View):
         )
 # PLACEHOLDER
 
-class ToDoListsView(LoginRequiredMixin, View):
+class AddListView(LoginRequiredMixin, View):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
 
-    template_name = 'to_do_list/to_do_lists.html'
+    template_name = 'to_do_list/add_to_do_list.html'
 
     def get(self, request, pk):
         country = get_object_or_404(Country, pk=pk)
@@ -51,7 +51,10 @@ class ToDoListsView(LoginRequiredMixin, View):
             todo.user = request.user
             todo.country = country
             todo.save()
-            return HttpResponseRedirect(reverse('to-do-lists', args=[country.pk]))
+            url = reverse('country', args=[country.pk])
+            return redirect(
+                f'{url}#to_do_list_location'
+                )
 
         context = {'add_list_form': add_list_form}
         return render(request, self.template_name, context)
@@ -65,8 +68,10 @@ class DeleteListView(LoginRequiredMixin, UserPassesTestMixin, View):
         list = get_object_or_404(ToDoList, pk=pk)
         list.delete()
 
-        url = reverse('to-do-lists', args=[list.country.pk])
-        return redirect(url)
+        url = reverse('country', args=[list.country.pk])
+        return redirect(
+                f'{url}#to_do_list_location'
+                )
 
     def test_func(self):
         list = get_object_or_404(ToDoList, pk=self.kwargs['pk'])
@@ -98,8 +103,10 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
             edit = edit_list_form.save(commit=False)
             edit.save()
 
-            url = reverse('to-do-lists', args=[edit.country.pk])
-            return redirect(url)
+            url = reverse('country', args=[edit.country.pk])
+            return redirect(
+                f'{url}#to_do_list_location'
+                )
 
         context = {
             'edit_list_form': edit_list_form,

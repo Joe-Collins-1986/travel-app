@@ -10,6 +10,7 @@ from django.views.generic import (
 )
 
 from .models import Country, Visit, Diary
+from to_do_list.models import ToDoList
 from .forms import VisitForm
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -74,9 +75,10 @@ class CountryView(LoginRequiredMixin, View):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
 
-    def get(self, request, pk):
+    def get(self, request, pk, *args, **kwargs):
         countries = Country.objects.all()
         country = get_object_or_404(countries, pk=pk)
+        lists = ToDoList.objects.filter(user=request.user, country=country)
 
         visited = Visit.objects.filter(user_id=request.user.id)
 
@@ -88,7 +90,8 @@ class CountryView(LoginRequiredMixin, View):
                     "diary/country.html",
                     {
                         "country": country,
-                        "visit_form": VisitForm(instance=country_visited)
+                        "visit_form": VisitForm(instance=country_visited),
+                        'lists': lists
                     },
             )
         else:
