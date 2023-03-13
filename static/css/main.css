@@ -1505,12 +1505,12 @@ p, .comments-txt, .form-label {
 
     /**** TO-DO-SECTION *****/
 
-    .list-container {
+    .list-container, .task-container {
         width: 100%;
         padding: 10px;
     }
 
-    .to-do-list-link-row {
+    .to-do-list-link-row, .task-list-row {
         display: flex;
         border: 1px solid rgb(6, 68, 103);
         align-items: center;
@@ -1559,7 +1559,7 @@ p, .comments-txt, .form-label {
 
 
     @media (max-width: 991px) {
-        .to-do-list-link-row {
+        .to-do-list-link-row, .task-list-row {
             display: flex;
             flex-direction: column;
             align-items: center;
