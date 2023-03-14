@@ -191,6 +191,7 @@
    ## User Stories
 
    All User Stories are detailed on my GitHub account as issues [here](https://github.com/Joe-Collins-1986/travel-app/issues?q=is%3Aissue+is%3Aclosed).<br>
+
    These also breakdown:
    - Tasks required for each User Story completion.
    - Acceptance criteria for each User Story.
@@ -286,22 +287,20 @@
   <details>
       <summary style="font-weight:bold">Colour Scheme</summary>
 
-   Client wished the game to feel as though it was written on a piece of paper. Therefore, main colours were kept simple with black and white.
+   Client requested the site to be built from shades of grey with a bold blue for enphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.
+
    - Main colours: 
-      - #000000 (Black)
-      - #FFFFFF (White)
+      - #064467 (Dark Blue)
+      - #cacaca (Light Grey)
+      - #484848 (Dark Grey)
+      - #e9e4e4 (Off White)
+      - #ffffff (White)
 
-   To add a bit of simple colour to the main page margin lines generated through repeating linear gradients used some lighter colours found on paper note pads.
-   - Margin lines on page:
-      - #ffc0cb (Pink) (This colour will also to be used in for the required button hover animation to keep design consistency) 
-      - #9198E5 (Maximum Blue Purple)
-
-   To make sure the menu content stands out this will be set in a new colour. This will be set it a light yellow to mirror a post-it note.
-   - Menu colour:
-      - #E7E773 (Straw) (This colour will be tweaked slightly using linear gradients to give a more real, 3d faded effect.) 
+   In additon to the standard colour scheme delete buttons will be marked as red to indicate the risk assosiated with them:
+   - #e2110a (Red)
 
 
-   ![Colour Palette](assets/readme-assets/design/hangman-colours.png)
+   ![Colour Palette](readme-assets/ux/travel-colour-scheme.png)
 
    ---
    </details>
@@ -309,8 +308,10 @@
    <details>
       <summary style="font-weight:bold">Typography</summary>
 
-   For the typography the client wanted an easy-to-read text which looked handwritten. The balance was to locate a font that gave this impression whilst still being clearly legible even on a small screen.
-   - Font applied with backup options: 'Handlee', cursive, sans-serif
+   For the typography the client wanted an easy-to-read text which is fun and engaging.
+
+   - Title Font and Anchor Tags applied with backup options: 'Lora', serif;
+   - Paragraph Font applied with backup options: 'Merriweather', serif;
 
    ---
    </details>
@@ -318,25 +319,10 @@
    <details>
       <summary style="font-weight:bold">Imagery</summary>
 
-   The images used for development of this website were taken from Unsplash and Font Awesome. These were selected to be minimalist and not detract from the main content which was styled through CSS to meet the client's specifications.
-   - Image for the background wood effect (jon-moore-5fIoyoKlz7A-unsplash.jpg).
-   - Image of the mountain doodle which shows on large screen viewings (nicolas-pinilla-GcDr6ZIzbIw-unsplash.jpg).
-   - Pins and paperclips were edited in photoshop from Unsplash images.
-   - the flavicon icon presented on the web tab was taken from Font Awesome (f43c).
-
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Audio</summary>
-
-   Audio was selected on this project to enhance the user experience but as per best practice guidelines was defaulted to mute. This can be toggled on via the settings menu. <br>
-   The audio was selected from YouTube clips which provided agreement for free usage. In several instances the audio clips were modified using Audacity to shorten them or remove background noise.
-   - Background music (opted not to apply this as it was likely to become monotonous and there would have been licencing issues to obtaining engaging music tracks).
-   - Sound on correct answer. (https://www.youtube.com/watch?v=403gX7TnhTQ)
-   - Sound on incorrect answer.(https://www.youtube.com/watch?v=RZEsfS1rGyY) - modified using Audacity
-   - Sound on getting word correct. (https://www.youtube.com/watch?v=ytjxf9YNJ-0) - modified using Audacity
-   - Sound on getting word incorrect. (https://www.youtube.com/watch?v=na-a3lLB13Q&t=16s) - modified using Audacity
+   The images used for development of this website were taken from Unsplash and Font Awesome.
+   - Flags for counties taken from: https://www.iconfinder.com/flag-icons?price=free
+   - Header images for each country/Home and login background images/Home planner images: https://unsplash.com/
+   - Icons: Font awsome
 
    ---
    </details>
