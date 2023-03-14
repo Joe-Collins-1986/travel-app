@@ -1510,7 +1510,7 @@ p, .comments-txt, .form-label {
         padding: 10px;
     }
 
-    .to-do-list-link-row, .task-list-row {
+    .to-do-list-link-row {
         display: flex;
         border: 1px solid rgb(6, 68, 103);
         align-items: center;
@@ -1559,7 +1559,7 @@ p, .comments-txt, .form-label {
 
 
     @media (max-width: 991px) {
-        .to-do-list-link-row, .task-list-row {
+        .to-do-list-link-row {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1714,3 +1714,111 @@ p, .comments-txt, .form-label {
       .stats {
           color: rgb(6, 68, 103);
       }
+
+
+      /***** TO-DO-ITEMS *****/
+      .to-do-item-header {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        text-align: center;
+    }
+
+    .tasks-container {
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 5%;
+    }
+
+    .task-list-row-closed {
+        display: flex;
+        border: 1px solid rgb(6, 68, 103);
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        background-color: #6c757d;
+    }
+
+    .task-list-row-open {
+        display: flex;
+        border: 1px solid rgb(6, 68, 103);
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        background-color: rgb(202, 202, 202);
+    }
+
+
+    .task-description {
+        width: 70%;
+    }
+
+
+    .task-list-row-closed p {
+        margin-bottom: 0;
+        color: white;
+    }
+
+    .task-list-row-open p {
+        margin-bottom: 0;
+        color: rgb(6, 68, 103);
+    }
+
+    .to-do-item-form-container {
+        margin: 0px 10px 120px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: rgb(6, 68, 103);
+    }
+
+    .to-do-item-form {
+        width: 90%;
+        border: 1px solid rgb(6, 68, 103);
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #e9e4e4;
+    }
+
+    .to-do-item-form button {
+        width: 180px;
+        background-color: rgb(6, 68, 103);
+        color: white;
+        font-weight: 700;
+    }
+    
+    .to-do-item-form button:hover {
+        background-color: rgb(13, 92, 138);
+        color: white;
+        font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+
+        .task-list-row-closed, .task-list-row-open {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .task-description {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .to-do-item-form {
+            width: 100%;
+            }
+
+        .tasks-container {
+            width: 100%;
+            margin-left: 0;
+        }
+    }

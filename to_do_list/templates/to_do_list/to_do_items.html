@@ -7,38 +7,7 @@
     body {
         background-color: white;
     }
-
-    .to-do-item-header {
-        padding-top: 50px;
-        padding-bottom: 20px;
-        background-color: rgb(6, 68, 103);
-        color: white;
-        text-align: center;
-    }
-
-    .tasks-container {
-        width: 90%;
-        margin-top: 20px;
-        margin-left: 5%;
-    }
-
-    .task-description {
-        width: 50%;
-    }
-
-    .task-list-row p {
-        margin-bottom: 0;
-        color: rgb(6, 68, 103);
-    }
-
-    @media (max-width: 991px) {
-        .task-list-row p {
-            width: 100%;
-        }
-    }
-
 </style>
-
 
     <div class="to-do-item-header">
         <h1>{{ to_do_list.title }}</h1>
@@ -50,79 +19,36 @@
         {% if items %}
             <div class="task-container">
                 {% for item in items %}
-                    <div class="task-list-row">
+
                         {% if item.complete %}
+                        <div class="task-list-row-closed">
                             <div class="task-description"><p><s>{{ item }}</s></p></div>
                             <div class="ms-lg-auto">
                                 <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}">Open</a>
                                 <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}">Delete</a>
                             </div>
+                        </div>
                         {% else %}
-                            <p>{{ item }}</p>
-                            <div class="ms-lg-auto">
-                                <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}">Close</a>
-                                <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}">Delete</a>
-                            </div>
+                        <div class="task-list-row-open">
+                            <div class="task-description"><p>{{ item }}</p></div>
+                                <div class="ms-lg-auto">
+                                    <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}">Close</a>
+                                    <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}">Delete</a>
+                                </div>
+                        </div>
                         {% endif %}
-                    </div>
+
                 {% endfor %}
             </div>
         {% else %}
             <h3 class="text-center">Currently you have no 'Tasks' in your 'To-Do List'!</h3>
         {% endif %}
     </div>
-
-
-<style>
-    .to-do-item-form-container {
-        margin: 0px 10px 120px 10px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        color: rgb(6, 68, 103);
-    }
-
-    .to-do-item-form {
-        width: 90%;
-        border: 1px solid rgb(6, 68, 103);
-        padding: 15px;
-        border-radius: 10px;
-        background-color: #e9e4e4;
-    }
-
-    .to-do-item-form button {
-        width: 180px;
-        background-color: rgb(6, 68, 103);
-        color: white;
-        font-weight: 700;
-    }
-    
-    .to-do-item-form button:hover {
-        background-color: rgb(13, 92, 138);
-        color: white;
-        font-weight: 700;
-    }
-
-    @media (max-width: 767px) {
-        .to-do-item-form {
-            width: 100%;
-            }
-
-        .tasks-container {
-            width: 100%;
-            margin-left: 0;
-        }
-    }
-</style>
-
-
-    <div class="to-do-item-form-container"> <!-- change to diary and add to same css -->
-        <div class="to-do-item-form"> <!-- change to diary and add to same css -->
+    <div class="to-do-item-form-container">
+        <div class="to-do-item-form">
             <h1>Add New Task Item</h1>
         
-            <div class="content-section"> <!-- change to diary and add to same css -->
+            <div class="content-section">
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
@@ -130,7 +56,7 @@
                     </fieldset>
                     <div class="form-group">
                         <button class="btn" type="submit">Add task</button>
-                        <a class="btn btn-secondary" href="{% url 'country' to_do_list.country.pk %}#to_do_list_location">Cancel</a>
+                        <a class="btn btn-secondary" href="{% url 'country' to_do_list.country.pk %}#to_do_list_location">Back</a>
                     </div>
                 </form>
             </div>
