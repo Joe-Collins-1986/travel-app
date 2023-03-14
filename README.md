@@ -288,7 +288,7 @@
       <summary style="font-weight:bold">Colour Scheme</summary>
 
    <br>
-   Client requested the site to be built from shades of grey with a bold blue for enphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.
+   Client requested the site to be built from shades of grey with a bold blue for enphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.<br>
 
    - Main colours: 
       - #064467 (Dark Blue)
@@ -310,7 +310,7 @@
       <summary style="font-weight:bold">Typography</summary>
 
    <br>
-   For the typography the client wanted an easy-to-read text which is fun and engaging.
+   For the typography the client wanted an easy-to-read text which is fun and engaging.<br>
 
    - Title Font and Anchor Tags applied with backup options: 'Lora', serif;
    - Paragraph Font applied with backup options: 'Merriweather', serif;
@@ -322,10 +322,12 @@
       <summary style="font-weight:bold">Imagery</summary>
 
    <br>
-   The images used for development of this website were taken from Unsplash and Font Awesome.
+   The images used for development of this website were taken from Unsplash and Font Awesome.<br>
+
    - Flags for counties taken from: https://www.iconfinder.com/flag-icons?price=free
    - Header images for each country/Home and login background images/Home planner images: https://unsplash.com/
    - Icons: https://fontawesome.com/
+   - Favicon: https://pixabay.com/vectors/departures-airport-sign-airliner-153136/
 
    ---
    </details>
