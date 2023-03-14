@@ -162,25 +162,12 @@
    <details>
       <summary style="font-weight:bold">Client Goals</summary>
 
-   The client wants a simple and engaging game that is easy to use and will result in users returning to the site. 
+   The client wants a simple and engaging website that is easy to use and will result in users returning to the site. 
    * Sleek yet simple UX design.
    * Easy to use functionality.
    * Responsive for any device size to encourage mobile use as well as desktop use.
    * Links to the client's social network accounts to enhance their online presence.
-   * Addictive gameplay to encourage return clients and drive positive word of mouth to encourage new users.
-   
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Client Future Goals</summary>
-   
-   Points to consider for future development:
-   * Additional words and topics to be added to the hangman game.
-   * Allow for scores to be recorded and stored into a leader board.
-   * Additional games and puzzles added to the site.
-   * Generate advertisement revenue through the site.
-
+   * Provide a base site to later indtroduce future partnerships relating to travel and accomodation bookings.
    ---
    </details>
 
@@ -190,21 +177,108 @@
    * Immediately engaged by the UX design.
    * Understand the purpose of the site.
    * Simple intuitive menu navigation.
-   * Intuitive content and links to social media.
+   * Intuitive content and links.
+   * Ability to view site updates, enhancements and news.
+   * Oppertunity to feedback on site updates to drive future improvments to tailor site to user expectations.
+   * Easy to access information about countries.
+   * Access to a diary to record travel experiences.
+   * Access to a task-manager/to-lists to manage travel activities.
    * Readable and aesthetically pleasing on all devices.
 
    ---
    </details>
 
-   <details>
-      <summary style="font-weight:bold">Returning Visitor Goals</summary>
-   
-   * Revisit to replay game to try different topics.
-   * Revisit to replay game to beat previous score.
-   * Revisit to locate social media links to client.
+   ## User Stories
 
+   All User Stories are detailed on my GitHub account as issues [here](https://github.com/Joe-Collins-1986/travel-app/issues?q=is%3Aissue+is%3Aclosed).<br>
+   These also breakdown:
+   - Tasks required for each User Story completion.
+   - Acceptance criteria for each User Story.
+   - Unit Testing for each User Story (where applicable)
+
+
+   ### Summary of User Stories
+   <details>
+      <summary style="font-weight:bold">Account Management</summary>
+   
+   * As an Administrator I can login in and out of my superuser account so that I can manage the site.
+   * As an Administrator I can add or delete user accounts so that I can manage the site.
+   * As an Administrator I can update user account information so that I can assist users where required.
+   * As a user I can register an account so that I can log in with my password.
+   * As a user I can login in and out of my account so that I can use the site.
+   * As a user I can reset my password so that I can still use the site if I have forgotten it or if it needs changing due to a security breach.
+   * As a Site Owner I can host the site on a cloud platform so that it can accessed by user be scaled up as appropriate.
    ---
    </details>
+
+   <details>
+      <summary style="font-weight:bold">Site Updates</summary>
+   
+   * As an Administrator I can post site updates so that users can be informed about latest features/updates.
+   * As a user I can check site updates so that I understand site changes and improvements.
+   * As a user I can comment on site updates so that I can influence future site enhancements.
+   * As a user I can update my comments on site updates so that I can correct or improve posts if necessary.
+   * As a user I can delete my comments on site updates so that i can remove comments that are no longer relevant.
+   * As an administrator I can update comments so that I can detail actions taken to resolve issues raised.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Country Navigation</summary>
+   
+   * As a user I can select countries from a map or dropdown so that I can access information about them.
+   * As a user I can mark a country to visited so that I can see at a glance where I have been.
+   * As a user I can access basic country info so that I can decide if it is somewhere I might be interested in visiting.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Profile</summary>
+   
+   * As a user I can see my profile information so that i can confirm if it is correct.
+   * As a user I can update my profile info so that it reflects any changes to my circumstances.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Travel Diary</summary>
+   
+   * As a user I can create a diary linked to a country I have visited so that I can record my experiences.
+   * As a user I can update my diary posts so that I can fix mistakes or add info.
+   * As a user I can delete diary posts so that I can remove unwanted information.
+   * As a user I can view a list of all the tags added to my diary posts related to the country I am in so that I can search via the tags.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">To-Do Lists</summary>
+   
+   * As a user I can view all the to-do lists i have for a country so that i can plan and track my travel and holiday activities.
+   * As a user I can add new to-do lists so that I can create specific task managers.
+   * As a user I can delete to-do lists so that I can remove lists that are no longer required.
+   * As a user I can update my to-do lists so that I can fix mistakes or add info.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">To-Do Tasks</summary>
+   
+   * As a user I can view all items in a to-do list so that I can see what specific activities are required.
+   * As a user I can add new to-do items to a list so that I can manage new tasks i consider.
+   * As a user I can toggle to-do items to open or closed so that I can see which tasks are outstanding.
+   * As a user I can delete to-do items so that I can remove tasks that are no longer required.
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Restrictions</summary>
+   
+   * As a user I am restricted from specific site updates, map and countries without first logging in so that I can do not try to submit a comment or visited with no user to assign to the object and generate an error.
+   * As a user I can restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the user.
+   * As a user I am sent to an instructive page when I am unable to access a web page for any reason so that I understand why I am unable to access the page requested.
+   ---
+   </details>
+
 
 
    ## Website Design
