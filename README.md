@@ -6,11 +6,11 @@
    - [Project Introduction](#project-introduction)
 - [Responsive Review](#responsive-review)
    - [Am I Responsive?](#am-i-responsive-link-to-responsive-review-website)
-- [User Experience (UX)](#...)
-   - [Website Objectives](#...)
-   - [Website Design](#...)
-   - [Structure Non-Linear Plane](#...)
-   - [Wireframes](#...)
+- [User Experience (UX)](#user-experience-ux)
+   - [Website Objectives](#website-objectives)
+   - [User Stories](#user-stories)
+   - [Website Design](#website-design)
+   - [Wireframes](#wireframes)
    - [Features](#...)
 - [Further Development](#...)
 - [Technologies Used](#...)
@@ -43,7 +43,7 @@
    ## Live Project [*(link to live project)*](https://traval-app.herokuapp.com/)
 
    ## Project Introduction
-   (**Note:** this is a fictitious client generated for the purpose of developing this project to test my HTML, CSS and JavaScript and Django Framework essentials.)
+   (**Note:** this is a fictitious client generated for the purpose of developing this project to test my HTML, CSS, Python, JavaScript and Django Framework essentials.)
 
    This website has been designed to provide users with an easy to use web application to aide in the planning and tacking of travel. The primary objectives of this project are to develop a diary for users to log their travel/holiday experiences whilst also allowing them to mark visited and wish list countries on a map. In addition to these key deliverables the client would also like to provide users with basic country info and an easy to to use travel task manager.
 
@@ -167,13 +167,14 @@
    * Easy to use functionality.
    * Responsive for any device size to encourage mobile use as well as desktop use.
    * Links to the client's social network accounts to enhance their online presence.
-   * Provide a base site to later indtroduce future partnerships relating to travel and accomodation bookings.
+   * Provide a base site to later introduce future partnerships relating to travel and accommodation bookings.
    ---
    </details>
 
    <details>
-      <summary style="font-weight:bold">First-Time Visitor Goals</summary>
+      <summary style="font-weight:bold">Visitor Goals</summary>
 
+   The visitor should have a clear understanding of what the website purpose is the site functions should encourage regular use.
    * Immediately engaged by the UX design.
    * Understand the purpose of the site.
    * Simple intuitive menu navigation.
@@ -194,14 +195,14 @@
 
    These also breakdown:
    - Tasks required for each User Story completion.
-   - Acceptance criteria for each User Story.
+   - Acceptance Criteria for each User Story.
    - Unit Testing for each User Story (where applicable)
 
 
    ### Summary of User Stories
    <details>
       <summary style="font-weight:bold">Account Management</summary>
-   
+   <br>
    * As an Administrator I can login in and out of my superuser account so that I can manage the site.
    * As an Administrator I can add or delete user accounts so that I can manage the site.
    * As an Administrator I can update user account information so that I can assist users where required.
@@ -214,7 +215,7 @@
 
    <details>
       <summary style="font-weight:bold">Site Updates</summary>
-   
+   <br>
    * As an Administrator I can post site updates so that users can be informed about latest features/updates.
    * As a user I can check site updates so that I understand site changes and improvements.
    * As a user I can comment on site updates so that I can influence future site enhancements.
@@ -243,7 +244,7 @@
 
    <details>
       <summary style="font-weight:bold">Travel Diary</summary>
-   
+   <br>
    * As a user I can create a diary linked to a country I have visited so that I can record my experiences.
    * As a user I can update my diary posts so that I can fix mistakes or add info.
    * As a user I can delete diary posts so that I can remove unwanted information.
@@ -253,7 +254,7 @@
 
    <details>
       <summary style="font-weight:bold">To-Do Lists</summary>
-   
+   <br>
    * As a user I can view all the to-do lists i have for a country so that i can plan and track my travel and holiday activities.
    * As a user I can add new to-do lists so that I can create specific task managers.
    * As a user I can delete to-do lists so that I can remove lists that are no longer required.
@@ -263,7 +264,7 @@
 
    <details>
       <summary style="font-weight:bold">To-Do Tasks</summary>
-   
+   <br>
    * As a user I can view all items in a to-do list so that I can see what specific activities are required.
    * As a user I can add new to-do items to a list so that I can manage new tasks i consider.
    * As a user I can toggle to-do items to open or closed so that I can see which tasks are outstanding.
@@ -273,7 +274,7 @@
 
    <details>
       <summary style="font-weight:bold">Restrictions</summary>
-   
+   <br>
    * As a user I am restricted from specific site updates, map and countries without first logging in so that I can do not try to submit a comment or visited with no user to assign to the object and generate an error.
    * As a user I can restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the user.
    * As a user I am sent to an instructive page when I am unable to access a web page for any reason so that I understand why I am unable to access the page requested.
@@ -288,7 +289,7 @@
       <summary style="font-weight:bold">Colour Scheme</summary>
 
    <br>
-   Client requested the site to be built from shades of grey with a bold blue for enphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.<br>
+   Client requested the site to be built from shades of grey with a bold blue for emphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.<br>
 
    - Main colours: 
       - #064467 (Dark Blue)
@@ -298,7 +299,9 @@
       - #ffffff (White)
 
    In additon to the standard colour scheme delete buttons will be marked as red to indicate the risk assosiated with them:
-   - #e2110a (Red)
+
+   - Delete colour:
+      - #e2110a (Red)
 
 
    ![Colour Palette](readme-assets/ux/travel-colour-scheme.png)
@@ -322,19 +325,15 @@
       <summary style="font-weight:bold">Imagery</summary>
 
    <br>
-   The images used for development of this website were taken from Unsplash and Font Awesome.<br>
+   The images and icons used for development of this website were taken from the below sources.<br>
 
    - Flags for counties taken from: https://www.iconfinder.com/flag-icons?price=free
-   - Header images for each country/Home and login background images/Home planner images: https://unsplash.com/
+   - Header images for each country. As well as home and login background images and home planner images: https://unsplash.com/
    - Icons: https://fontawesome.com/
    - Favicon: https://pixabay.com/vectors/departures-airport-sign-airliner-153136/
 
    ---
    </details>
-
-
-   ## Structure Non-Linear Plane
-   The entire website will be housed on a single index page. The menu navigation, change of topics and win/lose outcomes will be facilitated using JavaScript animating relevant sections.
 
 
    ## Wireframes
@@ -349,8 +348,115 @@
    ## Features
 
    ### **Features planning**
-   ![Feature Mind Map](assets/readme-assets/features/mindmap-hangman.png)
-   The above provides an initial mind map into what features might be appropriate for the website given the clients specifications.
+
+   <details>
+      <summary style="font-weight:bold">Problem Statement</summary>
+   <br>
+
+   Following discusions with a focus group the following problem statment was developed alongside potential overarching features to satisfy user expectations.
+
+   ![Problem Statment](readme-assets/features-planning/problem-statement.png)
+   <br>
+   If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/7a7db2c4-0ae5-4daf-9919-ac0871afd80f/edit?view_items=-9MgloYgLC6R&invitationId=inv_1dd18ca7-574f-4e19-9df3-fe768b642e93).
+   <br>
+
+   ---
+
+   </details>
+
+
+   <details>
+      <summary style="font-weight:bold">Mind-Map</summary>
+   <br>
+
+   The below image provides an initial mind-map into the features which might be appropriate for the travel application based on the problem statement. This will aide in the development of user stories.
+
+   ![Mind Map](readme-assets/features-planning/mind-map.png)
+   <br>
+   If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/8cd26622-1780-4fc3-85fa-28ced47687a8/edit?viewport_loc=-1468%2C-60%2C4105%2C2018%2C0_0&invitationId=inv_ceff3ba6-bc74-4fe6-ba65-aafecb2c6d31).
+   <br>
+
+   ---
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Priority Matrix</summary>
+   <br>
+
+   The below maps out the feasibility of the features considered against the user value they provide to help establish the priority they have as part of the build.
+
+   ![High Level Priority Matrix](readme-assets/features-planning/high-lvl-priority-matrix.png)
+   <br>
+   ![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix.png)
+   <br>
+   If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/2023f4b5-b0e3-4be5-b188-562b2ee292d7/edit?viewport_loc=-2222%2C-1006%2C16387%2C8543%2C0_0&invitationId=inv_12794b38-9259-4f4a-bba2-59feacd478f0).
+   <br>
+
+   Following this review the build order of the features will be broken down into phases:
+
+   #### Phase 1:
+   - Gameplay
+   - Validations
+   - Rules
+   - Difficulty
+
+   #### Phase 2:
+   - Clear screen
+   - Titles
+
+   #### Phase 3:
+   - Scoreboard
+   - Username (useless without scoreboard)
+
+   #### Phase 4 (Future enhancements - currently out of scope):
+   - User interface (e.g. tkinter, pygame)
+
+   ---
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Process Flow</summary>
+   <br>
+
+   The below details the process flow for the game from beginning to end.
+
+   ![Process Flow](readme_assets/features/process-flow.png)<br>
+   If you have a LucidChart account, you can also view this process flow [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-136%2C-64%2C3656%2C1771%2CI~k5YlUlNz8V&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   <br>
+
+   ---
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Functions Flow</summary>
+   <br>
+
+   The below demonstrates the key game functions and how they interact with each other. It also details the inclusion of the Gameplay class.
+
+   ![Functions Flow](readme_assets/features/function-flow.png)<br>
+   If you have a LucidChart account, you can also view this functions flow [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-391%2C-96%2C4221%2C2189%2CMrp4u2cXQ7zq&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   <br>
+
+   ---
+   
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Class Requirements</summary>
+   <br>
+
+   The below breaks down the Gameplay class detailing it's purpose, class variables and methods.
+
+   ![Class Requirements](readme_assets/features/class-breakdown.png)<br>
+   If you have a LucidChart account, you can also view this class requirements [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-1010%2C-180%2C3889%2C2017%2CVWq4R58lY_hn&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   <br>
+
+   ---
+   
+   </details>
 
    ### **Features breakdown**
 
