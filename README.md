@@ -388,7 +388,7 @@
 
    ![High Level Priority Matrix](readme-assets/features-planning/high-lvl-priority-matrix.png)
    <br>
-   ![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix-md.png)
+   ![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix-lg.png)
    <br>
    If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/2023f4b5-b0e3-4be5-b188-562b2ee292d7/edit?viewport_loc=-2222%2C-1006%2C16387%2C8543%2C0_0&invitationId=inv_12794b38-9259-4f4a-bba2-59feacd478f0).
    <br>
@@ -401,7 +401,7 @@
       <summary style="font-weight:bold">Process Flow</summary>
    <br>
 
-   The below details the process flow for the game from beginning to end.
+   The below details the process flow for travel application.
 
    ![Process Flow](readme-assets/features-planning/process-flow.png)<br>
    If you have a LucidChart account, you can also view this process flow [here](https://lucid.app/lucidchart/45f9a33d-bf6a-431b-8cb7-6cf56aced5a6/edit?viewport_loc=-279%2C-45%2C4992%2C2589%2CI~k5YlUlNz8V&invitationId=inv_e8867747-9ada-4d1d-9cd3-f40d4cf76206).
@@ -412,13 +412,13 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Functions Flow</summary>
+      <summary style="font-weight:bold">DataBase ER Diagram</summary>
    <br>
 
-   The below demonstrates the key game functions and how they interact with each other. It also details the inclusion of the Gameplay class.
+   The below demonstrates the site models and their attributes as well as documenting how they interact.
 
-   ![Functions Flow](readme_assets/features/function-flow.png)<br>
-   If you have a LucidChart account, you can also view this functions flow [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-391%2C-96%2C4221%2C2189%2CMrp4u2cXQ7zq&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   ![DataBase ER Diagram](readme-assets/features-planning/database-er.png)<br>
+   If you have a LucidChart account, you can also view this functions flow [here](https://lucid.app/lucidchart/cff13766-7082-47ae-8292-1718c002681d/edit?viewport_loc=-677%2C-74%2C4545%2C2357%2C0_0&invitationId=inv_5e2ae07a-9a26-417e-94da-965ebcb9ac10).
    <br>
 
    ---
