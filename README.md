@@ -426,13 +426,101 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Class Requirements</summary>
+      <summary style="font-weight:bold">Agile Methodology</summary>
    <br>
 
-   The below breaks down the Gameplay class detailing it's purpose, class variables and methods.
+   An Agile methodology was applied to the development and implementation of this project.
 
-   ![Class Requirements](readme_assets/features/class-breakdown.png)<br>
-   If you have a LucidChart account, you can also view this class requirements [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-1010%2C-180%2C3889%2C2017%2CVWq4R58lY_hn&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   The project development was run in multiple iterations/sprints each targeting a number of User Stories.
+
+   Each user story was moved out of a Backlog and assigned to the iteration with a priority label (Must Have, Should Have, Could Have, Won't Have).
+   In addition to User Stories bugs and enhancments where also applied within certain iterations.
+
+   To manage the Agile iterations I used the projects function within my GitHub account, pulling User Stories into a KanBan Board. (Links to each project iteration detailed in the iteration breakdown below.)
+
+   **Note:** It should be noted that the priority label was in relation to it's prioriry within the iteration, not the project as a whole.
+
+   <details>
+      <summary style="font-weight:bold">Iteration 1</summary>
+   <br>
+
+   For iteration 1 the key focus was to target the Site Administration to ensure the platform was operational with a superuser. Test users were set up with the ability to login and out as well as reset passwords.
+
+   In additon to this some optional site update User Stories where applied to allow the site owner to detail updates to test users as the site was in development.
+
+   For site of the project in GitHub detailing the completed User Stories in Iteration 1 please click [here](https://github.com/users/Joe-Collins-1986/projects/2/views/1).
+
+   ---
+
+   <br>
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Iteration 2</summary>
+   <br>
+
+   For iteration 2 the key focus was to target the Country Naviation which would provide the platform to later add diary posts and a task manager.
+
+   In additon to this some more optional site update User Stories where applied to allow test users to comment on the updates posted by the site owner.
+
+   For site of the project in GitHub detailing the completed User Stories in Iteration 2 please click [here](https://github.com/users/Joe-Collins-1986/projects/3/views/1).
+   
+   ---
+
+   <br>
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Iteration 3</summary>
+   <br>
+
+   Due to other commitments I was unable to conduct a standard iteration.
+   
+   Therefore, this iteration was used to review existing features and update them with user feedback. It was also used to finalise the site update features which will allow a tracker of future feature development and allow test users a way of feeding back their findings.
+
+
+   For site of the project in GitHub detailing the completed User Stories in Iteration 3 please click [here](https://github.com/users/Joe-Collins-1986/projects/4/views/1).
+   
+   ---
+
+   <br>
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Iteration 4</summary>
+   <br>
+
+   For iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary enteries related to a specific country.
+
+   In additon to this some optional profile User Stories where applied to auto generate a profile when a user is set up and allow users to update their profile info where required.
+
+
+   For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/5/views/1).
+   
+   ---
+
+   <br>
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Iteration 5</summary>
+   <br>
+
+   For iteration 5 the key focus was to target the To-Do List functionality which would allow users create, update and delete lists as well as assigning tasks to the lists and toggling them from open to closed or deleteing them where required.
+
+
+   For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/6/settings).
+   
+   ---
+
+   <br>
+
+   </details>
+
    <br>
 
    ---
