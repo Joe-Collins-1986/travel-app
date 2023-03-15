@@ -202,8 +202,7 @@
    ### Summary of User Stories
    <details>
       <summary style="font-weight:bold">Account Management</summary>
-
-   <br>
+      
    * As an Administrator I can login in and out of my superuser account so that I can manage the site.
    * As an Administrator I can add or delete user accounts so that I can manage the site.
    * As an Administrator I can update user account information so that I can assist users where required.
