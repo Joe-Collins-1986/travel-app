@@ -202,6 +202,7 @@
    ### Summary of User Stories
    <details>
       <summary style="font-weight:bold">Account Management</summary>
+
    <br>
    * As an Administrator I can login in and out of my superuser account so that I can manage the site.
    * As an Administrator I can add or delete user accounts so that I can manage the site.
@@ -215,7 +216,7 @@
 
    <details>
       <summary style="font-weight:bold">Site Updates</summary>
-   <br>
+
    * As an Administrator I can post site updates so that users can be informed about latest features/updates.
    * As a user I can check site updates so that I understand site changes and improvements.
    * As a user I can comment on site updates so that I can influence future site enhancements.
@@ -244,7 +245,7 @@
 
    <details>
       <summary style="font-weight:bold">Travel Diary</summary>
-   <br>
+
    * As a user I can create a diary linked to a country I have visited so that I can record my experiences.
    * As a user I can update my diary posts so that I can fix mistakes or add info.
    * As a user I can delete diary posts so that I can remove unwanted information.
@@ -254,7 +255,7 @@
 
    <details>
       <summary style="font-weight:bold">To-Do Lists</summary>
-   <br>
+
    * As a user I can view all the to-do lists i have for a country so that i can plan and track my travel and holiday activities.
    * As a user I can add new to-do lists so that I can create specific task managers.
    * As a user I can delete to-do lists so that I can remove lists that are no longer required.
@@ -264,7 +265,7 @@
 
    <details>
       <summary style="font-weight:bold">To-Do Tasks</summary>
-   <br>
+
    * As a user I can view all items in a to-do list so that I can see what specific activities are required.
    * As a user I can add new to-do items to a list so that I can manage new tasks i consider.
    * As a user I can toggle to-do items to open or closed so that I can see which tasks are outstanding.
@@ -274,7 +275,7 @@
 
    <details>
       <summary style="font-weight:bold">Restrictions</summary>
-   <br>
+
    * As a user I am restricted from specific site updates, map and countries without first logging in so that I can do not try to submit a comment or visited with no user to assign to the object and generate an error.
    * As a user I can restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the user.
    * As a user I am sent to an instructive page when I am unable to access a web page for any reason so that I understand why I am unable to access the page requested.
