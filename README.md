@@ -393,25 +393,6 @@
    If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/2023f4b5-b0e3-4be5-b188-562b2ee292d7/edit?viewport_loc=-2222%2C-1006%2C16387%2C8543%2C0_0&invitationId=inv_12794b38-9259-4f4a-bba2-59feacd478f0).
    <br>
 
-   Following this review the build order of the features will be broken down into phases:
-
-   #### Phase 1:
-   - Gameplay
-   - Validations
-   - Rules
-   - Difficulty
-
-   #### Phase 2:
-   - Clear screen
-   - Titles
-
-   #### Phase 3:
-   - Scoreboard
-   - Username (useless without scoreboard)
-
-   #### Phase 4 (Future enhancements - currently out of scope):
-   - User interface (e.g. tkinter, pygame)
-
    ---
 
    </details>
@@ -422,8 +403,8 @@
 
    The below details the process flow for the game from beginning to end.
 
-   ![Process Flow](readme_assets/features/process-flow.png)<br>
-   If you have a LucidChart account, you can also view this process flow [here](https://lucid.app/lucidchart/6f4a551a-5f6e-43eb-9645-1834994d4e27/edit?viewport_loc=-136%2C-64%2C3656%2C1771%2CI~k5YlUlNz8V&invitationId=inv_4642de00-28f1-4eff-8cd1-fe81b08e943d).
+   ![Process Flow](readme-assets/features-planning/process-flow.png)<br>
+   If you have a LucidChart account, you can also view this process flow [here](https://lucid.app/lucidchart/45f9a33d-bf6a-431b-8cb7-6cf56aced5a6/edit?viewport_loc=-279%2C-45%2C4992%2C2589%2CI~k5YlUlNz8V&invitationId=inv_e8867747-9ada-4d1d-9cd3-f40d4cf76206).
    <br>
 
    ---
