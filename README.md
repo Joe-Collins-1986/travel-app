@@ -388,7 +388,7 @@
 
    ![High Level Priority Matrix](readme-assets/features-planning/high-lvl-priority-matrix.png)
    <br>
-   ![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix.png)
+   ![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix-md.png)
    <br>
    If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/2023f4b5-b0e3-4be5-b188-562b2ee292d7/edit?viewport_loc=-2222%2C-1006%2C16387%2C8543%2C0_0&invitationId=inv_12794b38-9259-4f4a-bba2-59feacd478f0).
    <br>
