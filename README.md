@@ -444,7 +444,7 @@
       <summary style="font-weight:bold">Iteration 1</summary>
    <br>
 
-   For iteration 1 the key focus was to target the Site Administration to ensure the platform was operational with a superuser. Test users were set up with the ability to login and out as well as reset passwords.
+   For Iteration 1 the key focus was to target the Site Administration to ensure the platform was operational with a superuser. Test users were set up with the ability to login and out as well as reset passwords.
 
    In additon to this some optional site update User Stories where applied to allow the site owner to detail updates to test users as the site was in development.
 
@@ -460,7 +460,7 @@
       <summary style="font-weight:bold">Iteration 2</summary>
    <br>
 
-   For iteration 2 the key focus was to target the Country Naviation which would provide the platform to later add diary posts and a task manager.
+   For Iteration 2 the key focus was to target the Country Naviation which would provide the platform to later add diary posts and a task manager.
 
    In additon to this some more optional site update User Stories where applied to allow test users to comment on the updates posted by the site owner.
 
@@ -493,7 +493,7 @@
       <summary style="font-weight:bold">Iteration 4</summary>
    <br>
 
-   For iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary enteries related to a specific country.
+   For Iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary enteries related to a specific country.
 
    In additon to this some optional profile User Stories where applied to auto generate a profile when a user is set up and allow users to update their profile info where required.
 
@@ -510,7 +510,7 @@
       <summary style="font-weight:bold">Iteration 5</summary>
    <br>
 
-   For iteration 5 the key focus was to target the To-Do List functionality which would allow users create, update and delete lists as well as assigning tasks to the lists and toggling them from open to closed or deleteing them where required.
+   For Iteration 5 the key focus was to target the To-Do List functionality which would allow users create, update and delete lists as well as assigning tasks to the lists and toggling them from open to closed or deleteing them where required.
 
 
    For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/6/settings).
