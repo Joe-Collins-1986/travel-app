@@ -657,57 +657,22 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Logout Fu</summary>
+      <summary style="font-weight:bold">Home Features</summary>
    <br>
 
-   #### Letters selected are checked against word
-   The letter selected will be checked against the randomised word to see if it appears. If it does it will run success outcomes if it does not it will run fail outcomes. It will also update the presented word on the screen to incorporate correctly guessed letters.
+   #### Parallax Home Screen
+   To create an engaging initial introduction to the site a Parallax effect was applied to the home page image. However to meet the asthetic requirements of the client this meant removing the inner scroll bar. As a result a downward facing arrow was applied to the screen to direct users to scroll down incase it was not immediately apparent. This arrow was given some simple JS flashing animation to make the page more interesting.
    <br>
 
-   ---
-
-   #### Letters fade after use
-   After a letter is selected it will fade and be deactivated.
-
-   ![Start of game](assets/readme-assets/features/select-letters/faded-letters.png)
+   ![Home Parallax](readme-assets/features/home/home.png)
    <br>
 
    ---
 
-   #### On game completion deactivate all letters
-   After the game is won or lost no letter buttons will be active. This is to stop any further amendments to the score. <br>
-   The letters will not fade, they will just be deactivated.
-   <br>
+   #### Home Planner Introduction
+   Further down the home page there is a little introduction to some of the features the site offers as part of the planner.
 
-   ---
-
-   </details>
- 
-   <details>
-      <summary style="font-weight:bold">Hangman Drawing</summary>
-   <br>
-
-   #### Incorrect answers draw hangman element
-   On incorrect guess a hangman element will be drawn. This is done using canvas in JS.
-
-   ![Start of game](assets/readme-assets/features/hangman-drawing/hangman-elements.png)
-   <br>
-
-   ---
-
-   #### On game completion hangman section will be replaced with outcome
-   The div holding the hangman image will also be used to detail if the user has won or lost on game completion.
-
-   ![Start of game](assets/readme-assets/features/hangman-drawing/win.png)
-   <br>
-
-   ---
-   ![Start of game](assets/readme-assets/features/hangman-drawing/lose.png)
-   <br>
-
-   If reset is selected the webpage will refresh which will reset all variable and the game will start again at a score of 0.
-
-   If play again is selected the required variable will be resent in JS leaving the score to accumulate.
+   ![Home Planner Introduction](readme-assets/features/home/home-planner.png)
    <br>
 
    ---
@@ -715,18 +680,33 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Rules</summary>
+      <summary style="font-weight:bold">Profile Features</summary>
    <br>
 
-   #### Rules held on index page
-   The rules content will be kept on the same page at the rest of the web content. This is to ensure the score is retained as backend data storage is not in use for this project.
+   #### Create Profile
+   On registration a skeleton profile will be automatically generated for each user. 
 
-   A scroll feature was added to the rules to post-it to keep the sizing consistent.
-
-   ![Start of game](assets/readme-assets/features/rules/rules-top.png)
+   ![Skeleton Profile](readme-assets/features/profile/skeleton-profile.png)
    <br>
 
-   ![Start of game](assets/readme-assets/features/rules/rules-bottom.png)
+   ---
+   
+   #### Profile Page
+   This page will allow users to view their site details as well as give them an oppertunity to note down any travel objectives they may have.
+
+   In addition to this if the user has recorded any countries they wish to visit on the planner then links to these country info pages will be available to the user via their profile page.
+
+   ![Profile Page](readme-assets/features/profile/profile.png)
+   <br>
+
+   ---
+
+   #### Update Profile
+   Users will be able to update their details and travel objectives viat the update profile page.
+
+   They can also add an avator or photo of themselves and update the profile page background from a list of potential options.
+
+   ![Update Profile Page](readme-assets/features/profile/update-profile.png)
    <br>
 
    ---
@@ -734,31 +714,103 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Settings</summary>
+      <summary style="font-weight:bold">Planner</summary>
    <br>
 
-   #### Settings held on index page
-   The settings content will be kept on the same page at the rest of the web content. This is to ensure the score is retained as backend data storage is not in use for this project.
+   #### Map Country Selection
+   From the map on the planner page the user can navigate to a country info page relating that that country. From here the user will be able to access a number of other application features which will be detailed below. One of these features will enable the user to mark the country to visited or wish list. Having done this the map will be updated to reflect the wish list and visited countries in different colours.
 
-   A scroll feature was added to the settings to post-it to keep the sizing consistent. This will only appear if required on small screens.
+   ![Country Selection Map](readme-assets/features/planner/map.png)
+   <br>
 
-   ![Start of game](assets/readme-assets/features/settings/settings.png)
+   **Note:** The SVG used to show this map was taken from https://simplemaps.com/resources/svg-world and then tailored to the clients requirements. The client agreed that initial roll out should be tailored to Europe rather than the world.
+
+   ---
+
+   #### Map Country Hover
+   Due to the size of the map it was not aesthetically pleaseing to add naems to each country via the svg file. However, the client wanted to ensure that users could locate the counties they were looking for and therefore JS was used to add a hover function to the map which would should the country mame that the mouse is over. This can be seen in the top right corner.
    <br>
 
    ---
 
-   #### Allow change in topic
-   Within settings it will be possible to change the topic. This will change the list the randomised word is selected from and will also present the currents topic onto the html page.
+   #### Dropdown Country Selection
+   Due to the fact that many people using this site would be on mobile devices or tablets and would not have hover functionality available to them the client also requested that a dropdown be added in alphabetical order so that users can select the country that way if they wish.
 
-   (See screenshot above)
+   In additon to this if a user has at a country marked as 'wish list' or 'visited' additional dropdown fields will appear.
    <br>
 
    ---
 
-   #### Toggle audio
-   Within settings it will be possible to toggle the audio on and off. As per best practice this will be set to mute as default.
+   #### Pie Chart
+   To provide an easy to see visually appealing method of displaying how many countries the user has visited and wishes to visit npm Chart.js was used to present the information in a pie chart.
 
-   (See screenshot above)
+   However, on a small screen test users indicated that this was distracting them from the key focus of the page(navigation) and therefore this is only visible on large screen sizes.
+
+   ![Pie Chart Hidden](readme-assets/features/planner/map-small.png)
+   <br>
+
+   ---
+
+   #### Legend
+   A Bootstrap Modal was used and tailored to the requirement of displaying a legend for mobile devices so as not to take up space from the map.
+
+   ![Legend Small Screen](readme-assets/features/planner/map-small-legend.png)
+   <br>
+
+   ---
+
+   #### Country Info Header
+   To create a interesting and aesthetically pleasing country info page an image (taken from unsplash) and a flag (taken from https://www.iconfinder.com/flag-icons?price=free) was added to each country object.
+
+   This was then called dependant on the country pk that was used in the url.
+
+   A Back to Map icon was also added. Following user testing the concenses was that the image was intuative enough not to require text, this was also acceptable due to the fact that a user could also select Planner from the Navbar to return to the map.
+
+   ![Country Info Header](readme-assets/features/planner/country-info-header.png)
+   <br>
+
+   ---
+
+   #### Country Info
+   To initially set up the countries with basic information a json was obtained from https://gist.github.com/keeguon/2310008?permalink_comment_id=4255990#gistcomment-4255990.
+
+   From here unwanted data/countries were removed and any required additional fields were added. This was then looped through to generate all the required country objects.
+
+   ![Country Info](readme-assets/features/planner/country-info-info.png)
+   <br>
+
+   ---
+
+   #### Country Visited
+   Users can mark the countries they have visited or countries they wish to visit via the form on the Country Info page.
+
+   As stated in the map section above this will update the svg map to show the visited and wish list countries. In addition to this any wish list countries will also appear in the users profile page.
+
+   ![Country Visited](readme-assets/features/planner/country-info-visited.png)
+   <br>
+
+   ---
+
+   #### To-Do Lists
+   Users can use this feature to create, update or delete task lists. These lists are not the tasks themselves but rather a list of tasks that the user can add.
+
+   ![To-Do Lists](readme-assets/features/planner/country-info-lists.png)
+   <br>
+   ![To-Do Lists Add](readme-assets/features/planner/create-list.png)
+   <br>
+   ![To-Do Lists Update](readme-assets/features/planner/update-list.png)
+   <br>
+
+   After discussions with the client and test users it was decided that the delete function would not require confirmation due to the simplicity of the lists. Therefore it deletes the list immediatly on selection.
+
+   To access the list itself to add and manage task items the user can select the list anchor. This will be detailed in the task manager feature section. 
+
+   ---
+
+   #### Diary Link
+   Users can access their personal diaries related to the country they are on via the diary link available.
+
+   ![Diary Link](readme-assets/features/planner/country-info-diary.png)
    <br>
 
    ---
