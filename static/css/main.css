@@ -130,7 +130,7 @@ p, .comments-txt, .form-label {
 }
 
 .nav-item {
-    color: rgb(6, 68, 103);
+    color: #064467;
     font-weight: bold;
     font-size: 140%;
 }
@@ -157,6 +157,11 @@ p, .comments-txt, .form-label {
 }
 .social-icon-container {
     display: none;
+}
+
+.navbar-brand img {
+    height: 40px;
+    padding: 5px;
 }
 
 /* NAV BAR SMALLER SCREEN */
