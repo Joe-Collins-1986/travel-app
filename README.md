@@ -607,19 +607,57 @@
    
    ---
 
-   #### Guessed incorrect letter
-   If the user's guess is not in the randomly selected word the underscore will remain as well words informing the user the answer is incorrect.
-   
-   It will also result in a hangman element being drawn and the potential winning score being reduced.
+   #### Password Reset
+   The user will be given the opportunity to reset their password in case they forget it or want to change it for security purposes. The link to reseting password is found on the login page.
 
-   ![Start of game](assets/readme-assets/features/present-word/incorrect-guess.png)
+   On this page the user will be asked to enter their email to initial the process. Standard Django form validation is used for confirming the email.
+
+   ![Password Reset](readme-assets/features/password-reset/password-reset.png)
+   <br>
+
+   Once a valid email is input the user will get a confrimation that an email has been sent.
+
+   ![Password Email Sent](readme-assets/features/password-reset/email-sent.png)
+   <br>
+
+   The user will then receive an email taking them to a password reset form.
+
+   ![Password Email Recieved](readme-assets/features/password-reset/email.png)
+   <br>
+
+   After following the email link the user will be asked to input a password and confirm it. This password will have a Django password validation applied to it to ensure it is secure enough to use.
+
+   ![Password Reset Form](readme-assets/features/password-reset/new-password-page.png)
+   <br>
+
+   Following a successful password reset the user will recieve the following confirmation page.
+
+   ![Password Reset Confirmation](readme-assets/features/password-reset/password-updated.png)
+   <br>
+
+   ---
+
+   #### Logout
+   The user can logout of the site by simply selecting the logout option on the Navbar menu.
+   
+   ---
+
+   #### Summary Site Updates
+   The client wanted users to be able to see a summary of the most recent site updates at a glance and didn't want this to be restricted to signed in users. The logic for this is that the site updates and site news articles could be a good way of incentivising new users to register.
+
+   To this end, the 3 most recent site update posts are always presented at the bottom of the login, register, Passowrd Reset and Home pages.
+
+   Non logged in users can also select the 'see all updates' button to be taken to a page with all the site updates. However only signed in users will be able to navigate to any one specific site update in order to place comments.
+
+   ![Site_Updates Summary](readme-assets/features/site-updates-summary/3-site-updates.png)
    <br>
    
    ---
+
    </details>
 
    <details>
-      <summary style="font-weight:bold">Select Letters</summary>
+      <summary style="font-weight:bold">Logout Fu</summary>
    <br>
 
    #### Letters selected are checked against word
