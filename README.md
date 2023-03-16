@@ -533,19 +533,28 @@
    
 
    <details>
-      <summary style="font-weight:bold">Random Word</summary>
+      <summary style="font-weight:bold">Navbar/Footer Features</summary>
    <br>
 
-   #### Random word selected from list
-   There will be 3 lists in this game:
+   #### NavBar
+   The Navbar has been fixed to allow the user easy access to all key pages. (Some pages are not accessible via the nav bar as they are dependant on selections made via other pages e.g. country info).
 
-   1. animals
-   2. cars
-   3. countries
+   Prior to login the user will see the following Navbar:
+   ![Navbar Not Logged In](readme-assets/features/nav-bar/nav-bar-lg-no-login.png)<br>
+
+   **Note:** Despite seeing the planner the user will not be able to access it until logged in. This was an intentional decision to show non registered users features they could not access to drive curiosity and engourage registration.
+
+   After login the user will see the following Navbar:
+   ![Navbar Logged In](readme-assets/features/nav-bar/nav-bar-lg-login.png)<br>
    
-   Dependent on the topic selected the random word will be taken from the appropriate list. 
-   
-   If the user selects play again the word will be removed from the list so that it cannot be duplicated.
+   If the user is using a mobile screen they will have an expendable nav menu:<br>
+   ![Navbar Mobile](readme-assets/features/nav-bar/nav-bar-sm-login.png)<br>
+
+   **Note:** This menu will show the same options to the user depending ontheir logged in status as that of the large screen nav bar.
+
+   #### Footer
+   The Footer has been fixed to allow the user easy access to all social media links.<br>
+   ![Navbar Mobile](readme-assets/features/footer/footer.png)<br>
    <br>
 
    ---
@@ -553,21 +562,47 @@
    </details>
 
    <details>
-         <summary style="font-weight:bold">Present Word</summary>
+         <summary style="font-weight:bold">Account Management Features</summary>
    <br>
    
-   #### Empty word
-   At the commencement of the game there is a function to locate a random word from a list (dependent on topic selected) and present as underscores.
+   #### Register
+   New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login Page when users first access the site (this link will be shown on the login feature).
 
-   ![Start of game](assets/readme-assets/features/present-word/blank-word.png)
+   On valid Registration the user will be taken straight to the home page without having to re-login.
+
+   ![Register Page](readme-assets/features/register/register.png)
+   <br>
+
+   Django validation checks will be carried out on the registration form as with all future forms referenced in this Readme file.
+
+   ![Register Form Validation 1](readme-assets/features/register/form-validation.png)
+   <br>
+   ![Register Form Validation 2](readme-assets/features/register/form-wrong-password.png)
    <br>
 
    ---
 
-   #### Guessed letter
-   If the user's guess is in the randomly selected word the letter will appear as well as encouraging words on the screen.
+   #### Login
+   If the user has a registered account they will be able to login to the site using the login page.
 
-   ![Start of game](assets/readme-assets/features/present-word/correct-guess.png)
+   This page will also offer links to sign up and password reset. The password reset function will be covered below.
+
+   ![Login Page](readme-assets/features/login/login.png)
+   <br>
+
+   If the user tries to access site areas where login is required they will be directed to the following login page.
+
+   ![Login Access Required Page](readme-assets/features/login/access-login-required.png)
+   <br>
+
+   After completing the login they will automatically be redirected to the page they were initially trying to access.
+
+   ![Login Redirect](readme-assets/features/login/login-redirect.png)
+   <br>
+
+   As with registration Djago will manage the standard form validation.
+
+   ![Login Access Required Page](readme-assets/features/login/login-form-validation.png)
    <br>
    
    ---
