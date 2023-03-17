@@ -714,7 +714,7 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Planner</summary>
+      <summary style="font-weight:bold">Planner Features</summary>
    <br>
 
    #### Map Country Selection
@@ -818,31 +818,37 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Score</summary>
+      <summary style="font-weight:bold">Task Manager Features</summary>
    <br>
 
-   #### Score increase
-   Set to increase the score dependent on how many incorrect answers the user makes.
+   #### Add Tasks
+   Users can create tasks within the selected list via the form available to them.
 
-   Potential score starts at 10 each game and reduces by 1 for each incorrect letter guessed.
-
-   ![Start of game](assets/readme-assets/features/score/increase-score.png)
-   <br>
-
-   ---
-
-   #### Score decrease
-   If the user does not guess the word in 10 attempts, then their score will reduce by 5 points. This has the potential to take the users overall score into a negative figure.
-
-   ![Start of game](assets/readme-assets/features/score/lose-5-points.png)
+   ![Add Tasks](readme-assets/features/task-manager/tasks-added.png)
    <br>
 
    ---
 
-   #### Score accumulation
-   If the user opts to play again their score will be retained from the previous games with the new score being added.
+   #### Close Tasks
+   Once tasks have been completed users can mark them as closed. These will change colour and move below the opened tasks.
 
-   ![Start of game](assets/readme-assets/features/score/accumulate-score.png)
+   ![Close Tasks](readme-assets/features/task-manager/closed-tasks.png)
+   <br>
+
+   ---
+
+   #### Delete Tasks
+   If a user wished they can delete a task entirely. As with the lists the test users and client opted for no confirmation for this deletion.
+
+   ![Delete Tasks](readme-assets/features/task-manager/delete-tasks.png)
+   <br>
+
+   ---
+
+   #### Delete Tasks
+   Useres will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and position on the list.
+
+   ![Re-open Tasks](readme-assets/features/task-manager/tasks-re-opened.png)
    <br>
 
    ---
@@ -850,18 +856,170 @@
    </details>
 
    <details>
-      <summary style="font-weight:bold">Social Media Links</summary>
+      <summary style="font-weight:bold">Diary Features</summary>
    <br>
 
-   #### Present links to social media platforms
-   The links provided will take the user to the social media platforms but not to active accounts. This is because the client is fictional and does not have real accounts.
+   #### Add Diary Post
+   Once users have navigated to their specific country diary they will be able to add diary posts via the 'Add Diary Post' button.
 
-   ![Start of game](assets/readme-assets/features/social-media/social-media.png)
+   ![Diary Page](readme-assets/features/diary/diary.png)
+
+   Each post will allow the user to enter:
+   
+    - Content - detailing their travel experiences
+    - Image - This is an optional field the user can input if they wish - the image will be resized and stored to the client/site owner's AWS account.
+    - Tags - The user can add multiple tags to a post if they wish which can later be used to help filter searches. If no Tag is added a 'NO TAGS' tag will be applied automatically. The user does not have to be case sensitive with the tag enteries as these are all converted to uppercase.
+    - Experience - The user can select from a range of experience options. These will display on the post as emojis and can be selected to filter posts to that experience rating. This field is not manadatory and can be left 'Not Rated'.
+
+   ![Add Diary Post](readme-assets/features/diary/add-diary.png)
+
+   ---
+
+   #### Update Diary Post
+   If the user wishes to amend a post they have made they can select the update diary option.
+
+   **Note:** The diary post date will not be effected by this update. Due to the nature of a diary it is more critical to show the date of post over the amendment date.
+
+   ![Update Diary Post](readme-assets/features/diary/update-diary.png)
+
+   ---
+
+   #### Delete Diary Post
+   If the user wishes to delete a post they are not happy with they can select delete. Unlike the Task Manager this will required a delete confirmation as more detail is added to diary posts and therefore the impact of accidental deletion is higher.
+
+   ![Delete Diary Post](readme-assets/features/diary/delete-diary.png)
+
+   ---
+
+   #### Pagination
+   Pagination is set to only show 2 posts per page. This was experimented with test users and they felt this was a good amount per page due to the large amount of content that cound be added to each post.
+
+   ![Diary Pagination](readme-assets/features/diary/diary-pagination.png)
+
+   ---
+
+   #### Filter
+   Users will be able to filter the posts they wish to see using a range of options.
+
+   They can type into the seach bar and it will return any posts where the content or tags include what they have typed.
+
+   ![Diary Filter](readme-assets/features/diary/diary-search.png)
+
+   The user can select the tags on the post itself to filter to the tag they have selected. Or they can navigate to the tag page via the 'Search Tags' button. This will list out all the tags that have been created and list them in order of their populatity. These can be selected and it will filter the posts to the tag selected.
+
+   ![Tags Page](readme-assets/features/diary/tags-page.png)
+
+   The user can select the experience emoji on the post itself to filter to the experience they have selected.
+
+   ![Experience Filter](readme-assets/features/diary/diary-exp.png)
+
+   The user can refresh the page to remove all filtering via the refresh page button next to the seach input field.
+
+   **Note:** The pagination has been built to work on the filterd searches. Therefore, if there are more than 2 returned posts pagination will be applied.
+
+   ---
 
    </details>
 
-   </details>
+   <details>
+      <summary style="font-weight:bold">Site Update Features</summary>
    <br>
+
+   #### Site Updates Header
+   When the user navigates to the site updates page the header will return the total number of posts added.
+
+   ![Site Updates Page](readme-assets/features/site-updates/updates-page.png)
+   <br>
+
+   ---
+
+   #### Site Update Posts
+   The posts detailed on this screen are added by the site administrator. Users will not be able to add, update or delete any of these posts. However, logged in users will be able to select the post and add comments if they wish. This will be detailed later in this document.
+
+   The number of comments users have added to a post is shown at the bottom of the post next to a little comment icon.
+
+   ![Site Update Post](readme-assets/features/site-updates/site-update-post.png)
+   <br>
+
+   ---
+
+   #### Site Updates Pagination
+   Pagination is set to only show 5 posts per page. This was experimented with test users and they felt this was a good amount per page.
+
+   ![Site Updates Pagination](readme-assets/features/site-updates/pagination.png)
+   <br>
+
+   ---
+
+   #### Site Updates Filter
+   The site update posts can be filtered using 2 different methods.
+
+   The user can type a string into the search field and the page will return any posts where the title, content or topic contains that string. 
+
+   ![Site Updates Seach Bar](readme-assets/features/site-updates/filter-bar-closed.png)
+   <br>
+
+   The user can also open the filter tab built with JS to show all the topics with the number of posts assigned to each and select these to filter the posts.
+
+   ![Site Updates Filter Topic](readme-assets/features/site-updates/filter-bar-open.png)
+   <br>
+
+   **Note:** The pagination has been built to work on the filterd searches. Therefore, if there are more than 5 returned posts pagination will be applied.
+
+   ---
+
+   #### Add Comment To Post
+   Once a logged in user selects a post they will be directed to a page where they can add comments and view other user comments related to that post.
+
+   On a large screen the add comment form is directly on the page. This allows users to enter a title, comment and optionally an image.
+
+   ![Site Update Large Screen](readme-assets/features/site-updates/site-post-page-lg.png)
+   <br>
+
+   If the user is using a small screen they can access the add comment form via the 'Add Comment' button.
+
+   ![Site Update Small Screen](readme-assets/features/site-updates/site-post-page-sm.png)
+   <br>
+
+   ![Site Update Form](readme-assets/features/site-updates/add-comment.png)
+   <br>
+
+   ---
+
+   #### Comment Linked To User
+   If a user views a comment that has been added by another user thay will not be able to update of delete it and the updatea and delete buttons will not appear on the comment for them.
+
+   ![Comment By Other User](readme-assets/features/site-updates/comment.png)
+   <br>
+
+   However if they are the comment owner the update and delete buttons are available.
+
+   ![Comment By User](readme-assets/features/site-updates/comment-update-delete.png)
+   <br>
+
+   !**Note:** Once a comment has been added the administrator has the ability to respond to it. This is so that if actions are required based on the comment the administrator can update the site users.
+
+   ---
+
+   #### Update Comment
+   If a user wishes they can update their own comments. This will add an updated field to the comment to show when it was last ammended.
+
+   ![Update Comment](readme-assets/features/site-updates/update-comment.png)
+   <br>
+
+   ---
+
+   #### Delete Comment
+   If a user wishes they can delete their own comments. This will taek them to a confriation page to check they do not delete comments in error.
+
+   ![Delete Comment](readme-assets/features/site-updates/comment-delete.png)
+   <br>
+
+   ---
+   
+
+
+   </details>
 
 # Further Development
    * Add additional categories to the hangman game.
