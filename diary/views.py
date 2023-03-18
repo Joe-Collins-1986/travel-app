@@ -133,7 +133,10 @@ class CountryView(LoginRequiredMixin, View):
             else:
                 visit_form = VisitForm()
 
-        return HttpResponseRedirect(reverse('country', args=[pk]))
+        url = reverse('country', args=[country.pk])
+        return redirect(
+                f'{url}#visited_list_location'
+                )
 
 
 class DiaryAllPostsView(LoginRequiredMixin, View):
