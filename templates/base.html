@@ -38,7 +38,7 @@
                     <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
                         <div class="top-box">
                             <div class="offcanvas-header">
-                                <h3 class="offcanvas-title" id="offcanvas">Menu</h3>
+                                <h3 class="offcanvas-title">Menu</h3>
                                 <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
                             </div>
     
@@ -53,6 +53,9 @@
 
                                 <div class="navbar-nav ms-auto">
                                     {% if user.is_authenticated %}
+                                        {% if user.is_superuser %}
+                                            <a class="nav-item nav-link px-lg-4" href="{% url 'admin:index' %}">Admin</a>
+                                        {% endif %}
                                     <a class="nav-item nav-link px-lg-4" href="{% url 'profile-page' %}">Profile</a>
                                     <a class="nav-item nav-link px-lg-4" href="{% url 'home-logout' %}">Logout</a>
                                     {% else %}
