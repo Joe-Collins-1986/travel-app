@@ -58,6 +58,7 @@ class AdminUpdatesListView(View):
                 "topic_items": topic_items,
                 "all_published_updates": update_list_published,
                 "search_query": q,
+                "tab_title": "Site Updates"
             }
         )
 
@@ -82,7 +83,8 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
             {
                 "update": update,
                 "comments": comments,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                "tab_title": "Update"
             }
         )
     

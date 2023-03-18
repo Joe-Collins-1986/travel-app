@@ -26,6 +26,7 @@ class AddListView(LoginRequiredMixin, View):
         context = {
             'list_form': list_form,
             'country': country,
+            "tab_title": "Add List"
             }
         return render(request, self.template_name, context)
 
@@ -79,6 +80,7 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
         context = {
             'list_form': list_form,
             'list': list,
+            "tab_title": "Edit List"
             }
         return render(request, self.template_name, context)
 
@@ -121,7 +123,8 @@ class ToDoItemsView(LoginRequiredMixin, View):
         context = {
             'to_do_list': to_do_list,
             'items': items,
-            'add_item_form': add_item_form
+            'add_item_form': add_item_form,
+            "tab_title": "Task Items"
             }
         return render(request, self.template_name, context)
     

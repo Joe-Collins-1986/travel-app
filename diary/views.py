@@ -66,7 +66,7 @@ class MapView(LoginRequiredMixin, View):
 
         percentage_visited = round((visited_countries_travelled_to.count()/countries.count())*100, 2)
 
-        dict.update({"labels": labels, "data": data, "percentage_visited": percentage_visited})
+        dict.update({"labels": labels, "data": data, "percentage_visited": percentage_visited, "tab_title": "Map"})
 
         return render(request, "diary/map.html", dict)
     
@@ -91,7 +91,8 @@ class CountryView(LoginRequiredMixin, View):
                     {
                         "country": country,
                         "visit_form": VisitForm(instance=country_visited),
-                        'lists': lists
+                        'lists': lists,
+                        "tab_title": "Country Info"
                     },
             )
         else:
@@ -101,7 +102,9 @@ class CountryView(LoginRequiredMixin, View):
                     {
                         "country": country,
                         "visit_form": VisitForm(),
-                        'lists': lists
+                        'lists': lists,
+                        "tab_title": "Country Info"
+
                     },
             )
 
@@ -179,6 +182,7 @@ class DiaryAllPostsView(LoginRequiredMixin, View):
                 "diary_posts": diary_posts,
                 "country": country,
                 "search_query": q,
+                "tab_title": "Diary Posts"
             }
         )
 
@@ -212,6 +216,7 @@ class DiaryTagsView(LoginRequiredMixin, View):
             {
                 "country": country,
                 "tags": tags_list,
+                "tab_title": "Diary Tags"
             }
         )
 
