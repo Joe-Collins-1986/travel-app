@@ -11,7 +11,7 @@
    - [User Stories](#user-stories)
    - [Website Design](#website-design)
    - [Wireframes](#wireframes)
-   - [Features](#...)
+   - [Features](#features)
 - [Further Development](#...)
 - [Technologies Used](#...)
    - [Languages Used](#...)
@@ -45,11 +45,11 @@
    ## Project Introduction
    (**Note:** this is a fictitious client generated for the purpose of developing this project to test my HTML, CSS, Python, JavaScript and Django Framework essentials.)
 
-   This website has been designed to provide users with an easy to use web application to aide in the planning and tacking of travel. The primary objectives of this project are to develop a diary for users to log their travel/holiday experiences whilst also allowing them to mark visited and wish list countries on a map. In addition to these key deliverables the client would also like to provide users with basic country info and an easy to to use travel task manager.
+   This website has been designed to provide users with an easy to use web application to aide in the planning and tracking of travel. The primary objectives of this project are to develop a diary for users to log their travel/holiday experiences whilst also allowing them to mark visited and wish list countries on a map. In addition to these key deliverables the client would also like to provide users with basic country info and an easy to to use travel task manager.
 
-   Following discussions with the client this site will initially be tailored to Europe with the potential to expend the available countries following initial go live. There will also be future opertunities to provide a public blog for users to share their experiences with a wider audience however this is not in scope for the initial launch.
+   Following discussions with the client this site will initially be tailored to Europe with the potential to expand the available countries following initial go live. There will also be future opertunities to provide a public blog for users to share their experiences with a wider audience however this is not in scope for the initial launch.
 
-   The client requesting this website is using this as the first step in creating a one stop location for planning and booking holiday and transport needs. The initial goal is to generate user traffic and link in with potential future partners such as booking.com, sectret escapes, kuoni travel, skyscanner to provide a booking platform on a commision based model.
+   The client requesting this website is using this as the first step in creating a one stop location for planning and booking holiday and transport needs. The initial goal is to generate user traffic and link in with potential future partners such as Booking.com, Secret Escapes, Kuoni Travel, Skyscanner to provide a booking platform on a commision based model.
 
    <br>
 
@@ -57,7 +57,7 @@
 # Responsive Review
 
    ## Am I Responsive? [*(link to responsive review website)*](https://ui.dev/amiresponsive?url=https://traval-app.herokuapp.com/)
-   The above provides a view of the login page however login required to view the site contents. This is detailed via screenshots below.
+   The above provides a view of the login page however login is required to view the site contents. These are detailed via screenshots below.
 
    <details>
       <summary style="font-weight:bold">Login</summary>
@@ -174,13 +174,13 @@
    <details>
       <summary style="font-weight:bold">Visitor Goals</summary>
 
-   The visitor should have a clear understanding of what the website purpose is the site functions should encourage regular use.
+   The visitor should have a clear understanding of what the website purpose is and the site functions should encourage regular use.
    * Immediately engaged by the UX design.
    * Understand the purpose of the site.
    * Simple intuitive menu navigation.
    * Intuitive content and links.
    * Ability to view site updates, enhancements and news.
-   * Oppertunity to feedback on site updates to drive future improvments to tailor site to user expectations.
+   * Opportunity to feedback on site updates to drive future improvments to tailor site to user expectations.
    * Easy to access information about countries.
    * Access to a diary to record travel experiences.
    * Access to a task-manager/to-lists to manage travel activities.
@@ -209,7 +209,7 @@
    * As a user I can register an account so that I can log in with my password.
    * As a user I can login in and out of my account so that I can use the site.
    * As a user I can reset my password so that I can still use the site if I have forgotten it or if it needs changing due to a security breach.
-   * As a Site Owner I can host the site on a cloud platform so that it can accessed by user be scaled up as appropriate.
+   * As a Site Owner I can host the site on a cloud platform so that it can be accessed by user be scaled up as appropriate.
    ---
    </details>
 
@@ -220,7 +220,7 @@
    * As a user I can check site updates so that I understand site changes and improvements.
    * As a user I can comment on site updates so that I can influence future site enhancements.
    * As a user I can update my comments on site updates so that I can correct or improve posts if necessary.
-   * As a user I can delete my comments on site updates so that i can remove comments that are no longer relevant.
+   * As a user I can delete my comments on site updates so that I can remove comments that are no longer relevant.
    * As an administrator I can update comments so that I can detail actions taken to resolve issues raised.
    ---
    </details>
@@ -237,7 +237,7 @@
    <details>
       <summary style="font-weight:bold">Profile</summary>
    
-   * As a user I can see my profile information so that i can confirm if it is correct.
+   * As a user I can see my profile information so that I can confirm if it is correct.
    * As a user I can update my profile info so that it reflects any changes to my circumstances.
    ---
    </details>
@@ -255,7 +255,7 @@
    <details>
       <summary style="font-weight:bold">To-Do Lists</summary>
 
-   * As a user I can view all the to-do lists i have for a country so that i can plan and track my travel and holiday activities.
+   * As a user I can view all the to-do lists I have for a country so that i can plan and track my travel and holiday activities.
    * As a user I can add new to-do lists so that I can create specific task managers.
    * As a user I can delete to-do lists so that I can remove lists that are no longer required.
    * As a user I can update my to-do lists so that I can fix mistakes or add info.
@@ -266,7 +266,7 @@
       <summary style="font-weight:bold">To-Do Tasks</summary>
 
    * As a user I can view all items in a to-do list so that I can see what specific activities are required.
-   * As a user I can add new to-do items to a list so that I can manage new tasks i consider.
+   * As a user I can add new to-do items to a list so that I can manage new tasks I consider.
    * As a user I can toggle to-do items to open or closed so that I can see which tasks are outstanding.
    * As a user I can delete to-do items so that I can remove tasks that are no longer required.
    ---
@@ -276,7 +276,7 @@
       <summary style="font-weight:bold">Restrictions</summary>
 
    * As a user I am restricted from specific site updates, map and countries without first logging in so that I can do not try to submit a comment or visited with no user to assign to the object and generate an error.
-   * As a user I can restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the user.
+   * As a user I am restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the author.
    * As a user I am sent to an instructive page when I am unable to access a web page for any reason so that I understand why I am unable to access the page requested.
    ---
    </details>
@@ -289,7 +289,7 @@
       <summary style="font-weight:bold">Colour Scheme</summary>
 
    <br>
-   Client requested the site to be built from shades of grey with a bold blue for emphasising key elements. This consideration was made to not pull focus or negativly impact the readability of the site due to its information nature.<br>
+   Client requested the site to be built from shades of grey with a bold blue for emphasising key elements. This consideration was made to not pull focus or negatively impact the readability of the site due to its information nature.<br>
 
    - Main colours: 
       - #064467 (Dark Blue)
@@ -328,7 +328,7 @@
    The images and icons used for development of this website were taken from the below sources.<br>
 
    - Flags for counties taken from: https://www.iconfinder.com/flag-icons?price=free
-   - Header images for each country. As well as home and login background images and home planner images: https://unsplash.com/
+   - Header images for each country as well as home and login background images and home planner images: https://unsplash.com/
    - Icons: https://fontawesome.com/
    - Favicon: https://pixabay.com/vectors/departures-airport-sign-airliner-153136/
 
@@ -353,9 +353,9 @@
       <summary style="font-weight:bold">Problem Statement</summary>
    <br>
 
-   Following discusions with a focus group the following problem statment was developed alongside potential overarching features to satisfy user expectations.
+   Following discussions with a focus group the following problem statement was developed alongside potential overarching features to satisfy user expectations.
 
-   ![Problem Statment](readme-assets/features-planning/problem-statement.png)
+   ![Problem Statement](readme-assets/features-planning/problem-statement.png)
    <br>
    If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/7a7db2c4-0ae5-4daf-9919-ac0871afd80f/edit?view_items=-9MgloYgLC6R&invitationId=inv_1dd18ca7-574f-4e19-9df3-fe768b642e93).
    <br>
@@ -369,7 +369,7 @@
       <summary style="font-weight:bold">Mind-Map</summary>
    <br>
 
-   The below image provides an initial mind-map into the features which might be appropriate for the travel application based on the problem statement. This will aide in the development of user stories.
+   The below image provides an initial mind-map into the features which might be appropriate for the travel application based on the problem statement. This will aide in the development of User Stories.
 
    ![Mind Map](readme-assets/features-planning/mind-map.png)
    <br>
@@ -433,8 +433,8 @@
 
    The project development was run in multiple iterations/sprints each targeting a number of User Stories.
 
-   Each user story was moved out of a Backlog and assigned to the iteration with a priority label (Must Have, Should Have, Could Have, Won't Have).
-   In addition to User Stories bugs and enhancments where also applied within certain iterations.
+   Each User Story was moved out of a backlog and assigned to the iteration with a priority label (Must Have, Should Have, Could Have, Won't Have).
+   In addition to User Stories, bugs and enhancments were also applied within certain iterations.
 
    To manage the Agile iterations I used the projects function within my GitHub account, pulling User Stories into a KanBan Board. (Links to each project iteration detailed in the iteration breakdown below.)
 
@@ -460,7 +460,7 @@
       <summary style="font-weight:bold">Iteration 2</summary>
    <br>
 
-   For Iteration 2 the key focus was to target the Country Naviation which would provide the platform to later add diary posts and a task manager.
+   For Iteration 2 the key focus was to target the country navigation which would provide the platform to later add diary posts and a task manager.
 
    In additon to this some more optional site update User Stories where applied to allow test users to comment on the updates posted by the site owner.
 
@@ -493,7 +493,7 @@
       <summary style="font-weight:bold">Iteration 4</summary>
    <br>
 
-   For Iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary enteries related to a specific country.
+   For Iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary entries related to a specific country.
 
    In additon to this some optional profile User Stories where applied to auto generate a profile when a user is set up and allow users to update their profile info where required.
 
@@ -537,7 +537,7 @@
    <br>
 
    #### NavBar
-   The Navbar has been fixed to allow the user easy access to all key pages. (Some pages are not accessible via the nav bar as they are dependant on selections made via other pages e.g. country info).
+   The Navbar has been fixed to allow the user easy access to all key pages. (Some pages are not accessible via the nav bar as they are dependent on selections made via other pages e.g. country info).
 
    Prior to login the user will see the following Navbar:
    ![Navbar Not Logged In](readme-assets/features/nav-bar/nav-bar-lg-no-login.png)<br>
@@ -547,10 +547,10 @@
    After login the user will see the following Navbar:
    ![Navbar Logged In](readme-assets/features/nav-bar/nav-bar-lg-login.png)<br>
    
-   If the user is using a mobile screen they will have an expendable nav menu:<br>
+   If the user is using a mobile screen they will have an expandable nav menu:<br>
    ![Navbar Mobile](readme-assets/features/nav-bar/nav-bar-sm-login.png)<br>
 
-   **Note:** This menu will show the same options to the user depending ontheir logged in status as that of the large screen nav bar.
+   **Note:** This menu will show the same options to the user, depending on their logged in status, as that of the large screen nav bar.
 
    #### Footer
    The Footer has been fixed to allow the user easy access to all social media links.<br>
@@ -566,7 +566,7 @@
    <br>
    
    #### Register
-   New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login Page when users first access the site (this link will be shown on the login feature).
+   New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login page when users first access the site (this link will be shown on the Login feature).
 
    On valid Registration the user will be taken straight to the home page without having to re-login.
 
@@ -608,14 +608,14 @@
    ---
 
    #### Password Reset
-   The user will be given the opportunity to reset their password in case they forget it or want to change it for security purposes. The link to reseting password is found on the login page.
+   The user will be given the opportunity to reset their password in case they forget it or want to change it for security purposes. The link to resetting the password is found on the login page.
 
-   On this page the user will be asked to enter their email to initial the process. Standard Django form validation is used for confirming the email.
+   On this page the user will be asked to enter their email to initiate the process. Standard Django form validation is used for confirming the email.
 
    ![Password Reset](readme-assets/features/password-reset/password-reset.png)
    <br>
 
-   Once a valid email is input the user will get a confrimation that an email has been sent.
+   Once a valid email is input the user will get a confirmation that an email has been sent.
 
    ![Password Email Sent](readme-assets/features/password-reset/email-sent.png)
    <br>
@@ -645,7 +645,7 @@
    #### Summary Site Updates
    The client wanted users to be able to see a summary of the most recent site updates at a glance and didn't want this to be restricted to signed in users. The logic for this is that the site updates and site news articles could be a good way of incentivising new users to register.
 
-   To this end, the 3 most recent site update posts are always presented at the bottom of the login, register, Passowrd Reset and Home pages.
+   To this end, the 3 most recent site update posts are always presented at the bottom of the Login, Register, Password Reset and Home pages.
 
    Non logged in users can also select the 'see all updates' button to be taken to a page with all the site updates. However only signed in users will be able to navigate to any one specific site update in order to place comments.
 
@@ -692,7 +692,7 @@
    ---
    
    #### Profile Page
-   This page will allow users to view their site details as well as give them an oppertunity to note down any travel objectives they may have.
+   This page will allow users to view their site details as well as give them an opportunity to note down any travel objectives they may have.
 
    In addition to this if the user has recorded any countries they wish to visit on the planner then links to these country info pages will be available to the user via their profile page.
 
@@ -702,9 +702,9 @@
    ---
 
    #### Update Profile
-   Users will be able to update their details and travel objectives viat the update profile page.
+   Users will be able to update their details and travel objectives via the update Profile page.
 
-   They can also add an avator or photo of themselves and update the profile page background from a list of potential options.
+   They can also add an avatar or photo of themselves and update the Profile page background from a list of potential options.
 
    ![Update Profile Page](readme-assets/features/profile/update-profile.png)
    <br>
@@ -718,7 +718,7 @@
    <br>
 
    #### Map Country Selection
-   From the map on the planner page the user can navigate to a country info page relating that that country. From here the user will be able to access a number of other application features which will be detailed below. One of these features will enable the user to mark the country to visited or wish list. Having done this the map will be updated to reflect the wish list and visited countries in different colours.
+   From the map on the planner page the user can navigate to a country info page relating to that country. From here the user will be able to access a number of other application features which will be detailed below. One of these features will enable the user to mark the country to visited or wish list. Having done this the map will be updated to reflect the wish list and visited countries in different colours.
 
    ![Country Selection Map](readme-assets/features/planner/map.png)
    <br>
@@ -728,7 +728,7 @@
    ---
 
    #### Map Country Hover
-   Due to the size of the map it was not aesthetically pleaseing to add naems to each country via the svg file. However, the client wanted to ensure that users could locate the counties they were looking for and therefore JS was used to add a hover function to the map which would should the country mame that the mouse is over. This can be seen in the top right corner.
+   Due to the size of the map it was not aesthetically pleasing to add names to each country via the svg file. However, the client wanted to ensure that users could locate the countries they were looking for and therefore JS was used to add a hover function to the map which would should the country name that the mouse is over. This country name can be seen in the top right corner.
    <br>
 
    ---
@@ -736,7 +736,7 @@
    #### Dropdown Country Selection
    Due to the fact that many people using this site would be on mobile devices or tablets and would not have hover functionality available to them the client also requested that a dropdown be added in alphabetical order so that users can select the country that way if they wish.
 
-   In additon to this if a user has at a country marked as 'wish list' or 'visited' additional dropdown fields will appear.
+   In additon to this if a user has a country marked as 'wish list' or 'visited' additional dropdown fields will appear.
    <br>
 
    ---
@@ -830,7 +830,7 @@
    ---
 
    #### Close Tasks
-   Once tasks have been completed users can mark them as closed. These will change colour and move below the opened tasks.
+   Once tasks have been completed users can mark them as closed. These will change colour and move them below the open tasks.
 
    ![Close Tasks](readme-assets/features/task-manager/closed-tasks.png)
    <br>
@@ -838,15 +838,15 @@
    ---
 
    #### Delete Tasks
-   If a user wished they can delete a task entirely. As with the lists the test users and client opted for no confirmation for this deletion.
+   If a user wishes they can delete a task entirely. As with the lists the test users and client opted for no confirmation for this deletion.
 
    ![Delete Tasks](readme-assets/features/task-manager/delete-tasks.png)
    <br>
 
    ---
 
-   #### Delete Tasks
-   Useres will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and position on the list.
+   #### Re-open Tasks
+   Users will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and position on the list.
 
    ![Re-open Tasks](readme-assets/features/task-manager/tasks-re-opened.png)
    <br>
@@ -866,10 +866,10 @@
 
    Each post will allow the user to enter:
    
-    - Content - detailing their travel experiences
-    - Image - This is an optional field the user can input if they wish - the image will be resized and stored to the client/site owner's AWS account.
-    - Tags - The user can add multiple tags to a post if they wish which can later be used to help filter searches. If no Tag is added a 'NO TAGS' tag will be applied automatically. The user does not have to be case sensitive with the tag enteries as these are all converted to uppercase.
-    - Experience - The user can select from a range of experience options. These will display on the post as emojis and can be selected to filter posts to that experience rating. This field is not manadatory and can be left 'Not Rated'.
+   - Content: Detailing their travel experiences
+   - Image: This is an optional field the user can input if they wish. The image will be resized and stored to the client/site owner's AWS account.
+   - Tags: The user can add multiple tags to a post if they wish which can later be used to help filter searches. If no Tag is added a 'NO TAGS' tag will be applied automatically. The user does not have to be case sensitive with the tag enteries as these are all converted to uppercase.
+   - Experience: The user can select from a range of experience options. These will display on the post as emojis and can be selected to filter posts to that experience rating. This field is not manadatory and can be left 'Not Rated'.
 
    ![Add Diary Post](readme-assets/features/diary/add-diary.png)
 
@@ -901,7 +901,7 @@
    #### Filter
    Users will be able to filter the posts they wish to see using a range of options.
 
-   They can type into the seach bar and it will return any posts where the content or tags include what they have typed.
+   They can type into the search bar and it will return any posts where the content or tags include what they have typed.
 
    ![Diary Filter](readme-assets/features/diary/diary-search.png)
 
@@ -913,9 +913,9 @@
 
    ![Experience Filter](readme-assets/features/diary/diary-exp.png)
 
-   The user can refresh the page to remove all filtering via the refresh page button next to the seach input field.
+   The user can refresh the page to remove all filtering via the refresh page button next to the search posts field.
 
-   **Note:** The pagination has been built to work on the filterd searches. Therefore, if there are more than 2 returned posts pagination will be applied.
+   **Note:** The pagination has been built to work on the filtered searches. Therefore, if there are more than 2 returned posts pagination will be applied.
 
    ---
 
@@ -987,12 +987,12 @@
    ---
 
    #### Comment Linked To User
-   If a user views a comment that has been added by another user thay will not be able to update of delete it and the updatea and delete buttons will not appear on the comment for them.
+   If a user views a comment that has been added by another user thay will not be able to update or delete it and the update and delete buttons will not appear on the comment for them.
 
    ![Comment By Other User](readme-assets/features/site-updates/comment.png)
    <br>
 
-   However if they are the comment owner the update and delete buttons are available.
+   However, if they are the comment owner the update and delete buttons are available.
 
    ![Comment By User](readme-assets/features/site-updates/comment-update-delete.png)
    <br>
@@ -1002,7 +1002,7 @@
    ---
 
    #### Update Comment
-   If a user wishes they can update their own comments. This will add an updated field to the comment to show when it was last ammended.
+   If a user wishes they can update their own comments. This will add an updated field to the comment to show when it was last amended.
 
    ![Update Comment](readme-assets/features/site-updates/update-comment.png)
    <br>
@@ -1010,14 +1010,100 @@
    ---
 
    #### Delete Comment
-   If a user wishes they can delete their own comments. This will taek them to a confriation page to check they do not delete comments in error.
+   If a user wishes they can delete their own comments. This will take them to a confirmation page to check they do not delete comments in error.
 
    ![Delete Comment](readme-assets/features/site-updates/comment-delete.png)
    <br>
 
    ---
    
+   </details>
 
+   <details>
+      <summary style="font-weight:bold">Error Pages</summary>
+   <br>
+
+   #### Error Information
+   Users will be provided with tailored pages when they experience errors.
+
+   Page not found:
+
+   ![404](readme-assets/features/error-pages/404.png)
+   <br>
+
+   Page not permitted:
+
+   ![403](readme-assets/features/error-pages/403.png)
+   <br>
+
+   Server Issue:
+
+   ![500](readme-assets/features/error-pages/500.png)
+   <br>
+
+   ---
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Admin</summary>
+   <br>
+
+   #### Admin Navbar
+   If an Superuser logs in to the site they will be shown an additional option on the navbar directing them to the Django administration area.
+
+   ![Admin Navbar Large Screen](readme-assets/features/admin/admin-nav-large.png)
+   <br>
+
+   ![Admin Navbar Small Screen](readme-assets/features/admin/admin-nav-small.png)
+   <br>
+
+   ---
+
+   #### Admin Models
+   As part of the build for this project it has been useful to have access to all the models in the Admin section of the site. Following the clients approval most of these models will be removed leaving only the Site Update models and the Profile model.
+
+   These will be used by admin to add site update posts, add new or remove post categories and respond to user comments. The Profile will also allow the administrators to aide users regarding their site details once an appropriate Identification and Verifiication process is agreed. 
+
+   ![Admin Models](readme-assets/features/admin/show-all-admin-models.png)
+   <br>
+
+   ---
+
+   #### Admin Posts
+   Admin will be given the task of posting about site updates and news. This will be completed directly from the administaton area.
+
+   ![Admin Posts](readme-assets/features/admin/admin-posts.png)
+   <br>
+
+   Summernote was installed to give the admin team more flexibility in how they posted the site updates and the specific fonts were added to the Summernote config. However, on review it was agreed that it would be more consistent to use standard inputs and formatthem using HTML and CSS via the templates.
+
+   As a result Summernote was removed from the admin.py files, settings and requirements.txt.
+
+   ---
+
+   #### Admin Post Categories
+   Each site update post will be assigned a category to help users filter results. The admin team will have the ability to add and remove categories if required.
+
+   ![Admin Post Categories](readme-assets/features/admin/post-catagories.png)
+   <br>
+
+   ---
+
+   #### Admin Comment Responses
+   When a user comments on an update it will assign the object a Comment Status of Review Required. This will allow the admin team to filter any comments made by the user and mark them to Reviewed once they have looked them over. These can then be filtered out on future reviews.
+
+   To this end a filter has been applied to the 'Comment Status'.
+
+   ![Admin Filter Comments](readme-assets/features/admin/comments-filtered.png)
+   <br>
+
+   When an administrator reviews the comment they will have the ability to respond to it. This will them appear in the comment for all to see.
+
+   ![Admin Comment Response](readme-assets/features/admin/comment-response.png)
+   <br>
+
+   ---
 
    </details>
 
@@ -1039,6 +1125,7 @@
    - HTML
    - CSS
    - JavaScript
+   - Python
 
 
    ## Frameworks, Libraries and Programs Used
@@ -1055,8 +1142,7 @@
       - Used to plan out website format.
    7. Web Developer:
       - Used to analyse HTML, CSS and JavaScript output and correct where required.
-   8. Canvas:
-      - Used to draw the hangman on JS.
+   
 
    <br>
 
