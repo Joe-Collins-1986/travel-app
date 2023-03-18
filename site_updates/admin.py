@@ -4,4 +4,8 @@ from .models import UpdateCatagory, Update, UpdateComment
 
 admin.site.register(UpdateCatagory)
 admin.site.register(Update)
-admin.site.register(UpdateComment)
+
+@admin.register(UpdateComment)
+class UpdateCommentAdmin(admin.ModelAdmin):
+    list_filter = ['comment_status']
+    

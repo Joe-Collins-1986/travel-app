@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django_resized import ResizedImageField
 
-COMMENT_STATUS = ((0, "No Action Required"), (1, "Action Required"))
+COMMENT_STATUS = ((0, "Review Required"), (1, "Review Complete"))
 
 
 class UpdateCatagory(models.Model):
