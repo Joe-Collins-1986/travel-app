@@ -12,7 +12,7 @@
    - [Website Design](#website-design)
    - [Wireframes](#wireframes)
    - [Features](#features)
-- [Further Development](#...)
+- [Further Development](#further-development)
 - [Technologies Used](#...)
    - [Languages Used](#...)
    - [Frameworks, Libraries & Programs Used](#...)
@@ -338,12 +338,126 @@
 
    ## Wireframes
 
-   - [Skeleton Plane](https://www.figma.com/file/a9GzO1BVIhSaGTQPYAINzx/hangman-wireframe-(Skeleton)?node-id=0%3A1)
+   ### Skeleton Plane
 
-   - [Surface Plane](https://www.figma.com/file/9w1TswEvWfI4N8Fek3Gocf/hangman-wireframe?node-id=0%3A1)
+   [Skeleton Plane - Figma Link](https://www.figma.com/file/Sbio9RON3TWhozD0Jkmjun/Travel-Planner---Skeleton-Plane?node-id=106-2&t=A0em54x0gFCE78ZA-0)
+
+   <details>
+      <summary style="font-weight:bold">Skeleton Screenshots</summary>
+
+   Login/Register/Reset Password:<br>
+   ![Login/Register/Reset Password](readme-assets/wireframe/skeleton/login.png)<br>
+
+   ---
+
+   Home:<br>
+   ![Home](readme-assets/wireframe/skeleton/home.png)<br>
+
+   ---
+
+   Map:<br>
+   ![Home](readme-assets/wireframe/skeleton/map.png)<br>
+
+   ---
+
+   Country Info:<br>
+   ![Country Info](readme-assets/wireframe/skeleton/country-info.png)<br>
+
+   ---
+
+   List:<br>
+   ![List](readme-assets/wireframe/skeleton/list.png)<br>
+
+   ---
+
+   Diary:<br>
+   ![Diary](readme-assets/wireframe/skeleton/diary.png)<br>
+
+   ---
+
+   Tags:<br>
+   ![Tags](readme-assets/wireframe/skeleton/tags.png)<br>
+
+   ---
+
+   Site Updates:<br>
+   ![Site Updates](readme-assets/wireframe/skeleton/site-updates.png)<br>
+
+   ---
+
+   Update:<br>
+   ![Update](readme-assets/wireframe/skeleton/update.png)<br>
+
+   ---
+
+   Forms:<br>
+   ![Forms](readme-assets/wireframe/skeleton/forms.png)<br>
+
+   </details>
+
+   ---
+
+
+   ### Surface Plane
+
+   [Surface Plane - Figma Link](https://www.figma.com/file/fJL1wMXqAOuVchpzWhpWzF/Travel-Planner---Surface-Plane?node-id=102-1169&t=A0em54x0gFCE78ZA-0)
+
+   <details>
+      <summary style="font-weight:bold">Surface Screenshots</summary>
+
+   Login/Register/Reset Password:<br>
+   ![Login/Register/Reset Password](readme-assets/wireframe/surface-plane/login.png)<br>
+
+   ---
+
+   Home:<br>
+   ![Home](readme-assets/wireframe/surface-plane/home.png)<br>
+
+   ---
+
+   Map:<br>
+   ![Home](readme-assets/wireframe/surface-plane/map.png)<br>
+
+   ---
+
+   Country Info:<br>
+   ![Country Info](readme-assets/wireframe/surface-plane/country-info.png)<br>
+
+   ---
+
+   List:<br>
+   ![List](readme-assets/wireframe/surface-plane/list.png)<br>
+
+   ---
+
+   Diary:<br>
+   ![Diary](readme-assets/wireframe/surface-plane/diary.png)<br>
+
+   ---
+
+   Tags:<br>
+   ![Tags](readme-assets/wireframe/surface-plane/tags.png)<br>
+
+   ---
+
+   Site Updates:<br>
+   ![Site Updates](readme-assets/wireframe/surface-plane/site-updates.png)<br>
+
+   ---
+
+   Update:<br>
+   ![Update](readme-assets/wireframe/surface-plane/update.png)<br>
+
+   ---
+
+   Forms:<br>
+   ![Forms](readme-assets/wireframe/surface-plane/forms.png)<br>
+
+   </details>
+
+   ---
 
    **Note:** The structure and wireframes are only to act as a concept and are subject to change as the website development evolves in collaboration with the client.
-
 
    ## Features
 
