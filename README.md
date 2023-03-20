@@ -1222,13 +1222,13 @@
    </details>
 
 # Further Development
-   * Add additional categories to the hangman game.
-   * Use web scraping to generate full word lists for future categories.
-   * Add optional timer to game.
-   * Provide language options to game.
-   * Retain scores using back-end development to provide a scoreboard for users.
-   * Add additional games.
-   * Add advertisements to site to generate revenue.
+   * Add a Public attribute to Diary Post Model to create a Public Blog - still Linked to countries.
+   * Add rating system to site updates.
+   * Build notifications with a link for user when there is an admin response to their Site Update comments.
+   * Increase map from Europe to world.
+   * Link booking sites.
+   * Enhance AWS security protocals to allow site to have a wallet for passports and bording cards.
+   * Option advertisement space on site for travel companies.
    
    <br>
 
@@ -1241,246 +1241,60 @@
    - JavaScript
    - Python
 
+   ## Frameworks Used
 
-   ## Frameworks, Libraries and Programs Used
+   - Bootstrap:
+      - For quick front end deisgn.
+   - Django:
+      - Build site structure, routing, encryption, standard validation.
 
-   1. Google Fonts:
+   ## Libraries Used
+
+   - boto3:
+      - Used to integrate python3 site with AWS.
+   - coverage:
+      - Used to aide in python unit testing by generating an html to identify issues.
+   - pillow:
+      - Used to manipulate stored images.
+   - django-crispy-forms:
+      - Used to format forms.
+   - django-resized:
+      - Used to resize images stored in aWS account.
+   - django-taggit:
+      - Used to create a tag object linked to diary posts.
+   - jQuery:
+      - Javascript library for simplified JS useage.
+
+   ## Developer Tools / Software Used
+
+   - Google Fonts:
       - Used to obtain appropriate fonts to use in website not held as standard.
-   2. Font Awesome:
+   - Font Awesome:
       - Used to obtain several icons used to improve the visuals of the website.
-   3. Git:
+   - Git:
       - Used for version control and to Push to GitHub.
-   4. GitHub:
+   - GitHub:
       - Used to store and share the code as well as publish to live website.
-   6. Figma:
+   - Figma:
       - Used to plan out website format.
-   7. Web Developer:
+   - Web Developer:
       - Used to analyse HTML, CSS and JavaScript output and correct where required.
+   - Heroku:
+      - Hosting deployed site.
+   - SQLite3:
+      - Hosting development and testing databases.
+   - ElephantSQL:
+      - Hosting PostgressSQL database for live site.
+   - AWS:
+      - Hosting images and static files.
+   - Gmail:
+      - Link to site to send re-set passwords.
    
-
    <br>
 
 # Testing
-   ## HTML Validator Results: 
-   - [HTML index page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjoe-collins-1986.github.io%2FHangman%2F)
 
-   <details>
-      <summary style="font-weight:bold">HTML Issue Resolutions</summary>
-
-   ### Warnings
-   Following the HTML validation, the following warnings were identified and addressed.
-
-   ![HTML Warnings](assets/readme-assets/bugs/html/html-warinings.png)
-
-   ---
-
-   #### **Resolutions**
-   **Points 1 - 2:**
-   These were initially implemented as li items acting as a menu option directing to additional content. However, removed aria-label following best practice due to no href.
-
-   ---
-
-   **Points 3 - 7:**
-   All ID first occurrences were addressed by changing duplicate IDs to classes.
-
-   ---
-
-   **Points 8:**
-   Placed empty quotes into h2 space to remove error. This header is produced by JS.
-
-   ---
-
-   ### Errors
-   Following the HTML validation, the following errors were identified and addressed.
-
-   ![HTML Warnings](assets/readme-assets/bugs/html/html-errors.png)
-
-   ---
-
-   #### **Resolutions**
-   **Point 1:**
-   Delete stray div tag.
-
-   ---
-
-   **Points 2 - 6:**
-   - Replace IDs with Classes and update CSS to .element as opposed to #element.
-   - Checked ID was not used in JS.
-   - Removed duplicate class syntax e.g. class="settings-pin" class="pin-right". This was changed to class=”settings-pin pin-right”.
-
-   ---
-
-   **Points 7 - 10:**
-   Mute is defaulted as true so no need to specify. Therefore removed = “true”.
-
-   ---
-   </details>
-
-
-   ## CSS Validator Results
-   - [CSS validator results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjoe-collins-1986.github.io%2FHangman%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-
-   <details>
-      <summary style="font-weight:bold">CSS Issue Resolutions</summary>
-
-   ### Warnings & errors
-   Following the CSS validation, the following warnings and errors were identified and addressed.
-
-   ![CSS Warnings](assets/readme-assets/bugs/css/css-errors.png)
-
-   ---
-
-   **Points 1 - 2:**
-   Removed unnecessary semi-colon.
-
-   ---
-
-   **Warning Provided:** 'Imported style sheets are not checked in direct input and file upload modes'.
-
-   **Stack Overflow Response to Warning:** You're just trying to validate your CSS file using the W3C validator, and it's letting you know that it's not going to validate the imported style sheet (Google's). It's not an error, just some information for you.
-
-   ---
-   </details>
-
-
-   ## JS Validator Results
-   ![JS validator results using https://beautifytools.com/javascript-validator.php](assets/readme-assets/validation/js-validation.png)
-
-   <details>
-      <summary style="font-weight:bold">JS Issue Resolutions</summary>
-
-   ### Errors
-   Following the JS validation the following errors were identified and addressed.
-
-   **Points - define variables:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/define-variable.png)
-
-   Errors resolved by declaring i in the relevant for loops.
-
-   ---
-
-   **Points - template literal syntax:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/esversion.png)
-
-   Cause by use of Font Awesome. no detriment to usage. Site functioning as expected. Following consultation with my mentor no action was required.
-
-   ---
-
-   **Points - functions declared within loops referencing an outer scoped variable:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/functions-declared-within-loops.png)
-
-   Utilising outer scoped variables. No issues caused by this, and maintenance is acceptable. Following consultation with my mentor no action was required.
-
-   ---
-
-   **Points - expected a conditional expression and instead saw an assignment.:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/conditional-not-assignment.png)
-
-   Functions built with if statements, with no else option. No errors occurring. Following consultation with my mentor no action was required.
-
-   ---
-
-   **Points - level not defined.:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/level-not-defined.png)
-
-   HTML ID not defined as a variable. Created a variable for this and stored as level.
-
-   ---
-
-   **Points - 	'i' is not defined.:** <br>
-   ![JS Errors](assets/readme-assets/bugs/js/i-not-defined.png)
-
-   Declare i as a variable.
-
-   </details>
-
-
-   ## Console Log Warning
-   ![Console Log Warning](assets/readme-assets/validation/console-log-warning.png)
-
-   <details>
-      <summary style="font-weight:bold">Console Log Warning Review</summary>
-
-   On refreshing the page a warning was highlighted on the console log. I used Stack Overflow to investigate the potential impact of this warning.
-
-   Stack Overflow findings:
-
-      Basically you can ignore it. GitHub hosted pages disable FLoC, which is Google's 3rd party cookie alternative. GitHub, Microsoft, doesn't seems to like it.
-
-   Following this review and consultation with my mentor no action was required for this warning.
-
-   </details>
-   
-
-   ## Lighthouse Accessibility Results:
-   ![Accessibility Review](assets/readme-assets/validation/accessibility.png)
-
-
-   ## Testing User Stories From User Experience (UX) Section
-
-   <details>
-      <summary style="font-weight:bold">Client Goals</summary>
-
-   The client wants a simple and engaging game that is easy to use and will result in users returning to the site. 
-   * Sleek yet simple UX design.
-      - **REVIEW - UX design kept minimalist. Simple, clear colour scheme with engaging visuals to make the page look like it is being completed on a notepad as one might historically play hangman.**
-   * Easy to use functionality.
-      - **REVIEW - Simple intuitive buttons/functions. Built without overcomplicating and game requirements. All built on one page for simplicity.**
-   * Responsive for any device size to encourage mobile use as well as desktop use.
-      - **REVIEW - Built with responsive design for all devices. Structure of page amended to best suit the appropriate device size.**
-   * Links to the client's social network accounts to enhance their online presence.
-      - **REVIEW - Social network links located in footer with clear recognisable images.**
-   * Addictive gameplay to encourage return clients and drive positive word of mouth to encourage new users.
-      - **REVIEW - Used feedback from testers to build a game which has been well received with testers re-using for their own enjoyment.**
-   
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Client Future Goals</summary>
-   
-   Points to consider for future development:
-   * Additional words and topics to be added to the hangman game.
-      - **REVIEW - Option to add additional lists to the game and increase the existing lists. Code written to make this addition easy to implement.**
-   * Allow for scores to be recorded and stored into a leader board.
-      - **REVIEW - For future enhancements utilising back-end development, it would be good to store user data and scores to generate a leader board encouraging re-use and competition between users.**
-   * Additional games and puzzles added to the site.
-      - **REVIEW - Use the site to develop a range of similar games with a consistent aesthetic appeal.**
-   * Generate advertisement revenue through the site.
-      - **REVIEW - Once web traffic is sufficient use the site to advertise products and services. This must be done in a way to minimise the negative impact on user experience.**
-
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">First-Time Visitor Goals</summary>
-
-   * Immediately engaged by the UX design.
-      - **REVIEW - Engaging gameplay and visuals developed based on user feedback to ensure an immediate and continued interest in the game.**
-   * Understand the purpose of the site.
-      - **REVIEW - Very clear game purpose and easy to locate and read rules where required.**
-   * Simple intuitive menu navigation.
-      - **REVIEW - Menus built to stand out using colour differentiation. Always easily identified on the screen.**
-   * Intuitive content and links to social media.
-      - **REVIEW - Social Media links easily identifiable and located on the screen.**
-   * Readable and aesthetically pleasing on all devices.
-      - **REVIEW - Game structure amended to best present on each device size. Smooth responsive alterations on reducing screen size.**
-
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Returning Visitor Goals</summary>
-   
-   * Revisit to replay game to try different topics.
-      - **REVIEW - Multiple topics generated to keep people of different interests engaged. On completion of a topic, it will be unusable (until game reset) giving the user a feeling of accomplishment.**
-   * Revisit to replay game to beat previous score.
-      - **REVIEW - Accumulating score gives a challenge to users to see how high a score they can generate and try to beat this on re-visits.**
-   * Revisit to locate social media links to client.
-      - **REVIEW - Social Media links available for anyone trying to link in with the client (These are not set to real accounts for this project due to a fictional client).**
-
-   </details>
-
+   Testing doumentation found [here](TESTING.md).
 
    ## Further Testing
    * Tested across Google Chrome, Safari, Microsoft Edge, Fire Fox browsers on both Mac and Windows.
