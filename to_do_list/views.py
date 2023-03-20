@@ -44,9 +44,6 @@ class AddListView(LoginRequiredMixin, View):
                 f'{url}#to_do_list_location'
                 )
 
-        context = {'list_form': list_form}
-        return render(request, self.template_name, context)
-
 
 class DeleteListView(LoginRequiredMixin, UserPassesTestMixin, View):
     login_url = '/login/required'
@@ -98,11 +95,6 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
                 f'{url}#to_do_list_location'
                 )
 
-        context = {
-            'list_form': list_form,
-            }
-        return render(request, self.template_name, context)
-
     def test_func(self):
         list = get_object_or_404(ToDoList, pk=self.kwargs['pk'])
         return self.request.user == list.user
@@ -141,11 +133,6 @@ class ToDoItemsView(LoginRequiredMixin, View):
 
             url = reverse('to-do-items', args=[item_add.list.id])
             return redirect(url)
-
-        context = {
-            'add_item_form': add_item_form
-            }
-        return render(request, self.template_name, context)
 
 
 class CompleteItemView(LoginRequiredMixin, UserPassesTestMixin, View):

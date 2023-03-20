@@ -95,7 +95,7 @@ class TestCountryView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response,
-            f'/diary/country/{self.visited_model.id}',
+            f'/diary/country/{self.visited_model.id}#visited_list_location',
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
@@ -114,7 +114,7 @@ class TestCountryView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response,
-            f'/diary/country/2',
+            f'/diary/country/2#visited_list_location',
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)

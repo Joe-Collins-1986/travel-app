@@ -2,7 +2,7 @@ from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 
 from to_do_list.views import (
-    ToDoListsView,
+    AddListView,
     DeleteListView,
     EditListView,
     ToDoItemsView,
@@ -13,9 +13,9 @@ from to_do_list.views import (
 
 class TestToDoUrls(SimpleTestCase):
 
-    def test_lists_view_url_resolves(self):
-        url = reverse('to-do-lists', args=[1])
-        self.assertEquals(resolve(url).func.view_class, ToDoListsView)
+    def test_lists_add_url_resolves(self):
+        url = reverse('add-list', args=[1])
+        self.assertEquals(resolve(url).func.view_class, AddListView)
 
     def test_lists_delete_url_resolves(self):
         url = reverse('delete-list', args=[1])
