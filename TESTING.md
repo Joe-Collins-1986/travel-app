@@ -12,7 +12,7 @@ ___
 ## Python Unit Testing
 
 Unit Testing coverage rounded to 100%.
-![Home Unit Tests](readme-assets/testing/python/total.png)
+![Home Unit Tests](readme-assets/testing/python/total-border.png)
 
 <br>
 See below for details on each app:
@@ -21,6 +21,7 @@ See below for details on each app:
       <summary style="font-weight:bold">Home App</summary>
    
 Home app covered to 100%:
+
 ![Home Unit Tests](readme-assets/testing/python/home.png)<br>
 
 ___
@@ -31,6 +32,7 @@ ___
       <summary style="font-weight:bold">Diary App</summary>
 
 Diary app covered to 100%:
+
 ![Diary Unit Tests](readme-assets/testing/python/diary.png)<br>
 
 ___
@@ -41,6 +43,7 @@ ___
       <summary style="font-weight:bold">To-Do List App</summary>
 
 To-Do List app covered to 100%:
+
 ![To-Do List Unit Tests](readme-assets/testing/python/to-do-list.png)<br>
 
 ___
@@ -51,6 +54,7 @@ ___
       <summary style="font-weight:bold">User Profile App</summary>
 
 User Profile app covered to 100%:
+
 ![User Profile App Unit Tests](readme-assets/testing/python/user-profile.png)<br>
 
 ___
@@ -61,6 +65,7 @@ ___
       <summary style="font-weight:bold">Site Updates App</summary>
 
 Site Updates app covered to 100%:
+
 ![Site Updates App Unit Tests](readme-assets/testing/python/site-updates.png)<br>
 
 ___
@@ -71,6 +76,7 @@ ___
       <summary style="font-weight:bold">Travel App Views</summary>
 
 Travel App Views covered to 78%:
+
 ![Travel App Views Unit Tests](readme-assets/testing/python/travel-app.png)
 
 Error pages 404 was unit tested and 403 was also covered by other unit testing.
@@ -88,6 +94,7 @@ ___
       <summary style="font-weight:bold">Travel App Settings</summary>
 
 Travel App Settings covered to 98%:
+
 ![Travel App Settings Unit Tests](readme-assets/testing/python/settings.png)
 
 Unit testing was all run through sqlite3 and no access was granted for ElephantSQL therfore this line could not be covered.
@@ -102,6 +109,7 @@ ___
       <summary style="font-weight:bold">Manage.py</summary>
 
 Manage.py covered to 83%:
+
 ![Manage.py Unit Tests](readme-assets/testing/python/manage.png)
 
 Unit testing did not cover except ImportError. This has no negative impact on functionality.
