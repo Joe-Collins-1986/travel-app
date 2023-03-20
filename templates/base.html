@@ -24,86 +24,84 @@
 </head>
 
 <body>
-        <section class="navigation">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid fixed-top header-grey">
-                    <a class="navbar-brand" href="{% url 'travel-home' %}"><img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/logo-dark-blue.png" alt=""></a>
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid fixed-top header-grey">
+                <a class="navbar-brand" href="{% url 'travel-home' %}"><img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/logo-dark-blue.png" alt=""></a>
+
+                <a class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
 
 
-                    <button class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+                <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                    <div class="top-box">
+                        <div class="offcanvas-header">
+                            <h3 class="offcanvas-title" id="offcanvasLabel">Menu</h3>
+                            <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
+                        </div>
 
-
-                    <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-                        <div class="top-box">
-                            <div class="offcanvas-header">
-                                <h3 class="offcanvas-title">Menu</h3>
-                                <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
+                        <div class="offcanvas-body">
+                            <div class="navbar-nav mr-auto">
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}">Home</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'country-map' %}">Planner</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'all-admin-updates' %}">Site Updates</a>
+                                <hr>
                             </div>
-    
-                            <div class="offcanvas-body">
-                                <div class="navbar-nav mr-auto">
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}">Home</a>
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'country-map' %}">Planner</a>
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'all-admin-updates' %}">Site Updates</a>
-                                    <hr>
-                                </div>
-                            <!-- Navbar Right Side -->
+                        <!-- Navbar Right Side -->
 
-                                <div class="navbar-nav ms-auto">
-                                    {% if user.is_authenticated %}
-                                        {% if user.is_superuser %}
-                                            <a class="nav-item nav-link px-lg-4" href="{% url 'admin:index' %}">Admin</a>
-                                        {% endif %}
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'profile-page' %}">Profile</a>
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'home-logout' %}">Logout</a>
-                                    {% else %}
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'home-login' %}">Login</a>
-                                    <a class="nav-item nav-link px-lg-4" href="{% url 'home-register' %}">Register</a>
+                            <div class="navbar-nav ms-auto">
+                                {% if user.is_authenticated %}
+                                    {% if user.is_superuser %}
+                                        <a class="nav-item nav-link px-lg-4" href="{% url 'admin:index' %}">Admin</a>
                                     {% endif %}
-                                </div>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'profile-page' %}">Profile</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-logout' %}">Logout</a>
+                                {% else %}
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-login' %}">Login</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-register' %}">Register</a>
+                                {% endif %}
                             </div>
-                        </div>
-
-                        <div class="social-title-container hide-social-icons">
-                            <p id="social-menu-header" class="m-1 text-center">Social</p>
-                            <hr class="justify-content-evenly m-0 text-center">
-                        </div>
-
-                        <div class="social-icon-container hide-social-icons">
-                            <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                                aria-label="Visit our Facebook page (opens in a new tab)"><i class="social-icons fa-brands fa-facebook"></i></a></div>
-                            <div class="footer-icons"><a href="https://www.instagram.com" target="_blank" rel="noopener"
-                                aria-label="Visit our Instagram page (opens in a new tab)"><i class="social-icons fa-brands fa-instagram"></i></a></div>
-                            <div class="footer-icons"><a href="https://www.twitter.com" target="_blank" rel="noopener"
-                                aria-label="Visit our Twitter page (opens in a new tab)"><i class="social-icons fa-brands fa-twitter"></i></a></div>
-                            <div class="footer-icons"><a href="https://www.pinterest.co.uk" target="_blank" rel="noopener"
-                                aria-label="Visit our Pinterest page (opens in a new tab)"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
                         </div>
                     </div>
+
+                    <div class="social-title-container hide-social-icons">
+                        <p id="social-menu-header" class="m-1 text-center">Social</p>
+                        <hr class="justify-content-evenly m-0 text-center">
+                    </div>
+
+                    <div class="social-icon-container hide-social-icons">
+                        <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                            aria-label="Visit our Facebook page (opens in a new tab)"><i class="social-icons fa-brands fa-facebook"></i></a></div>
+                        <div class="footer-icons"><a href="https://www.instagram.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Instagram page (opens in a new tab)"><i class="social-icons fa-brands fa-instagram"></i></a></div>
+                        <div class="footer-icons"><a href="https://www.twitter.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Twitter page (opens in a new tab)"><i class="social-icons fa-brands fa-twitter"></i></a></div>
+                        <div class="footer-icons"><a href="https://www.pinterest.co.uk" target="_blank" rel="noopener"
+                            aria-label="Visit our Pinterest page (opens in a new tab)"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
+                    </div>
                 </div>
-            </nav>
-        </section>
-
-        <main class="main-section">
-            {% block content %}
-            {% endblock %}
-        </main>
-
-        <section id="footer">
-            <div class="h-100 d-flex justify-content-end">
-                <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in a new tab)"><i class="social-icons fa-brands fa-facebook"></i></a></div>
-                <div class="footer-icons"><a href="https://www.instagram.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Instagram page (opens in a new tab)"><i class="social-icons fa-brands fa-instagram"></i></a></div>
-                <div class="footer-icons"><a href="https://www.twitter.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Twitter page (opens in a new tab)"><i class="social-icons fa-brands fa-twitter"></i></a></div>
-                <div class="footer-icons"><a href="https://www.pinterest.co.uk" target="_blank" rel="noopener"
-                    aria-label="Visit our Pinterest page (opens in a new tab)"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
             </div>
-        </section>
+        </nav>
+    </div>
 
+    <main class="main-section">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <div id="footer">
+        <div class="h-100 d-flex justify-content-end">
+            <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                aria-label="Visit our Facebook page (opens in a new tab)"><i class="social-icons fa-brands fa-facebook"></i></a></div>
+            <div class="footer-icons"><a href="https://www.instagram.com" target="_blank" rel="noopener"
+                aria-label="Visit our Instagram page (opens in a new tab)"><i class="social-icons fa-brands fa-instagram"></i></a></div>
+            <div class="footer-icons"><a href="https://www.twitter.com" target="_blank" rel="noopener"
+                aria-label="Visit our Twitter page (opens in a new tab)"><i class="social-icons fa-brands fa-twitter"></i></a></div>
+            <div class="footer-icons"><a href="https://www.pinterest.co.uk" target="_blank" rel="noopener"
+                aria-label="Visit our Pinterest page (opens in a new tab)"><i class="social-icons fa-brands fa-pinterest"></i></a></div>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/5c52ef23bc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

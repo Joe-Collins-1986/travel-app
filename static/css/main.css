@@ -103,6 +103,7 @@ p, .comments-txt, .form-label {
 
 /***** ALL PAGES *****/
 /* NAV BAR */
+
 .offcanvas {
     background-color: rgb(6, 68, 103);
     color: rgb(255, 255, 255);
@@ -275,7 +276,7 @@ p, .comments-txt, .form-label {
         scrollbar-width: none;  /* Firefox */
     }
     
-    header {
+    .home-top {
         position: relative;
         display: flex;
         justify-content: center;
