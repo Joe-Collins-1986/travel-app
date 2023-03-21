@@ -7,11 +7,11 @@
     </fieldset>
     <div class="form-group">
         <br>
-        <a href="{% url 'home-logout' %}" class="btn btn-travel mb-2">Logout</a>
+        <a href="{% url 'home-logout' %}" class="btn btn-travel mb-2" aria-label="select to logout">Logout</a>
     </div>
     <div class="border-top pt-3 mb-3 text-center">
         <small class="p-font">
-            Want to update your profile? <a class="ml-2" href="#">Profile</a>
+            Want to update your profile? <a class="ml-2" href="{% url 'profile-page' %}">Profile</a>
         </small>
     </div>
 {% endblock already_logged_in %}

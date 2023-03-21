@@ -31,10 +31,12 @@
     <div class="navigation">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid fixed-top header-grey">
-                <a class="navbar-brand" href="{% url 'travel-home' %}"><img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/logo-dark-blue.png" alt="travel app logo"></a>
+                <a class="navbar-brand" href="{% url 'travel-home' %}">
+                    <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/logo-dark-blue.png" alt="travel app logo" aria-label="links to home page">
+                </a>
 
                 <!-- navbar toggle menu icon -->
-                <a class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas">
+                <a class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas" aria-label="click to expand menu">
                     <i class="fa-solid fa-bars"></i>
                 </a>
 
@@ -49,9 +51,9 @@
                         <!-- navbar left side links / top of mobile menu-->
                         <div class="offcanvas-body">
                             <div class="navbar-nav mr-auto">
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}">Home</a>
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'country-map' %}">Planner</a>
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'all-admin-updates' %}">Site Updates</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}" aria-label="link to home page">Home</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'country-map' %}" aria-label="link to planner page">Planner</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'all-admin-updates' %}" aria-label="link to site updates page">Site Updates</a>
                                 <hr>
                             </div>
 
@@ -59,13 +61,13 @@
                             <div class="navbar-nav ms-auto">
                                 {% if user.is_authenticated %}
                                     {% if user.is_superuser %}
-                                        <a class="nav-item nav-link px-lg-4" href="{% url 'admin:index' %}">Admin</a>
+                                        <a class="nav-item nav-link px-lg-4" href="{% url 'admin:index' %}" aria-label="link to admin page">Admin</a>
                                     {% endif %}
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'profile-page' %}">Profile</a>
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-logout' %}">Logout</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'profile-page' %}" aria-label="link to profile page">Profile</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-logout' %}" aria-label="click to logout">Logout</a>
                                 {% else %}
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-login' %}">Login</a>
-                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-register' %}">Register</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-login' %}" aria-label="link to login page">Login</a>
+                                <a class="nav-item nav-link px-lg-4" href="{% url 'home-register' %}" aria-label="link to register page">Register</a>
                                 {% endif %}
                             </div>
                         </div>

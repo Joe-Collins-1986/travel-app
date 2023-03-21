@@ -23,13 +23,13 @@
                     <div class="form-group">
                         <button class="btn btn-travel mb-2" type="submit">Sign In</button><br>
                         <small class="p-font">
-                            Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}">Password Reset</a>
+                            Forgot your password? <a class="ml-2" href="{% url 'password_reset' %}" aria-label="link to password reset page">Password Reset</a>
                         </small><br><br>
                     </div>
                 </form>
                 <div class="border-top pt-3 mb-3 text-center">
                     <small class="p-font">
-                        Need An Account? <a class="ml-2" href="{% url 'home-register' %}">Sign Up</a>
+                        Need An Account? <a class="ml-2" href="{% url 'home-register' %}" aria-label="link to register page">Sign Up</a>
                     </small>
                 </div>
             {% endif %}

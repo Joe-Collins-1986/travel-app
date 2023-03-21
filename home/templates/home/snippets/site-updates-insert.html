@@ -8,7 +8,7 @@
         {% for update in updates %}
         <!-- updates card header -->
         <div class="bg-light update-card update-card-front-page">
-            <a href="{% url 'admin-update-detail' update.id %}">
+            <a href="{% url 'admin-update-detail' update.id %}" aria-label="link to selected update - requires login">
                 <div class="update-card-body">
                     <h4 class="text-center">{{ update.title }}</h4>
                     <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
@@ -19,11 +19,11 @@
             <!-- updates card footer -->
             <div class="update-card-footer">
                 {% if update.updatecomment_set.all.count == 0 %}
-                    <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                    <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}" aria-label="link to selected update - requires login">
                         <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
                     </a>
                 {% else %}
-                    <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                    <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}" aria-label="link to selected update - requires login">
                         <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
                     </a>
                 {% endif %}
@@ -33,7 +33,7 @@
 
         <!-- link to all updates -->
         <div>
-            <a class="btn btn-site-updates-all" href="{% url 'all-admin-updates' %}">See all updates</a>
+            <a class="btn btn-site-updates-all" href="{% url 'all-admin-updates' %}" aria-label="link to site updates page">See all updates</a>
         </div>
     </div>
 {% endblock site_updates_snippet %}
