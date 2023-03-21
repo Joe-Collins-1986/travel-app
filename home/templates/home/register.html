@@ -1,13 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock additional_styles %}
 
 {% block content %}
-
-    {% block additional_styles %}
-        {% include 'home/snippets/home-backgound-styles.html' %}
-    {% endblock additional_styles %}
-
     <div class="bg-img center-form">
         <div class="form-layout register-form-width register-form-margin">
             {% if user.is_authenticated %}
