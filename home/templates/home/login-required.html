@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-<!-- main block code -->
-{% block content %}
-
 {% block additional_styles %}
-    {% include 'home/snippets/home-backgound-styles.html' %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock additional_styles %}
 
+{% block content %}
+    <!-- if the user tries to access a site feature that requires login without first logging in they will see this -->
+    <!-- login form -->
     <div class="bg-img center-form">
         <div class="form-layout register-form-width register-form-margin">
             <form method="POST">
@@ -32,6 +33,8 @@
             </div>
         </div>
     </div>
+
+    <!-- updates section -->
     <section class="content-under-home-header">
         {% include 'home/snippets/site-updates-insert.html' %}
     </section>

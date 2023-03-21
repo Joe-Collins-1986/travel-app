@@ -7,6 +7,7 @@
 {% endblock additional_styles %}
 
 {% block content %}
+    <!-- register form -->
     <div class="bg-img center-form">
         <div class="form-layout register-form-width register-form-margin">
             {% if user.is_authenticated %}
@@ -30,6 +31,8 @@
             {% endif %}
         </div>
     </div>
+
+    <!-- updates section -->
     <section class="content-under-home-header">
         {% include 'home/snippets/site-updates-insert.html' %}
     </section>

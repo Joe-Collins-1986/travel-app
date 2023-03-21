@@ -1,11 +1,13 @@
 {% block site_updates_snippet %}
-
+    <!-- site updates intro -->
     <div class="row site-updates-section">
         <h3 class="mt-5">What have we been up to recently?</h3>
         <h5 class="mb-5">Check out our latest 3 updates</h5>
-        {% for update in updates %}
-        <div class="bg-light update-card update-card-front-page">
 
+        <!-- updates -->
+        {% for update in updates %}
+        <!-- updates card header -->
+        <div class="bg-light update-card update-card-front-page">
             <a href="{% url 'admin-update-detail' update.id %}">
                 <div class="update-card-body">
                     <h4 class="text-center">{{ update.title }}</h4>
@@ -14,6 +16,7 @@
                     <p class="text-center">{{ update.content|linebreaksbr }}</p>
                 </div>
             </a>
+            <!-- updates card footer -->
             <div class="update-card-footer">
                 {% if update.updatecomment_set.all.count == 0 %}
                     <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
@@ -26,8 +29,9 @@
                 {% endif %}
             </div>
         </div>
-            
         {% endfor %}
+
+        <!-- link to all updates -->
         <div>
             <a class="btn btn-site-updates-all" href="{% url 'all-admin-updates' %}">See all updates</a>
         </div>
