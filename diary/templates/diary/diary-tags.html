@@ -1,27 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/off-white-bg.css' %}">
+{% endblock additional_styles %}
+
+
 {% block content %}
+    <!-- dairy tags page -->
 
-
-<style>
-    body {
-        background-color: #e9e4e4;
-    }
-</style>
-
-<div class="diary-header">
-    <div class="search-links-container">
-        <a class="tags-link-tag-page mt-2" href="{% url 'diary-all-posts' country.pk %}">Back To Diary</a>
+    <!-- header section with back button -->
+    <div class="diary-header">
+        <div class="search-links-container">
+            <a class="tags-link-tag-page mt-2" href="{% url 'diary-all-posts' country.pk %}" aria-label="Back to Diary">Back To Diary</a>
+        </div>
     </div>
-</div>
 
-<div class="tag-outer-container">
-    <div class="tag-header-section">
-        <h1>Tags</h1>
-    </div>
-    <div class="tag-body-section">
+    <!-- tags -->
+    <div class="tag-outer-container">
+        <div class="tag-header-section">
+            <h1>Tags</h1>
+        </div>
+        <div class="tag-body-section">
         {% if tags %}
             {% for tag in tags %}
-                <a href="{% url 'diary-all-posts' country.pk %}?q={{tag.tags__name}}">
+                <a href="{% url 'diary-all-posts' country.pk %}?q={{tag.tags__name}}" aria-label="Filter to selected tag">
                     <div class="tag-selection">
                         <div class="tag-name"><p>{{tag.tags__name|upper }}</p></div>
                         <div class="tag-number"><p>{{tag.count}}</p></div>
@@ -31,46 +34,49 @@
         {% else %}
             <h1>No tags</h1>
         {% endif %}
+        </div>
     </div>
-</div>
 
+    <!-- pagination -->
+    {% if tags.has_other_pages %}
+        <nav class="buffer-site-updates">
+            <ul class="pagination justify-content-center mt-3">
 
-{% if tags.has_other_pages %}
-    <nav class="buffer-site-updates">
-        <ul class="pagination justify-content-center mt-3">
-            {% if tags.has_previous %}
-                <li>
-                    <a class="page-link" href="?page={{ tags.previous_page_number }}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-            {% else %}
-                <li class="page-item disabled">
-                    <span class="page-link" aria-hidden="true">&laquo;</span>
-                </li>
-            {% endif %}
-
-            {% for tag in tags.paginator.page_range %}
-                {% if tags.number == tag %}
-                    <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ tag }}</strong></a></li>
+                <!-- previous -->
+                {% if tags.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ tags.previous_page_number }}" aria-label="Previous Page">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="?page={{ tag }}">{{ tag }}</a></li>
+                    <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&laquo;</span>
+                    </li>
                 {% endif %}
-            {% endfor %}
 
-            {% if tags.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ tags.next_page_number }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            {% else %}
-                <li class="page-item disabled">
-                    <span class="page-link" aria-hidden="true">&raquo;</span>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
-{% endif %}
+                <!-- current -->
+                {% for tag in tags.paginator.page_range %}
+                    {% if tags.number == tag %}
+                        <li class="page-item active-page-item"><a class="page-link active-page-link" href="#" aria-label="Current Page"><strong>{{ tag }}</strong></a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ tag }}">{{ tag }}</a></li>
+                    {% endif %}
+                {% endfor %}
 
+                <!-- next -->
+                {% if tags.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ tags.next_page_number }}" aria-label="Next Page">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&raquo;</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
 {% endblock %}

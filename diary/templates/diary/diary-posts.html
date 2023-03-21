@@ -1,106 +1,114 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/off-white-bg.css' %}">
+{% endblock additional_styles %}
+
 {% block content %}
+    <!-- dairy posts page -->
 
-<style>
-    body {
-        background-color: #e9e4e4;
-    }
-
-</style>
-
-<div class="diary-header">
-    <div class="search-container align">
-        <form class="search-bar" method="GET" action="{% url 'diary-all-posts' country.pk %}">
-            <input type="text" name="q" placeholder="Search Posts" />
-        </form>
-        <a href="{% url 'diary-all-posts' country.pk %}"><i class="fa-solid fa-arrows-rotate"></i></a>
-    </div>
-    <div class="search-links-container">
-        <a class="tags-link" href="{% url 'country' country.pk %}#diary_location">Country Info</a>
-        <a class="tags-link" href="{% url 'diary-tags' country.pk %}">Search Tags</a>
-    </div>
-</div>
-
-<div class="diary-outer-border">
-
-    <div class="add-post-btn-container">
-        <a href="{% url 'diary-create' country.pk %}">
-            <i class="fa-solid fa-file-circle-plus">&ensp;</i>
-                Add Diary Post &ensp;
-            <i class="fa-solid fa-file-circle-plus"></i></a>
+    <!-- header section with filter buttons -->
+    <div class="diary-header">
+        <div class="search-container align">
+            <form class="search-bar" method="GET" action="{% url 'diary-all-posts' country.pk %}" aria-label="filter posts where content and title contain input data">
+                <input type="text" name="q" placeholder="Search Posts" />
+            </form>
+            <a href="{% url 'diary-all-posts' country.pk %}" aria-label="refresh page to remove filters"><i class="fa-solid fa-arrows-rotate"></i></a>
+        </div>
+        <div class="search-links-container">
+            <a class="tags-link" href="{% url 'country' country.pk %}#diary_location" aria-label="back to country info page">Country Info</a>
+            <a class="tags-link" href="{% url 'diary-tags' country.pk %}" aria-label="link to tags page">Search Tags</a>
+        </div>
     </div>
 
-    <div class="diary-post-container">
-        {% for post in diary_posts %}
-            <div class="diary-summary-post">
-                <div class="diary-summary-date-container">
-                    <h3>{{ post.created_on|date:"dS M Y" }}</h3>
-                    <a class="ms-auto" href="?q={{post.exp_rating}}"><i class="rating-emoji fa-regular {{ post.exp_rating }}"></i></a>
-                </div>
-                <div class="diary-summary-body-container">
-                    {% if post.content_image %}
-                    <div class="diary-img-container">
-                        <img class="diary-img" src="{{ post.content_image.url }}" alt="">
+    <!-- add diary posts section -->
+    <div class="diary-outer-border">
+
+        <div class="add-post-btn-container">
+            <a href="{% url 'diary-create' country.pk %}">
+                <i class="fa-solid fa-file-circle-plus">&ensp;</i>
+                    Add Diary Post &ensp;
+                <i class="fa-solid fa-file-circle-plus"></i>
+            </a>
+        </div>
+
+        <!-- diary posts -->
+        <div class="diary-post-container">
+            {% for post in diary_posts %}
+                <div class="diary-summary-post">
+                    <div class="diary-summary-date-container">
+                        <h3>{{ post.created_on|date:"dS M Y" }}</h3>
+                        <a class="ms-auto" href="?q={{post.exp_rating}}" aria-label="filter posts to experience"><i class="rating-emoji fa-regular {{ post.exp_rating }}"></i></a>
                     </div>
-                    {% endif %}
-                    <h5 class="mt-2">{{ post.content|linebreaksbr }}</h5>
-                    <hr class="mt-3 mb-3">
-                    <ul>
-                        {% if post.tags.all %}
-                            {% for tag in post.tags.all %}
-                                <li><a href="?q={{tag}}">{{ tag }}</a></li>
-                            {% endfor %}
+                    <div class="diary-summary-body-container">
+                        {% if post.content_image %}
+                        <div class="diary-img-container">
+                            <!-- alt string not added to image as don't want alt text if author does not post image -->
+                            <img class="diary-img" src="{{ post.content_image.url }}" alt="">
+                        </div>
+                        {% endif %}
+                        <h5 class="mt-2">{{ post.content|linebreaksbr }}</h5>
+                        <hr class="mt-3 mb-3">
+                        <ul>
+                            {% if post.tags.all %}
+                                {% for tag in post.tags.all %}
+                                    <li><a href="?q={{tag}}" aria-label="filter posts to tag">{{ tag }}</a></li>
+                                {% endfor %}
+                            {% else %}
+                                <li><a href="?q=no_tags" aria-label="filter posts to those with no tag">No Tags</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="diary-bottom-buttons-container">
+                        <a class="btn-update-diary-post" href="{% url 'diary-update' post.pk %}" aria-label="link to update post page">Update</a>
+                        <a class="btn-delete-diary-post" href="{% url 'diary-delete' post.pk%}" aria-label="link to delete confirmation page">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- pagination -->
+        {% if diary_posts.has_other_pages %}
+                <nav class="buffer-site-updates">
+                    <ul class="pagination justify-content-center mt-3">
+
+                        <!-- previous -->
+                        {% if diary_posts.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ diary_posts.previous_page_number }}&q={{search_query}}" aria-label="Previous Page">
+                                <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
                         {% else %}
-                            <li><a href="?q=no_tags">No Tags</a></li>
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">&laquo;</span>
+                            </li>
+                        {% endif %}
+
+                        <!-- current -->
+                        {% for post in diary_posts.paginator.page_range %}
+                            {% if diary_posts.number == post %}
+                                <li class="page-item active-page-item"><a class="page-link active-page-link" href="#" aria-label="Current Page"><strong>{{ post }}</strong></a></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ post }}&q={{search_query}}">{{ post }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- next -->
+                        {% if diary_posts.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}" aria-label="Next Page">
+                                <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link" aria-hidden="true">&raquo;</span>
+                            </li>
                         {% endif %}
                     </ul>
-                </div>
-                <div class="diary-bottom-buttons-container">
-                    <a class="btn-update-diary-post" href="{% url 'diary-update' post.pk %}">Update</a>
-                    <a class="btn-delete-diary-post" href="{% url 'diary-delete' post.pk%}">Delete</a>
-                </div>
-            </div>
-        {% endfor %}
+                </nav>
+            {% endif %}
     </div>
-
-    {% if diary_posts.has_other_pages %}
-            <nav class="buffer-site-updates">
-                <ul class="pagination justify-content-center mt-3">
-                    {% if diary_posts.has_previous %}
-                        <li>
-                            <a class="page-link" href="?page={{ diary_posts.previous_page_number }}&q={{search_query}}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                    {% else %}
-                        <li class="page-item disabled">
-                            <span class="page-link" aria-hidden="true">&laquo;</span>
-                        </li>
-                    {% endif %}
-
-                    {% for post in diary_posts.paginator.page_range %}
-                        {% if diary_posts.number == post %}
-                            <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ post }}</strong></a></li>
-                        {% else %}
-                            <li class="page-item"><a class="page-link" href="?page={{ post }}&q={{search_query}}">{{ post }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if diary_posts.has_next %}
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    {% else %}
-                        <li class="page-item disabled">
-                            <span class="page-link" aria-hidden="true">&raquo;</span>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav>
-        {% endif %}
-
-</div>
-
 {% endblock %}

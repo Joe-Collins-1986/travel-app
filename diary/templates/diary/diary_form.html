@@ -1,15 +1,8 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+
 {% block content %}
-
-<style>
-
-    body {
-        background-color: white;
-    }
-
-</style>
-
+    <!-- diary add/update form page -->
     <div class="diary-form-container">
         <div class="diary-form">
             <h1>Diary Post</h1>
@@ -21,12 +14,10 @@
                     </fieldset>
                     <div class="form-group">
                         <button class="btn" type="submit">Submit Post</button>
-                        <a class="btn btn-secondary" href="{{request.META.HTTP_REFERER|escape}}">Cancel</a>
+                        <a class="btn btn-secondary" href="{{request.META.HTTP_REFERER|escape}}" aria-label="Previous Page">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
 {% endblock content %}
