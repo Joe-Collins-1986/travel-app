@@ -1,105 +1,113 @@
 {% extends "base.html" %}
-{% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-<style>
-    .header-img-background {
-        background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
-    }
-</style>
+{% block additional_styles %}
+    <!-- written in style tags to include context passed by backend -->
+    <style>
+        .header-img-background {
+            background-image: url('https://django-travel-app.s3.amazonaws.com/{{country.country_image}}');
+        }
+    </style>
+{% endblock additional_styles %}
 
-<a href="{% url 'country-map' %}"><i class="fa-solid fa-globe back-to-map btn"></i></a>
+{% block content %}
+    <!-- country info -->
+    <a href="{% url 'country-map' %}" aria-label="link back to map page"><i class="fa-solid fa-globe back-to-map btn"></i></a>
 
+    <!-- country info header section -->
+    <div class="header-img-background">
+        <div class="header-content-container">
+            <div class="header-flag-container">
+                {% if country.country_flag %}
+                    <img src="{{ country.country_flag.url }}" alt="flag of country being viewed">
+                {% else %}
+                    <img src='{% static "images/default_flag.png" %}' alt="placeholder flag">
+                {% endif %}
+            </div>
+            <div>
+                <h1>{{ country.name }}</h1>
+            </div>       
+        </div>
+    </div>
 
-<div class="header-img-background">
-    <div class="header-content-container">
-        <div class="header-flag-container">
-            {% if country.country_flag %}
-                <img src="{{ country.country_flag.url }}" alt="">
+    <!-- country info about section -->
+    <div class="row m-0 grey-background">
+        <div class="col-12 d-flex justify-content-center align-self-center p-5">
+            <div class="w-75">
+                <h4 class="text-center">About {{ country.name }}</h4>
+                <p class="text-center">{{ country.about }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- country info stats and visit form -->
+    <div class="row text-center m-0 blue-background">
+        <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
+            <div>
+                <i class="fa-solid fa-circle-info fa-10x"></i>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center p-5">
+            <div id="visited_list_location">
+                <h4>Info</h4>
+                <p><strong>Capital:</strong> {{ country.capital }}</p>
+                <p><strong>Currency:</strong> {{ country.currency }}</p>
+                <p><strong>Language:</strong> {{ country.language }}</p>
+                <p><strong>Population:</strong> {{ country.population }}</p>
+                <form class="visit-form m-2 w-auto blue-font" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group text-center">
+                        <legend class="border-bottom mb-4">Visited Status:</legend>
+                        {{ visit_form | crispy }}
+                    </fieldset>
+                    <button type="submit" class="btn btn-travel">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
+            <div>
+                <i class="fa-solid fa-circle-info fa-10x"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- to-do list section -->
+    <div class="row m-0 off-white-background">
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center text-center px-5 pt-5 p-lg-5">
+            <div id="to_do_list_location">
+                <h4>To-Do List</h4>
+                <p>Plan and track your travel activities with our easy to use 'To-Do List'.</p>
+                <a class="btn btn-travel m-2" href="{% url 'add-list' country.pk %}" aria-label="add a to-do list">Add To-Do List</a>
+            </div>
+        </div>
+        <div class="col m-lg-5 justify-content-center align-self-center">
+            {% if lists %}
+                <div class="list-container">
+                    {% for list in lists %}
+                        <div class="to-do-list-link-row">
+                            <a class="to-do-list-link" href="{% url 'to-do-items' list.pk %}"><li> {{ list.title }} </li></a>
+                            <div class="ms-lg-auto">
+                                <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'edit-list' list.pk %}" aria-label="edit the to-do list">Edit</a>
+                                <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-list' list.pk %}" aria-label="delete the to-do list">Delete</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             {% else %}
-                <img src="../../../static/images/home/home_background_img_small.jpg" alt="">
+                <h3 class="text-center">Currently you have no 'To-Do Lists'!</h3>
             {% endif %}
         </div>
-        <div>
-            <h1>{{ country.name }}</h1>
-        </div>       
     </div>
-</div>
 
-<div class="row m-0 grey-background">
-    <div class="col-12 d-flex justify-content-center align-self-center p-5">
-        <div class="w-75">
-            <h4 class="text-center">About {{ country.name }}</h4>
-            <p class="text-center">{{ country.about }}</p>
-        </div>
-    </div>
-</div>
-
-<div class="row text-center m-0 blue-background">
-    <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
-        <div>
-            <i class="fa-solid fa-circle-info fa-10x"></i>
-        </div>
-    </div>
-    <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center p-5">
-        <div id="visited_list_location">
-            <h4>Info</h4>
-            <p><strong>Capital:</strong> {{ country.capital }}</p>
-            <p><strong>Currency:</strong> {{ country.currency }}</p>
-            <p><strong>Language:</strong> {{ country.language }}</p>
-            <p><strong>Population:</strong> {{ country.population }}</p>
-            <form class="visit-form m-2 w-auto blue-font" method="POST">
-                {% csrf_token %}
-                <fieldset class="form-group text-center">
-                    <legend class="border-bottom mb-4">Visited Status:</legend>
-                    {{ visit_form | crispy }}
-                </fieldset>
-                <button type="submit" class="btn btn-travel">Submit</button>
-            </form>
-        </div>
-    </div>
-    <div class="col-3 d-flex justify-content-center p-5 d-none d-lg-block">
-        <div>
-            <i class="fa-solid fa-circle-info fa-10x"></i>
-        </div>
-    </div>
-</div>
-
-<div class="row m-0 off-white-background">
-    <div class="col-12 col-lg-6 d-flex justify-content-center align-self-center text-center px-5 pt-5 p-lg-5">
-        <div id="to_do_list_location">
-            <h4>To-Do List</h4>
-            <p>Plan and track your travel activities with our easy to use 'To-Do List'.</p>
-            <a class="btn btn-travel m-2" href="{% url 'add-list' country.pk %}">Add To-Do List</a>
-        </div>
-    </div>
-    <div class="col m-lg-5 justify-content-center align-self-center">
-        {% if lists %}
-            <div class="list-container">
-                {% for list in lists %}
-                    <div class="to-do-list-link-row">
-                        <a class="to-do-list-link" href="{% url 'to-do-items' list.pk %}"><li> {{ list.title }} </li></a>
-                        <div class="ms-lg-auto">
-                            <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'edit-list' list.pk %}">Edit</a>
-                            <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-list' list.pk %}">Delete</a>
-                        </div>
-                    </div>
-                {% endfor %}
+    <!-- diary section -->
+    <div class="row m-0 text-center blue-background">
+        <div class="col-12 d-flex justify-content-center align-self-center p-5">
+            <div id="diary_location" class="w-75 mb-5">
+                <h4>Diary Entries</h4>
+                <p>Record your memories for your {{ country.name }} trip.</p>
+                <a class="btn btn-off-white-background" href="{% url 'diary-all-posts' country.pk %}" aria-label="link to diary page">View Diary</a>
             </div>
-        {% else %}
-            <h3 class="text-center">Currently you have no 'To-Do Lists'!</h3>
-        {% endif %}
-    </div>
-</div>
-
-<div class="row m-0 text-center blue-background">
-    <div class="col-12 d-flex justify-content-center align-self-center p-5">
-        <div id="diary_location" class="w-75 mb-5">
-            <h4>Diary Entries</h4>
-            <p>Record your memories for your {{ country.name }} trip.</p>
-            <a class="btn btn-off-white-background" href="{% url 'diary-all-posts' country.pk %}">View Diary</a>
         </div>
     </div>
-</div>
-
 {% endblock content %}
