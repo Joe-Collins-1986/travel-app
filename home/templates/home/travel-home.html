@@ -8,14 +8,14 @@
 
         <!-- images and title -->
         <div class="home-top">
-            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/mountains-new.webp" class="background" alt="">
-            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/trees-cropped-mid.webp" class="foreground" alt="">
+            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/mountains-new.webp" class="background" alt="background image of mountains">
+            <img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/trees-cropped-mid.webp" class="foreground" alt="forground image of trees">
 
             <h1 class="home-title text-center">Welcome {{ user.username }}
                 <br>
                 Let your journey begin!
                 <br>
-                <i class="blink fa-solid fa-angle-down"></i>
+                <i class="blink fa-solid fa-angle-down" aria-label="flashing arrow pointing down"></i>
             </h1>
         </div>
 
@@ -25,21 +25,21 @@
                 <h3>Let us help you plan your adventure!</h3>
                 <div class="col-12 col-md-6 col-lg-4 planner-info">
                     <h4>Map Destinations</h4>
-                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/map-plan-pic.jpg" alt="">
+                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/map-plan-pic.jpg" alt="picture of a map">
                     <p>Use our planner map of Europe to select countries you wish to visit and markdown locations you have already visisted.</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 planner-info">
                     <h4>Plan Journeys</h4>
-                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/to-do-pic.jpg" alt="">
+                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/to-do-pic.jpg" alt="picture of a note book">
                     <p>Use our to-do list to plan out your journey and activities.</p>
                 </div>
                 <div class="col-12 col-lg-4 planner-info">
                     <h4>Record Memories</h4>
-                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/diary-pic.jpg" alt="">
+                    <img class="home-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/home/diary-pic.jpg" alt="picture of a woman on a mountain writing in a diary">
                     <p>Our travel diary allows you to document your experiences.</p>
                 </div>
                 <div>
-                    <a class="btn btn-site-planner" href="{% url 'country-map' %}">Planner</a>
+                    <a class="btn btn-site-planner" href="{% url 'country-map' %}" aria-label="link to map page in planner">Planner</a>
                 </div>
             </div>
             
