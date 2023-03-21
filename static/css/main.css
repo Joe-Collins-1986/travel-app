@@ -1524,13 +1524,13 @@ p, .comments-txt, .form-label {
         border-radius: 10px;
         margin-bottom: 15px;
         background-color: rgb(202, 202, 202);
+        list-style-type: none;
     }
 
     .to-do-list-link {
-        list-style-type: none;
         padding: 5px;
         font-family: 'Merriweather', serif;
-        font-size: 120%;
+        font-size: 150%;
         color: rgb(6, 68, 103);
         font-weight: 700;
         width: 50%;

@@ -12,7 +12,7 @@
     <div class="diary-header">
         <div class="search-container align">
             <form class="search-bar" method="GET" action="{% url 'diary-all-posts' country.pk %}" aria-label="filter posts where content and title contain input data">
-                <input type="text" name="q" placeholder="Search Posts" />
+                <input type="text" name="q" placeholder="Search Posts">
             </form>
             <a href="{% url 'diary-all-posts' country.pk %}" aria-label="refresh page to remove filters"><i class="fa-solid fa-arrows-rotate"></i></a>
         </div>

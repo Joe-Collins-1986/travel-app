@@ -86,7 +86,7 @@
                 <div class="list-container">
                     {% for list in lists %}
                         <div class="to-do-list-link-row">
-                            <a class="to-do-list-link" href="{% url 'to-do-items' list.pk %}"><li> {{ list.title }} </li></a>
+                            <a class="to-do-list-link" href="{% url 'to-do-items' list.pk %}">{{ list.title }}</a>
                             <div class="ms-lg-auto">
                                 <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'edit-list' list.pk %}" aria-label="edit the to-do list">Edit</a>
                                 <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-list' list.pk %}" aria-label="delete the to-do list">Delete</a>
