@@ -3,18 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="A website to aide in recording and managing travel">
+    <meta name="keywords" content="Django, Python, Travel, Trip, Planner, Country, Holiday, Diary">
+    <meta name="author" content="Joe Collins">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2013/07/12/18/15/departures-153136_960_720.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- specialist styling for page if there is any --> 
     {% block additional_styles %}
     {% endblock additional_styles %}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="icon" href="https://cdn.pixabay.com/photo/2013/07/12/18/15/departures-153136_960_720.png">
-
+    <!-- title passed through from view or urls -->   
     {% if tab_title %}
         <title>Travel App - {{ tab_title }}</title>
     {% else %}
@@ -23,16 +27,18 @@
 </head>
 
 <body>
+    <!-- navbar -->
     <div class="navigation">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid fixed-top header-grey">
                 <a class="navbar-brand" href="{% url 'travel-home' %}"><img src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/logo-dark-blue.png" alt="travel app logo"></a>
 
+                <!-- navbar toggle menu icon -->
                 <a class="navbar-toggler" href="#offcanvas" role="button" data-bs-toggle="offcanvas" aria-controls="offcanvas">
                     <i class="fa-solid fa-bars"></i>
                 </a>
 
-
+                <!-- navbar mobile menu -->
                 <div class="offcanvas offcanvas-end" data-bs-backdrop="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
                     <div class="top-box">
                         <div class="offcanvas-header">
@@ -40,6 +46,7 @@
                             <i data-bs-dismiss="offcanvas" class="fa-regular fa-circle-xmark"></i>
                         </div>
 
+                        <!-- navbar left side links / top of mobile menu-->
                         <div class="offcanvas-body">
                             <div class="navbar-nav mr-auto">
                                 <a class="nav-item nav-link px-lg-4" href="{% url 'travel-home' %}">Home</a>
@@ -47,8 +54,8 @@
                                 <a class="nav-item nav-link px-lg-4" href="{% url 'all-admin-updates' %}">Site Updates</a>
                                 <hr>
                             </div>
-                        <!-- Navbar Right Side -->
 
+                            <!-- navbar right side links / bottom of mobile menu-->
                             <div class="navbar-nav ms-auto">
                                 {% if user.is_authenticated %}
                                     {% if user.is_superuser %}
@@ -64,11 +71,13 @@
                         </div>
                     </div>
 
+                    <!-- social menu header for mobile-->
                     <div class="social-title-container hide-social-icons">
                         <p id="social-menu-header" class="m-1 text-center">Social</p>
                         <hr class="justify-content-evenly m-0 text-center">
                     </div>
 
+                    <!-- social menu links for mobile-->
                     <div class="social-icon-container hide-social-icons">
                         <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
                             aria-label="Visit our Facebook page (opens in a new tab)"><i class="social-icons fa-brands fa-facebook"></i></a></div>
@@ -85,10 +94,13 @@
     </div>
 
     <main class="main-section">
+    <!-- template block for page-->
         {% block content %}
         {% endblock %}
+    <!-- end of template block -->
     </main>
 
+    <!-- fixed footer with social media links-->
     <div id="footer">
         <div class="h-100 d-flex justify-content-end">
             <div class="footer-icons"><a href="https://www.facebook.com/" target="_blank" rel="noopener"
@@ -102,6 +114,7 @@
         </div>
     </div>
 
+    <!-- js scripts -->
     <script src="https://kit.fontawesome.com/5c52ef23bc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
