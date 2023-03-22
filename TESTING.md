@@ -3,7 +3,11 @@
 # Table Of Contents
 
 - [Python Unit Testing](#python-unit-testing)
-
+- [HTML Validation Testing](#html-validation-testing)
+- [CSS Validation Testing](#css-validation-testing)
+- [JS Validation Testing](#js-validation-testing)
+- [Lighthouse Testing](#lighthouse-testing)
+- [User Testing](#user-testing)
 
 <br>
 
@@ -116,8 +120,156 @@ Unit testing did not cover except ImportError. This has no negative impact on fu
 
 <br>
 
+</details>
+
+___
+
+
+## HTML Validation Testing
+
+See below html validation results for each page:
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Home</summary>
+<br>
+
+Login:
+
+![Login](readme-assets/testing/html/home/login.png)
+
+___
+
+Login Required:
+
+![Login Required](readme-assets/testing/html/home/login-required.png)
+
+___
+
+Register:
+
+![Register](readme-assets/testing/html/home/register.png)
+
+___
+
+Home:
+
+![Home](readme-assets/testing/html/home/home.png)
+
+___
+
+Password Reset:
+
+![Password Reset](readme-assets/testing/html/home/password-reset.png)
+
+___
+
+Password Email Sent
+
+![Password Email Sent](readme-assets/testing/html/home/password-email-sent.png)
+
+___
+
+Password Reset Set Password
+
+![Password Reset Set Password](readme-assets/testing/html/home/password-reset-set-password.png)
+
+___
+
+Password Reset Confirmation
+
+![Password Reset Confirmation](readme-assets/testing/html/home/password-reset-confirmation.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Planner</summary>
+<br>
+
+Map:
+
+![Map](readme-assets/testing/html/planner/map.png)
+
+___
+
+Country Info:
+
+![Country Info](readme-assets/testing/html/planner/country-info.png)
+
+___
+
+Diary Posts:
+
+![Diary Posts](readme-assets/testing/html/planner/diary-post.png)
+
+___
+
+Add / Update Diary:
+
+![Add / Update Diary](readme-assets/testing/html/planner/add-diary.png)
+
+___
+
+Delete Diary:
+
+![Delete Diary](readme-assets/testing/html/planner/diary-delete.png)
+
+___
+
+Diary Tags:
+
+![Diary Tags:](readme-assets/testing/html/planner/tags.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">To-Do List</summary>
+<br>
+
+To Be Added
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile</summary>
+<br>
+
+To Be Added
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Site Updates</summary>
+<br>
+
+To Be Added
+
 ___
 
 </details>
 
 ___
+
+## CSS Unit Testing
+
+___
+
+## JS Unit Testing
+
+___
+
+## Lighthouse Testing
+
+___
+
+## User Testing
+
