@@ -2,10 +2,7 @@
 
 TO DO:
  - ADD LOGO TO WEB DESIGN
-
- - HTML Validation Testing
- - CSS Validation Testing
- - JS Validation Testing
+ 
  - Lighthouse Testing
  - User Testing
 

@@ -358,7 +358,82 @@ ___
 
 ## Lighthouse Testing
 
+<details>
+      <summary style="font-weight:bold">All Lighthouse Scores</summary>
+
+Login:
+
+![Login](readme-assets/testing/lighthouse/lighthouse-login.png)<br>
+
 ___
+
+Register:
+
+![Register](readme-assets/testing/lighthouse/lighthouse-register.png)<br>
+
+___
+
+Profile:
+
+![Profile](readme-assets/testing/lighthouse/lighthouse-profile.png)<br>
+
+___
+
+Home:
+
+![Home](readme-assets/testing/lighthouse/lighthouse-home.png)<br>
+
+___
+
+Map:
+
+![Map](readme-assets/testing/lighthouse/lighthouse-map.png)<br>
+
+___
+
+Country Info:
+
+![Country Info](readme-assets/testing/lighthouse/lighthouse-country-info.png)<br>
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/lighthouse/lighthouse-form.png)<br>
+
+___
+
+List Items:
+
+![List Items](readme-assets/testing/lighthouse/lighthouse-list-items.png)<br>
+
+___
+
+Diary:
+
+![Diary](readme-assets/testing/lighthouse/lighthouse-diary.png)<br>
+
+___
+
+Diary Tags:
+
+![Diary Tags](readme-assets/testing/lighthouse/lighthouse-dairy-tags.png)<br>
+
+___
+
+Site Updates:
+
+![Site Updates](readme-assets/testing/lighthouse/lighthouse-site-updates.png)<br>
+
+___
+
+Update Detail:
+
+![Update Detail](readme-assets/testing/lighthouse/lighthouse-update-detail.png)<br>
+
+___
+
+</details>
 
 ## User Testing
 
