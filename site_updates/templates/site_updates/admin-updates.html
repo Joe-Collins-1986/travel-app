@@ -1,20 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/off-white-bg.css' %}">
+{% endblock additional_styles %}
+
 {% block content %}
-
-<style>
-    body {
-        background-color: #e9e4e4;
-    }
-</style>
-
+    <!-- site updates section -->
     <div class="updates-page">
+
+        <!-- site updates title with returned number of results -->
         <div class="text-center updates-title-section">
             {% if topic_items != 0 %}
             <div class="updates-title">
                 <h1>Site Updates</h1>
                 <h3 class="updates-header-count">{{topic_items}}</h3>
             </div>
-
             {% else %}
                 <div class="text-center updates-title">
                     <h1>Site Updates</h1>
@@ -25,36 +26,36 @@
             {% endif %}
         </div>
 
+        <!-- search container -->
         <div class="d-lg-flex">
             <div class="full-search-container">
                 <div class="topic-filter-container">
                     <div class="col-9 search-container">
-                        <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}">
-                            <input type="text" name="q" placeholder="Search Updates" />
+                        <form class="m-2" method="GET" action="{% url 'all-admin-updates' %}" aria-label="filter updates where contentm title or topic contain input data">
+                            <input type="text" name="q" placeholder="Search Updates">
                         </form>
                     </div>
     
+                    <!-- topics dropdown button -->
                     <div class="col topic-dropdown-icon-container">
                         <i onclick="filterToggle()" class="fa-regular fa-square-caret-down"></i>
                     </div>
                 </div>
 
+                <!-- topics inside dropdown -->
                 <div class="topic-selections" id="filter-updates">
-
                     <div class="row mx-0 mb-3">
                         <div class="col-9 topic-titles">
-                            <a href="{% url 'all-admin-updates' %}">All Topics</a>
+                            <a href="{% url 'all-admin-updates' %}" aria-label="remove filters to show all topics">All Topics</a>
                         </div>
                         <div class="col topic-numbers">
                             <div class="topic-number">{{ all_published_updates.count }}</div>
                         </div>
                     </div>
-
                     {% for topic in topics %}
-
                         <div class="row mx-0 mb-3">
                             <div class="col-9 topic-titles">
-                                <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}">{{ topic }}</a>
+                                <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}" aria-label="filter to topic selected">{{ topic }}</a>
                             </div>
                             <div class="col topic-numbers">
                                 <div class="topic-number">{{ topic.update_set.all.count }}</div>
@@ -64,11 +65,14 @@
                 </div>
             </div>
 
+            <!-- site update posts area-->
             <div class="w-100 mt-4 mt-lg-0">
                 {% if topic_items != 0 %}
+                
+                    <!-- site update posts -->
                     {% for update in updates %}
                     <div class="bg-light update-card mb-4 mx-3">
-                        <a href="{% url 'admin-update-detail' update.id %}">
+                        <a href="{% url 'admin-update-detail' update.id %}" aria-label="link to update selected with comments">
                             <div class="p-4 all-updates-card-body">
                                 <h4 class="text-center"><strong>{{ update.topic }}:</strong> {{ update.title }}</h4>
                                 <h6 class="text-center">Posted: {{ update.published_on|timesince }} ago</h6>
@@ -77,41 +81,46 @@
                                 {% if update.update_image %}
                                     <div class="update-picture-container">
                                         <div class="update-picture">
-                                            <img src="{{ update.update_image.url }}">
+                                            <img src="{{ update.update_image.url }}" alt="admin posted image">
                                         </div>
                                     </div>
-            
                                 {% endif %}
                             </div>
                         </a>
+
+                        <!-- site update card footer -->
                         <div class="update-card-footer">
                             {% if update.updatecomment_set.all.count == 0 %}
-                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}" aria-label="link to update selected with comments">
                                     <small><strong><i class="fa-regular fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
                                 </a>
                             {% else %}
-                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}">
+                                <a class="text-decoration-none" href="{% url 'admin-update-detail' update.id %}" aria-label="link to update selected with comments">
                                     <small><strong><i class="fa-solid fa-comment"></i></strong>&nbsp;{{ update.updatecomment_set.all.count }}</small>
                                 </a>
                             {% endif %}
                         </div>
                     </div>
                     {% endfor %}
-                {% else %}
 
+                <!-- no site updates found -->
+                {% else %}
                     <div class="topic-not-found-img-container">
-                        <img class="topic-not-found-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/topic-not-found-cropped.jpg" alt="">
+                        <img class="topic-not-found-img" src="https://django-travel-app.s3.eu-west-2.amazonaws.com/images/topic-not-found-cropped.jpg" alt="woman searching with binoculars">
                     </div>
                 {% endif %}
             </div>
         </div>
 
+        <!-- pagination -->
         {% if updates.has_other_pages %}
             <nav class="buffer-site-updates">
                 <ul class="pagination justify-content-center mt-3">
+
+                    <!-- previous -->
                     {% if updates.has_previous %}
-                        <li>
-                            <a class="page-link" href="?page={{ updates.previous_page_number }}&q={{search_query}}" aria-label="Previous">
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ updates.previous_page_number }}&q={{search_query}}" aria-label="Previous Page">
                             <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -121,6 +130,7 @@
                         </li>
                     {% endif %}
 
+                    <!-- current -->
                     {% for update in updates.paginator.page_range %}
                     {% if updates.number == update %}
                         <li class="page-item active-page-item"><a class="page-link active-page-link" href="#"><strong>{{ update }}</strong></a></li>
@@ -129,9 +139,10 @@
                     {% endif %}
                     {% endfor %}
 
+                    <!-- next -->
                     {% if updates.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ updates.next_page_number }}&q={{search_query}}" aria-label="Next">
+                            <a class="page-link" href="?page={{ updates.next_page_number }}&q={{search_query}}" aria-label="Next Page">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
@@ -142,27 +153,16 @@
                     {% endif %}
                 </ul>
             </nav>
+        <!-- buffer -->
         {% else %}
             <div class="buffer-site-updates"></div>
         {% endif %}
     </div>
-       
-       
-<script>
-    const filterTopics = document.getElementById("filter-updates");
-
-    function filterToggle() {
-        if (filterTopics.style.display === "none") {
-                filterTopics.style.display = "block";
-            } else {
-                filterTopics.style.display = "none";
-            }
-        }
-    document.getElementById("filter-updates").style.display = "none";
-
-</script>
-
 {% endblock content %}
+
+{% block additional_scripts %}
+    <script src="{% static 'js/site-updates.js' %}"></script>
+{% endblock additional_scripts %}
 
 
 

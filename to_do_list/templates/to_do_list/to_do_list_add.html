@@ -1,20 +1,12 @@
 {% extends "base.html" %}
-{% block content %}
 {% load crispy_forms_tags %}
 
-    <style>
-
-        body {
-            background-color: white;
-        }
-    
-    </style>
-    
-    <div class="to-do-list-form-container"> <!-- change to diary and add to same css -->
-        <div class="to-do-list-form"> <!-- change to diary and add to same css -->
+{% block content %}
+    <!-- add to-do list page -->
+    <div class="to-do-list-form-container"> 
+        <div class="to-do-list-form">
             <h1>Add To-Do List</h1>
-        
-            <div class="content-section"> <!-- change to diary and add to same css -->
+            <div class="content-section">
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
@@ -22,12 +14,10 @@
                     </fieldset>
                     <div class="form-group">
                         <button class="btn" type="submit">Submit To-Do List</button>
-                        <a class="btn btn-secondary" href="{% url 'country' country.pk %}#to_do_list_location">Cancel</a>
+                        <a class="btn btn-secondary" href="{% url 'country' country.pk %}#to_do_list_location" aria-label="back to country info page">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
-
 {% endblock content %}
