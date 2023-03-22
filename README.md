@@ -1222,12 +1222,13 @@
    </details>
 
 # Further Development
-   * Add a Public attribute to Diary Post Model to create a Public Blog - still Linked to countries.
+
+   * Add a Public attribute to Diary Post Model to create a Public Blog - still linked to countries.
    * Add rating system to site updates.
    * Build notifications with a link for user when there is an admin response to their Site Update comments.
-   * Increase map from Europe to world.
+   * Increase map from Europe to World.
    * Link booking sites.
-   * Enhance AWS security protocals to allow site to have a wallet for passports and bording cards.
+   * Enhance AWS security protocals to allow site to have a wallet for passports and boarding cards.
    * Option advertisement space on site for travel companies.
    
    <br>
@@ -1259,7 +1260,7 @@
    - django-crispy-forms:
       - Used to format forms.
    - django-resized:
-      - Used to resize images stored in aWS account.
+      - Used to resize images stored in AWS account.
    - django-taggit:
       - Used to create a tag object linked to diary posts.
    - jQuery:
@@ -1288,7 +1289,7 @@
    - AWS:
       - Hosting images and static files.
    - Gmail:
-      - Link to site to send re-set passwords.
+      - Linked to site to send password resets.
    
    <br>
 
@@ -1306,175 +1307,45 @@
    ## Development Bugs
 
    <details>
-      <summary style="font-weight:bold">Menu Toggle Issue</summary>
+      <summary style="font-weight:bold">Bug 1</summary>
    
-   On closing settings or rules using the close button on a small screen the menu remains open. I want this to close to improve aesthetics and reduce required button clicks when returning to game.
+   To be added ....
 
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/leave-settings.png)
-
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/small-menu.png)
-
-   Image shows that after ‘Leave Settings’ is selected the menu remains on screen until the ? icon is selected again.
-
-   Another issue this caused was that if the rules or settings content were opened on a small screen and the ? icon was clicked it would toggle the menu off and need to be clicked again to open the menu options.
-
-   The final issue with the toggle option on the ? icon was that when it was set to on and the screen size was changed to large, when rules or settings were opened and the screen was returned to small the menu overlapped the rules or settings content.
-
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/overlap-menu.png)
-
-   Image shows the menu overlapping rules and settings content.
-
-   By adding the matchMedia code and moving the rules and settings in front of the small screen menu with a CSS z-index of 2 the functionality works as intended.
-   
    <br>
 
    **Code block to resolve:**
 
-      if (matchMedia("(min-width: 821px)").matches) {
-            postIt.className = "post-it-contents";
-      }
-      else {
-            postIt.classList.toggle("select");
-      }
+      resolution code if used
 
    ___
 
    </details>
 
    <details>
-      <summary style="font-weight:bold">Canvas Re-Size</summary>
+      <summary style="font-weight:bold">Bug 2</summary>
    
-   When I initially drew the hangman on the canvas, I had an issue if the screen was re-sized. The image would not re-size along with it.
+   To be added ....
 
-   By implementing an event listener for window re-size and calculating the canvas images based on a percentage of the canvas height and width I was able to resolve this issue.
-
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/hangman-resize.png)
-
-   Image shows canvas not re-sizing to match screen change.
-  
    <br>
 
    **Code block to resolve:**
 
-      window.addEventListener("resize", function() {
-        canvas.width = canvasSize.clientWidth;
-        canvas.height = canvasSize.clientHeight;
-        hangmanDraw();
-      });
-
-   The above code block shows how when the screen size is changed the canvas re-sizes and redraws the required elements.
-
-      function drawBase() {
-        ctx.fillRect(canvas.width * 0.2, canvas.height * 0.9, canvas.width * 0.6, 5);
-      }
-   
-   The above code block shows a canvas element calculated based on canvas dimensions.
+      resolution code if used
 
    ___
 
    </details>
 
-   <details>
-      <summary style="font-weight:bold">Underscore Overlap</summary>
-   
-   When testing the game, it was identified that for long words the underscores overlapped the word output container.
 
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/underscores-overlap.jpg)
-
-   However, when some of the letters were presented as text it did not.
-
-   ![Leave Settings Img](assets/readme-assets/bugs/develoment/word-fits.jpg)
-
-   I identified that this was because in the JS code I had put spaces around the underscores. However, I had also set the CSS word output to have a letter spacing of 0.8rem.
-  
-   <br>
-
-   **Code blocks detailing issue:**
-
-   JS code:
-
-      function underscoreWord() {
-         for (let i = 0; i < selectedWord.length; i++) { 
-            shownWord[i] = " _ "; //remove spaces from around the underscore
-            }
-        
-            wordOutput.innerHTML = shownWord.join(" ");
-         }
-   
-   CSS code:
-
-      #word-output {
-         height: 54px;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         font-size: 2rem;
-         font-weight: bold;
-         letter-spacing: .8rem; // already has spacing between letters
-         background-color: white;
-         border: 2px solid black;
-         border-radius: 1.2rem;
-         margin-bottom: 27px;
-      }
-
-   By removing the spacing from the underscore in the JS code, it resolved the issue. 
-
-   Despite this I later decided to make the maximum word length 6 letters. This was because when the text size was reduced to fit the output container for a small screen it was becoming challenging to read the letters.
-
-   In future developments the word output container could be increased to allow for longer words and potentially sentences. 
-
-   </details>
-   
-
-   ## Key Learn
-   The main key learn I took from this project was to build the readme file in conjunction with the website development.
-
-   I was not sure if the design and functionality were feasible for the development of this project given my limited experience in CSS and JS. Therefore, I spent a lot of time building it in a test environment before deciding I could accomplish the desired result.
-
-   By the time I had realised it was feasible I had completed a lot of the work. As a result of this I had to retrospectively complete sections of the readme file which would have been better suited to completing at the scoping, researching and initial build stages.
-
-   Despite this I feel that I did a good job recording my progress through easy-to-understand concise commits which made it easier to revisit certain elements of the project where necessary.
+   ## Key Learns
+   To be added ...
 
    <br>
 
 
 # Deployment
-   ## Set Up Local GitHub Repository
-   1. Go to https://github.com/Code-Institute-Org/gitpod-full-template.
-   2. Select use this template.
-   3. Add repository name within my GitHub. (This will generate a repository in my Git Hub with the appropriate files.)
 
-
-   ## Repository Framework
-   1. Select the repository on GitHub and open with GitPod (green button).
-   2. Create required html page.
-   3. Create assets folder.
-   4. Within assets folder create CSS folder, images folder, JS folder & readme-assets folder.
-   5. Add required files to folders including style.css, images, script.js, etc.
-
-
-   ## Update Repository
-   1. When adding a new feature create a separate branch to work in safely typing into the terminal "git branch 'name of required feature/update'".
-   2. Checkout the branch with "git checkout 'name of required feature/update'".
-   3. Make updates and test using "python -m http.server".
-   4. Once testing is complete add to Git staging area using "git add ."
-   5. Commit the changes and add a useful explanation of what action was done to track the history in GitHub using "git commit -m 'explanation of update'".
-   6. Once the feature is complete, fully tested, and ready to be added to the main branch first go to the main branch using "git checkout main".
-   7. Merge the feature branch into the main using "git merge 'name of required feature/update'".
-   8. Confirm merge was successful and then if it is not going to be re-used delete the feature branch using "git branch -d 'name of required feature/update'". (If deleting a branch with commits not merged to main delete with -D instead of -d)
-   9. Use "git push" to push the commits to GitHub. These will then appear in the live website if it has been set up in GitHub Pages.
-
-
-   ## GitHub Pages
-   Deploy in GitHub Pages:
-   1. Log in to my GitHub and go to my appropriate repository.
-   2. Access settings.
-   3. Under 'Code and Automation' go to pages.
-   4. Leave the source as Deploy from Branch.
-   5. Set Branch to Main.
-   6. Save.
-   7. Give GitHub a few minutes and the live URL is provided at the top of the GutHub Pages section of settings.
-   8. Any Git Pushes from the terminal whilst working on the repository using GitPod will now update in this live site.
+   Deployment doumentation found [here](DEPLOYMENT.md).
 
    <br>
 
@@ -1484,28 +1355,10 @@
    The following sources acted as guidance for understanding. No code was taken directly for use in this project.
 
 
-   * Learning how to use linear gradients. This was used to develop the look of a notepad with re-occurring lines. (https://www.w3schools.com/css/css3_gradients.asp), (https://codepen.io/ceg9498/post/creating-lined-paper)
-   * FlexBox guidance/re-fresh. (https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-   * Intro to canvas in JS to create the hangman image. (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)
-   * Canvas responsive. (https://stackoverflow.com/questions/34772957/how-to-make-canvas-responsive)
-   * Clearing the canvas. (https://stackoverflow.com/questions/2142535/how-to-clear-the-canvas-for-redrawing)
-   * Understanding event listeners. (https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
-   * Change mouse pointer on hover for menu list items (https://www.w3schools.com/cssref/pr_class_cursor.asp)
-   * Understand the toggle class method to utilise in menu activation. (https://www.w3schools.com/howto/howto_js_toggle_class.asp)
-   * Set JS rules dependent on-screen size. (https://www.w3schools.com/jsrEF/met_win_matchmedia.asp)
-   * Wrap entire game in an initialise function to eliminate global variables. (https://www.youtube.com/watch?v=_4V4yUxGng8)
-   * Stack Overflow used for generalised queries during development.
-
+   * To be added ...
 
    ## Media Resources
-   * All images were obtained from Unsplash.
-      - Image for the background wood effect (jon-moore-5fIoyoKlz7A-unsplash.jpg).
-      - Image of the mountain doodle which shows on large screen viewings (nicolas-pinilla-GcDr6ZIzbIw-unsplash.jpg).
-   * Audio was taken form YouTube videos
-      - Sound on correct answer. (https://www.youtube.com/watch?v=403gX7TnhTQ)
-      - Sound on incorrect answer. (https://www.youtube.com/watch?v=RZEsfS1rGyY) - modified using Audacity
-      - Sound on getting word correct. (https://www.youtube.com/watch?v=ytjxf9YNJ-0) - modified using Audacity
-      - Sound on getting word incorrect. (https://www.youtube.com/watch?v=na-a3lLB13Q&t=16s) - modified using Audacity
+   * To be added ...
 
 
    ## Acknowledgements
