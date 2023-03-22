@@ -32,7 +32,8 @@ class AdminUpdatesListView(View):
 
         updates = update_list_published.filter(
             Q(topic__topic_catagory__icontains=q) |
-            Q(title__icontains=q)
+            Q(title__icontains=q) |
+            Q(content__icontains=q) 
             )
 
         updates = updates.distinct()
