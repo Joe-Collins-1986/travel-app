@@ -116,7 +116,7 @@
                 {% if user == comment.author %}
                 <hr>
                 <div class="add-delete-btn-container">
-                    <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}" aria-label="link to update comment form">Update</a>
+                    <a class="btn btn-blue" href="{% url 'comment-update' comment.pk %}" aria-label="link to update comment form">Update</a>
                     <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}" aria-label="delete comment">Delete</a>
                 </div>
                 {% endif %}        

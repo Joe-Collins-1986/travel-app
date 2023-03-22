@@ -753,7 +753,6 @@ p, .comments-txt, .form-label {
     }
 
     .update-card-comment-btn .btn {
-        width: 150px;
         background-color: white;
         color: rgb(6, 68, 103);
         font-weight: 700;
@@ -785,6 +784,16 @@ p, .comments-txt, .form-label {
         border-radius: 10px;
         background-color: rgba(255, 255, 255);
         width: 50%;
+    }
+
+    .btn-blue {
+        background-color: rgb(6, 68, 103);
+        color: white;
+    }
+
+    .btn-blue:hover {
+        background-color: rgb(10, 104, 158);
+        color: white;
     }
 
     @media (max-width: 750px) {
