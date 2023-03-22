@@ -1,53 +1,53 @@
 {% extends "base.html" %}
-{% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
 
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/white-bg.css' %}">
+{% endblock additional_styles %}
 
-<style>
-    body {
-        background-color: white;
-    }
-</style>
+{% block content %}
+    <!-- to-do items page -->
 
+    <!-- to-do list title and description -->
     <div class="to-do-item-header">
         <h1>{{ to_do_list.title }}</h1>
         <h4>{{ to_do_list.description }}</h4>
     </div>
 
-
+    <!-- to-do items -->
     <div class="tasks-container">
         {% if items %}
             <div class="task-container">
                 {% for item in items %}
-
                         {% if item.complete %}
                         <div class="task-list-row-closed">
                             <div class="task-description"><p><s>{{ item }}</s></p></div>
                             <div class="ms-lg-auto">
-                                <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}">Open</a>
-                                <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}">Delete</a>
+                                <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}" aria-label="opens task item">Open</a>
+                                <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}" aria-label="deletes task item">Delete</a>
                             </div>
                         </div>
                         {% else %}
                         <div class="task-list-row-open">
                             <div class="task-description"><p>{{ item }}</p></div>
                                 <div class="ms-lg-auto">
-                                    <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}">Close</a>
-                                    <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}">Delete</a>
+                                    <a class="to-do-list-buttons to-do-list-edit btn" href="{% url 'complete-item' item.pk %}" aria-label="closes task item">Close</a>
+                                    <a class="to-do-list-buttons to-do-list-delete btn" href="{% url 'delete-item' item.pk %}" aria-label="deletes task item">Delete</a>
                                 </div>
                         </div>
                         {% endif %}
-
                 {% endfor %}
             </div>
         {% else %}
             <h3 class="text-center">Currently you have no 'Tasks' in your 'To-Do List'!</h3>
         {% endif %}
     </div>
+
+    <!-- add to-do item form -->
     <div class="to-do-item-form-container">
         <div class="to-do-item-form">
             <h1>Add New Task Item</h1>
-        
             <div class="content-section">
                 <form method="POST">
                     {% csrf_token %}
@@ -56,12 +56,10 @@
                     </fieldset>
                     <div class="form-group">
                         <button class="btn" type="submit">Add task</button>
-                        <a class="btn btn-secondary" href="{% url 'country' to_do_list.country.pk %}#to_do_list_location">Back</a>
+                        <a class="btn btn-secondary" href="{% url 'country' to_do_list.country.pk %}#to_do_list_location" aria-label="link back to country info page">Back</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
 {% endblock content %}
