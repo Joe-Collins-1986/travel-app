@@ -1,33 +1,36 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/off-white-bg.css' %}">
+    <!-- written in style tags to include context passed by backend -->
+    <style>
+        .profile-outer-border:before{
+            background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/{{profile.background_img}}');
+        }
+    </style>
+{% endblock additional_styles %}
+
 {% block content %}
-
-<style>
-    body {
-        background-color: #e9e4e4;
-    }
-
-    .profile-outer-border:before{
-        background-image: url('https://django-travel-app.s3.eu-west-2.amazonaws.com/{{profile.background_img}}');
-    }
-</style>
-
-
+    <!-- profile page-->
     <div class="profile-outer-border">
+
+        <!-- profile user info-->
         <div class="profile-section">
             <div class="profile-user-info-container">
-                <img src="{{ profile.profile_img.url }}" alt="">
+                <img src="{{ profile.profile_img.url }}" alt="profile image">
                 <div class="profile-user-info">
                     <h5>{{ user.username }}</h5>
                     <p>{{ user.email }}</p>
                 </div>
             </div>
             <div class="update-profile-button">
-                <a class="btn" href="{% url 'update-profile-page' %}">Update</a>
+                <a class="btn" href="{% url 'update-profile-page' %}" aria-label="link to update profile page">Update</a>
             </div>
         </div>
 
+        <!-- profile objectives-->
         <div class="profile-section">
             <div class="profile-user-bio-container">
                 <h5>Travel Objectives</h5>
@@ -39,15 +42,15 @@
             </div>
         </div>
 
+        <!-- profile wishlist-->
         <div class="profile-section">
             <div class="profile-user-wish-container">
                 <h5>Wish List</h5>
-
                 {% if countries %}
                     {% for visit in countries %}
                         <ul>
                         {% if visit.status == "wish_list" %}
-                            <li><a href="{% url 'country' visit.country.id %}">{{ visit.country.name }}</a></li>
+                            <li><a href="{% url 'country' visit.country.id %}" aria-label="link to info for country selected">{{ visit.country.name }}</a></li>
                         {% endif %}
                         </ul>
                     {% endfor %}
@@ -56,7 +59,5 @@
                 {% endif %}
             </div>
         </div>
-
     </div>
-
 {% endblock %}

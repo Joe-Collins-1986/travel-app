@@ -1,5 +1,19 @@
 # TRAVEL APPLICATION
 
+TO DO:
+ - ADD LOGO TO WEB DESIGN
+
+ - HTML Validation Testing
+ - CSS Validation Testing
+ - JS Validation Testing
+ - Lighthouse Testing
+ - User Testing
+
+ - Development Bugs
+ - Key Learns
+ - Credits
+
+
 # Table Of Contents
 - [Travel Application Website Overview](#travel-application-website-overview)
    - [Live Project](#live-project-link-to-live-project)
@@ -13,24 +27,18 @@
    - [Wireframes](#wireframes)
    - [Features](#features)
 - [Further Development](#further-development)
-- [Technologies Used](#...)
-   - [Languages Used](#...)
-   - [Frameworks, Libraries & Programs Used](#...)
-- [Testing](#...)
-   - [HTML Validator Results](#...)
-   - [CSS Validator Results](#...)
-   - [JS Validator Results](#...)
-   - [Console Log Warning](#...)
-   - [Lighthouse Accessibility Results](#...)
-   - [Testing User Stories from User Experience (UX) Section](#...)
-   - [Further Testing](#...)
-   - [Development Bugs](#...)
-   - [Key Learn](#...)
-- [Deployment](#...)
-   - [Set Up Local GitHub Repository](#...)
-   - [Repository Framework](#...)
-   - [Update Repository](#...)
-   - [GitHub Pages](#...)
+- [Technologies Used](#technologies-used)
+   - [Languages Used](#languages-used)
+   - [Frameworks Used](#frameworks-used)
+   - [Libraries Used](#libraries-used)
+   - [Developer Tools](#developer-tools)
+- [Testing](#testing)
+   - [Testing Document](#testing-document)
+   - [Further Testing](#further-testing)
+   - [Development Bugs](#development-bugs)
+   - [Key Learns](#key-learns)
+- [Deployment](#deployment)
+   - [Deployment Document](#deployment-document)
 - [Credits](#credits)
    - [Development Resources](#development-resources)
    - [Media Resources](#media-resources)
@@ -1221,6 +1229,8 @@
 
    </details>
 
+   <br>
+
 # Further Development
 
    * Add a Public attribute to Diary Post Model to create a Public Blog - still linked to countries.
@@ -1266,7 +1276,7 @@
    - jQuery:
       - Javascript library for simplified JS useage.
 
-   ## Developer Tools / Software Used
+   ## Developer Tools
 
    - Google Fonts:
       - Used to obtain appropriate fonts to use in website not held as standard.
@@ -1295,6 +1305,7 @@
 
 # Testing
 
+   ## Testing Document
    Testing doumentation found [here](TESTING.md).
 
    ## Further Testing
@@ -1345,6 +1356,7 @@
 
 # Deployment
 
+   ## Deployment Document
    Deployment doumentation found [here](DEPLOYMENT.md).
 
    <br>

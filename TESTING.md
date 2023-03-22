@@ -243,7 +243,15 @@ ___
       <summary style="font-weight:bold">Profile</summary>
 <br>
 
-To Be Added
+Profile:
+
+![Profile:](readme-assets/testing/html/profile/profile.png)
+
+___
+
+Profile Update:
+
+![Profile Update:](readme-assets/testing/html/profile/update-profile.png)
 
 ___
 
