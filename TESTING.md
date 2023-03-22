@@ -350,11 +350,16 @@ ___
 
 ## JS Unit Testing
 
+<details>
+      <summary style="font-weight:bold">JSHint Validations</summary>
+   
 No Errors idendified in JSHint:
 
 ![JSHint:](readme-assets/testing/js/js-validation.png)
 
 ___
+
+</details>
 
 ## Lighthouse Testing
 
