@@ -49,9 +49,7 @@
                 {% if countries %}
                     {% for visit in countries %}
                         <ul>
-                        {% if visit.status == "wish_list" %}
                             <li><a href="{% url 'country' visit.country.id %}" aria-label="link to info for country selected">{{ visit.country.name }}</a></li>
-                        {% endif %}
                         </ul>
                     {% endfor %}
                 {% else %}

@@ -18,6 +18,7 @@ class ProfilePageView(LoginRequiredMixin, View):
     def get(self, request):
         profile = get_object_or_404(Profile, user=self.request.user)
         countries = Visit.objects.filter(user=request.user.id)
+        countries = countries.filter(status='wish_list')
 
         return render(
             request,
