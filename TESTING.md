@@ -275,7 +275,27 @@ ___
       <summary style="font-weight:bold">Site Updates</summary>
 <br>
 
-To Be Added
+Site Updates:
+
+![Site Updates:](readme-assets/testing/html/site-updates/site-updates.png)
+
+___
+
+Site Update Detail:
+
+![Site Update Detail:](readme-assets/testing/html/site-updates/site-update-detail.png)
+
+___
+
+Add / Update Comment:
+
+![Add/Update Comment:](readme-assets/testing/html/site-updates/update-comment.png)
+
+___
+
+Delete Comment:
+
+![Delete Comment:](readme-assets/testing/html/site-updates/confirm-comment-delete.png)
 
 ___
 

@@ -55,7 +55,7 @@
                     {% for topic in topics %}
                         <div class="row mx-0 mb-3">
                             <div class="col-9 topic-titles">
-                                <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory }}" aria-label="filter to topic selected">{{ topic }}</a>
+                                <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory|urlencode }}" aria-label="filter to topic selected">{{ topic }}</a>
                             </div>
                             <div class="col topic-numbers">
                                 <div class="topic-number">{{ topic.update_set.all.count }}</div>

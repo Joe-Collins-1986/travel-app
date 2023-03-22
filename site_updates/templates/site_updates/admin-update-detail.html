@@ -1,125 +1,133 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-<!-- main block code -->
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static 'css/update-grey.css' %}">
+{% endblock additional_styles %}
+
 {% block content %}
+    <!-- site update with comments section -->
+    <div class="container-fluid top-div">
+        <div class="row">
+            <div class="col-12 col-lg-8 p-0">
+                <div class="update-card-comment-page">
 
-<style>
-    body {
-        background-color: rgb(202, 202, 202);
-    }
-</style>
-
-
-<div class="container-fluid top-div">
-    <div class="row">
-        <div class="col-12 col-lg-8 p-0">
-            <div class="update-card-comment-page">
-                <div class="update-card-title">
-                    <h1 class="m-0 p-1">{{ update.title }}</h1>
-                    <hr>
-                </div>
-
-                <div class="update-card-content p-3 text-center">
-                    <div><h5>{{ update.topic }}</h5></div>
-                    <hr>
-                    <div>{{ update.content|linebreaksbr }}</div>
-                </div>
-
-                {% if update.update_image %}
-                    <div class="update-card-img-section">
-                        <img class="update-detail-img" src="{{ update.update_image.url }}" alt="">
+                    <!-- update title -->
+                    <div class="update-card-title">
+                        <h1 class="m-0 p-1">{{ update.title }}</h1>
+                        <hr>
                     </div>
-                {% endif %}
 
-                <div class="update-card-posted-date p-3 text-center">
-                    <hr>
-                    <div><strong>PUBLISHED: </strong>{{ update.published_on|date:"dS M Y" }}</div>
-                </div>
-
-                <div class="butons-container-back-add">
-                    <div class="update-card-comment-btn">
-                        <a class="btn" href="{% url 'all-admin-updates' %}">Site Updates</a>
-
+                    <!-- update topic -->
+                    <div class="update-card-content p-3 text-center">
+                        <div><h5>{{ update.topic }}</h5></div>
+                        <hr>
+                        <div>{{ update.content|linebreaksbr }}</div>
                     </div>
-    
-                    <div class="update-card-comment-btn d-lg-none">
-                        <a class="btn" href="{% url 'comment-create' update.pk %}">Add Comment</a>
+
+                    <!-- update image if exists-->
+                    {% if update.update_image %}
+                        <div class="update-card-img-section">
+                            <img class="update-detail-img" src="{{ update.update_image.url }}" alt="site update image added by admin">
+                        </div>
+                    {% endif %}
+
+                    <!-- update published -->
+                    <div class="update-card-posted-date p-3 text-center">
+                        <hr>
+                        <div><strong>PUBLISHED: </strong>{{ update.published_on|date:"dS M Y" }}</div>
+                    </div>
+
+                    <!-- button on site update-->
+                    <div class="butons-container-back-add">
+                        <!-- back to site updates button -->
+                        <div class="update-card-comment-btn">
+                            <a class="btn" href="{% url 'all-admin-updates' %}" aria-label="back to site updates page">Site Updates</a>
+                        </div>
+        
+                        <!-- add comment button - only visible on small screens-->
+                        <div class="update-card-comment-btn d-lg-none">
+                            <a class="btn" href="{% url 'comment-create' update.pk %}" aria-label="add a comment">Add Comment</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="d-none d-lg-inline col">
-            <div class="comment-form-section">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Add Comment</legend>
-                        {{ comment_form|crispy }}
-                    </fieldset>
-                    <div class="form-group">
-                        <button class="btn btn-comment-submit" type="submit">Submit Comment</button>
-                    </div>
-                </form>
+        
+            <!-- add comment form - only visible on large screens -->
+            <div class="d-none d-lg-inline col">
+                <div class="comment-form-section">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Add Comment</legend>
+                            {{ comment_form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-comment-submit" type="submit">Submit Comment</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="comments-section">
-    <h3 class="text-center pt-3 mt-2">COMMENTS</h3>
-    {% for comment in comments %}
-        <div class="comment-card text-center">
-            <h5>{{ comment.title }}</h5>
-            <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
-            {% if comment.updated_on %}
-                <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
-            {% endif %}
-            <div><small><strong>Author:</strong> {{ comment.author }}</small></div>
+    <!-- comments section -->
+    <div class="comments-section">
+        <h3 class="text-center pt-3 mt-2">COMMENTS</h3>
 
-            <hr>
-            <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>
+        <!-- comments -->
+        {% for comment in comments %}
 
-            {% if comment.comment_image %}
-                <div class="update-card-img-section mt-3">
-                    <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="">
-                </div>
-            {% endif %}
+            <!-- comment -->
+            <div class="comment-card text-center">
+                <h5>{{ comment.title }}</h5>
+                <div><small><strong>Posted:</strong> {{ comment.created_on|date:"dS F Y (P)" }}</small></div>
+                {% if comment.updated_on %}
+                    <div><small><strong>Updated:</strong> {{ comment.updated_on|timesince }} ago</small></div>
+                {% endif %}
+                <div><small><strong>Author:</strong> {{ comment.author }}</small></div>
+                <hr>
+                <div class="comments-txt">{{ comment.comment|linebreaksbr }}</div>
 
-
-            {% if comment.action_taken %}
-            <div class="admin-response">
-                <h6><strong>ADMIN RESPONSE</strong></h6>
-                <div>{{ comment.action_taken|linebreaksbr }}</div>
-    
-                {% if comment.action_image %}
+                <!-- comment img if exists-->
+                {% if comment.comment_image %}
                     <div class="update-card-img-section mt-3">
-                        <img class="update-detail-img" src="{{ comment.action_image.url }}" alt="">
+                        <img class="update-detail-img" src="{{ comment.comment_image.url }}" alt="comment image added by comment author">
                     </div>
                 {% endif %}
 
+                <!-- action taken by admin if exists-->
+                {% if comment.action_taken %}
+                <div class="admin-response">
+                    <h6><strong>ADMIN RESPONSE</strong></h6>
+                    <div>{{ comment.action_taken|linebreaksbr }}</div>
+        
+                    <!-- action taken image by admin if exists-->
+                    {% if comment.action_image %}
+                        <div class="update-card-img-section mt-3">
+                            <img class="update-detail-img" src="{{ comment.action_image.url }}" alt="response image added by admin">
+                        </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                <!-- update and delete buttons for comment author-->
+                {% if user == comment.author %}
+                <hr>
+                <div class="add-delete-btn-container">
+                    <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}" aria-label="link to update comment form">Update</a>
+                    <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}" aria-label="delete comment">Delete</a>
+                </div>
+                {% endif %}        
             </div>
-            {% endif %}
+        {% endfor %}
 
-            {% if user == comment.author %}
-            <hr>
-            <div class="add-delete-btn-container">
-                <a class="btn btn-success" href="{% url 'comment-update' comment.pk %}">Update</a>
-                <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Delete</a>
+        <!-- if no comments-->
+        {% if comments.count == 0 %}
+            <div class="comment-card text-center">
+                <div class="comments-txt">No Comments</div>
             </div>
-            {% endif %}        
-        </div>
-    {% endfor %}
-
-
-    {% if comments.count == 0 %}
-        <div class="comment-card text-center">
-            <div class="comments-txt">No Comments</div>
-        </div>
-
-    {% endif %}
-
-</div>
-
+        {% endif %}
+    </div>
 {% endblock %}
