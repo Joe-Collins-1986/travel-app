@@ -35,11 +35,11 @@ class TestUpdateModels(TestCase):
         self.assertEquals(str(self.update1), 'update-1')
 
 
-
 class TestUpdateCommentModels(TestCase):
 
     def setUp(self):
-        user1 = User.objects.create_user('JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
+        user1 = User.objects.create_user(
+            'JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
         self.catagory1 = UpdateCatagory.objects.create(
             topic_catagory='catagory-1'
         )
@@ -61,7 +61,7 @@ class TestUpdateCommentModels(TestCase):
 
     def test_update_foreign_key_link(self):
         self.assertEquals(self.comment1.site_update.title, 'update-1')
-    
+
     def test_user_foreign_key_link(self):
         self.assertEquals(self.comment1.author.username, 'JoeBloggs')
 
@@ -69,9 +69,11 @@ class TestUpdateCommentModels(TestCase):
         self.assertEquals(str(self.comment1), 'test comment')
 
     def test_model_update_comment_absolute_url_name(self):
-        response = self.client.post(reverse('admin-update-detail',
-                                            args=[self.comment1.site_update.pk]))
+        response = self.client.post(
+            reverse(
+                'admin-update-detail',
+                args=[
+                    self.comment1.site_update.pk]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.comment1.get_absolute_url(),
                          f'/updates/{self.comment1.site_update.pk}/')
-

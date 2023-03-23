@@ -18,10 +18,10 @@ class Update(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     update_image = ResizedImageField(
-                                    upload_to='media/update_pics/',
-                                    blank=True,
-                                    size=[600, None],
-                                    force_format='JPEG')
+        upload_to='media/update_pics/',
+        blank=True,
+        size=[600, None],
+        force_format='JPEG')
     published_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -37,16 +37,16 @@ class UpdateComment(models.Model):
     title = models.CharField(max_length=100)
     comment = models.TextField()
     comment_image = ResizedImageField(
-                                        upload_to='media/comment_pics/',
-                                        blank=True,
-                                        size=[600, None],
-                                        force_format='JPEG')
+        upload_to='media/comment_pics/',
+        blank=True,
+        size=[600, None],
+        force_format='JPEG')
     action_taken = models.TextField(blank=True)
     action_image = ResizedImageField(
-                                        upload_to='media/comment_pics/',
-                                        blank=True,
-                                        size=[600, None],
-                                        force_format='JPEG')
+        upload_to='media/comment_pics/',
+        blank=True,
+        size=[600, None],
+        force_format='JPEG')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     comment_status = models.IntegerField(choices=COMMENT_STATUS, default=0)

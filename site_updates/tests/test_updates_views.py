@@ -22,7 +22,7 @@ class AdminUpdatesListViewTestCase(TestCase):
         response = self.client.get(self.url, {"q": "Test"})
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Test Update")
-    
+
     def test_get_without_search_query(self):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
@@ -56,23 +56,28 @@ class AdminDetailUpdateViewTestCase(TestCase):
             comment='Test comment',
             author=self.user,
             site_update=self.update)
-        self.url = reverse('admin-update-detail', kwargs={'pk': self.update.pk})
+        self.url = reverse(
+            'admin-update-detail',
+            kwargs={
+                'pk': self.update.pk})
 
     def test_get(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'site_updates/admin-update-detail.html')
+        self.assertTemplateUsed(
+            response, 'site_updates/admin-update-detail.html')
 
     def test_post_valid(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         data = {
-            'title': 'Comment Title 2', 
+            'title': 'Comment Title 2',
             'comment': 'Test Comment 2',
-            }
+        }
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'site_updates/admin-update-detail.html')
+        self.assertTemplateUsed(
+            response, 'site_updates/admin-update-detail.html')
 
 
 class CommentCreateViewTestCase(TestCase):
@@ -90,15 +95,18 @@ class CommentCreateViewTestCase(TestCase):
             title='Test Update',
             content='Test content',
         )
-        self.url = reverse('admin-update-detail', kwargs={'pk': self.update.pk})
+        self.url = reverse(
+            'admin-update-detail',
+            kwargs={
+                'pk': self.update.pk})
 
     def test_post_valid(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         self.url = reverse('comment-create', kwargs={'pk': self.update.pk})
         data = {
-            'title': 'Test Comment', 
+            'title': 'Test Comment',
             'comment': 'This is a test comment.',
-            }
+        }
         response = self.client.post(self.url, data)
         self.assertRedirects(
             response,
@@ -106,7 +114,10 @@ class CommentCreateViewTestCase(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(UpdateComment.objects.filter(title='Test Comment', comment='This is a test comment.').exists())
+        self.assertTrue(
+            UpdateComment.objects.filter(
+                title='Test Comment',
+                comment='This is a test comment.').exists())
 
 
 class CommentUpdateViewTestCase(TestCase):
@@ -138,9 +149,9 @@ class CommentUpdateViewTestCase(TestCase):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         self.url = reverse('comment-update', kwargs={'pk': self.comment.pk})
         data = {
-            'title': 'Updated Comment', 
+            'title': 'Updated Comment',
             'comment': 'This is an update test comment.',
-            }
+        }
         response = self.client.post(self.url, data)
         self.assertRedirects(
             response,
@@ -156,9 +167,9 @@ class CommentUpdateViewTestCase(TestCase):
         self.client.login(username='JaneBloggs', password='Xyz123456!')
         self.url = reverse('comment-update', kwargs={'pk': self.comment.pk})
         data = {
-            'title': 'Updated Comment From Wrong Author', 
+            'title': 'Updated Comment From Wrong Author',
             'comment': 'Update test comment from another login user.',
-            }
+        }
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(UpdateComment.objects.filter(
@@ -167,6 +178,7 @@ class CommentUpdateViewTestCase(TestCase):
         self.assertFalse(UpdateComment.objects.filter(
             title='Updated Comment From Wrong Author',
             comment='Update test comment from another login user.').exists())
+
 
 class CommentDeleteViewTestCase(TestCase):
     def setUp(self):

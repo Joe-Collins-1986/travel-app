@@ -31,6 +31,3 @@ class TestSiteUpdatesUrls(SimpleTestCase):
     def test_comment_delete_view_url_resolves(self):
         url = reverse('comment-delete', args=[1])
         self.assertEquals(resolve(url).func.view_class, CommentDeleteView)
-
-
-

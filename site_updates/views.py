@@ -18,11 +18,12 @@ from django.views.generic import (
 from .forms import CommentForm
 
 
-class AdminUpdatesListView(View):  
+class AdminUpdatesListView(View):
 
     def get(self, request):
         topics = UpdateCatagory.objects.all()
 
+        # filter results
         if request.GET.get('q') is not None:
             q = request.GET.get('q')
         else:
@@ -33,13 +34,15 @@ class AdminUpdatesListView(View):
         updates = update_list_published.filter(
             Q(topic__topic_catagory__icontains=q) |
             Q(title__icontains=q) |
-            Q(content__icontains=q) 
-            )
+            Q(content__icontains=q)
+        )
 
+        # remove object duplication from filter
         updates = updates.distinct()
 
         topic_items = updates.count()
 
+        # pagination
         page = request.GET.get('page', 1)
         paginator = Paginator(updates, 5)
 
@@ -49,7 +52,7 @@ class AdminUpdatesListView(View):
             updates = paginator.page(1)
         except EmptyPage:
             updates = paginator.page(paginator.num_pages)
-        
+
         return render(
             request,
             "site_updates/admin-updates.html",
@@ -73,6 +76,7 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
         update = get_object_or_404(update_objects, pk=pk)
         comments = UpdateComment.objects.filter(site_update=update)
 
+        # if created and updated are equal set updated_on to none
         for comment in comments:
             a = str(comment.updated_on - comment.created_on)
             if '0:00:00' in a:
@@ -88,7 +92,7 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
                 "tab_title": "Update"
             }
         )
-    
+
     def post(self, request, pk):
         update_objects = Update.objects.all()
         update = get_object_or_404(update_objects, pk=pk)
@@ -103,11 +107,12 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
         else:
             comment_form = CommentForm()
 
+        # if created and updated are equal set updated_on to none
         for comment in comments:
             a = str(comment.updated_on - comment.created_on)
             if '0:00:00' in a:
                 comment.updated_on = None
-        
+
         return render(
             request,
             "site_updates/admin-update-detail.html",
@@ -119,13 +124,14 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
         )
 
 
-class CommentCreateView(LoginRequiredMixin, CreateView): # create and update will default to <app>/<model>_<form>.html
+class CommentCreateView(LoginRequiredMixin, CreateView):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
-    
+
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
+    # form validation actions
     def form_valid(self, form):
         update = get_object_or_404(Update, pk=self.kwargs['pk'])
         form.instance.author = self.request.user
@@ -133,17 +139,19 @@ class CommentCreateView(LoginRequiredMixin, CreateView): # create and update wil
         return super().form_valid(form)
 
 
-class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # default to <app>/<model>_<form>.html
+class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
-    
+
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
+    # form validation actions
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+    # restrict if user is not author
     def test_func(self):
         comment = self.get_object()
         if self.request.user == comment.author:
@@ -151,17 +159,20 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): # 
         return False
 
 
-class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # default to a form for: <app>/<model>_<confirm_delete>.html
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
-    
+
     model = UpdateComment
     context_object_name = 'comment'
-    
+
+    # navigate to update detail if successful
     def get_success_url(self):
         comment = self.get_object()
-        return reverse('admin-update-detail', args=[str(comment.site_update.id)])
+        return reverse('admin-update-detail',
+                       args=[str(comment.site_update.id)])
 
+    # restrict if user is not author
     def test_func(self):
         comment = self.get_object()
         if self.request.user == comment.author:
