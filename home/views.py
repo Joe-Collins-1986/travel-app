@@ -10,9 +10,8 @@ from django.views.generic import (
 )
 
 
-# Create your views here.
 class TravelHome(View):
-    
+
     def get(self, request):
         updates = Update.objects.all().order_by('-published_on')[0:3]
 
@@ -25,7 +24,7 @@ class TravelHome(View):
                     "updates": updates,
                 },
             )
-        else:  
+        else:
             return redirect('home-login')
 
 
@@ -46,11 +45,11 @@ def register(request):
         form = UserRegisterForm()
 
     return render(
-                request,
-                'home/register.html',
-                {
-                    "tab_title": "Register",
-                    "form": form,
-                    "updates": updates,
-                }
-            )
+        request,
+        'home/register.html',
+        {
+            "tab_title": "Register",
+            "form": form,
+            "updates": updates,
+        }
+    )

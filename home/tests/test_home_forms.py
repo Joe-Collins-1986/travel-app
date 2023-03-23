@@ -5,10 +5,8 @@ from home.forms import UserRegisterForm
 
 
 class TestUserRegisterForm(TestCase):
-    """ Test sign up form """
 
     def test_registration_form_valid(self):
-        """ Registration form is valid """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
             'email': 'JoeBloggs@test.com',
@@ -18,7 +16,6 @@ class TestUserRegisterForm(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_registration_invalid_passwords_dont_match(self):
-        """ Registration form when passwords do not match """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
             'email': 'JoeBloggs@test.com',
@@ -28,7 +25,6 @@ class TestUserRegisterForm(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_registration_invalid_passwords_no_special_characters(self):
-        """ Registration form when passwords match but are not valid (e.g. no special characters) """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
             'email': 'JoeBloggs@test.com',
@@ -36,9 +32,8 @@ class TestUserRegisterForm(TestCase):
             'password2': 'Abc123456'
         })
         self.assertFalse(form.is_valid())
-    
+
     def test_registration_form_email_not_valid(self):
-        """ Registration form when email not valid """
         form = UserRegisterForm(data={
             'username': 'JoeBloggs',
             'email': 'JoeBloggstest.com',
@@ -48,10 +43,7 @@ class TestUserRegisterForm(TestCase):
         self.assertFalse(form.is_valid())
 
 
-# CREATE TESTS DUPLICATING ACCOUNT INFO OF EXISSTING ACCOUNT
-
 class SetupUserRegister(TestCase):
-    """ Setup register """
 
     def setUp(self):
         self.user = User.objects.create(
@@ -62,10 +54,8 @@ class SetupUserRegister(TestCase):
 
 
 class RegistrationFormDuplicateInfo(SetupUserRegister):
-    """ Test if any field from register is duplicated """
 
     def test_duplicated_username_on_registration_form(self):
-        """ Test if username is duplicated """
         form = UserRegisterForm(data={
             "username": "JoeBloggs",
         })
@@ -73,7 +63,6 @@ class RegistrationFormDuplicateInfo(SetupUserRegister):
         self.assertRaises(ValidationError)
 
     def test_duplicated_email_on_registration_form(self):
-        """ Test if username is duplicated """
         form = UserRegisterForm(data={
             "email": "JoeBloggs@test.com",
         })

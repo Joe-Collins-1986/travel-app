@@ -12,7 +12,7 @@ class TestHomeUrls(SimpleTestCase):
     def test_home_url_resolves(self):
         url = reverse('travel-home')
         self.assertEquals(resolve(url).func.view_class, TravelHome)
-    
+
     def test_register_url_resolves(self):
         url = reverse('home-register')
         self.assertEquals(resolve(url).func, register)
@@ -29,7 +29,7 @@ class TestHomeUrls(SimpleTestCase):
         url = reverse('password_reset')
         self.assertEquals(resolve(url).func.view_class,
                           auth_views.PasswordResetView)
-    
+
     def test_password_reset_confirm_url_resolves(self):
         url = reverse('password_reset_confirm', args=['arg1', 'arg2'])
         self.assertEquals(resolve(url).func.view_class,
