@@ -25,7 +25,8 @@ class TestCountryModel(TestCase):
 class TestVisitModel(TestCase):
 
     def setUp(self):
-        user1 = User.objects.create_user('JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
+        user1 = User.objects.create_user(
+            'JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
         self.country1 = Country.objects.create(
             name='country-1',
             code='AA',
@@ -56,7 +57,8 @@ class TestVisitModel(TestCase):
 class TestDiaryModel(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create_user('JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
+        self.user = User.objects.create_user(
+            'JoeBloggs', 'JoeBloggs@test.com', 'Abc123456!')
 
         self.country1 = Country.objects.create(
             name='country-1',
@@ -82,8 +84,10 @@ class TestDiaryModel(TestCase):
         self.assertEquals(str(self.diary), f'{date_created} diary post')
 
     def test_diary_absolute_url_name(self):
-        response = self.client.post(reverse('diary-all-posts', args=[self.country1.id]))
+        response = self.client.post(
+            reverse(
+                'diary-all-posts',
+                args=[
+                    self.country1.id]))
         self.assertEqual(self.diary.get_absolute_url(),
                          f'/diary/diary_all_posts/{self.country1.pk}')
-
-

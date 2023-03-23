@@ -47,4 +47,3 @@ class TestDiaryUrls(SimpleTestCase):
         url = reverse('diary-delete', args=[1])
         self.assertEquals(resolve(url).func.view_class,
                           DiaryDeleteView)
-

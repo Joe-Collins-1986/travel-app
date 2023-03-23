@@ -18,7 +18,7 @@ class TestMapView(TestCase):
         with open('countries.json', 'r') as f:
             countries = json.load(f)
             f.close()
-        
+
         for country in countries:
             Country.objects.create(name=country['name'],
                                    code=country['code'],
@@ -34,16 +34,16 @@ class TestMapView(TestCase):
         for country in countries:
             country_code_list.append(country['code'])
 
-        visited_model = Visit.objects.create(user=user1,
-                                             country=Country.objects.get(code='AL'),
-                                             status='visited')
+        visited_model = Visit.objects.create(
+            user=user1, country=Country.objects.get(
+                code='AL'), status='visited')
 
     def test_map_get_function(self):
         """ Test loading of map page """
         self.client.login(username='JoeBloggs', password='Abc123456!')
         response = self.client.get(reverse('country-map'))
         self.assertEqual(response.status_code, 200)
-    
+
 
 class TestCountryView(TestCase):
 
@@ -57,7 +57,7 @@ class TestCountryView(TestCase):
         with open('countries.json', 'r') as f:
             countries = json.load(f)
             f.close()
-        
+
         for country in countries:
             Country.objects.create(name=country['name'],
                                    code=country['code'],
@@ -73,18 +73,21 @@ class TestCountryView(TestCase):
         for country in countries:
             country_code_list.append(country['code'])
 
-        self.visited_model = Visit.objects.create(user=user1,
-                                                  country=Country.objects.get(code='AL'),
-                                                  status='visited')
+        self.visited_model = Visit.objects.create(
+            user=user1, country=Country.objects.get(
+                code='AL'), status='visited')
 
     def test_get_country_info_not_visited_found(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         response = self.client.get(reverse('country', args=[10]))
         self.assertEqual(response.status_code, 200)
-    
+
     def test_get_country_info__visited_found(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
-        response = self.client.get(reverse('country', args=[self.visited_model.id]))
+        response = self.client.get(
+            reverse(
+                'country', args=[
+                    self.visited_model.id]))
         self.assertEqual(response.status_code, 200)
 
     def test_post_valid_visited_form_for_visted_user(self):
@@ -118,7 +121,7 @@ class TestCountryView(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-    
+
     def test_post_invalid_visited_form_for_non_visted_user(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         response = self.client.post(reverse('country',
@@ -226,9 +229,9 @@ class TestDiaryCreateView(TestCase):
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
-                'JoeBloggs',
-                'JoeBloggs@test.com',
-                'Abc123456!')
+            'JoeBloggs',
+            'JoeBloggs@test.com',
+            'Abc123456!')
 
         self.country1 = Country.objects.create(
             name='country-1',
@@ -246,7 +249,7 @@ class TestDiaryCreateView(TestCase):
     def test_post_valid_no_tags(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         data = {
-            'content': 'Test diary post content', 
+            'content': 'Test diary post content',
             'exp_rating': 'Not Rated',
             'tags': [''],
         }
@@ -257,12 +260,14 @@ class TestDiaryCreateView(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(Diary.objects.filter(content='Test diary post content').exists())
+        self.assertTrue(
+            Diary.objects.filter(
+                content='Test diary post content').exists())
 
     def test_post_valid_tags(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         data = {
-            'content': 'Test diary post content', 
+            'content': 'Test diary post content',
             'exp_rating': 'Not Rated',
             'tags': ['Test_Tag_1', 'Test_Tag_2'],
         }
@@ -273,23 +278,24 @@ class TestDiaryCreateView(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(Diary.objects.filter(content='Test diary post content').exists())
-
+        self.assertTrue(
+            Diary.objects.filter(
+                content='Test diary post content').exists())
 
 
 class TestDiaryUpdateView(TestCase):
-    
+
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
-                'JoeBloggs',
-                'JoeBloggs@test.com',
-                'Abc123456!')
+            'JoeBloggs',
+            'JoeBloggs@test.com',
+            'Abc123456!')
 
         self.user2 = User.objects.create_user(
-                'JaneBloggs',
-                'JaneBloggs@test.com',
-                'Xyz123456!')
+            'JaneBloggs',
+            'JaneBloggs@test.com',
+            'Xyz123456!')
 
         self.country1 = Country.objects.create(
             name='country-1',
@@ -303,7 +309,7 @@ class TestDiaryUpdateView(TestCase):
         )
 
         self.diary = Diary.objects.create(
-            content='Test diary post content', 
+            content='Test diary post content',
             exp_rating='Not Rated',
             author=self.user,
             country=self.country1
@@ -315,7 +321,7 @@ class TestDiaryUpdateView(TestCase):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         self.url = reverse('diary-update', kwargs={'pk': self.diary.pk})
         data = {
-            'content': 'Updated test content', 
+            'content': 'Updated test content',
             'exp_rating': 'Not Rated',
         }
         response = self.client.post(self.url, data)
@@ -333,7 +339,7 @@ class TestDiaryUpdateView(TestCase):
         self.url = reverse('diary-update', kwargs={'pk': self.diary.pk})
         data = {
             'content': 'Update test content from another login user.',
-            }
+        }
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(Diary.objects.filter(
@@ -343,18 +349,18 @@ class TestDiaryUpdateView(TestCase):
 
 
 class TestDiaryDeleteView(TestCase):
-    
+
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
-                'JoeBloggs',
-                'JoeBloggs@test.com',
-                'Abc123456!')
+            'JoeBloggs',
+            'JoeBloggs@test.com',
+            'Abc123456!')
 
         self.user2 = User.objects.create_user(
-                'JaneBloggs',
-                'JaneBloggs@test.com',
-                'Xyz123456!')
+            'JaneBloggs',
+            'JaneBloggs@test.com',
+            'Xyz123456!')
 
         self.country1 = Country.objects.create(
             name='country-1',
@@ -368,7 +374,7 @@ class TestDiaryDeleteView(TestCase):
         )
 
         self.diary = Diary.objects.create(
-            content='Test diary post content', 
+            content='Test diary post content',
             exp_rating='Not Rated',
             author=self.user,
             country=self.country1
