@@ -738,10 +738,12 @@ Each User Story documented (as an issue) in the Project Iterations [here](https:
 
 To view these access the User Story Issues in Iterations 1-5
 
-Example Screenshot of Iteration On GitHub
-![Example Screenshot Of an Iteration](readme-assets/testing/user-testing/user-stories/Kanban.png)
+Example Screenshot of Iteration On GitHub:
 
-Example Screenshot of User Story in Iteration
+![Example Screenshot Of an Iteration](readme-assets/testing/user-testing/user-stories/kanban.png)
+
+Example Screenshot of User Story in Iteration:
+
 ![Example Screenshot Of a User Story](readme-assets/testing/user-testing/user-stories/user-story.png)
 
 
