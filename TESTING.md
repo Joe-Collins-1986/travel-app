@@ -733,7 +733,23 @@ ___
 
 ## User Testing
 
-Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tables.
+### User Stories Acceptance Criteria
+Each User Story documented (as an issue) in the Project Iterations [here](https://github.com/Joe-Collins-1986?query=is%3Aclosed&tab=projects) has Acceptance Criteria documented on GitHub which needed to be achieved before marking the User Sory to complete.
+
+To view these access the User Story Issues in Iterations 1-5
+
+Example Screenshot of Iteration On GitHub
+![Example Screenshot Of an Iteration](readme-assets/testing/user-testing/user-stories/Kanban.png)
+
+Example Screenshot of User Story in Iteration
+![Example Screenshot Of a User Story](readme-assets/testing/user-testing/user-stories/user-story.png)
+
+
+### User Testing Checklist
+
+In addition to the User Story Acceptance Criteria a checklist was developed to check each page after all features were developed prior to sharing project content.
+
+To record this checklist https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ was used to quickly conver data to Markdown Tables tables.
 
 <details>
       <summary style="font-weight:bold">Navbar</summary>
