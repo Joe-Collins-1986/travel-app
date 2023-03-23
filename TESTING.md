@@ -763,3 +763,18 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | Expandable Instagram     | Shows if logged in or not when menu is expended.  Directed to Instagram - but not to client account as this does not exist. | P         |
 | Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
 | Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
+
+### **Register Page**
+
+| TEST                               | EXPECTATION                                           | Pass/Fail |
+| ---------------------------------- | ----------------------------------------------------- | --------- |
+| Blank Username                     | Notified field required.                              | P         |
+| Pre-Existing Username              | Notified username already exists and new name needed. | P         |
+| Invalid Username                   | Field highlighted and instruction text highlighted.   | P         |
+| Blank Email                        | Notified field required.                              | P         |
+| Invalid Email                      | Notified why email is not acceptable.                 | P         |
+| Invalid Password                   | Notified why password is not acceptable.              | P         |
+| Blank Confirmation                 | Notified field required.                              | P         |
+| Non Matching Password Confirmation | Notified passwords do not match.                      | P         |
+| Sign Up Button                     | Submits the form - if valid directed to home.         | P         |
+| Sign In Link                       | Directed to Login Page.                               | P         |
