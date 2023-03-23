@@ -778,3 +778,15 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | Non Matching Password Confirmation | Notified passwords do not match.                      | P         |
 | Sign Up Button                     | Submits the form - if valid directed to home.         | P         |
 | Sign In Link                       | Directed to Login Page.                               | P         |
+
+
+### **Login and Login Required**
+
+| TEST                  | EXPECTATION                                                                                                          | Pass/Fail |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
+| Blank Username        | Notified field required.                                                                                             | P         |
+| Blank Password        | Notified field required.                                                                                             | P         |
+| Invalid Password/User | Notified password does not link to username.                                                                         | P         |
+| Sign In Button        | Submits the form - if valid directed to home or the page the user tried to access when redirected to login required. | P         |
+| Sign Up Link          | Directed to Register Page.                                                                                           | P         |
+| Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
