@@ -17,5 +17,3 @@ class TestProfileUrls(SimpleTestCase):
         url = reverse('update-profile-page')
         self.assertEquals(resolve(url).func.view_class,
                           UpdateProfilePageView)
-
-

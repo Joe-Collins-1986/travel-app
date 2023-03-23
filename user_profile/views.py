@@ -46,7 +46,7 @@ class UpdateProfilePageView(LoginRequiredMixin, View):
                 "p_form": p_form,
             }
         )
-    
+
     def post(self, request):
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(
@@ -54,6 +54,7 @@ class UpdateProfilePageView(LoginRequiredMixin, View):
             request.FILES,
             instance=request.user.profile)
 
+        # form valid actions
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
@@ -68,4 +69,3 @@ class UpdateProfilePageView(LoginRequiredMixin, View):
                     "p_form": p_form,
                 }
             )
-

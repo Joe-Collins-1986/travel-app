@@ -9,19 +9,19 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 
 class TestProfileView(TestCase):
-    
+
     def setUp(self):
         user = User.objects.create_user(
             'JoeBloggs',
             'JoeBloggs@test.com',
             'Abc123456!'
-            )
+        )
         self.client = Client()
 
         with open('countries.json', 'r') as f:
             countries = json.load(f)
             f.close()
-        
+
         for country in countries:
             Country.objects.create(
                 name=country['name'],
@@ -51,7 +51,7 @@ class TestUpdateProfilePageView(TestCase):
             'JoeBloggs',
             'JoeBloggs@test.com',
             'Abc123456!'
-            )
+        )
         self.client = Client()
 
         self.url = reverse('update-profile-page')
@@ -90,9 +90,13 @@ class TestUpdateProfilePageView(TestCase):
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'user_profile/update_profile.html')
-        self.assertFormError(response, 'u_form', 'username', 'This field is required.')
-        self.assertFormError(response, 'u_form', 'email', 'Enter a valid email address.')
-
-
-    
-
+        self.assertFormError(
+            response,
+            'u_form',
+            'username',
+            'This field is required.')
+        self.assertFormError(
+            response,
+            'u_form',
+            'email',
+            'Enter a valid email address.')

@@ -131,7 +131,7 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
-    # form validation actions
+    # valid from actions
     def form_valid(self, form):
         update = get_object_or_404(Update, pk=self.kwargs['pk'])
         form.instance.author = self.request.user
@@ -146,7 +146,7 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = UpdateComment
     fields = ['title', 'comment', 'comment_image']
 
-    # form validation actions
+    # valid from actions
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
