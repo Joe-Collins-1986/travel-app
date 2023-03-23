@@ -8,6 +8,7 @@ Back to Readme [here](README.md)
 - [HTML Validation Testing](#html-validation-testing)
 - [CSS Validation Testing](#css-validation-testing)
 - [JS Validation Testing](#js-validation-testing)
+- [Python Validation Testing]((#python-validation-testing))
 - [Lighthouse Testing](#lighthouse-testing)
 - [User Testing](#user-testing)
 
@@ -301,10 +302,11 @@ ___
 
 ___
 
-## CSS Unit Testing
+## CSS Validation Testing
 
 <details>
       <summary style="font-weight:bold">Main</summary>
+<br>
 
 ![Main](readme-assets/testing/css/css-main.png)<br>
 
@@ -314,6 +316,7 @@ ___
 
 <details>
       <summary style="font-weight:bold">Login</summary>
+<br>
 
 ![Login](readme-assets/testing/css/css-login.png)<br>
 
@@ -323,6 +326,7 @@ ___
 
 <details>
       <summary style="font-weight:bold">White Background</summary>
+<br>
 
 ![White Background](readme-assets/testing/css/css-white-bg.png)<br>
 
@@ -332,6 +336,7 @@ ___
 
 <details>
       <summary style="font-weight:bold">Off-White Background</summary>
+<br>
 
 ![Off-White Background](readme-assets/testing/css/css-off-white-bg.png)<br>
 
@@ -341,17 +346,19 @@ ___
 
 <details>
       <summary style="font-weight:bold">Site Update Grey Background</summary>
+<br>
 
 ![Site Update Grey Background](readme-assets/testing/css/css-update-grey-bg.png)<br>
 
-___
-
 </details>
 
-## JS Unit Testing
+___
+
+## JS Validation Testing
 
 <details>
       <summary style="font-weight:bold">JSHint Validations</summary>
+<br>
    
 No Errors idendified in JSHint:
 
@@ -360,6 +367,287 @@ No Errors idendified in JSHint:
 ___
 
 </details>
+
+___
+
+## Python Validation Testing
+
+<details>
+      <summary style="font-weight:bold">Home</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/home/home-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/home/home-urls.png)
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/python-pep8/home/home-urls.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Home Unit Tests</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/home-test/home-test-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/home-test/home-test-urls.png)
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/python-pep8/home-test/home-test-forms.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Diary</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/diary/diary-view.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/diary/diary-urls.png)
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/python-pep8/diary/diary-form.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/diary/diary-models.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Diary Unit Tests</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/diary-test/diary-test-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/diary-test/diary-test-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/diary-test/diary-test-models.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/profile/profile-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/profile/profile-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/profile/profile-models.png)
+
+___
+
+Signals:
+
+![Signals](readme-assets/testing/python-pep8/profile/profile-signals.png)
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/python-pep8/profile/profile-forms.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile Unit Tests</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/profile-test/profile-test-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/profile-test/profile-test-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/profile-test/profile-test-models.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Site Updates</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/site-updates/site-updates-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/site-updates/site-updates-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/site-updates/site-updates-models.png)
+
+___
+
+Forms:
+
+![Models](readme-assets/testing/python-pep8/site-updates/site-updates-forms.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Site Updates Unit Tests</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/site-updates-test/site-updates-test-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/site-updates-test/site-updates-test-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/site-updates-test/site-updates-test-models.png)
+
+___
+
+Forms:
+
+![Models](readme-assets/testing/python-pep8/site-updates-test/site-updates-test-forms.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">To-Do List</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/to-do-list/to-do-list-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/to-do-list/to-do-list-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/to-do-list/to-do-list-models.png)
+
+___
+
+Forms:
+
+![Forms](readme-assets/testing/python-pep8/to-do-list/to-do-list-forms.png)
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">To-Do List Unit Tests</summary>
+<br>
+   
+Views:
+
+![Views](readme-assets/testing/python-pep8/to-do-list-test/to-do-list-test-views.png)
+
+___
+
+URLs:
+
+![URLs](readme-assets/testing/python-pep8/to-do-list-test/to-do-list-test-urls.png)
+
+___
+
+Models:
+
+![Models](readme-assets/testing/python-pep8/to-do-list-test/to-do-list-test-models.png)
+
+
+</details>
+
+___
 
 ## Lighthouse Testing
 
@@ -439,6 +727,9 @@ Update Detail:
 ___
 
 </details>
+
+___
+
 
 ## User Testing
 
