@@ -814,8 +814,6 @@ ___
 
 </details>
 
-### **Password Reset**
-
 <details>
       <summary style="font-weight:bold">Password Reset</summary>
 <br>
@@ -838,7 +836,7 @@ Test the full Reset password process accross all relevent pages.
 
 ___
 
-</details>                                                                                                                    |
+</details>
 
 <details>
       <summary style="font-weight:bold">Summary Updates</summary>
