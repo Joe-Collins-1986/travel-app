@@ -766,18 +766,18 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 
 ### **Register Page**
 
-| TEST                               | EXPECTATION                                           | Pass/Fail |
-| ---------------------------------- | ----------------------------------------------------- | --------- |
-| Blank Username                     | Notified field required.                              | P         |
-| Pre-Existing Username              | Notified username already exists and new name needed. | P         |
-| Invalid Username                   | Field highlighted and instruction text highlighted.   | P         |
-| Blank Email                        | Notified field required.                              | P         |
-| Invalid Email                      | Notified why email is not acceptable.                 | P         |
-| Invalid Password                   | Notified why password is not acceptable.              | P         |
-| Blank Confirmation                 | Notified field required.                              | P         |
-| Non Matching Password Confirmation | Notified passwords do not match.                      | P         |
-| Sign Up Button                     | Submits the form - if valid directed to home.         | P         |
-| Sign In Link                       | Directed to Login Page.                               | P         |
+| TEST                               | EXPECTATION                                                                         | Pass/Fail |
+| ---------------------------------- | ----------------------------------------------------------------------------------- | --------- |
+| Blank Username                     | Notified field required.                                                            | P         |
+| Pre-Existing Username              | Notified username already exists and new name needed.                               | P         |
+| Invalid Username                   | Field highlighted and instruction text highlighted.                                 | P         |
+| Blank Email                        | Notified field required.                                                            | P         |
+| Invalid Email                      | Notified why email is not acceptable.                                               | P         |
+| Invalid Password                   | Notified why password is not acceptable.                                            | P         |
+| Blank Confirmation                 | Notified field required.                                                            | P         |
+| Non Matching Password Confirmation | Notified passwords do not match.                                                    | P         |
+| Sign Up Button                     | Submits the form - if valid directed to home. No additional login required.         | P         |
+| Sign In Link                       | Directed to Login Page.                                                             | P         |
 
 
 ### **Login and Login Required**
@@ -790,3 +790,19 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | Sign In Button        | Submits the form - if valid directed to home or the page the user tried to access when redirected to login required. | P         |
 | Sign Up Link          | Directed to Register Page.                                                                                           | P         |
 | Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
+
+### **Password Reset**
+
+| TEST                                                  | EXPECTATION                                                                                                     | Pass/Fail                                                                                                                                                                                                                                                                                                                      |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Email Blank                                           | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| Invalid Email                                         | Notified why email is not acceptable.                                                                           | P                                                                                                                                                                                                                                                                                                                              |
+| Sign Up Link                                          | Directed to Register Page.                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
+| Email Success On Valid Email                          | Success Email Screen Shown                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
+| Email Success Page Password Reset Link                | Directed to back to password reset provide email Page.                                                          | P                                                                                                                                                                                                                                                                                                                              |
+| Email Success Sign Up Link                            | Directed to Login Page.                                                                                         | P                                                                                                                                                                                                                                                                                                                              |
+| Password Reset Email Received                         | Email with link to reset page is received and link directs to reset password page.                              | P - Note BT Internet has placed restriction against spam emails which can effect BT Internet email address oweners getting the reset email.<br><br>If this was to be established as a commercial website BT could be contacted and registered with to stop this occuring.<br><br>Other email providers worked fine in testing. |
+| On Reset Page Blank Password or Password Confirmation | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| On Reset Page Invalid Password                        | Notified why password is not acceptable.                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| On Reset Page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
+| Password Reset - Password Reset Button                | On successful completion button directs to Password Updated Page with link to Login Page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
