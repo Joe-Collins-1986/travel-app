@@ -751,7 +751,7 @@ Example Screenshot of User Story in Iteration:
 
 In addition to the User Story Acceptance Criteria a checklist was developed to check each page after all features were developed prior to sharing project content.
 
-To record this checklist https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ was used to quickly conver data to Markdown Tables tables.
+To record this checklist [tabletomarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to quickly convert data to Markdown Tables tables.
 
 <details>
       <summary style="font-weight:bold">Navbar</summary>
@@ -884,6 +884,28 @@ ___
 | G2  | Arrow Flash          | Arrow flashing on load to direct users to scroll                                                                                                | P         |
 | G3  | Planner Button       | If logged in planner button directs to Map page. If not logged in direcs to Login Required page then on completion directs to Map page (See D4) | P         |
 | G4  | Site Updates Section | See Summary Updates F1-F4                                                                                                                       | P         |                                                                                          | P         |
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Map</summary>
+<br>
+   
+| REF | TEST                                     | EXPECTATION                                                                                                                                                                                 | Pass/Fail |
+| --- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| H1  | Hover Over Countries                     | The country name appears in the top right corner when hovering over the country on the map.                                                                                                 | P         |
+| H2  | Select Map Country                       | Directs to country Info page when a country is selected on the map.                                                                                                                         | P         |
+| H3  | Country Dropdown Alphabetical            | All country dropdown country options appear in alphabetical order.                                                                                                                          | P         |
+| H4  | Select Dropdown Country                  | Directs to country Info page when a country is selected on all countries dropdown.                                                                                                          | P         |
+| H5  | Country Status Updated - Map Update      | When a country status is updated on the country info page and the Map page is returned to the country on the map shows in a different colour - green- wish list or yellow - visited.        | P         |
+| H6  | Country Status Updated - Dropdown Update | When a country status is updated on the country info page and the Map page is returned dropdowns appear for visited or wish list if the user has set these statuses on at least on country. | P         |
+| H7  | Visit/Wish List Disappears               | If the user changes the status to no longer have any wish list or visited countries the respective dropdown will disappear.                                                                 | P         |
+| H8  | Select Visit or Wish List Dropdown       | Directs to country Info page when a country is selected on dropdowns.                                                                                                                       | P         |
+| H9  | Pie Chart Shows Header                   | Shows percentage visited. Does not account for whish list.                                                                                                                                  | P         |
+| H10 | Pie Chart                                | Pie Chart reflects the number of wish lists, visited and not visted countries with the respective colour to align with the ledgend.                                                         | P         |
+| H11 | Pie Char - Small Screen                  | The Pie Chart disappears for small screens.                                                                                                                                                 | P         |
 
 ___
 
