@@ -733,16 +733,33 @@ ___
 
 ## User Testing
 
+Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tables.
+
 ### **Navbar**
 
-| TEST         | EXPECTATION                                                              | CHROME | SAFARI | EDGE | MOBILE |
-| ------------ | ------------------------------------------------------------------------ | ------ | ------ | ---- | ------ |
-| Logo         | To be directed to the Home Page if logged in, Login Page in not.         | x      | x      | x    | x      |
-| Home         | To be directed to the Home Page if logged in, Login Page in not.         | x      | x      | x    | x      |
-| Planner      | To be directed to the Map Page if logged in, Login Required Page in not. | x      | x      | x    | x      |
-| Site Updates | To be directed to the Site Updates Page if logged in or not.             | x      | x      | x    | x      |
-| Login        |                                                                          |        |        |      |        |
-| Register     |                                                                          |        |        |      |        |
-| Profile      |                                                                          |        |        |      |        |
-| Logout       |                                                                          |        |        |      |        |
-| Admin        |                                                                          |        |        |      |        |
+| TEST         | EXPECTATION                                                                      | Pass/Fail |
+| ------------ | -------------------------------------------------------------------------------- | --------- |
+| Logo         | Directed to Home Page if logged in, Login Page in not.                           | P         |
+| Home         | Directed to Home Page if logged in, Login Page in not.                           | P         |
+| Planner      | Directed to Map Page if logged in, Login Required Page in not.                   | P         |
+| Site Updates | Directed to Site Updates Page if logged in or not.                               | P         |
+| Login        | Only shown if user is not logged in. Direct to Login Page.                       | P         |
+| Register     | Only shown if user is not logged in. Direct to Register Page.                    | P         |
+| Profile      | Only shown if user is logged in. Direct to Profile Page.                         | P         |
+| Logout       | Only shown if user is logged in. Logs user out and directs to Login Page.        | P         |
+| Admin        | Only shown if user is logged in with a superuser account. Directs to Admin Page. | P         |
+
+### **Footer/Menu Social Media Links**
+
+**Note:** The client is fictional and therefore the social sites do not exist so the footer links will only take the user to the overall social media site specified e.g. twitter.
+
+| TEST                     | EXPECTATION                                                                                                                 | Pass/Fail |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Facebook                 | Shows if logged in or not. Directed to Facebook - but not to client account as this does not exist.                         | P         |
+| Instagram                | Shows if logged in or not. Directed to Instagram - but not to client account as this does not exist.                        | P         |
+| Twitter                  | Shows if logged in or not. Directed to Twitter- but not to client account as this does not exist.                           | P         |
+| Pinterest                | Shows if logged in or not. Directed to Pinterest - but not to client account as this does not exist.                        | P         |
+| Expandable Menu Facebook | Shows if logged in or not when menu is expended. Directed to Facebook - but not to client account as this does not exist.   | P         |
+| Expandable Instagram     | Shows if logged in or not when menu is expended.  Directed to Instagram - but not to client account as this does not exist. | P         |
+| Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
+| Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
