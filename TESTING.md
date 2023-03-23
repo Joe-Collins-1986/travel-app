@@ -8,7 +8,7 @@ Back to Readme [here](README.md)
 - [HTML Validation Testing](#html-validation-testing)
 - [CSS Validation Testing](#css-validation-testing)
 - [JS Validation Testing](#js-validation-testing)
-- [Python Validation Testing]((#python-validation-testing))
+- [Python Validation Testing](#python-validation-testing)
 - [Lighthouse Testing](#lighthouse-testing)
 - [User Testing](#user-testing)
 
