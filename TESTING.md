@@ -737,72 +737,85 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 
 ### **Navbar**
 
-| TEST         | EXPECTATION                                                                      | Pass/Fail |
-| ------------ | -------------------------------------------------------------------------------- | --------- |
-| Logo         | Directed to Home Page if logged in, Login Page in not.                           | P         |
-| Home         | Directed to Home Page if logged in, Login Page in not.                           | P         |
-| Planner      | Directed to Map Page if logged in, Login Required Page in not.                   | P         |
-| Site Updates | Directed to Site Updates Page if logged in or not.                               | P         |
-| Login        | Only shown if user is not logged in. Direct to Login Page.                       | P         |
-| Register     | Only shown if user is not logged in. Direct to Register Page.                    | P         |
-| Profile      | Only shown if user is logged in. Direct to Profile Page.                         | P         |
-| Logout       | Only shown if user is logged in. Logs user out and directs to Login Page.        | P         |
-| Admin        | Only shown if user is logged in with a superuser account. Directs to Admin Page. | P         |
+| REF | TEST         | EXPECTATION                                                                      | Pass/Fail |
+| --- | ------------ | -------------------------------------------------------------------------------- | --------- |
+| A1  | Logo         | Directed to Home Page if logged in, Login Page in not.                           | P         |
+| A2  | Home         | Directed to Home Page if logged in, Login Page in not.                           | P         |
+| A3  | Planner      | Directed to Map Page if logged in, Login Required Page in not.                   | P         |
+| A4  | Site Updates | Directed to Site Updates Page if logged in or not.                               | P         |
+| A5  | Login        | Only shown if user is not logged in. Direct to Login Page.                       | P         |
+| A6  | Register     | Only shown if user is not logged in. Direct to Register Page.                    | P         |
+| A7  | Profile      | Only shown if user is logged in. Direct to Profile Page.                         | P         |
+| A8  | Logout       | Only shown if user is logged in. Logs user out and directs to Login Page.        | P         |
+| A9  | Admin        | Only shown if user is logged in with a superuser account. Directs to Admin Page. | P         |
 
 ### **Footer/Menu Social Media Links**
 
 **Note:** The client is fictional and therefore the social sites do not exist so the footer links will only take the user to the overall social media site specified e.g. twitter.
 
-| TEST                     | EXPECTATION                                                                                                                 | Pass/Fail |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | --------- |
-| Facebook                 | Shows if logged in or not. Directed to Facebook - but not to client account as this does not exist.                         | P         |
-| Instagram                | Shows if logged in or not. Directed to Instagram - but not to client account as this does not exist.                        | P         |
-| Twitter                  | Shows if logged in or not. Directed to Twitter- but not to client account as this does not exist.                           | P         |
-| Pinterest                | Shows if logged in or not. Directed to Pinterest - but not to client account as this does not exist.                        | P         |
-| Expandable Menu Facebook | Shows if logged in or not when menu is expended. Directed to Facebook - but not to client account as this does not exist.   | P         |
-| Expandable Instagram     | Shows if logged in or not when menu is expended.  Directed to Instagram - but not to client account as this does not exist. | P         |
-| Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
-| Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
+| REF | TEST                     | EXPECTATION                                                                                                                 | Pass/Fail |
+| --- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | --------- |
+| B1  | Facebook                 | Shows if logged in or not. Directed to Facebook - but not to client account as this does not exist.                         | P         |
+| B2  | Instagram                | Shows if logged in or not. Directed to Instagram - but not to client account as this does not exist.                        | P         |
+| B3  | Twitter                  | Shows if logged in or not. Directed to Twitter- but not to client account as this does not exist.                           | P         |
+| B4  | Pinterest                | Shows if logged in or not. Directed to Pinterest - but not to client account as this does not exist.                        | P         |
+| B5  | Expandable Menu Facebook | Shows if logged in or not when menu is expended. Directed to Facebook - but not to client account as this does not exist.   | P         |
+| B6  | Expandable Instagram     | Shows if logged in or not when menu is expended.  Directed to Instagram - but not to client account as this does not exist. | P         |
+| B7  | Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
+| B8  | Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
 
 ### **Register Page**
 
-| TEST                               | EXPECTATION                                                                         | Pass/Fail |
-| ---------------------------------- | ----------------------------------------------------------------------------------- | --------- |
-| Blank Username                     | Notified field required.                                                            | P         |
-| Pre-Existing Username              | Notified username already exists and new name needed.                               | P         |
-| Invalid Username                   | Field highlighted and instruction text highlighted.                                 | P         |
-| Blank Email                        | Notified field required.                                                            | P         |
-| Invalid Email                      | Notified why email is not acceptable.                                               | P         |
-| Invalid Password                   | Notified why password is not acceptable.                                            | P         |
-| Blank Confirmation                 | Notified field required.                                                            | P         |
-| Non Matching Password Confirmation | Notified passwords do not match.                                                    | P         |
-| Sign Up Button                     | Submits the form - if valid directed to home. No additional login required.         | P         |
-| Sign In Link                       | Directed to Login Page.                                                             | P         |
+| REF | TEST                               | EXPECTATION                                                                 | Pass/Fail |
+| --- | ---------------------------------- | --------------------------------------------------------------------------- | --------- |
+| C1  | Blank Username                     | Notified field required.                                                    | P         |
+| C2  | Pre-Existing Username              | Notified username already exists and new name needed.                       | P         |
+| C3  | Invalid Username                   | Field highlighted and instruction text highlighted.                         | P         |
+| C4  | Blank Email                        | Notified field required.                                                    | P         |
+| C5  | Invalid Email                      | Notified why email is not acceptable.                                       | P         |
+| C6  | Invalid Password                   | Notified why password is not acceptable.                                    | P         |
+| C7  | Blank Confirmation                 | Notified field required.                                                    | P         |
+| C8  | Non Matching Password Confirmation | Notified passwords do not match.                                            | P         |
+| C9  | Sign Up Button                     | Submits the form - if valid directed to home. No additional login required. | P         |
+| C10 | Sign In Link                       | Directed to Login Page.                                                     | P         |
 
 
 ### **Login and Login Required**
 
-| TEST                  | EXPECTATION                                                                                                          | Pass/Fail |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
-| Blank Username        | Notified field required.                                                                                             | P         |
-| Blank Password        | Notified field required.                                                                                             | P         |
-| Invalid Password/User | Notified password does not link to username.                                                                         | P         |
-| Sign In Button        | Submits the form - if valid directed to home or the page the user tried to access when redirected to login required. | P         |
-| Sign Up Link          | Directed to Register Page.                                                                                           | P         |
-| Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
+| REF | TEST                  | EXPECTATION                                                                                                          | Pass/Fail |
+| --- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
+| D1  | Blank Username        | Notified field required.                                                                                             | P         |
+| D2  | Blank Password        | Notified field required.                                                                                             | P         |
+| D3  | Invalid Password/User | Notified password does not link to username.                                                                         | P         |
+| D4  | Sign In Button        | Submits the form - if valid directed to home or the page the user tried to access when redirected to login required. | P         |
+| D5  | Sign Up Link          | Directed to Register Page.                                                                                           | P         |
+| D6  | Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
 
 ### **Password Reset**
 
-| TEST                                                  | EXPECTATION                                                                                                     | Pass/Fail                                                                                                                                                                                                                                                                                                                      |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Email Blank                                           | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
-| Invalid Email                                         | Notified why email is not acceptable.                                                                           | P                                                                                                                                                                                                                                                                                                                              |
-| Sign Up Link                                          | Directed to Register Page.                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
-| Email Success On Valid Email                          | Success Email Screen Shown                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
-| Email Success Page Password Reset Link                | Directed to back to password reset provide email Page.                                                          | P                                                                                                                                                                                                                                                                                                                              |
-| Email Success Sign Up Link                            | Directed to Login Page.                                                                                         | P                                                                                                                                                                                                                                                                                                                              |
-| Password Reset Email Received                         | Email with link to reset page is received and link directs to reset password page.                              | P - Note BT Internet has placed restriction against spam emails which can effect BT Internet email address oweners getting the reset email.<br><br>If this was to be established as a commercial website BT could be contacted and registered with to stop this occuring.<br><br>Other email providers worked fine in testing. |
-| On Reset Page Blank Password or Password Confirmation | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
-| On Reset Page Invalid Password                        | Notified why password is not acceptable.                                                                        | P                                                                                                                                                                                                                                                                                                                              |
-| On Reset Page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
-| Password Reset - Password Reset Button                | On successful completion button directs to Password Updated Page with link to Login Page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
+Test the full Reset password process accross all relevent pages.
+
+| REF | TEST                                                  | EXPECTATION                                                                                                     | Pass/Fail                                                                                                                                                                                                                                                                                                                      |
+| --- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| E1  | Email Blank                                           | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| E2  | Invalid Email                                         | Notified why email is not acceptable.                                                                           | P                                                                                                                                                                                                                                                                                                                              |
+| E3  | Sign Up Link                                          | Directed to Register Page.                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
+| E4  | Email Success On Valid Email                          | Success Email Screen Shown                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
+| E5  | Email Success Page Password Reset Link                | Directed to back to password reset provide email Page.                                                          | P                                                                                                                                                                                                                                                                                                                              |
+| E6  | Email Success Sign Up Link                            | Directed to Login Page.                                                                                         | P                                                                                                                                                                                                                                                                                                                              |
+| E7  | Password Reset Email Received                         | Email with link to reset page is received and link directs to reset password page.                              | P - Note BT Internet has placed restriction against spam emails which can effect BT Internet email address oweners getting the reset email.<br><br>If this was to be established as a commercial website BT could be contacted and registered with to stop this occuring.<br><br>Other email providers worked fine in testing. |
+| E8  | On Reset Page Blank Password or Password Confirmation | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| E9  | On Reset Page Invalid Password                        | Notified why password is not acceptable.                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| E10 | On Reset Page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
+| E11 | Password Reset - Password Reset Button                | On successful completion button directs to Password Updated Page with link to Login Page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
+
+### **Summary Updates**
+
+Updates section that appears on the bottom of Register, Login, Login Required, Password Resets and Home pages.
+
+| REF | TEST                     | EXPECTATION                                                                                                                                                 | Pass/Fail |
+| --- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| F1  | 3 Updates                | Page shows latest 3 updates.                                                                                                                                | P         |
+| F2  | Hover on Update          | Update goes blue un hover                                                                                                                                   | P         |
+| F3  | Select Update Or Comment | If Logged in directed to Update Detail page, if not logged in directed to Login Required page. Then after login go straight to Update Detail page. (See D4) | P         |
+| F4  | See All Updates Button   | Ig logged in or not logged in direct to Site Updates Posts page.                                                                                            | P         |
