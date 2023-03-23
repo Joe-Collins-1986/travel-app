@@ -4,7 +4,6 @@ from to_do_list.models import ToDoList, ToDoItem
 from django.contrib.auth.models import User
 
 
-
 class TestToDoListandToDoItemModel(TestCase):
 
     def setUp(self):
@@ -36,10 +35,9 @@ class TestToDoListandToDoItemModel(TestCase):
             list=self.to_do_list,
             item="To Do List Item",
         )
-    
+
     def test_to_do_list_model_str_returns_title_attribute(self):
         self.assertEquals(str(self.to_do_list), 'To Do List Title')
 
     def test_to_do_item_model_str_returns_name_attribute(self):
         self.assertEquals(str(self.to_do_item), 'To Do List Item')
-

@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 class TestToDoListViews(TestCase):
-    
+
     def setUp(self):
         self.client = Client()
         self.user1 = User.objects.create_user(
@@ -53,7 +53,7 @@ class TestToDoListViews(TestCase):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         redirect_url = reverse('country', args=[self.country1.pk])
         data = {
-            'title': 'New To Do List Title', 
+            'title': 'New To Do List Title',
             'description': 'New To Do List Description',
         }
         response = self.client.post(self.url, data)
@@ -63,16 +63,20 @@ class TestToDoListViews(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(ToDoList.objects.filter(title='New To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='New To Do List Title').exists())
 
     def test_post_to_do_lists_not_loged_in(self):
         data = {
-            'title': 'New To Do List Title', 
+            'title': 'New To Do List Title',
             'description': 'New To Do List Description',
         }
         response = self.client.post(self.url, data)
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(ToDoList.objects.filter(title='New To Do List Title').exists())
+        self.assertFalse(
+            ToDoList.objects.filter(
+                title='New To Do List Title').exists())
 
     def test_delete_list(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
@@ -85,20 +89,26 @@ class TestToDoListViews(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertFalse(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertFalse(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
     def test_delete_list_not_logged_in(self):
         url = reverse('delete-list', args=[self.to_do_list.pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
     def test_delete_list_wrong_user(self):
         self.client.login(username='JaneBloggs', password='Xyz123456!')
         url = reverse('delete-list', args=[self.to_do_list.pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
     def test_get_edit_to_do_lists(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
@@ -116,7 +126,7 @@ class TestToDoListViews(TestCase):
         url = reverse('edit-list', args=[self.to_do_list.pk])
         redirect_url = reverse('country', args=[self.country1.pk])
         data = {
-            'title': 'Updated To Do List Title', 
+            'title': 'Updated To Do List Title',
         }
         response = self.client.post(url, data)
         self.assertRedirects(
@@ -125,33 +135,45 @@ class TestToDoListViews(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(ToDoList.objects.filter(title='Updated To Do List Title').exists())
-        self.assertFalse(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='Updated To Do List Title').exists())
+        self.assertFalse(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
     def test_post_edit_to_do_lists_not_logged_in(self):
         url = reverse('edit-list', args=[self.to_do_list.pk])
         data = {
-            'title': 'Updated To Do List Title', 
+            'title': 'Updated To Do List Title',
         }
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(ToDoList.objects.filter(title='Updated To Do List Title').exists())
-        self.assertTrue(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertFalse(
+            ToDoList.objects.filter(
+                title='Updated To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
     def test_post_edit_to_do_lists_wrong_user(self):
         self.client.login(username='JaneBloggs', password='Xyz123456!')
         url = reverse('edit-list', args=[self.to_do_list.pk])
         data = {
-            'title': 'Updated To Do List Title', 
+            'title': 'Updated To Do List Title',
         }
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 200)
-        self.assertFalse(ToDoList.objects.filter(title='Updated To Do List Title').exists())
-        self.assertTrue(ToDoList.objects.filter(title='To Do List Title').exists())
+        self.assertFalse(
+            ToDoList.objects.filter(
+                title='Updated To Do List Title').exists())
+        self.assertTrue(
+            ToDoList.objects.filter(
+                title='To Do List Title').exists())
 
 
 class TestToDoItemViews(TestCase):
-    
+
     def setUp(self):
         self.client = Client()
         self.user1 = User.objects.create_user(
@@ -202,7 +224,7 @@ class TestToDoItemViews(TestCase):
         url = reverse('to-do-items', args=[self.to_do_list.pk])
         self.client.login(username='JoeBloggs', password='Abc123456!')
         data = {
-            'item': 'New To Do List Item', 
+            'item': 'New To Do List Item',
         }
         response = self.client.post(url, data)
         self.assertRedirects(
@@ -211,18 +233,26 @@ class TestToDoItemViews(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertTrue(ToDoItem.objects.filter(item='To Do List Item').exists())
-        self.assertTrue(ToDoItem.objects.filter(item='New To Do List Item').exists())
+        self.assertTrue(
+            ToDoItem.objects.filter(
+                item='To Do List Item').exists())
+        self.assertTrue(
+            ToDoItem.objects.filter(
+                item='New To Do List Item').exists())
 
     def test_post_to_do_items_not_logged_in(self):
         url = reverse('to-do-items', args=[self.to_do_list.pk])
         data = {
-            'item': 'New To Do List Item', 
+            'item': 'New To Do List Item',
         }
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(ToDoItem.objects.filter(item='To Do List Item').exists())
-        self.assertFalse(ToDoItem.objects.filter(item='New To Do List Item').exists())
+        self.assertTrue(
+            ToDoItem.objects.filter(
+                item='To Do List Item').exists())
+        self.assertFalse(
+            ToDoItem.objects.filter(
+                item='New To Do List Item').exists())
 
     def test_delete_item(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
@@ -234,20 +264,26 @@ class TestToDoItemViews(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-        self.assertFalse(ToDoItem.objects.filter(item='To Do List Item').exists())
+        self.assertFalse(
+            ToDoItem.objects.filter(
+                item='To Do List Item').exists())
 
     def test_delete_item_wrong_user(self):
         self.client.login(username='JaneBloggs', password='Xyz123456!')
         url = reverse('delete-item', args=[self.to_do_item.pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(ToDoItem.objects.filter(item='To Do List Item').exists())
+        self.assertTrue(
+            ToDoItem.objects.filter(
+                item='To Do List Item').exists())
 
     def test_delete_item_not_logged_in(self):
         url = reverse('delete-item', args=[self.to_do_item.pk])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(ToDoItem.objects.filter(item='To Do List Item').exists())
+        self.assertTrue(
+            ToDoItem.objects.filter(
+                item='To Do List Item').exists())
 
     def test_toggle_complete_item(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')

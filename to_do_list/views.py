@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
+
 class AddListView(LoginRequiredMixin, View):
     login_url = '/login/required'
     redirect_field_name = 'redirect_to'
@@ -34,6 +35,7 @@ class AddListView(LoginRequiredMixin, View):
         country = get_object_or_404(Country, pk=pk)
         list_form = FullToDoListForm(request.POST)
 
+        # valid form actions
         if list_form.is_valid():
             todo = list_form.save(commit=False)
             todo.user = request.user
@@ -58,6 +60,7 @@ class DeleteListView(LoginRequiredMixin, UserPassesTestMixin, View):
                 f'{url}#to_do_list_location'
                 )
 
+    # validate request user is author and restrict if not
     def test_func(self):
         list = get_object_or_404(ToDoList, pk=self.kwargs['pk'])
         return self.request.user == list.user
@@ -86,6 +89,7 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
 
         list_form = FullToDoListForm(request.POST, instance=list)
 
+        # form valid actions
         if list_form.is_valid():
             edit = list_form.save(commit=False)
             edit.save()
@@ -95,6 +99,7 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
                 f'{url}#to_do_list_location'
                 )
 
+    # validate request user is author and restrict if not
     def test_func(self):
         list = get_object_or_404(ToDoList, pk=self.kwargs['pk'])
         return self.request.user == list.user
@@ -119,13 +124,14 @@ class ToDoItemsView(LoginRequiredMixin, View):
             "tab_title": "Task Items"
             }
         return render(request, self.template_name, context)
-    
+
     def post(self, request, pk, *args, **kwargs):
         to_do_list = get_object_or_404(ToDoList, pk=pk)
         items = ToDoItem.objects.filter(list=to_do_list)
 
         add_item_form = ToDoItemForm(request.POST)
 
+        # form valid actions
         if add_item_form.is_valid():
             item_add = add_item_form.save(commit=False)
             item_add.list = to_do_list
@@ -147,6 +153,7 @@ class CompleteItemView(LoginRequiredMixin, UserPassesTestMixin, View):
         url = reverse('to-do-items', args=[item.list.id])
         return redirect(url)
 
+    # validate request user is author and restrict if not
     def test_func(self):
         item = get_object_or_404(ToDoItem, pk=self.kwargs['pk'])
         return self.request.user == item.list.user
@@ -163,9 +170,7 @@ class DeleteItemView(LoginRequiredMixin, UserPassesTestMixin, View):
         url = reverse('to-do-items', args=[item.list.id])
         return redirect(url)
 
+    # validate request user is author and restrict if not
     def test_func(self):
         item = get_object_or_404(ToDoItem, pk=self.kwargs['pk'])
         return self.request.user == item.list.user
-
-
-
