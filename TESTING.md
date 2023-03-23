@@ -733,3 +733,16 @@ ___
 
 ## User Testing
 
+### **Navbar**
+
+| TEST         | EXPECTATION                                                              | CHROME | SAFARI | EDGE | MOBILE |
+| ------------ | ------------------------------------------------------------------------ | ------ | ------ | ---- | ------ |
+| Logo         | To be directed to the Home Page if logged in, Login Page in not.         | x      | x      | x    | x      |
+| Home         | To be directed to the Home Page if logged in, Login Page in not.         | x      | x      | x    | x      |
+| Planner      | To be directed to the Map Page if logged in, Login Required Page in not. | x      | x      | x    | x      |
+| Site Updates | To be directed to the Site Updates Page if logged in or not.             | x      | x      | x    | x      |
+| Login        |                                                                          |        |        |      |        |
+| Register     |                                                                          |        |        |      |        |
+| Profile      |                                                                          |        |        |      |        |
+| Logout       |                                                                          |        |        |      |        |
+| Admin        |                                                                          |        |        |      |        |
