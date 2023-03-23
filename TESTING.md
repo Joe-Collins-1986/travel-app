@@ -735,8 +735,10 @@ ___
 
 Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tables.
 
-### **Navbar**
-
+<details>
+      <summary style="font-weight:bold">Navbar</summary>
+<br>
+   
 | REF | TEST         | EXPECTATION                                                                      | Pass/Fail |
 | --- | ------------ | -------------------------------------------------------------------------------- | --------- |
 | A1  | Logo         | Directed to Home Page if logged in, Login Page in not.                           | P         |
@@ -749,8 +751,14 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | A8  | Logout       | Only shown if user is logged in. Logs user out and directs to Login Page.        | P         |
 | A9  | Admin        | Only shown if user is logged in with a superuser account. Directs to Admin Page. | P         |
 
-### **Footer/Menu Social Media Links**
+___
 
+</details>
+
+<details>
+      <summary style="font-weight:bold">Footer/Menu Social Media Links</summary>
+<br>
+   
 **Note:** The client is fictional and therefore the social sites do not exist so the footer links will only take the user to the overall social media site specified e.g. twitter.
 
 | REF | TEST                     | EXPECTATION                                                                                                                 | Pass/Fail |
@@ -764,8 +772,14 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | B7  | Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
 | B8  | Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
 
-### **Register Page**
+___
 
+</details>
+
+<details>
+      <summary style="font-weight:bold">Register</summary>
+<br>
+   
 | REF | TEST                               | EXPECTATION                                                                 | Pass/Fail |
 | --- | ---------------------------------- | --------------------------------------------------------------------------- | --------- |
 | C1  | Blank Username                     | Notified field required.                                                    | P         |
@@ -779,9 +793,14 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | C9  | Sign Up Button                     | Submits the form - if valid directed to home. No additional login required. | P         |
 | C10 | Sign In Link                       | Directed to Login Page.                                                     | P         |
 
+___
 
-### **Login and Login Required**
+</details>
 
+<details>
+      <summary style="font-weight:bold">Login and Login Required</summary>
+<br>
+   
 | REF | TEST                  | EXPECTATION                                                                                                          | Pass/Fail |
 | --- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
 | D1  | Blank Username        | Notified field required.                                                                                             | P         |
@@ -791,8 +810,16 @@ Used https://tabletomarkdown.com/convert-spreadsheet-to-markdown/ to covert tabl
 | D5  | Sign Up Link          | Directed to Register Page.                                                                                           | P         |
 | D6  | Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
 
+___
+
+</details>
+
 ### **Password Reset**
 
+<details>
+      <summary style="font-weight:bold">Password Reset</summary>
+<br>
+   
 Test the full Reset password process accross all relevent pages.
 
 | REF | TEST                                                  | EXPECTATION                                                                                                     | Pass/Fail                                                                                                                                                                                                                                                                                                                      |
@@ -809,8 +836,14 @@ Test the full Reset password process accross all relevent pages.
 | E10 | On Reset Page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
 | E11 | Password Reset - Password Reset Button                | On successful completion button directs to Password Updated Page with link to Login Page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
 
-### **Summary Updates**
+___
 
+</details>                                                                                                                    |
+
+<details>
+      <summary style="font-weight:bold">Summary Updates</summary>
+<br>
+   
 Updates section that appears on the bottom of Register, Login, Login Required, Password Resets and Home pages.
 
 | REF | TEST                     | EXPECTATION                                                                                                                                                 | Pass/Fail |
@@ -819,3 +852,23 @@ Updates section that appears on the bottom of Register, Login, Login Required, P
 | F2  | Hover on Update          | Update goes blue un hover                                                                                                                                   | P         |
 | F3  | Select Update Or Comment | If Logged in directed to Update Detail page, if not logged in directed to Login Required page. Then after login go straight to Update Detail page. (See D4) | P         |
 | F4  | See All Updates Button   | Ig logged in or not logged in direct to Site Updates Posts page.                                                                                            | P         |
+
+___
+
+</details>
+
+
+<details>
+      <summary style="font-weight:bold">Home</summary>
+<br>
+   
+| REF | TEST                 | EXPECTATION                                                                                                                                     | Pass/Fail |
+| --- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| G1  | Parallax Image       | Parallax on image scroll. Content move at different speeds - moutains, trees, welcome text.                                                     | P         |
+| G2  | Arrow Flash          | Arrow flashing on load to direct users to scroll                                                                                                | P         |
+| G3  | Planner Button       | If logged in planner button directs to Map page. If not logged in direcs to Login Required page then on completion directs to Map page (See D4) | P         |
+| G4  | Site Updates Section | See Summary Updates F1-F4                                                                                                                       | P         |                                                                                          | P         |
+
+___
+
+</details>
