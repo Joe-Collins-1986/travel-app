@@ -3,8 +3,6 @@
 TO DO:
  - ADD LOGO TO WEB DESIGN
 
- - User Testing
-
  - Development Bugs
  - Key Learns
  - Credits
@@ -335,6 +333,18 @@ TO DO:
    - Header images for each country as well as home and login background images and home planner images: https://unsplash.com/
    - Icons: https://fontawesome.com/
    - Favicon: https://pixabay.com/vectors/departures-airport-sign-airliner-153136/
+
+   ---
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Logo</summary>
+
+   <br>
+   Client provided the Logo they wish to see on the site.
+   <br><br>
+
+   ![Logo](readme-assets/ux/logo.png)
 
    ---
    </details>
