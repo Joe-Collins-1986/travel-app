@@ -1360,7 +1360,7 @@ TO DO:
    <details>
       <summary style="font-weight:bold">Image Orientation</summary>
    <br>
-   
+
    In development it was identified that certain images were rotating when they where uploaded to the AWS account.
 
    ![Img Rotation Bug](readme-assets/testing/bugs/picture-orientation-bug.jpg)
@@ -1369,24 +1369,117 @@ TO DO:
 
       DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = False
 
-   ![Img Rotation Bug](readme-assets/testing/bugs/picture-orientation-fix.png)
+   ![Img Rotation Fix](readme-assets/testing/bugs/picture-orientation-fix.png)
 
    ___
 
    </details>
 
-   </details>
-
-      <details>
-      <summary style="font-weight:bold">Bug</summary>
+   <details>
+      <summary style="font-weight:bold">Line Break</summary>
    
-   To be added ....
+   In development when reviewing the site update posts it became apparent that line breaks were not being implemented into the posts.
+
+   ![Line Break Entry Bug](readme-assets/testing/bugs/line-break-add-bug.png)
 
    <br>
 
-   **Code block to resolve:**
+   ![Line Break View Bug](readme-assets/testing/bugs/line-break-bug.png)
 
-      resolution code if used
+   To resolve this a |linebreaksbr was added to the required fields. This was implemented accross the entire site:
+
+      <p class="text-center">{{ update.content|linebreaksbr }}</p>
+
+
+   ![Line Break View Fix](readme-assets/testing/bugs/line-break-fix.png)
+
+   <br>
+
+   ___
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Tags Duplication</summary>
+   
+   In testing it was identified that tags were case sensitive and that this was causing duplication of the same tags.
+
+   ![Tags On Posts Bug](readme-assets/testing/bugs/tags-on-posts-bug.png)
+
+   <br>
+
+   ![Tags Page Bug](readme-assets/testing/bugs/tags-page-bug.png)
+
+   <br>
+
+   To resolve this issue I converted the tags to uppercase where the exclude duplication code could take effect for these instances:
+
+      def form_valid(self, form):
+         country = get_object_or_404(Country, pk=self.kwargs['pk'])
+         form.instance.author = self.request.user
+         form.instance.country = country
+
+         tag_names = form.cleaned_data.get('tags')
+         if tag_names:
+            for i, tag_name in enumerate(tag_names):
+                  tag, created = Tag.objects.get_or_create(name=tag_name.upper())
+                  tag_names[i] = tag.name
+
+         response = super().form_valid(form)
+
+         tags = form.instance.tags.all()
+         if not tags.exists():
+            no_tags = Tag.objects.get_or_create(name='NO TAGS')[0]
+            form.instance.tags.add(no_tags)
+
+         return response
+
+   ![Tags On Posts Fix](readme-assets/testing/bugs/tags-on-posts-fix.png)
+
+   <br>
+
+   ![Tags Page Fix](readme-assets/testing/bugs/tags-page-fix.png)
+
+   ___
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Pagination</summary>
+   
+   In testing it was identified that when pagination was used on a filtered page it would reset the filter. This is because it was assigned its own value to the end of the URL which was being used to define the filter criteria.
+
+   To resolve i added a variable (search_query) into the view to get the value of the search criteria (q) and then passed this back to the template as context.
+
+   This variable could then be applied to the end of the pagination href to navigate back and forth but retain the search criteria:
+
+      <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}" aria-label="Next Page">
+
+   ___
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Filter By Topic</summary>
+   
+   In testing it was identified that when filtering by topic in the Site Updates the spacing in the topic names was causing HTML validation errors:
+
+   ![Filter By Topic Bug](readme-assets/testing/bugs/filter-by-topic-bug.png)
+
+   To resolve this I applied |urlencode to remove URL spacing.
+
+      <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory|urlencode }}" aria-label="filter to topic selected">{{ topic }}</a>
+
+   ___
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Admin CORS Console Errors</summary>
+   
+   When using the Django Admin pages it was identified that CORS errors were being displayed on the console. This was due to the CORS policy I had set on my AWS account.
+
+   I updated the policy and this removed the errors.
 
    ___
 
