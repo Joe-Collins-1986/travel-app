@@ -1052,6 +1052,34 @@ ___
 | O8  | Post Header                | The Header shows the Topic, title and posted date.                                                                                                                                                             | P         |
 | O9  | Post Body                  | The body shows the content and image (if an image was added).                                                                                                                                                  | P         |
 | O10 | Post Footer                | The footer shows the number of comments added to the post. If there are no comments the comment icon is clear, if there are comments in is solid.                                                              | P         |
+| O11 | Post Hover                 | Post will highlight in blue when hovered over.                                                                                                                                                                 | P         |
+| O12 | Select Post                | If Logged in directed to Update Detail page, if not logged in directed to Login Required page. Then after login go straight to Update Detail page. (See D4)                                                    | P         |
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Diary Tags</summary>
+<br>
+   
+| REF | TEST                                          | EXPECTATION                                                                                                                                                                       | Pass/Fail |
+| --- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| P1  | Post                                          | The post information shows at the top of the page.                                                                                                                                | P         |
+| P2  | Large Screen Add Comment Form                 | On a large screen the comment form is presented on the right of the screen.                                                                                                       | P         |
+| P3  | Large Screen Comment Form - Title Blank       | Notified field required.                                                                                                                                                          | P         |
+| P4  | Large Screen Add Comment Form - Comment Blank | Notified field required.                                                                                                                                                          | P         |
+| P5  | Large Screen Add Comment Form - Image         | User can select images from system. This is optional.                                                                                                                             | P         |
+| P6  | Large Screen Add Comment Form - Submit        | If form valid submit adds a comment to the page.                                                                                                                                  | P         |
+| P7  | Site Updates Button                           | Directs back to Site Updates page.                                                                                                                                                | P         |
+| P8  | Add Comment Button                            | This button only appears on a small screen. Directs to Comment Form page.                                                                                                         | P         |
+| P9  | Comments                                      | Comments displayed on the bottom of the page in the order they are created.                                                                                                       | P         |
+| P10 | Comments Header                               | Comments header displays title and posted date and the author. If an update has been made to the post by the user or the Administrator then the post also shows the updated date. | P         |
+| P11 | Comments Body                                 | Comments body shows the comment added as well as an image if an image has been added.                                                                                             | P         |
+| P12 | Comments Footer - Not Author                  | The comment footer does not appear if the user is not the author of the comment.                                                                                                  | P         |
+| P13 | Comments Footer - Author                      | If the user is the author of the comment the footer of the comment will appear and present the update and delete buttons.                                                         | P         |
+| P14 | Comments Footer - Update                      | Directs to Comment Form page.                                                                                                                                                     | P         |
+| P15 | Comments Footer - Delete                      | Directs to Confirm Comment Deletion page.                                                                                                                                         | P         |
 
 ___
 
