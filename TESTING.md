@@ -1143,3 +1143,27 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Admin</summary>
+<br>
+
+All models are currently registered with Django Administration. Once the client signs off on the go live all models will have the admin registration removed with the exception of the Site Update Models and the Profile Model.
+
+As a result of this, only the Site Update Models and Profile Model were User Tested.
+   
+| REF | TEST                       | EXPECTATION                                                                     | Pass/Fail |
+| --- | -------------------------- | ------------------------------------------------------------------------------- | --------- |
+| T1  | Update Category Registered | Check Update Category pulled through to Django Administration.                  | P         |
+| T2  | CRUD Category              | Admin can add, update or delete categories. Built in Django Functionality.      | P         |
+| T3  | Updates  Registered        | Check Updates pulled through to Django Administration.                          | P         |
+| T4  | CRUD Updates               | Admin can add, update or delete Site Updates. Built in Django Functionality.    | P         |
+| T5  | Update Comments Registered | Check Update Comments pulled through to Django Administration.                  | P         |
+| T6  | Filter Update Comments     | Admin can filter Update Comments by Comment Status.                             | P         |
+| T7  | CRUD Update Comments       | Admin can add, update or delete Update Comments. Built in Django Functionality. | P         |
+| T8  | Profile Registered         | Check Profile pulled through to Django Administration.                          | P         |
+| T9  | CRUD Profile               | Admin can add, update or delete Profiles. Built in Django Functionality.        | P         |
+
+___
+
+</details>
