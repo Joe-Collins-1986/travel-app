@@ -1,8 +1,6 @@
 # TRAVEL APPLICATION
 
 TO DO:
- - ADD LOGO TO WEB DESIGN
-
  - Development Bugs
  - Key Learns
  - Credits
@@ -1326,22 +1324,61 @@ TO DO:
    ## Development Bugs
 
    <details>
-      <summary style="font-weight:bold">Bug 1</summary>
-   
-   To be added ....
-
+      <summary style="font-weight:bold">BT Email</summary>
    <br>
+   
+   On testing of the website it was identified that due to BT's strict spam policies users with a BT email address did not always receive their reset password emails.
 
-   **Code block to resolve:**
+   If this site was to be push commercially BT have a contact for businesses to register with them and allow emails to be sent without restriction.
 
-      resolution code if used
+   All other email proviers tested received reset password emails without issue.
 
    ___
 
    </details>
 
    <details>
-      <summary style="font-weight:bold">Bug 2</summary>
+      <summary style="font-weight:bold">Parallax Effect On Home Screen</summary>
+   <br>
+
+   On testing it was identified by multiple users accross a range of devices that the parallax image on the home page was not loading correctly.
+
+   ![Parallax Bug](readme-assets/testing/bugs/parallax-bug.jpg)
+
+   On reviewing the Lighthouse score for this it became apparent that this was due to the image size and resolution. To resolve this issue the image was converted to a webp format.
+
+   Users confirmed this resolved the issue and Lighthouse gave good performance scores to confirm.
+
+   ![Parallax Bug](readme-assets/testing/bugs/parallax-fix.png)
+
+   **Note:** There was one instance where the image still failed to load correctly. This was run on a mac using Parallels to validate a microsoft machine usage in Edge. However, on request 2 users ran the website on seperate microsoft machines using Edge and no issue occured.
+
+   ___
+
+   </details>
+
+   <details>
+      <summary style="font-weight:bold">Image Orientation</summary>
+   <br>
+   
+   In development it was identified that certain images were rotating when they where uploaded to the AWS account.
+
+   ![Img Rotation Bug](readme-assets/testing/bugs/picture-orientation-bug.jpg)
+
+   To resolve this issue I updated the settings.py to manage the image orientation:
+
+      DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = False
+
+   ![Img Rotation Bug](readme-assets/testing/bugs/picture-orientation-fix.png)
+
+   ___
+
+   </details>
+
+   </details>
+
+      <details>
+      <summary style="font-weight:bold">Bug</summary>
    
    To be added ....
 
