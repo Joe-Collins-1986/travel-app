@@ -951,3 +951,23 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">To-Do List Items Manager</summary>
+<br>
+   
+| REF | TEST                            | EXPECTATION                                                                                              | Pass/Fail |
+| --- | ------------------------------- | -------------------------------------------------------------------------------------------------------- | --------- |
+| K1  | Title                           | Title is for the selected To-Do List.                                                                    | P         |
+| K2  | Description                     | Description is for the selected To-Do List. If no description added only the title shows.                | P         |
+| K3  | Add New Task Form - Blank Entry | Notified field required.                                                                                 | P         |
+| K4  | Back Button                     | Directs back to Country Info page for correct country and navigates back to To-Do List section.          | P         |
+| K5  | Add Button                      | Creates a item and presents it at the top to the page.                                                   | P         |
+| K6  | List Item Order                 | List items presented in the order they were created.                                                     | P         |
+| K7  | Close Button On Item            | Put a line through the item title, darkens the item box and moves the item  below the open items.        | P         |
+| K8  | Open Button On Item             | Resets the original formatting and moves the item back to it's original position above all closed items. | P         |
+| K9  | Delete Button On Item           | Deletes the item. No confirmation required.                                                              | P         |
+
+___
+
+</details>
