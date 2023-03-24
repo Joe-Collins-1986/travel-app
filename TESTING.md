@@ -1104,3 +1104,42 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Profile</summary>
+<br>
+   
+| R1 | Default Set Up     | On Registration a skeleton profile is set up with a placeholder round profile image. This page shows user name and email and a default background of Paris. | P |
+| -- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| R2 | Default Objectives | Before objectives are added the objectives section will show 'Currently you have no travel objectives set.'                                                 | P |
+| R3 | Default Wish List  | Before wish list is set on any country the wish list  section will show 'Currently you have no countries on your wish list.'                                | P |
+| R4 | Profile Image      | Once profile image added. This will show in replacement of the default profile image.                                                                       | P |
+| R5 | Travel Objectives  | Once travel objectives are added they will show in the Travel Objectives section.                                                                           | P |
+| R6 | Wish List          | Once a country is set to have a wish list status it will appear in the wish list section.                                                                   | P |
+| R7 | Wish List Link     | The wish lists shown in the wish list section will direct to the Country Info page for that country.                                                        | P |
+| R8 | Backgound Image    | The background image selected will replace the default Paris background.                                                                                    | P |
+| R9 | Update Button      | Directs to the Profile Update page.                                                                                                                         | P |
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile Update</summary>
+<br>
+   
+| REF | TEST                                        | EXPECTATION                                                                                             | Pass/Fail |
+| --- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------- |
+| S1  | Pre-population From User Model Registration | Registration will pre-populate username and email as per registration. These can be updated in profile. | P         |
+| S2  | Pre-Population Default                      | Default profile image and background set. These can be updated in profile.                              | P         |
+| S3  | Username blank                              | Notified field required.                                                                                | P         |
+| S4  | Email blank                                 | Notified field required.                                                                                | P         |
+| S5  | Profile Image                               | Allows user to select image from their system and add it in replacement of default.                     | P         |
+| S6  | Travel Objectives                           | Allows users to set travel objectives.                                                                  | P         |
+| S7  | Background Image                            | Allows user to select image from set options in replacement of default.                                 | P         |
+| S8  | Submit Button                               | On valid form, update profile and direct back to Profile page.                                          | P         |
+| S9  | Cancel Button                               | Direct back to Profile page.                                                                            | P         |
+
+___
+
+</details>

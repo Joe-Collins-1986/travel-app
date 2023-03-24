@@ -3,8 +3,6 @@
 TO DO:
  - ADD LOGO TO WEB DESIGN
 
- - Lighthouse Testing
- - Python Validation
  - User Testing
 
  - Development Bugs
