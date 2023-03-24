@@ -746,7 +746,6 @@ Example Screenshot of User Story in Iteration:
 
 ![Example Screenshot Of a User Story](readme-assets/testing/user-testing/user-stories/user-story.png)
 
-
 ### User Testing Checklist
 
 In addition to the User Story Acceptance Criteria a checklist was developed to check each page after all features were developed prior to sharing project content.
@@ -759,15 +758,15 @@ To record this checklist [tabletomarkdown.com](https://tabletomarkdown.com/conve
    
 | REF | TEST         | EXPECTATION                                                                      | Pass/Fail |
 | --- | ------------ | -------------------------------------------------------------------------------- | --------- |
-| A1  | Logo         | Directed to Home Page if logged in, Login Page in not.                           | P         |
-| A2  | Home         | Directed to Home Page if logged in, Login Page in not.                           | P         |
-| A3  | Planner      | Directed to Map Page if logged in, Login Required Page in not.                   | P         |
-| A4  | Site Updates | Directed to Site Updates Page if logged in or not.                               | P         |
-| A5  | Login        | Only shown if user is not logged in. Direct to Login Page.                       | P         |
-| A6  | Register     | Only shown if user is not logged in. Direct to Register Page.                    | P         |
-| A7  | Profile      | Only shown if user is logged in. Direct to Profile Page.                         | P         |
-| A8  | Logout       | Only shown if user is logged in. Logs user out and directs to Login Page.        | P         |
-| A9  | Admin        | Only shown if user is logged in with a superuser account. Directs to Admin Page. | P         |
+| A1  | Logo         | Directed to Home page if logged in, Login page in not.                           | P         |
+| A2  | Home         | Directed to Home page if logged in, Login page in not.                           | P         |
+| A3  | Planner      | Directed to Map page if logged in, Login Required page in not.                   | P         |
+| A4  | Site Updates | Directed to Site Updates page if logged in or not.                               | P         |
+| A5  | Login        | Only shown if user is not logged in. Direct to Login page.                       | P         |
+| A6  | Register     | Only shown if user is not logged in. Direct to Register page.                    | P         |
+| A7  | Profile      | Only shown if user is logged in. Direct to Profile page.                         | P         |
+| A8  | Logout       | Only shown if user is logged in. Logs user out and directs to Login page.        | P         |
+| A9  | Admin        | Only shown if user is logged in with a Superuser account. Directs to Admin page. | P         |
 
 ___
 
@@ -779,16 +778,16 @@ ___
    
 **Note:** The client is fictional and therefore the social sites do not exist so the footer links will only take the user to the overall social media site specified e.g. twitter.
 
-| REF | TEST                     | EXPECTATION                                                                                                                 | Pass/Fail |
-| --- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | --------- |
-| B1  | Facebook                 | Shows if logged in or not. Directed to Facebook - but not to client account as this does not exist.                         | P         |
-| B2  | Instagram                | Shows if logged in or not. Directed to Instagram - but not to client account as this does not exist.                        | P         |
-| B3  | Twitter                  | Shows if logged in or not. Directed to Twitter- but not to client account as this does not exist.                           | P         |
-| B4  | Pinterest                | Shows if logged in or not. Directed to Pinterest - but not to client account as this does not exist.                        | P         |
-| B5  | Expandable Menu Facebook | Shows if logged in or not when menu is expended. Directed to Facebook - but not to client account as this does not exist.   | P         |
-| B6  | Expandable Instagram     | Shows if logged in or not when menu is expended.  Directed to Instagram - but not to client account as this does not exist. | P         |
-| B7  | Expandable Twitter       | Shows if logged in or not when menu is expended. Directed to Twitter- but not to client account as this does not exist.     | P         |
-| B8  | Expandable Pinterest     | Shows if logged in or not when menu is expended. Directed to Pinterest - but not to client account as this does not exist.  | P         |
+| REF | TEST                      | EXPECTATION                                                                                                                 | Pass/Fail |
+| --- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------- |
+| B1  | Facebook                  | Shows if logged in or not. Directed to Facebook - but not to client account as this does not exist.                         | P         |
+| B2  | Instagram                 | Shows if logged in or not. Directed to Instagram - but not to client account as this does not exist.                        | P         |
+| B3  | Twitter                   | Shows if logged in or not. Directed to Twitter - but not to client account as this does not exist.                          | P         |
+| B4  | Pinterest                 | Shows if logged in or not. Directed to Pinterest - but not to client account as this does not exist.                        | P         |
+| B5  | Expandable Menu Facebook  | Shows if logged in or not when menu is expanded. Directed to Facebook - but not to client account as this does not exist.   | P         |
+| B6  | Expandable Menu Instagram | Shows if logged in or not when menu is expanded.  Directed to Instagram - but not to client account as this does not exist. | P         |
+| B7  | Expandable Menu Twitter   | Shows if logged in or not when menu is expanded. Directed to Twitter - but not to client account as this does not exist.    | P         |
+| B8  | Expandable Menu Pinterest | Shows if logged in or not when menu is expanded. Directed to Pinterest - but not to client account as this does not exist.  | P         |
 
 ___
 
@@ -825,8 +824,8 @@ ___
 | D2  | Blank Password        | Notified field required.                                                                                             | P         |
 | D3  | Invalid Password/User | Notified password does not link to username.                                                                         | P         |
 | D4  | Sign In Button        | Submits the form - if valid directed to home or the page the user tried to access when redirected to login required. | P         |
-| D5  | Sign Up Link          | Directed to Register Page.                                                                                           | P         |
-| D6  | Password Reset        | Directed to Password Reset Page.                                                                                     | P         |
+| D5  | Sign Up Link          | Directed to Register page.                                                                                           | P         |
+| D6  | Password Reset        | Directed to Password Reset page.                                                                                     | P         |
 
 ___
 
@@ -836,38 +835,38 @@ ___
       <summary style="font-weight:bold">Password Reset</summary>
 <br>
    
-Test the full Reset password process accross all relevent pages.
+Test the full Reset password process across all relevent pages.
 
 | REF | TEST                                                  | EXPECTATION                                                                                                     | Pass/Fail                                                                                                                                                                                                                                                                                                                      |
 | --- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | E1  | Email Blank                                           | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
 | E2  | Invalid Email                                         | Notified why email is not acceptable.                                                                           | P                                                                                                                                                                                                                                                                                                                              |
-| E3  | Sign Up Link                                          | Directed to Register Page.                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
-| E4  | Email Success On Valid Email                          | Success Email Screen Shown                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
-| E5  | Email Success Page Password Reset Link                | Directed to back to password reset provide email Page.                                                          | P                                                                                                                                                                                                                                                                                                                              |
-| E6  | Email Success Sign Up Link                            | Directed to Login Page.                                                                                         | P                                                                                                                                                                                                                                                                                                                              |
+| E3  | Sign Up Link                                          | Directed to Register page.                                                                                      | P                                                                                                                                                                                                                                                                                                                              |
+| E4  | Email Success On Valid Email                          | Success Email Screen Shown.                                                                                     | P                                                                                                                                                                                                                                                                                                                              |
+| E5  | Email Success page Password Reset Link                | Directed to back to password reset provide email page.                                                          | P                                                                                                                                                                                                                                                                                                                              |
+| E6  | Email Success Sign Up Link                            | Directed to Login page.                                                                                         | P                                                                                                                                                                                                                                                                                                                              |
 | E7  | Password Reset Email Received                         | Email with link to reset page is received and link directs to reset password page.                              | P - Note BT Internet has placed restriction against spam emails which can effect BT Internet email address oweners getting the reset email.<br><br>If this was to be established as a commercial website BT could be contacted and registered with to stop this occuring.<br><br>Other email providers worked fine in testing. |
-| E8  | On Reset Page Blank Password or Password Confirmation | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
-| E9  | On Reset Page Invalid Password                        | Notified why password is not acceptable.                                                                        | P                                                                                                                                                                                                                                                                                                                              |
-| E10 | On Reset Page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
-| E11 | Password Reset - Password Reset Button                | On successful completion button directs to Password Updated Page with link to Login Page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
+| E8  | On Reset page Blank Password or Password Confirmation | Notified field required.                                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| E9  | On Reset page Invalid Password                        | Notified why password is not acceptable.                                                                        | P                                                                                                                                                                                                                                                                                                                              |
+| E10 | On Reset page Non Matching Password Confirmation      | Notified passwords do not match.                                                                                | P                                                                                                                                                                                                                                                                                                                              |
+| E11 | Password Reset - Password Reset Button                | On successful completion button directs to Password Updated page with link to Login page Via Sign In Here link. | P                                                                                                                                                                                                                                                                                                                              |
 
 ___
 
 </details>
 
 <details>
-      <summary style="font-weight:bold">Summary Updates</summary>
+      <summary style="font-weight:bold">Summary Site Updates</summary>
 <br>
    
-Updates section that appears on the bottom of Register, Login, Login Required, Password Resets and Home pages.
+Summary Site Updates section that appears on the bottom of Register, Login, Login Required, Password Resets and Home pages.
 
 | REF | TEST                     | EXPECTATION                                                                                                                                                 | Pass/Fail |
 | --- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | F1  | 3 Updates                | Page shows latest 3 updates.                                                                                                                                | P         |
-| F2  | Hover on Update          | Update goes blue un hover                                                                                                                                   | P         |
-| F3  | Select Update Or Comment | If Logged in directed to Update Detail page, if not logged in directed to Login Required page. Then after login go straight to Update Detail page. (See D4) | P         |
-| F4  | See All Updates Button   | Ig logged in or not logged in direct to Site Updates Posts page.                                                                                            | P         |
+| F2  | Hover on Update          | Update goes blue on hover.                                                                                                                                  | P         |
+| F3  | Select Update Or Comment | If logged in directed to Update Detail page, if not logged in directed to Login Required page. Then after login go straight to Update Detail page. (See D4) | P         |
+| F4  | See All Updates Button   | If logged in or not logged in direct to Site Updates posts page.                                                                                            | P         |
 
 ___
 
@@ -878,12 +877,12 @@ ___
       <summary style="font-weight:bold">Home</summary>
 <br>
    
-| REF | TEST                 | EXPECTATION                                                                                                                                     | Pass/Fail |
-| --- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| G1  | Parallax Image       | Parallax on image scroll. Content move at different speeds - moutains, trees, welcome text.                                                     | P         |
-| G2  | Arrow Flash          | Arrow flashing on load to direct users to scroll                                                                                                | P         |
-| G3  | Planner Button       | If logged in planner button directs to Map page. If not logged in direcs to Login Required page then on completion directs to Map page (See D4) | P         |
-| G4  | Site Updates Section | See Summary Updates F1-F4                                                                                                                       | P         |                                                                                          | P         |
+| REF | TEST                 | EXPECTATION                                                                                                                                      | Pass/Fail |
+| --- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| G1  | Parallax Image       | Parallax on image scroll. Content move at different speeds - moutains, trees, welcome text.                                                      | P         |
+| G2  | Arrow Flash          | Arrow flashing on load to direct users to scroll.                                                                                                | P         |
+| G3  | Planner Button       | If logged in planner button directs to Map page. If not logged in direcs to Login Required page then on completion directs to Map page. (See D4) | P         |
+| G4  | Site Updates Section | See Summary Updates. F1-F4                                                                                                                       | P         |                                                                                          | P         |
 
 ___
 
@@ -896,16 +895,16 @@ ___
 | REF | TEST                                     | EXPECTATION                                                                                                                                                                                 | Pass/Fail |
 | --- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | H1  | Hover Over Countries                     | The country name appears in the top right corner when hovering over the country on the map.                                                                                                 | P         |
-| H2  | Select Map Country                       | Directs to country Info page when a country is selected on the map.                                                                                                                         | P         |
+| H2  | Select Map Country                       | Directs to Country Info page when a country is selected on the map.                                                                                                                         | P         |
 | H3  | Country Dropdown Alphabetical            | All country dropdown country options appear in alphabetical order.                                                                                                                          | P         |
-| H4  | Select Dropdown Country                  | Directs to country Info page when a country is selected on all countries dropdown.                                                                                                          | P         |
-| H5  | Country Status Updated - Map Update      | When a country status is updated on the country info page and the Map page is returned to the country on the map shows in a different colour - green- wish list or yellow - visited.        | P         |
-| H6  | Country Status Updated - Dropdown Update | When a country status is updated on the country info page and the Map page is returned dropdowns appear for visited or wish list if the user has set these statuses on at least on country. | P         |
+| H4  | Select Dropdown Country                  | Directs to Country Info page when a country is selected on all countries dropdown.                                                                                                          | P         |
+| H5  | Country Status Updated - Map Update      | When a country status is updated on the Country Info page and the Map page is returned to the country on the map shows in a different colour - green- wish list or yellow - visited.        | P         |
+| H6  | Country Status Updated - Dropdown Update | When a country status is updated on the Country Info page and the Map page is returned dropdowns appear for visited or wish list if the user has set these statuses on at least on country. | P         |
 | H7  | Visit/Wish List Disappears               | If the user changes the status to no longer have any wish list or visited countries the respective dropdown will disappear.                                                                 | P         |
-| H8  | Select Visit or Wish List Dropdown       | Directs to country Info page when a country is selected on dropdowns.                                                                                                                       | P         |
-| H9  | Pie Chart Shows Header                   | Shows percentage visited. Does not account for whish list.                                                                                                                                  | P         |
-| H10 | Pie Chart                                | Pie Chart reflects the number of wish lists, visited and not visted countries with the respective colour to align with the ledgend.                                                         | P         |
-| H11 | Pie Char - Small Screen                  | The Pie Chart disappears for small screens.                                                                                                                                                 | P         |
+| H8  | Select Visit or Wish List Dropdown       | Directs to Country Info page when a country is selected on dropdowns.                                                                                                                       | P         |
+| H9  | Pie Chart Shows Header                   | Shows percentage visited. Does not account for wish list.                                                                                                                                   | P         |
+| H10 | Pie Chart                                | Pie Chart reflects the number of wish lists, visited and not visted countries with the respective colour to align with the legend.                                                          | P         |
+| H11 | Pie Chart - Small Screen                 | The Pie Chart disappears for small screens.                                                                                                                                                 | P         |
 
 ___
 
