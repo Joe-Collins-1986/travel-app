@@ -971,3 +971,30 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Diary Posts</summary>
+<br>
+   
+| REF | TEST                     | EXPECTATION                                                                                                                                                                                            | Pass/Fail |
+| --- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| L1  | Add Diary Post Button    | Directs to Diary Post Form page.                                                                                                                                                                       | P         |
+| L2  | Country Info Button      | Directs back to Country Info page for the correct country and navigates back to the diary section.                                                                                                     | P         |
+| L3  | Posts Paginated          | Each page only shows two diary posts. Pagination navigation is presented at the bottom of the page if there are more than two posts. This navigation allows specific page selection or next, previous. | P         |
+| L4  | Search Posts Input Field | Diary posts are filtered to any diary posts where the title, content or tag include the input.                                                                                                         | P         |
+| L5  | Search Tags              | Directs to the Tags page.                                                                                                                                                                              | P         |
+| L6  | Pagiation On Filter      | The pagination applies to the filtered searches. The filter remains when using the pagination navigation at the bottom of the page.                                                                    | P         |
+| L7  | Refresh Icon             | The refresh icon resets all filters to show all posts.                                                                                                                                                 | P         |
+| L8  | Date Post Created        | The post shows the date created in the top left. This is not amended with any future post updates. Date shows in short format.                                                                         | P         |
+| L9  | Experience Icon          | The expereince of the post is represented as an emoji. Selecting this emoji will filter the posts to the experience selected.                                                                          | P         |
+| L10 | No Experience Icon       | If no experence is entered on the post then no emoji will show.                                                                                                                                        | P         |
+| L11 | Content                  | Content is shown in the body of the post. Line spacing is reflected.                                                                                                                                   | P         |
+| L12 | Image                    | Image is shown in the body of the post if it exists. This is optional and does not need to be added.                                                                                                   | P         |
+| L13 | Tags                     | If tags are added to the post they are reflected at the bottom of the post in uppercase. These can be selected on the post to filter to any posts with that tag.                                       | P         |
+| L14 | No Tags                  | If not tag is added to a post a NO_TAGS tag is applied. Selecting this tag will filter to all posts with NO_TAGS tags.                                                                                 | P         |
+| L15 | Update                   | Directs to Diary Post Form page.                                                                                                                                                                       | P         |
+| L16 | Delete                   | Directs to Diary Post Delete Confirmation page.                                                                                                                                                        | P         |
+
+___
+
+</details>
