@@ -1036,3 +1036,23 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Site Updates</summary>
+<br>
+   
+| REF | TEST                       | EXPECTATION                                                                                                                                                                                                    | Pass/Fail |
+| --- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| O1  | Title                      | The title on the page shows the number of posts returned.                                                                                                                                                      | P         |
+| O2  | Search Updates Input Field | Site Update posts are filtered to any posts where the title, content or topic include the input.                                                                                                               | P         |
+| O3  | Topics Dropdown            | Selecting the arrow in the search area opens up a list of the topics assigned to the Site Updates.                                                                                                             | P         |
+| O4  | Topics Selection           | Selecting a topic filters the posts to that topic.                                                                                                                                                             | P         |
+| O6  | Pagination                 | Each page only shows five Site Update posts. Pagination navigation is presented at the bottom of the page if there are more than five posts. This navigation allows specific page selection or next, previous. | P         |
+| O7  | Pagiation On Filter        | The pagination applies to the filtered searches. The filter remains when using the pagination navigation at the bottom of the page.                                                                            | P         |
+| O8  | Post Header                | The Header shows the Topic, title and posted date.                                                                                                                                                             | P         |
+| O9  | Post Body                  | The body shows the content and image (if an image was added).                                                                                                                                                  | P         |
+| O10 | Post Footer                | The footer shows the number of comments added to the post. If there are no comments the comment icon is clear, if there are comments in is solid.                                                              | P         |
+
+___
+
+</details>
