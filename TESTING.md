@@ -1020,3 +1020,19 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Diary Tags</summary>
+<br>
+   
+| REF | TEST                       | EXPECTATION                                                                                                                                                  | Pass/Fail |
+| --- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| N1  | Back Button                | Directs back to Diary Posts page.                                                                                                                            | P         |
+| N2  | Tags                       | Tags appear in the order of popularity. The number of times used in represented next to the tag name.                                                        | P         |
+| N3  | Tags Duplication           | Tags added with the same text but different capitalised characters do not duplicate but are represented as the same tag and add to the number of times used. | P         |
+| N4  | Tags Duplication Same Post | If the saem tags are used in a single post they are amalgamated to 1 tag regardless of case sensitivity.                                                     | P         |
+| N5  | Select Tag                 | Selecting a tag will direct user to the Diary Posts page filtered to the tag selected.                                                                       | P         |
+
+___
+
+</details>
