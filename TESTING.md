@@ -1060,7 +1060,7 @@ ___
 </details>
 
 <details>
-      <summary style="font-weight:bold">Diary Tags</summary>
+      <summary style="font-weight:bold">Site Update Detail</summary>
 <br>
    
 | REF | TEST                                          | EXPECTATION                                                                                                                                                                       | Pass/Fail |
@@ -1080,6 +1080,26 @@ ___
 | P13 | Comments Footer - Author                      | If the user is the author of the comment the footer of the comment will appear and present the update and delete buttons.                                                         | P         |
 | P14 | Comments Footer - Update                      | Directs to Comment Form page.                                                                                                                                                     | P         |
 | P15 | Comments Footer - Delete                      | Directs to Confirm Comment Deletion page.                                                                                                                                         | P         |
+| P16 | Admin Response                                | When an administrator responds to a comment it appears in light yellow in the body of the comment.                                                                                | P         |
+
+___
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Comment Forms</summary>
+<br>
+   
+| REF | TEST                              | EXPECTATION                                                        | Pass/Fail |
+| --- | --------------------------------- | ------------------------------------------------------------------ | --------- |
+| Q1  | Title Blank                       | Notified field required.                                           | P         |
+| Q2  | Comment Blank                     | Notified field required.                                           | P         |
+| Q3  | Image                             | User can select images from system. This is optional.              | P         |
+| Q4  | Submit Button                     | If form valid submit adds a comment to the page.                   | P         |
+| Q1  | Cancel Button                     | Directs Back to Update Detail page.                                | P         |
+| Q2  | Edit Form                         | Pre-populates with fields previously entered.                      | P         |
+| Q3  | Delete Confirmation Delete Button | Deletes the comment and navigates back to Site Update Detail page. | P         |
+| Q4  | Delete Confirmation Cancel Button | Directs Back to Update Detail page.                                | P         |
 
 ___
 
