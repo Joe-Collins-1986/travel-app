@@ -909,3 +909,29 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Country Info</summary>
+<br>
+   
+| REF | TEST                        | EXPECTATION                                                                                                                                                    | Pass/Fail |
+| --- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| I1  | Back Button                 | The globe icon on the top left of the screen is fixed to always show and directs back to the Map page.                                                         | P         |
+| I2  | Country Flag                | The country selected shows the correct flag.                                                                                                                   | P         |
+| I3  | Header Image                | The country selected shows the correct header image.                                                                                                           | P         |
+| I4  | About                       | The country selected shows the correct about info.                                                                                                             | P         |
+| I5  | Info Stats                  | The country selected shows the correct info stats (Capital, Currency, Language, Population).                                                                   | P         |
+| I6  | Visited Selected            | Visited form defaults to 'Not Visited' until the user selects a status for the country and provides a dropdown list of 'Not Visited', 'Visited' & 'Wish List'. | P         |
+| I7  | Visited Selected Re-Visited | The status remains from previous selection when re-visited the country.                                                                                        | P         |
+| I8  | Visited Selected Submit     | When visited is selected and submitted the page returns to the visited status form and shows the applied status.                                               | P         |
+| I9  | Visited Updates Map Colour  | See H5.                                                                                                                                                        | P         |
+| I10 | Add To-Do List              | Add To-Do List button directs to Add To-Do List form.                                                                                                          | P         |
+| I11 | Select To-Do List Title     | Directs to task To-Do List Item Manager page.                                                                                                                  | P         |
+| I12 | Edit To-Do List             | Add To-Do List button directs to Add To-Do List form.                                                                                                          | P         |
+| I13 | To-Do List Order            | To Do Lists are ordered by created date. The order is not ammended by update.                                                                                  | P         |
+| I14 | Delete To-Do List           | Deletes To-Do List  and returns to the To-Do List  section. No confirmation required.                                                                          | P         |
+| I15 | View Diary Button           | Directs to the Diary page.                                                                                                                                     | P         |
+___
+
+</details>
+
