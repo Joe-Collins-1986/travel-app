@@ -323,6 +323,7 @@ class TestDiaryUpdateView(TestCase):
         data = {
             'content': 'Updated test content',
             'exp_rating': 'Not Rated',
+            'tags': ['Test_Tag_New'],
         }
         response = self.client.post(self.url, data)
         self.assertRedirects(

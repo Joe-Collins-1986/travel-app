@@ -308,7 +308,19 @@ class DiaryUpdateView(
     # valid from actions
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        """
+        Convert tag names to uppercase to avoid duplication based
+        on case sensitivity
+        """
+        tag_names = form.cleaned_data.get('tags')
+        if tag_names:
+            for i, tag_name in enumerate(tag_names):
+                tag, created = Tag.objects.get_or_create(name=tag_name.upper())
+                tag_names[i] = tag.name
+
+        response = super().form_valid(form)
+
+        return response
 
     # restrict if request user is not author
     def test_func(self):
