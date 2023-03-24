@@ -1236,7 +1236,7 @@ TO DO:
    * Build notifications with a link for user when there is an admin response to their Site Update comments.
    * Increase map from Europe to World.
    * Link booking sites.
-   * Enhance AWS security protocals to allow site to have a wallet for passports and boarding cards.
+   * Enhance AWS security protocols to allow site to have a wallet for passports and boarding cards.
    * Option advertisement space on site for travel companies.
    
    <br>
@@ -1253,7 +1253,7 @@ TO DO:
    ## Frameworks Used
 
    - Bootstrap:
-      - For quick front end deisgn.
+      - For quick front end design.
    - Django:
       - Build site structure, routing, encryption, standard validation.
 
@@ -1262,7 +1262,7 @@ TO DO:
    - boto3:
       - Used to integrate python3 site with AWS.
    - coverage:
-      - Used to aide in python unit testing by generating an html to identify issues.
+      - Used to aid in python unit testing by generating an html to identify issues.
    - pillow:
       - Used to manipulate stored images.
    - django-crispy-forms:
@@ -1288,6 +1288,8 @@ TO DO:
       - Used to plan out website format.
    - Web Developer:
       - Used to analyse HTML, CSS and JavaScript output and correct where required.
+   - tabletomarkdown.com:
+      - Used to to quickly convert data to Markdown Tables tables for TESTING.md document.
    - Heroku:
       - Hosting deployed site.
    - SQLite3:
@@ -1304,7 +1306,7 @@ TO DO:
 # Testing
 
    ## Testing Document
-   Testing doumentation found [here](TESTING.md).
+   Testing documentation found [here](TESTING.md).
 
    ## Further Testing
    * Tested across Google Chrome, Safari, Microsoft Edge, Fire Fox browsers on both Mac and Windows.
