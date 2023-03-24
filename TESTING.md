@@ -998,3 +998,24 @@ ___
 ___
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Diary Forms</summary>
+<br>
+   
+| REF | TEST                                     | EXPECTATION                                                                   | Pass/Fail |
+| --- | ---------------------------------------- | ----------------------------------------------------------------------------- | --------- |
+| M1  | Content Blank                            | Notified field required.                                                      | P         |
+| M2  | Content                                  | Allows content to be entered in paragraphs with spacing.                      | P         |
+| M3  | Image                                    | Allows user to select image from their system and add it. This is optional.   | P         |
+| M4  | Image - Edit                             | Allows user to clear previous image or replace image with a new image.        | P         |
+| M5  | Tags                                     | Allow user to add multiple tags. This is optional.                            | P         |
+| M6  | Exp Rating                               | Can select from a dropdown list of experiences.                               | P         |
+| M7  | Submit                                   | On valid form - Adds / edits diaty post and directs back to Diary Posts page. | P         |
+| M8  | Cancel                                   | Directs back to Diary Posts page.                                             | P         |
+| M9  | Delete Confirmation Form - Delete Button | Deletes post and directs back to Diary Posts page.                            | P         |
+| M10 | Delete Confirmation Form - Cancel Button | Directs back to Diary Posts page.                                             | P         |
+
+___
+
+</details>
