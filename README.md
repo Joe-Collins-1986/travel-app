@@ -1,11 +1,5 @@
 # TRAVEL APPLICATION
 
-TO DO:
- - Development Bugs
- - Key Learns
- - Credits
-
-
 # Table Of Contents
 - [Travel Application Website Overview](#travel-application-website-overview)
    - [Live Project](#live-project-link-to-live-project)
@@ -33,7 +27,7 @@ TO DO:
    - [Deployment Document](#deployment-document)
 - [Credits](#credits)
    - [Development Resources](#development-resources)
-   - [Media Resources](#media-resources)
+   - [Media and Content Resources](#media-and-content-resources)
    - [Acknowledgements](#acknowledgements)
 
 <br>
@@ -1377,6 +1371,7 @@ TO DO:
 
    <details>
       <summary style="font-weight:bold">Line Break</summary>
+   <br>
    
    In development when reviewing the site update posts it became apparent that line breaks were not being implemented into the posts.
 
@@ -1401,6 +1396,7 @@ TO DO:
 
    <details>
       <summary style="font-weight:bold">Tags Duplication</summary>
+   <br>
    
    In testing it was identified that tags were case sensitive and that this was causing duplication of the same tags.
 
@@ -1446,6 +1442,7 @@ TO DO:
 
    <details>
       <summary style="font-weight:bold">Pagination</summary>
+   <br>
    
    In testing it was identified that when pagination was used on a filtered page it would reset the filter. This is because it was assigned its own value to the end of the URL which was being used to define the filter criteria.
 
@@ -1461,6 +1458,7 @@ TO DO:
 
    <details>
       <summary style="font-weight:bold">Filter By Topic</summary>
+   <br>
    
    In testing it was identified that when filtering by topic in the Site Updates the spacing in the topic names was causing HTML validation errors:
 
@@ -1476,6 +1474,7 @@ TO DO:
 
    <details>
       <summary style="font-weight:bold">Admin CORS Console Errors</summary>
+   <br>
    
    When using the Django Admin pages it was identified that CORS errors were being displayed on the console. This was due to the CORS policy I had set on my AWS account.
 
@@ -1487,7 +1486,17 @@ TO DO:
 
 
    ## Key Learns
-   To be added ...
+   This project proved to be by far the most challenging and exciting project I have completed. Django did not come naturally to me and my understanding needed to be developed and enhanced by a number of really great online resources (see credits).
+
+   I had an almost endless list of things I learned from this project ranging from basic Django functionality to implementation strategies.
+
+   Below list some of the key factors I would try to improve upon for my next project.
+
+   * As I developed my Django knowledge, I became more capable of writing smaller blocks of more efficient code. Given more time I would revisit earlier blocks of code to refine them further and improve their readability.
+   * At times in this project, I showed an inconsistency of methods used to achieve the same tasks. Although these methods worked as expected, I would aim to be more consistent in future.
+   * Throughout the project I gained a better understanding of class-based views vs function views. I frequently used class-based views where in some instances the development might have been better served and simplified using function-based views.
+   * In some of my code, especially the earlier functions I tried to achieve to many things with a single function. In future I would use the html blocks to write more concise, tailored, and reusable code.
+   * I need to be more efficient with the use of CSS. In future projects I will look to break the required components down into reusable elements for styling.
 
    <br>
 
@@ -1502,15 +1511,27 @@ TO DO:
 
 # Credits
    ## Development Resources
-   The following sources acted as guidance for understanding. No code was taken directly for use in this project.
+   The following sources acted as guidance for understanding. No code was taken directly for use in this project:
+
+   * [Dennis Ivy]( https://www.youtube.com/@DennisIvy) – Youtube Instructor – Helped develop basic Django functionality knowledge.
+   * [Corey Schafer]( https://www.youtube.com/@coreyms) – Youtube Instructor – Helped develop basic Django functionality knowledge.
+   * [thenewboston]( https://www.youtube.com/@thenewboston) – Youtube Instructor – Helped develop basic Django functionality knowledge.
+   * [B Learning Club]( https://www.youtube.com/watch?v=zwBKm8xp9V0&t=6s) – Youtube tutorial video – Helped develop understanding of Django taggit usability.
+   * [developedbyed](https://www.youtube.com/watch?v=Nt70Ld0dJCM) - Youtube tutorial video – How to build Parallax image effect.
+   * Code Institute Slack Community Support – Aided in the testing of the project and discussions regarding issues and features.
+   * Code Institute Tutor Support – Code Institute for queries on issues I required clarification on.
+   * Stack Overflow used for generalised queries during development.
 
 
-   * To be added ...
+   ## Media and Content Resources
 
-   ## Media Resources
-   * To be added ...
+   * Images - See Website Design Imagery for links to the image/icon sites used within this project [here](#imagery).
+   * Map SVG – The original SVG map was taken and tailored from the following source [here]( https://simplemaps.com/resources/svg-world).
+   * Countries JSON – The JSON used to populate the Country Info was taken from [here](https://gist.github.com/keeguon/2310008?permalink_comment_id=4255990#gistcomment-4255990).
+
 
 
    ## Acknowledgements
+   
    * Thank to my Mentor (Spencer Barriball) for his feedback and guidance.
    * The Code Institute Slack community for helping with any and all queries.
