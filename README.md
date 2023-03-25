@@ -1534,4 +1534,5 @@
    ## Acknowledgements
    
    * Thank to my Mentor (Spencer Barriball) for his feedback and guidance.
+   * To all my friends and family that have taken the time to test this site and listen to me rant.
    * The Code Institute Slack community for helping with any and all queries.
