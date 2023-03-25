@@ -1495,7 +1495,7 @@
    * As I developed my Django knowledge, I became more capable of writing smaller blocks of more efficient code. Given more time I would revisit earlier blocks of code to refine them further and improve their readability.
    * At times in this project, I showed an inconsistency of methods used to achieve the same tasks. Although these methods worked as expected, I would aim to be more consistent in future.
    * Throughout the project I gained a better understanding of class-based views vs function views. I frequently used class-based views where in some instances the development might have been better served and simplified using function-based views.
-   * In some of my code, especially the earlier functions I tried to achieve to many things with a single function. In future I would use the html blocks to write more concise, tailored, and reusable code.
+   * In some of my code, especially the earlier functions I tried to achieve too many things with a single function. In future I would use the html blocks to write more concise, tailored, and reusable code.
    * I need to be more efficient with the use of CSS. In future projects I will look to break the required components down into reusable elements for styling.
 
    <br>
