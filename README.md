@@ -1525,7 +1525,7 @@
 
    ## Media and Content Resources
 
-   * Images - See Website Design Imagery for links to the image/icon sites used within this project [here](#imagery).
+   * Images - See Website Design Imagery for links to the image/icon sites used within this project [here](#website-design).
    * Map SVG – The original SVG map was taken and tailored from the following source [here]( https://simplemaps.com/resources/svg-world).
    * Countries JSON – The JSON used to populate the Country Info was taken from [here](https://gist.github.com/keeguon/2310008?permalink_comment_id=4255990#gistcomment-4255990).
 
