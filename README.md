@@ -50,8 +50,9 @@
 
 # Responsive Review
 
-   ## Am I Responsive? [*(link to responsive review website)*](https://ui.dev/amiresponsive?url=https://traval-app.herokuapp.com/)
-   The above provides a view of the login page however login is required to view the site contents. These are detailed via screenshots below.
+   ## Am I Responsive?
+   
+   Login is required to view the site contents on responsive websites therefore the pages have been detailed via screenshots below.
 
    <details>
       <summary style="font-weight:bold">Login</summary>
