@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Profile
+from django.contrib import messages
 from diary.models import Visit, Country
 from django.views.generic import (
     View,
@@ -58,6 +59,10 @@ class UpdateProfilePageView(LoginRequiredMixin, View):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
+            messages.success(
+                self.request,
+                'YOUR PROFILE HAS BEEN UPDATED SUCCESSFULLY'
+                )
             return redirect('profile-page')
 
         else:
