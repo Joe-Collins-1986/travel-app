@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 from django.views.generic import (
     View,
@@ -144,7 +145,7 @@ class CountryView(LoginRequiredMixin, View):
         country = get_object_or_404(countries, pk=pk)
         visited = Visit.objects.filter(user_id=request.user.id)
 
-        # add visit_status
+        # update visit_status
         if visited.filter(country=country).exists():
             country_visited = visited.get(country=country)
 
@@ -155,10 +156,15 @@ class CountryView(LoginRequiredMixin, View):
                 visit_form.instance.id = country_visited.id
                 country_visited = visit_form.save(commit=False)
                 country_visited.save()
+                messages.success(
+                    request,
+                    f'VISITED STATUS SUCCESSFULLY UPDATED'
+                    )
             else:
                 visit_form = VisitForm()
+                messages.error(request, f'NOT VALID STATUS')
 
-        # update visit_status
+        # add visit_status
         else:
             visit_form = VisitForm(data=request.POST)
             if visit_form.is_valid():
@@ -166,8 +172,13 @@ class CountryView(LoginRequiredMixin, View):
                 visit = visit_form.save(commit=False)
                 visit.country = country
                 visit.save()
+                messages.success(
+                    request,
+                    f'VISITED STATUS SUCCESSFULLY ADDED'
+                    )
             else:
                 visit_form = VisitForm()
+                messages.error(request, f'NOT VALID STATUS')
 
         url = reverse('country', args=[country.pk])
         return redirect(
@@ -292,6 +303,11 @@ class DiaryCreateView(
             no_tags = Tag.objects.get_or_create(name='NO TAGS')[0]
             form.instance.tags.add(no_tags)
 
+        messages.success(
+            self.request,
+            'YOUR DIARY ENTRY HAS BEEN CREATED SUCCESSFULLY'
+            )
+
         return response
 
 
@@ -320,6 +336,13 @@ class DiaryUpdateView(
 
         response = super().form_valid(form)
 
+        diary_date = form.cleaned_data.get('created_on')
+
+        messages.success(
+            self.request,
+            f'YOUR DIARY ENTRY HAS BEEN UPDATED SUCCESSFULLY'
+            )
+
         return response
 
     # restrict if request user is not author
@@ -343,6 +366,10 @@ class DiaryDeleteView(
     # on success go to diary posts
     def get_success_url(self):
         diary = self.get_object()
+        messages.success(
+            self.request,
+            f'YOUR DIARY ENTRY HAS BEEN DELETED SUCCESSFULLY'
+            )
         return reverse('diary-all-posts', args=[str(diary.country.id)])
 
     # restrict if request user is not author
