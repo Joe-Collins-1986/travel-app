@@ -1141,6 +1141,23 @@
    </details>
 
    <details>
+      <summary style="font-weight:bold">CRUD Notifications</summary>
+   <br>
+
+   #### Django Messaging
+   Whenever a user creates, edits or deletes an object in the database they will receive a notification informing them that their action has been successful.
+
+   This notification will only show for 3 seconds so as not to negatively impact the user experience.
+
+   Success Notification:
+
+   ![Notification](readme-assets/features/notifications/success-notifications.png)
+
+   ---
+
+   </details>
+
+   <details>
       <summary style="font-weight:bold">Error Pages</summary>
    <br>
 
