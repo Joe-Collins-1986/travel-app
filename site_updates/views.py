@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Update, UpdateComment, UpdateCatagory
 from django.urls import reverse
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -104,6 +105,10 @@ class AdminDetailUpdateView(LoginRequiredMixin, View):
             comment = comment_form.save(commit=False)
             comment.site_update = update
             comment.save()
+            messages.success(
+                self.request,
+                'YOUR NEW COMMENT HAS BEEN CREATED SUCCESSFULLY'
+                )
         else:
             comment_form = CommentForm()
 
@@ -136,6 +141,10 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         update = get_object_or_404(Update, pk=self.kwargs['pk'])
         form.instance.author = self.request.user
         form.instance.site_update = update
+        messages.success(
+                self.request,
+                'YOUR NEW COMMENT HAS BEEN CREATED SUCCESSFULLY'
+                )
         return super().form_valid(form)
 
 
@@ -149,6 +158,10 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     # valid from actions
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(
+                self.request,
+                'YOUR COMMENT HAS BEEN UPDATED SUCCESSFULLY'
+                )
         return super().form_valid(form)
 
     # restrict if user is not author
@@ -169,6 +182,10 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     # navigate to update detail if successful
     def get_success_url(self):
         comment = self.get_object()
+        messages.success(
+                self.request,
+                'YOUR COMMENT HAS BEEN DELETED SUCCESSFULLY'
+                )
         return reverse('admin-update-detail',
                        args=[str(comment.site_update.id)])
 
