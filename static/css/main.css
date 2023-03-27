@@ -197,6 +197,16 @@ p, .comments-txt, .form-label {
 
 }
 
+/* ALERT NOTIFICATIONS */
+
+.alert-position {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 500;
+    text-align: center;
+}
+
 /* FOOTER SECTION */
 .social-icons {
     font-size: xx-large;

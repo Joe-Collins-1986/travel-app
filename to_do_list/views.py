@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.views.generic import (
     View,
 )
@@ -41,6 +42,10 @@ class AddListView(LoginRequiredMixin, View):
             todo.user = request.user
             todo.country = country
             todo.save()
+            messages.success(
+                self.request,
+                'YOUR NEW TO-DO LIST HAS BEEN CREATED SUCCESSFULLY'
+                )
             url = reverse('country', args=[country.pk])
             return redirect(
                 f'{url}#to_do_list_location'
@@ -56,6 +61,10 @@ class DeleteListView(LoginRequiredMixin, UserPassesTestMixin, View):
         list.delete()
 
         url = reverse('country', args=[list.country.pk])
+        messages.success(
+            self.request,
+            'YOUR TO-DO LIST HAS BEEN DELETED SUCCESSFULLY'
+            )
         return redirect(
                 f'{url}#to_do_list_location'
                 )
@@ -95,6 +104,10 @@ class EditListView(LoginRequiredMixin, UserPassesTestMixin, View):
             edit.save()
 
             url = reverse('country', args=[edit.country.pk])
+            messages.success(
+                self.request,
+                f'YOUR TO-DO LIST HAS BEEN UPDATED SUCCESSFULLY'
+                )
             return redirect(
                 f'{url}#to_do_list_location'
                 )
@@ -136,6 +149,10 @@ class ToDoItemsView(LoginRequiredMixin, View):
             item_add = add_item_form.save(commit=False)
             item_add.list = to_do_list
             item_add.save()
+            messages.success(
+                self.request,
+                f'YOUR TO-DO ITEM HAS BEEN CREATED SUCCESSFULLY'
+                )
 
             url = reverse('to-do-items', args=[item_add.list.id])
             return redirect(url)
@@ -149,6 +166,17 @@ class CompleteItemView(LoginRequiredMixin, UserPassesTestMixin, View):
         item = get_object_or_404(ToDoItem, pk=pk)
         item.complete = not item.complete
         item.save()
+
+        if item.complete:
+            messages.success(
+                self.request,
+                f'YOUR TO-DO ITEM HAS BEEN CLOSED SUCCESSFULLY'
+                )
+        else:
+            messages.success(
+                self.request,
+                f'YOUR TO-DO ITEM HAS BEEN OPENED SUCCESSFULLY'
+                )
 
         url = reverse('to-do-items', args=[item.list.id])
         return redirect(url)
@@ -166,6 +194,10 @@ class DeleteItemView(LoginRequiredMixin, UserPassesTestMixin, View):
     def get(self, request, pk):
         item = get_object_or_404(ToDoItem, pk=pk)
         item.delete()
+        messages.success(
+                self.request,
+                f'YOUR TO-DO ITEM HAS BEEN DELETED SUCCESSFULLY'
+                )
 
         url = reverse('to-do-items', args=[item.list.id])
         return redirect(url)

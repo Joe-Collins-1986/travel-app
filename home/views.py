@@ -39,7 +39,7 @@ def register(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request, f"Your account has been created!")
+            messages.success(request, f"YOUR ACCOUNT AND PROFILE HAVE BEEN CREATED!")
             return redirect('travel-home')
     else:
         form = UserRegisterForm()
