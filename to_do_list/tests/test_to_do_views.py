@@ -209,6 +209,12 @@ class TestToDoItemViews(TestCase):
             item="To Do List Item",
         )
 
+        self.to_do_item_2 = ToDoItem.objects.create(
+            list=self.to_do_list,
+            item="To Do List Item 2",
+            complete=True,
+        )
+
     def test_get_to_do_items(self):
         self.client.login(username='JoeBloggs', password='Abc123456!')
         url = reverse('to-do-items', args=[self.to_do_list.pk])
@@ -297,6 +303,19 @@ class TestToDoItemViews(TestCase):
             fetch_redirect_response=True)
         updated_item = ToDoItem.objects.get(pk=self.to_do_item.pk)
         self.assertTrue(updated_item.complete)
+
+    def test_toggle_open_item(self):
+        self.client.login(username='JoeBloggs', password='Abc123456!')
+        url = reverse('complete-item', args=[self.to_do_item_2.pk])
+        response = self.client.get(url)
+        self.assertRedirects(
+            response,
+            reverse('to-do-items', args=[self.to_do_list.pk]),
+            status_code=302,
+            target_status_code=200,
+            fetch_redirect_response=True)
+        updated_item = ToDoItem.objects.get(pk=self.to_do_item_2.pk)
+        self.assertFalse(updated_item.complete)
 
     def test_toggle_complete_item_not_logged_in(self):
         url = reverse('complete-item', args=[self.to_do_item.pk])

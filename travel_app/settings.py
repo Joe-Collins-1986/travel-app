@@ -156,7 +156,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-#Default redirect auth_views
+# Default redirect auth_views
 LOGIN_REDIRECT_URL = 'travel-home'
 LOGOUT_REDIRECT_URL = 'home-login'
 
