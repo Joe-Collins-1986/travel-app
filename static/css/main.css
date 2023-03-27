@@ -771,6 +771,11 @@ p, .comments-txt, .form-label {
         color: rgb(6, 68, 103);
     }
 
+    .comment-card {
+        word-wrap: break-word;
+        width: 70%;
+    }
+
     .comment-form-section {
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 5% 0;
@@ -947,8 +952,9 @@ p, .comments-txt, .form-label {
     .profile-user-info-container {
         border-radius: 15px;
         padding: 1rem 1rem 1rem 1rem;
-        max-width: max-content;
+        /* max-width: max-content; */
         background-color: rgba(255, 255, 255, 0.9);
+        min-width: 60%;
 
         display: flex;
     }
@@ -971,6 +977,8 @@ p, .comments-txt, .form-label {
 
     .profile-user-info {
         margin-left: 10px;
+        width: 60%;
+        word-wrap: break-word;
     }
 
     .update-profile-button {
