@@ -305,6 +305,9 @@ p, .comments-txt, .form-label {
     .home-title {
         color: white;
         text-shadow: 0 0 5px rgb(6, 68, 103);
+        width: 100%;
+        word-wrap: break-word;
+        padding: 0 2.5%;
     }
     
     .content-under-home-header {

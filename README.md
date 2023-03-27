@@ -967,7 +967,7 @@
    ---
 
    #### Re-open Tasks
-   Users will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and position on the list.
+   Users will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and move back above the closed items.
 
    ![Re-open Tasks](readme-assets/features/task-manager/tasks-re-opened.png)
    <br>

@@ -15,6 +15,6 @@ class VisitForm(forms.ModelForm):
         fields = ['status',]
 
     status = forms.CharField(
-        label="Have you visited this counry before? Do you want to?",
+        label="Have you visited this country before? Do you want to?",
         widget=forms.Select(
             choices=VISITED))
