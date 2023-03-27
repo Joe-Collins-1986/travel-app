@@ -1485,6 +1485,33 @@
 
    </details>
 
+   <details>
+      <summary style="font-weight:bold">Long Username</summary>
+   <br>
+   
+   During final testing it was identified that is a user used a extremely long username it would negatively impact the formatting for the home page, comments and profile.
+
+   ![Long Username Bug](readme-assets/testing/bugs/long-username-home-bug.jpeg)
+
+   A long term solution to this issue would be to override the Django User model to restrict the username character allowance. However, at this stage in the delopment I did not want to impact the existing models. As a result I insead updated the CSS with word-wrap: break-word. This stopped long usernames exceeding their containers.
+
+   Home Update:
+
+   ![Long Username Home Fix](readme-assets/testing/bugs/long-username-home-fix.png)
+
+   Profile Update:
+
+   ![Long Username Profile Fix](readme-assets/testing/bugs/long-username-profile-fix.png)
+
+   Comment Update:
+   
+   ![Long Username Comment Fix](readme-assets/testing/bugs/long-username-comment-fix.png)
+
+
+   ___
+
+   </details>
+
 
    ## Key Learns
    This project proved to be by far the most challenging and exciting project I have completed. Django did not come naturally to me and my understanding needed to be developed and enhanced by a number of really great online resources (see credits).
